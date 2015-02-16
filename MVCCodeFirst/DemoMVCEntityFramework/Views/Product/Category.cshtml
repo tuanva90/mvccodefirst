@@ -1,0 +1,27 @@
+﻿
+@using (Ajax.BeginForm("LoadProduct", "Product", new AjaxOptions { UpdateTargetId = "tblProduct" }))
+{
+    <label>Categories</label>
+   @Html.DropDownList("CategoryID",String.Empty)
+    
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#CategoryID').change(function () {
+                $.ajax({
+                        type: "GET",
+                        url: "http://localhost:5325/Product/LoadProduct?CategoryID=" + $('#CategoryID').find("option:selected").val(),
+                        data: $('#CategoryID').find("option:selected").val(),
+                        contentType: "text/xml; charset=utf-8",
+                        success: function (data) {
+                            $('#tblProduct').html(data);                            
+                        },
+                        error:function (error)
+                        {
+                            alert(error.state + " " + error.statusText)
+                        }
+                    });
+            });
+        });
+    </script>
+
+}

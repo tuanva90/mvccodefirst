@@ -1,0 +1,50 @@
+﻿@{
+    ViewBag.Title = "ORDER INFORMATION";
+}
+@model PagedList.IPagedList<DemoMVCEntityFramework.Models.Order>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+<h2>CustomersInfoPage</h2>
+
+
+<br />
+<table class="table">
+    <tr>
+        <th>
+            @Html.ActionLink("Ship Name", "CustomersInfoPage", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+        </th>
+        <th>
+            Shipped Date
+        </th>
+        <th>
+            @Html.ActionLink("Shipped Country", "CustomersInfoPage", new { sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter })
+        </th>
+        <th></th>
+    </tr>
+
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShipName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShippedDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShipCountry)
+            </td>
+            <td>
+                @Html.ActionLink("Details", "Details", new { id = item.OrderID }) |
+            </td>
+        </tr>
+    }
+
+</table>
+<br />
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+@Html.PagedListPager(Model, page => Url.Action("CustomersInfoPage",
+    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))

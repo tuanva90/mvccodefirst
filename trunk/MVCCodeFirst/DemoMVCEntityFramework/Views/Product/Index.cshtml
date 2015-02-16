@@ -1,0 +1,19 @@
+﻿@model PagedList.IPagedList<DemoMVCEntityFramework.Models.Product>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<div>
+    @Html.Partial("Category", null)
+</div>
+
+<div id="tblProduct">
+    @Html.Partial("tableView", Model)
+</div>

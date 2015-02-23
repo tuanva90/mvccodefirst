@@ -33,28 +33,10 @@ namespace DemoMVCEntityFramework.Models
         public string Phone { get; set; }
         [MaxLength(50), Required]
         public string Fax { get; set; }
-        [NotMapped]
-        public bool Bool { get; set; }
-        [NotMapped]
-        public bool RememberMe { get; set; }
-        [Required]
-        public string Password { get; set; }
-        [NotMapped, Compare("Password")]
-        public string ConfirmPassword { get; set; }
-        public virtual ICollection<Order> Orders { get; set; }
 
-        public bool IsValid(string _username, string _password)
-        {
-            NorthWNDContext db = new NorthWNDContext();
-            var check = from p in db.Customers where p.ContactName == _username && p.Password == _password select p.ContactName;
-            if (check.Count() > 0)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
+        public int userID { get; set; }
+        public virtual ICollection<Order> Orders { get; set; }
+        public virtual User Users { get; set; }
+        
     }
 }

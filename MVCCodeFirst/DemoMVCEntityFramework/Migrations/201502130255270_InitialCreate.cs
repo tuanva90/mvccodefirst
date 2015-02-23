@@ -19,6 +19,18 @@ namespace DemoMVCEntityFramework.Migrations
                 .PrimaryKey(t => t.CategoryID);
             
             CreateTable(
+                "dbo.User",
+                c => new
+                {
+                    UserID= c.Int(nullable: false, identity:true),
+                    UserName= c.String(nullable:false,maxLength:50),
+                    UserPassword=c.String(nullable:false,maxLength:20),
+                    Role=c.String(nullable:false,maxLength:10),
+                }
+                )
+                .PrimaryKey(t=>t.UserID);
+
+            CreateTable(
                 "dbo.Product",
                 c => new
                     {

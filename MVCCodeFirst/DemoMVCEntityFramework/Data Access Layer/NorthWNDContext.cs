@@ -16,6 +16,7 @@ namespace DemoMVCEntityFramework.Data_Access_Layer
         public DbSet<Order> Orders { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<OrderDetail> OrderDetails { get; set; }
+        public DbSet<User> Users { get; set; }
         //public DbSet<Supplier> Suppliers { get; set; }
         //public DbSet<Region> Regions { get; set; }
         //public DbSet<Shipper> Shippers { get; set; }

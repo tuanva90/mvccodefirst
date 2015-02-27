@@ -13,30 +13,28 @@ namespace DemoMVCEntityFramework.Models
         [Key]
         public int OrderID { get; set; }
         [MaxLength(50),Required]
-        public string CustomerID { get; set; }
-        [DataType(DataType.Date), Required]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        public int CustomerID { get; set; }
+        //[DataType(DataType.Date)]
+        //[DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime OrderDate { get; set; }
-        [DataType(DataType.Date), Required]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        //[DataType(DataType.Date)]
+        //[DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime RequiredDate { get; set; }
-        [Required]
         public DateTime ShippedDate { get; set; }
-        [Required]
         public int ShipVia { get; set; }
         [DataType(DataType.Currency)]
         public decimal Freight { get; set; }
-        [MaxLength(50), Required]
+        [MaxLength(50)]
         public string ShipName { get; set; }
-        [MaxLength(50), Required]
+        [MaxLength(50)]
         public string ShipAddress { get; set; }
-        [MaxLength(50), Required]
+        [MaxLength(50)]
         public string ShipCity { get; set; }
-        [MaxLength(50), Required]
+        [MaxLength(50)]
         public string ShipRegion { get; set; }
-        [MaxLength(50), Required]
+        [MaxLength(50)]
         public string ShipPostalCode { get; set; }
-        [MaxLength(50), Required]
+        [MaxLength(50)]
         public string ShipCountry { get; set; }
         public virtual Customer Customer { get; set; }
         public virtual ICollection<OrderDetail> OrderDetails { get; set; }

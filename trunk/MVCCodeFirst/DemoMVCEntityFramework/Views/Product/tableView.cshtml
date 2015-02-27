@@ -2,46 +2,46 @@
 @using PagedList.Mvc;
 
 <link href="~/Content/PagedList.css" rel="stylesheet" />
-<table class="tbproduct" border="0" cellpadding="10">
+<script type="text/javascript">
+    function filter(phrase, _id) {
+        var words = phrase.value.toLowerCase().split(" ");
+        var table = document.getElementById(_id);
+        var ele;
+        for (var r = 1; r < table.rows.length; r++) {
+            ele = table.rows[r].innerHTML.replace(/<[^>]+>/g, "");
+            var displayStyle = 'none';
+            for (var i = 0; i < words.length; i++) {
+                if (ele.toLowerCase().indexOf(words[i]) >= 0)
+                    displayStyle = '';
+                else {
+                    displayStyle = 'none';
+                    break;
+                }
+            }
+            table.rows[r].style.display = displayStyle;
+        }
+    }
+</script>
+<form>
+    <input name="filt" onkeyup="filter(this, 'tbproduct', '1')" type="text">
+</form>
+<table class="tbproduct" id="tbproduct" data-role="table" border="0" cellpadding="10" cellspacing="5">
     <thead>
-        <th>
-            @*@Html.DisplayNameFor(model => model.ProductName)*@
-            @*@Html.ActionLink("ProductID", "tableView", new { sortOrder = ViewBag.NameSortParm})*@
-        </th>
-        <th>
-            @*@Html.DisplayNameFor(model => model.Category.CategoryName)*@Product
-            @*@Html.ActionLink("CategoryName", "tableView", new { sortOrder = ViewBag.DateSortParm })*@
-        </th>
-        <th>
-            @*@Html.DisplayNameFor(model => model.QuantityPerUnit)*@Category
-        </th>
-        <th>
-            @*@Html.DisplayNameFor(model => model.UnitPrice)*@Quantity
-        </th>
-        <th>
-            @*@Html.DisplayNameFor(model => model.UnitsInStock)*@Price
-        </th>
-        <th>
-            @*@Html.DisplayNameFor(model => model.UnitsOnOrder)*@InStock
-        </th>
-        <th>
-            @*@Html.DisplayNameFor(model => model.ReorderLevel)*@OnOrder
-        </th>
-        <th>
-            @*@Html.DisplayNameFor(model => model.Discontinued)*@ReorderLevel
-        </th>
-        <th>
-            Discontinued
-        </th>
-        <th></th>
+    <th style="display:none"></th>
+    <th>Product</th>
+    <th>Category</th>
+    <th>Quantity</th>
+    <th>Price</th>
+    <th>InStock</th>
+    <th>OnOrder</th>
+    <th>ReorderLevel</th>
+    <th>Discontinued</th>
     </thead>
     @foreach (var item in Model)
     {
         <tr id="item_@item.ProductID">
-            <td>
+            <td style="display:none">
                 @Html.HiddenFor(modelItem => item.ProductID)
-                @*@Html.DisplayFor(modelItem => item.CategoryID)*@
-                @*@Html.DisplayFor(modelItem => item.ProductID)*@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.ProductName)
@@ -67,26 +67,16 @@
             <td align="center">
                 @Html.DisplayFor(modelItem => item.Discontinued)
             </td>
-            <td>
-                @*<button name="btnAdd" id="btnAdd" value="Add to order">
-                    <img src="~/Images/1423837216_add.png" width="20" height="20" />
-                </button>*@
-                @*@Html.ActionLink("Edit", "Edit", new { id = item.ProductID }) |
-                @Html.ActionLink("Details", "Details", new { id = item.ProductID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.ProductID })*@
-            </td>
         </tr>
     }
 </table>
-<br />
-Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
 
+<br />
+
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
 @Html.PagedListPager(Model, page => Url.Action("Index", new { page, categoryID = ViewBag.SelectedCategoryID}))
 <script type="text/javascript">
     $(document).ready(function () {
-        $("#btnAdd").click(function () {
-            $("#btnAdd").disabled();
-        });
         $(".tbproduct tbody tr   ").mouseover(function () {
             $this = $(this);
             $(".tbproduct tbody tr   ").removeClass("_selected");
@@ -102,8 +92,74 @@ Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.Page
             if ($this.length > 0) {
                 var jobNum = $this.find("#item_ProductID").val();
                 //alert(jobNum);
-                window.open('http://localhost:5325/Product/Details?id=' + jobNum, '_self', false)
+                $.ajax({
+                    type: "GET",
+                    url: "http://localhost:5325/Product/Details?id=" + jobNum,
+                    data: jobNum,
+                    contentType: "text/xml; charset=utf-8",
+                    success: function (data) {
+                        $('#tblpro').html(data);
+                    },
+                    error: function (error) {
+                        alert(error.state + " " + error.statusText)
+                    }
+                });
+                document.getElementById("dialogform").showModal();
+                //window.open('http://localhost:5325/Product/Details?id=' + jobNum, '_self', false);
+
             }
         });
+        $("#dialogform").dblclick(function () {
+            document.getElementById("dialogform").close();
+        });
+        //$("#btnOrder").click(function () {
+        //    var id = document.getElementById("prid").val();
+        //    var quantity = document.getElementById("txtquantity").val();
+        //    //var id = $("#prid").val();
+        //    //var quantity = $("txtquantity").val();
+        //    alert(id + " " + quantity);
+        //    $.ajax({
+        //        type: "POST",
+        //        url: "http://localhost:5325/Product/AddOrder",
+        //        data: '{"ProductID":' + id + '","quantity":"' + quantity + '"}',
+        //        contentType: "text/xml; charset=utf-8",
+        //        success: function (data) {
+        //            alert("add successfully !");
+        //        },
+        //        error: function (error) {
+        //            alert(error.state + " " + error.statusText)
+        //        }
+        //    });
+        //});
+        //function filter(term, _id, cellNr) {
+        //    var suche = term.value.toLowerCase();
+        //    var table = document.getElementById(_id);
+        //    var ele;
+        //    for (var r = 1; r < table.rows.length; r++) {
+        //        ele = table.rows[r].cells[cellNr].innerHTML.replace(/<[^>]+>/g, "");
+        //        if (ele.toLowerCase().indexOf(suche) >= 0)
+        //            table.rows[r].style.display = '';
+        //        else table.rows[r].style.display = 'none';
+        //    }
+        //}
+        //function filter (phrase, _id)
+        //{
+        //    var words = phrase.value.toLowerCase().split(" ");
+        //    var table = document.getElementById(_id);
+        //    var ele;
+        //    for (var r = 1; r < table.rows.length; r++) {
+        //        ele = table.rows[r].innerHTML.replace(/<[^>]+>/g, "");
+        //        var displayStyle = 'none';
+        //        for (var i = 0; i < words.length; i++) {
+        //            if (ele.toLowerCase().indexOf(words[i]) >= 0)
+        //                displayStyle = '';
+        //            else {
+        //                displayStyle = 'none';
+        //                break;
+        //            }
+        //        }
+        //        table.rows[r].style.display = displayStyle;
+        //    }
+        //};
    });
 </script>

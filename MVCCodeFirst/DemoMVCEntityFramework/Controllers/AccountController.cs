@@ -12,6 +12,7 @@ using DemoMVCEntityFramework.Filters;
 using DemoMVCEntityFramework.Models;
 using DemoMVCEntityFramework.Data_Access_Layer;
 using PagedList;
+using System.Net;
 
 namespace DemoMVCEntityFramework.Controllers
 {
@@ -35,24 +36,25 @@ namespace DemoMVCEntityFramework.Controllers
         [HttpPost]
         [AllowAnonymous]
         //[ValidateAntiForgeryToken]
-        public ActionResult Login(Customer customer)
+        public ActionResult Login(User user)
         {
 
 
-            if (customer.IsValid(customer.ContactName, customer.Password))
+            if (user.IsValid(user.UserName, user.Password))
             {
                 //WebSecurity.CreateUserAndAccount(model.UserName, model.Password);
                 //WebSecurity.Login(model.UserName, model.Password);
-                System.Web.Security.FormsAuthentication.SetAuthCookie(customer.ContactName, customer.RememberMe);
-                return RedirectToAction("CustomersInfoPage", "Account");
+                System.Web.Security.FormsAuthentication.SetAuthCookie(user.UserName, user.Bool);
+                return RedirectToAction("Create", "Customer");
             }
             else
             {
                 ModelState.AddModelError("", "Login data is incorrect!");
             }
 
-            return View(customer);
+            return View(user);
         }
+        
         [Authorize]
         public ActionResult CustomersInfoPage(string sortOrder, string currentFilter, string searchString, int? page)
         {
@@ -72,31 +74,49 @@ namespace DemoMVCEntityFramework.Controllers
             ViewBag.CurrentFilter = searchString;
 
             NorthWNDContext db = new NorthWNDContext();
-            int cusid = (from x in db.Customers where x.ContactName == User.Identity.Name select x.CustomerID).FirstOrDefault();
+            //int cusid = (from x in db.Customers where x.ContactName == User.Identity.Name select x.CustomerID).FirstOrDefault();
 
-            var orders = from o in db.Orders where o.Customer.ContactName == User.Identity.Name select o;
-
-            switch (sortOrder)
+            //var orders = from o in db.Orders where o.Customer.ContactName == User.Identity.Name select o;
+            var sID = db.Users.Where(i => i.UserName == User.Identity.Name).FirstOrDefault();
+            if (sID != null)
             {
-                case "name_desc":
-                    orders = orders.OrderByDescending(s => s.ShipName);
-                    break;
-                case "Date":
-                    orders = orders.OrderBy(s => s.ShippedDate);
-                    break;
-                case "date_desc":
-                    orders = orders.OrderByDescending(s => s.ShippedDate);
-                    break;
-                default:  // Name ascending 
-                    orders = orders.OrderBy(s => s.ShipName);
-                    break;
+                var orders = db.Orders.Where(i => i.CustomerID == sID.CustomerID);
+                switch (sortOrder)
+                {
+                    case "name_desc":
+                        orders = orders.OrderByDescending(s => s.ShipName);
+                        break;
+                    case "Date":
+                        orders = orders.OrderBy(s => s.ShippedDate);
+                        break;
+                    case "date_desc":
+                        orders = orders.OrderByDescending(s => s.ShippedDate);
+                        break;
+                    default:  // Name ascending 
+                        orders = orders.OrderBy(s => s.ShipName);
+                        break;
+                }
+                int pageSize = 5;
+                int pageNumber = (page ?? 1);
+                return View(orders.ToPagedList(pageNumber, pageSize));
             }
-            int pageSize = 5;
-            int pageNumber = (page ?? 1);
-
-            return View(orders.ToPagedList(pageNumber, pageSize));
+            return View();
         }
-        //
+        public ActionResult Detail(int? id)
+        {
+            NorthWNDContext db = new NorthWNDContext();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Order order = db.Orders.Find(id);
+            if (order == null)
+            {
+                return HttpNotFound();
+            }
+            return View(order);
+        }
+        
         // POST: /Account/LogOff
 
         [HttpPost]
@@ -123,8 +143,9 @@ namespace DemoMVCEntityFramework.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public ActionResult Register(RegisterModel model)
+        public ActionResult Register(User model)
         {
+            NorthWNDContext db = new NorthWNDContext();
             if (ModelState.IsValid)
             {
                 // Attempt to register the user
@@ -132,7 +153,11 @@ namespace DemoMVCEntityFramework.Controllers
                 {
                     WebSecurity.CreateUserAndAccount(model.UserName, model.Password);
                     WebSecurity.Login(model.UserName, model.Password);
-                    return RedirectToAction("Index", "Home");
+                    model.Roles = false;
+                    db.Users.Add(model);
+                    db.SaveChanges();
+                    return RedirectToAction("Create", "Customer");
+
                 }
                 catch (MembershipCreateUserException e)
                 {

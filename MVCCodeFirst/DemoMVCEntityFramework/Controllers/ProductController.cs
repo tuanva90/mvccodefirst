@@ -9,7 +9,7 @@ using DemoMVCEntityFramework.Models;
 using DemoMVCEntityFramework.Data_Access_Layer;
 using PagedList;
 
-namespace DemoMVCEntityFramework.Controllers
+namespace DemoMVCEntityFramework.Controllerss
 {
     public class ProductController : Controller
     {
@@ -20,9 +20,10 @@ namespace DemoMVCEntityFramework.Controllers
         // GET: /Product/
         public ActionResult Index(int? page, int? categoryID)
         {
+            //SelectListItem all = new SelectListItem() { Value="0",Text="All" };
             ViewBag.CategoryID = new SelectList(db.Categories, "CategoryID", "CategoryName");
             var products = db.Products.Include(p => p.Category);
-            
+            //db.Categories.(all);
             pageSize = 3;
             int pageNumber = (page ?? 1);
             
@@ -41,17 +42,150 @@ namespace DemoMVCEntityFramework.Controllers
         [HttpGet]
         public PartialViewResult LoadProduct(int CategoryID)
         {
-            ViewBag.CategoryID = new SelectList(db.Categories, "CategoryID", "CategoryName");
-            ViewBag.SelectedCategoryID = CategoryID;
-            var products = db.Products.Where(p => p.CategoryID == CategoryID).ToList();
-            return PartialView("tableView", products.ToPagedList(1, pageSize));
+            if (CategoryID != 0)
+            {
+                ViewBag.CategoryID = new SelectList(db.Categories, "CategoryID", "CategoryName");
+                ViewBag.SelectedCategoryID = CategoryID;
+                var products = db.Products.Where(p => p.CategoryID == CategoryID).ToList();
+                return PartialView("tableView", products.ToPagedList(1, pageSize));
+            }
+            else
+            {
+                ViewBag.CategoryID = new SelectList(db.Categories, "CategoryID", "CategoryName");
+                ViewBag.SelectedCategoryID = CategoryID;
+                var products = db.Products.Include(p => p.Category).ToList();
+                return PartialView("tableView", products.ToPagedList(1, pageSize));
+            }
             //Product pro = new Product();
             //return Json(products, JsonRequestBehavior.AllowGet);
 
         }
         //
-        // GET: /Product/Details/5
+        [NonAction]
+        [HttpGet]
+        public bool chkOrder(int id)
+        {
+            var order = db.Orders.Where(o => o.OrderID == id).FirstOrDefault();
+            if(order == null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        [HttpPost]
+        public ActionResult AddOrder(Product pro)
+        {
+            var product = db.Products.Where(p => p.ProductID == pro.ProductID).FirstOrDefault();
+            var user = db.Users.Where(u => u.UserName == User.Identity.Name).FirstOrDefault();
+            var customer = db.Customers.Where(c => c.CustomerID == user.CustomerID).FirstOrDefault();
+            Order or = new Order();
+            OrderDetail odt = new OrderDetail();
+            or.OrderID = 1;
+            or.CustomerID = user.CustomerID;
+            or.OrderDate = DateTime.Today;
+            or.RequiredDate = DateTime.Today;
+            or.ShippedDate = DateTime.Today;
+            or.ShipName = customer.ContactName;
+            or.ShipAddress = customer.Address;
+            or.ShipCity = customer.City;
+            or.ShipCountry = customer.Country;
+            or.ShipPostalCode = customer.PostalCode;
+            or.ShipRegion = customer.Region;
+            or.ShipVia = 0;
+            or.Freight = 0;
+            var exist = chkOrder(or.OrderID);
+            if (exist == true)
+            {
+                odt.OrderID = or.OrderID;
+                odt.ProductID = product.ProductID;
+                odt.Quanlity = pro.Quantity;
+                odt.UnitPrice = product.UnitPrice;
+                odt.Discount = 0;
+                //if (ModelState.IsValid)
+                //{
+                    db.Orders.Add(or);
+                    db.OrderDetails.Add(odt);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                //}
+            }
+            else
+            {
+                odt.OrderID = or.OrderID;
+                odt.ProductID = product.ProductID;
+                odt.Quanlity = pro.Quantity;
+                odt.UnitPrice = product.UnitPrice;
+                odt.Discount = 0;
+                //if (ModelState.IsValid)
+                //{
+                    db.OrderDetails.Add(odt);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                //}
+            }
 
+            //return Index(1,1);
+        }
+
+
+        //[HttpPost]
+        //public ActionResult AddOrder(int ProductID=0, int quantity=0)
+        //{
+        //    var product = db.Products.Where(p => p.ProductID == ProductID).FirstOrDefault();
+        //    var user = db.Users.Where(u => u.UserName == User.Identity.Name).FirstOrDefault();
+        //    var customer = db.Customers.Where(c => c.CustomerID == user.CustomerID).FirstOrDefault();
+        //    //CustomerID = user.CustomerID;
+        //    Order or = new Order();
+        //    OrderDetail odt = new OrderDetail();
+        //    or.CustomerID = user.CustomerID;
+        //    or.OrderDate = DateTime.Today;
+        //    or.RequiredDate = DateTime.Today;
+        //    or.ShippedDate = DateTime.Today;
+        //    or.ShipName = customer.ContactName;
+        //    or.ShipAddress = customer.Address;
+        //    or.ShipCity = customer.City;
+        //    or.ShipCountry = customer.Country;
+        //    or.ShipPostalCode = customer.PostalCode;
+        //    or.ShipRegion = customer.Region;
+        //    or.ShipVia = 0;
+        //    or.Freight = 0;
+        //    var exist = chkOrder(or.OrderID);
+        //    if(exist == true)
+        //    {
+        //        odt.OrderID = or.OrderID;
+        //        odt.ProductID = product.ProductID;
+        //        odt.Quanlity = quantity;
+        //        odt.UnitPrice = product.UnitPrice;
+        //        odt.Discount = 0;
+        //        if(ModelState.IsValid)
+        //        {
+        //            db.Orders.Add(or);
+        //            db.OrderDetails.Add(odt);
+        //            db.SaveChanges();
+        //            return RedirectToAction("Index");
+        //        }
+        //    }
+        //    else
+        //    {
+        //        odt.OrderID = or.OrderID;
+        //        odt.ProductID = product.ProductID;
+        //        odt.Quanlity = quantity;
+        //        odt.UnitPrice = product.UnitPrice;
+        //        odt.Discount = 0;
+        //        if(ModelState.IsValid)
+        //        {
+        //            db.OrderDetails.Add(odt);
+        //            db.SaveChanges();
+        //            return RedirectToAction("Index");
+        //        }
+        //    }
+
+        //    return View(product);
+        //}
+        // GET: /Product/Details/5
         public ActionResult Details(int id = 0)
         {
             Product product = db.Products.Find(id);
@@ -82,11 +216,12 @@ namespace DemoMVCEntityFramework.Controllers
             {
                 db.Products.Add(product);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Create");
             }
 
             ViewBag.CategoryID = new SelectList(db.Categories, "CategoryID", "CategoryName", product.CategoryID);
-            return View(product);
+            return Create();
+            //return View(product);
         }
 
         //

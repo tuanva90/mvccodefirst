@@ -2,7 +2,7 @@
 @using (Ajax.BeginForm("LoadProduct", "Product", new AjaxOptions { UpdateTargetId = "tblProduct" }))
 {
     <label>Categories</label>
-   @Html.DropDownList("CategoryID",String.Empty)
+   @Html.DropDownList("CategoryID","All")
     
     <script type="text/javascript">
         $(document).ready(function () {
@@ -17,6 +17,7 @@
                         },
                         error:function (error)
                         {
+                            alert($('#CategoryID').find("option:selected").val());
                             alert(error.state + " " + error.statusText)
                         }
                     });

@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 using DemoMVCEntityFramework.Models;
 using DemoMVCEntityFramework.Data_Access_Layer;
+using System.Web.Security;
 
 namespace DemoMVCEntityFramework.Controllers
 {
@@ -37,7 +38,7 @@ namespace DemoMVCEntityFramework.Controllers
 
         //
         // GET: /Customer/Create
-
+        [HttpGet]
         public ActionResult Create()
         {
             return View();
@@ -47,9 +48,16 @@ namespace DemoMVCEntityFramework.Controllers
         // POST: /Customer/Create
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public ActionResult Create(Customer customer)
         {
+            var s = db.Users.Where(i => i.UserName == User.Identity.Name).FirstOrDefault();
+            if (s != null)
+            {
+                customer.CustomerID = s.CustomerID;
+            }
+
+
+
             if (ModelState.IsValid)
             {
                 db.Customers.Add(customer);

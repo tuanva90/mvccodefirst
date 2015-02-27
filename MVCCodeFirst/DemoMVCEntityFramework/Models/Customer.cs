@@ -11,32 +11,27 @@ namespace DemoMVCEntityFramework.Models
     public class Customer
     {
         public Customer() { }
-        [Key]
+        [Key,ForeignKey("User")]
         public int CustomerID { get; set; }
-        [MaxLength(50), Required]
-        public string CompanyName { get; set; }
-        [MaxLength(50), Required]
+        [MaxLength(50)]
         public string ContactName { get; set; }
-        [MaxLength(50), Required]
+        [MaxLength(50)]
         public string ContactTitle { get; set; }
-        [MaxLength(60), Required]
+        [MaxLength(60)]
         public string Address { get; set; }
-        [MaxLength(50), Required]
+        [MaxLength(50)]
         public string City { get; set; }
-        [MaxLength(50), Required]
+        [MaxLength(50)]
         public string Region { get; set; }
-        [MaxLength(50), Required]
+        [MaxLength(50)]
         public string PostalCode { get; set; }
-        [MaxLength(50), Required]
+        [MaxLength(50)]
         public string Country { get; set; }
-        [MaxLength(20), Required]
+        [MaxLength(20)]
         public string Phone { get; set; }
-        [MaxLength(50), Required]
+        [MaxLength(50)]
         public string Fax { get; set; }
-
-        public int userID { get; set; }
         public virtual ICollection<Order> Orders { get; set; }
-        public virtual User Users { get; set; }
-        
+        public virtual User User { get; set; }
     }
 }

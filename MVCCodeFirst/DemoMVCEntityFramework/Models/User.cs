@@ -15,6 +15,7 @@ namespace DemoMVCEntityFramework.Models
         public string UserName { get; set; }
         [Required]
         public string Password { get; set; }
+        [Display(Name="Remember Me")]
         public bool Bool { get; set; }
         [NotMapped, Compare("Password")]
         

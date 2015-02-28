@@ -1,14 +1,13 @@
 ﻿@model DemoMVCEntityFramework.Models.Product
-<script>
-    $(document).ready(function () {
-        $("#dialogform").dblclick(function () {
-            document.getElementById("dialogform").close();
-        });
-    });
-</script>
+
 <h2>Details</h2>
 <h4>Product</h4>
-<table id="tblpro" width="500" border="1" align="left">
+@*@using (Html.BeginForm("AddOrder", "Product", FormMethod.Post))
+{*@ 
+    <table id="tblpro" width="500" border="1" align="left">
+        <tr>
+            <td colspan="2" id="prid">@Html.HiddenFor(model => model.ProductID)</td>
+        </tr>
         <tr>
             <td>@Html.DisplayNameFor(model => model.ProductName)</td>
             <td>@Html.DisplayFor(model => model.ProductName)</td>
@@ -43,8 +42,12 @@
         </tr>
     </table>
     <div style="text-align:left">
-        <input type="number" value="Quantity" id="btnQuantity" placeholder="quantity"/>
-        <input type="submit" value="Add to order" id="btnOrder" />
-        <input type="button" value="Close" id="btnClose" />
+        @*@Html.TextBoxFor(model => model.Quantity, new { @placeholder = "quantity"})
+        @Html.ValidationMessageFor(model => model.Quantity)*@
+        <input type="text" name="txtquantity" id="txtquantity" placeholder="quantity"/>
+        <input type="button" value="Add to order" id="btnOrder" />
+        @*<input type="button" value="Close" id="btnClose" />*@
     </div>
+@*}*@
+
 

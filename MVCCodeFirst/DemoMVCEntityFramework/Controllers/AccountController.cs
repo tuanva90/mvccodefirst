@@ -20,7 +20,7 @@ namespace DemoMVCEntityFramework.Controllers
     [InitializeSimpleMembership]
     public class AccountController : Controller
     {
-       private NorthWNDContext db = new NorthWNDContext();
+        private NorthWNDContext db = new NorthWNDContext();
         //
         // GET: /Account/Login
 
@@ -46,7 +46,9 @@ namespace DemoMVCEntityFramework.Controllers
                 //WebSecurity.CreateUserAndAccount(model.UserName, model.Password);
                 //WebSecurity.Login(model.UserName, model.Password);
                 System.Web.Security.FormsAuthentication.SetAuthCookie(user.UserName, user.Bool);
-                return RedirectToAction("CustomersInfoPage", "Account");
+                var d = from p in db.Users where p.UserName == User.Identity.Name select p.CustomerID;
+                int id = d.FirstOrDefault();
+                return RedirectToAction("Create", "Customer");
             }
             else
             {
@@ -55,9 +57,10 @@ namespace DemoMVCEntityFramework.Controllers
 
             return View(user);
         }
+        
         [Authorize]
         public ActionResult CustomersInfoPage(string sortOrder, string currentFilter, string searchString, int? page)
-        {            
+        {
             ViewBag.CurrentSort = sortOrder;
             ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
             ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date";
@@ -96,19 +99,15 @@ namespace DemoMVCEntityFramework.Controllers
                         orders = orders.OrderBy(s => s.ShipName);
                         break;
                 }
-                        int pageSize = 5;
-                        int pageNumber = (page ?? 1);
-                        return View(orders.ToPagedList(pageNumber, pageSize));
-                }
-                return View();
-
+                int pageSize = 5;
+                int pageNumber = (page ?? 1);
+                return View(orders.ToPagedList(pageNumber, pageSize));
             }
-
-
-        //
-        //GET: /Account/Detail
+            return View();
+        }
         public ActionResult Detail(int? id)
         {
+            NorthWNDContext db = new NorthWNDContext();
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -120,18 +119,14 @@ namespace DemoMVCEntityFramework.Controllers
             }
             return View(order);
         }
-
-
-            
-            
-        //
+        
         // POST: /Account/LogOff
 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult LogOff()
         {
-            WebSecurity.Logout();
+            FormsAuthentication.SignOut();
 
             return RedirectToAction("Index", "Home");
         }

@@ -9,42 +9,93 @@
 
 
 <br />
-<table class="table">
-    <tr>
-        <th>
-            @Html.ActionLink("Ship Name", "CustomersInfoPage", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
-        </th>
-        <th>
-            Shipped Date
-        </th>
-        <th>
-            @Html.ActionLink("Shipped Country", "CustomersInfoPage", new { sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter })
-        </th>
-        <th></th>
-    </tr>
-
-
-    @foreach (var item in Model)
-    {
+@Styles.Render("~/Content/css")
+@Scripts.Render("~/bundles/modernizr")
+<script src="~/Scripts/jquery-1.8.2.min.js"></script>
+<script src="~/Scripts/jquery-ui-1.8.24.min.js"></script>
+<script src="~/Scripts/jquery.mobile-1.4.5.min.js"></script>
+<script src="~/Scripts/boostrap.js"></script>
+<script src="~/Scripts/boostrap.min.js"></script>
+<div class="table-responsive">
+    <table class="table table-condensed">
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.ShipName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ShippedDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ShipCountry)
-            </td>
-            <td>
-                @Html.ActionLink("Details", "Details", new { id = item.OrderID }) |
-            </td>
+            <th>
+                @Html.ActionLink("OrderDate", "CustomersInfoPage", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+            </th>
+            <th>
+                Required Date
+            </th>
+            <th>
+                Shipped Date
+            </th>
+            <th>
+                ShipVia
+            </th>
+            <th>
+                Freight
+            </th>
+            <th>
+                ShipName
+            </th>
+            <th>
+                ShipAddress
+            </th>
+            <th>
+                ShipCity
+            </th>
+            <th>
+                ShipRegion
+            </th>
+            <th>
+                ShipPostalCode
+            </th>
         </tr>
-    }
 
-</table>
-<br />
-Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
 
-@Html.PagedListPager(Model, page => Url.Action("CustomersInfoPage",
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OrderDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RequiredDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ShippedDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ShipVia)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Freight)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ShipName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ShipAddress)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ShipCity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ShipRegion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ShipPostalCode)
+                </td>
+
+                <td>
+                    @Html.ActionLink("Details", "Details", new { id = item.OrderID }) |
+                </td>
+            </tr>
+        }
+
+    </table>
+    </div>
+    <br />
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+    @Html.PagedListPager(Model, page => Url.Action("CustomersInfoPage",
     new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))

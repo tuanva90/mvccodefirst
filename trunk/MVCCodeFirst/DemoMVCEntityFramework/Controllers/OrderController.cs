@@ -77,6 +77,18 @@ namespace DemoMVCEntityFramework.Controllers
             return View(order);
         }
 
+
+        public ActionResult OrderHistory()
+        {
+            var s = db.Users.Where(i => i.UserName == User.Identity.Name).FirstOrDefault();
+            if (s != null)
+            {
+                var p = db.Orders.Where(i => i.CustomerID == s.CustomerID);
+                return View(p);
+            }
+            return View();
+        }
+
         //
         // POST: /Order/Edit/5
 

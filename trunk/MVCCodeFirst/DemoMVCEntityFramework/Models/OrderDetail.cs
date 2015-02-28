@@ -16,7 +16,9 @@ namespace DemoMVCEntityFramework.Models
         public int ProductID { get; set; }
         [DataType(DataType.Currency),Required]
         public decimal UnitPrice { get; set; }
+        [Required]
         public int Quanlity { get; set; }
+        [Required]
         public float Discount { get; set; }
         public virtual Order Order { get; set; }
         public virtual Product Product { get; set; }

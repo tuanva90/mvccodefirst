@@ -20,6 +20,7 @@ namespace DemoMVCEntityFramework.Controllers
     [InitializeSimpleMembership]
     public class AccountController : Controller
     {
+       private NorthWNDContext db = new NorthWNDContext();
         //
         // GET: /Account/Login
 
@@ -45,7 +46,7 @@ namespace DemoMVCEntityFramework.Controllers
                 //WebSecurity.CreateUserAndAccount(model.UserName, model.Password);
                 //WebSecurity.Login(model.UserName, model.Password);
                 System.Web.Security.FormsAuthentication.SetAuthCookie(user.UserName, user.Bool);
-                return RedirectToAction("Create", "Customer");
+                return RedirectToAction("CustomersInfoPage", "Account");
             }
             else
             {
@@ -54,10 +55,9 @@ namespace DemoMVCEntityFramework.Controllers
 
             return View(user);
         }
-        
         [Authorize]
         public ActionResult CustomersInfoPage(string sortOrder, string currentFilter, string searchString, int? page)
-        {
+        {            
             ViewBag.CurrentSort = sortOrder;
             ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
             ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date";
@@ -96,15 +96,19 @@ namespace DemoMVCEntityFramework.Controllers
                         orders = orders.OrderBy(s => s.ShipName);
                         break;
                 }
-                int pageSize = 5;
-                int pageNumber = (page ?? 1);
-                return View(orders.ToPagedList(pageNumber, pageSize));
+                        int pageSize = 5;
+                        int pageNumber = (page ?? 1);
+                        return View(orders.ToPagedList(pageNumber, pageSize));
+                }
+                return View();
+
             }
-            return View();
-        }
+
+
+        //
+        //GET: /Account/Detail
         public ActionResult Detail(int? id)
         {
-            NorthWNDContext db = new NorthWNDContext();
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -116,7 +120,11 @@ namespace DemoMVCEntityFramework.Controllers
             }
             return View(order);
         }
-        
+
+
+            
+            
+        //
         // POST: /Account/LogOff
 
         [HttpPost]

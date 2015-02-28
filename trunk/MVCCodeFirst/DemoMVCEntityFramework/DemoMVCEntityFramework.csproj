@@ -202,9 +202,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201502270253152_InitialCreate.cs" />
-    <Compile Include="Migrations\201502270253152_InitialCreate.Designer.cs">
-      <DependentUpon>201502270253152_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201502260353463_InitialCreate.cs" />
+    <Compile Include="Migrations\201502260353463_InitialCreate.designer.cs">
+      <DependentUpon>201502260353463_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
@@ -491,12 +491,12 @@
     <Content Include="Global.asax" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Images\1423837216_add.png" />
-    <Content Include="Scripts\Detailproduct.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
     <Content Include="Scripts\jquery.mobile-1.4.5.js" />
     <Content Include="Scripts\jquery.mobile-1.4.5.min.js" />
-    <Content Include="Scripts\jquery.mobile-1.4.5.min.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery-ui-1.8.24.js" />
     <Content Include="Scripts\jquery-ui-1.8.24.min.js" />
@@ -509,6 +509,8 @@
     <Content Include="Scripts\knockout-2.2.0.debug.js" />
     <Content Include="Scripts\knockout-2.2.0.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -587,8 +589,8 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201502270253152_InitialCreate.resx">
-      <DependentUpon>201502270253152_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201502260353463_InitialCreate.resx">
+      <DependentUpon>201502260353463_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

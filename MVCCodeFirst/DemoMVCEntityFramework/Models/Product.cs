@@ -31,8 +31,6 @@ namespace DemoMVCEntityFramework.Models
         public int ReorderLevel { get; set; }
         [Required]
         public bool Discontinued { get; set; }
-        [NotMapped]
-        public int Quantity { get; set; }
         public virtual Category Category { get; set; }
         public virtual ICollection<OrderDetail> OrderDetails { get; set; }
     }

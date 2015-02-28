@@ -55,9 +55,9 @@ namespace DemoMVCEntityFramework.Controllers
             {
                 customer.CustomerID = s.CustomerID;
             }
+                
 
-
-
+     
             if (ModelState.IsValid)
             {
                 db.Customers.Add(customer);

@@ -14,15 +14,13 @@ namespace DemoMVCEntityFramework.Models
         public int OrderID { get; set; }
         [MaxLength(50),Required]
         public int CustomerID { get; set; }
-        [DataType(DataType.Date), Required]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        //[DataType(DataType.Date)]
+        //[DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime OrderDate { get; set; }
-        [DataType(DataType.Date), Required]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        //[DataType(DataType.Date)]
+        //[DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime RequiredDate { get; set; }
-
         public DateTime ShippedDate { get; set; }
-
         public int ShipVia { get; set; }
         [DataType(DataType.Currency)]
         public decimal Freight { get; set; }

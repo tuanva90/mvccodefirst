@@ -17,7 +17,7 @@ namespace DemoMVCEntityFramework.Controllers
 
         //
         // GET: /Customer/
-
+        [Authorize(Roles="admin")]
         public ActionResult Index()
         {
             return View(db.Customers.ToList());
@@ -46,7 +46,7 @@ namespace DemoMVCEntityFramework.Controllers
 
         //
         // POST: /Customer/Create
-
+        [Authorize]
         [HttpPost]
         public ActionResult Create(Customer customer)
         {
@@ -55,14 +55,14 @@ namespace DemoMVCEntityFramework.Controllers
             {
                 customer.CustomerID = s.CustomerID;
             }
-                
 
-     
+
+
             if (ModelState.IsValid)
             {
                 db.Customers.Add(customer);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index","Product");
             }
 
             return View(customer);

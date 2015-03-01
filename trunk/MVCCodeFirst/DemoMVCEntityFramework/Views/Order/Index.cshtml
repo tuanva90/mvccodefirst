@@ -13,9 +13,6 @@
 <table>
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Customer.CompanyName)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.OrderDate)
         </th>
         <th>
@@ -54,9 +51,6 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Customer.CompanyName)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.OrderDate)
         </td>
         <td>
@@ -91,7 +85,7 @@
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.OrderID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.OrderID }) |
+            @Html.ActionLink("Detail", "Detail", new { id=item.OrderID }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.OrderID })
         </td>
     </tr>

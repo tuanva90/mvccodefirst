@@ -39,15 +39,18 @@ namespace DemoMVCEntityFramework.Controllers
         //[ValidateAntiForgeryToken]
         public ActionResult Login(User user)
         {
-
-
             if (user.IsValid(user.UserName, user.Password))
             {
                 //WebSecurity.CreateUserAndAccount(user.UserName, user.Password);
                 WebSecurity.Login(user.UserName, user.Password);
                 var d = from p in db.Users where p.UserName == User.Identity.Name select p.CustomerID;
-                int id = d.FirstOrDefault();
-                return RedirectToAction("Create", "Customer");
+                int id = (from u in db.Users where u.UserName == user.UserName select u.CustomerID).FirstOrDefault();
+
+                var cus = db.Customers.Find(id);
+                if (cus == null)
+                    return RedirectToAction("Create", "Customer");
+                else
+                    return RedirectToAction("Index", "Order");
             }
             else
             {

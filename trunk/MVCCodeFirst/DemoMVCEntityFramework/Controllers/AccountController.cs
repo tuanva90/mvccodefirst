@@ -43,9 +43,8 @@ namespace DemoMVCEntityFramework.Controllers
 
             if (user.IsValid(user.UserName, user.Password))
             {
-                //WebSecurity.CreateUserAndAccount(model.UserName, model.Password);
-                //WebSecurity.Login(model.UserName, model.Password);
-                System.Web.Security.FormsAuthentication.SetAuthCookie(user.UserName, user.Bool);
+                //WebSecurity.CreateUserAndAccount(user.UserName, user.Password);
+                WebSecurity.Login(user.UserName, user.Password);
                 var d = from p in db.Users where p.UserName == User.Identity.Name select p.CustomerID;
                 int id = d.FirstOrDefault();
                 return RedirectToAction("Create", "Customer");
@@ -78,7 +77,6 @@ namespace DemoMVCEntityFramework.Controllers
 
             NorthWNDContext db = new NorthWNDContext();
             //int cusid = (from x in db.Customers where x.ContactName == User.Identity.Name select x.CustomerID).FirstOrDefault();
-
             //var orders = from o in db.Orders where o.Customer.ContactName == User.Identity.Name select o;
             var sID = db.Users.Where(i => i.UserName == User.Identity.Name).FirstOrDefault();
             if (sID != null)
@@ -126,7 +124,7 @@ namespace DemoMVCEntityFramework.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult LogOff()
         {
-            FormsAuthentication.SignOut();
+            WebSecurity.Logout();
 
             return RedirectToAction("Index", "Home");
         }

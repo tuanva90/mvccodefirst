@@ -26,7 +26,7 @@ namespace DemoMVCEntityFramework.Controllers
         //
         // GET: /Customer/Details/5
 
-        public ActionResult Details(string id = null)
+        public ActionResult Details(int ? id = 0)
         {
             Customer customer = db.Customers.Find(id);
             if (customer == null)
@@ -41,7 +41,14 @@ namespace DemoMVCEntityFramework.Controllers
         [HttpGet]
         public ActionResult Create()
         {
-            return View();
+            var d = (from p in db.Users where p.UserName == User.Identity.Name select p.CustomerID).FirstOrDefault();
+            int id = (from u in db.Users where u.CustomerID == d select u.CustomerID).FirstOrDefault();
+
+            var cus = db.Customers.Find(id);
+            if (cus == null)
+                return View();
+            else
+                return Content("<a>This user already created customer!</a>");
         }
 
         //
@@ -70,7 +77,7 @@ namespace DemoMVCEntityFramework.Controllers
         //
         // GET: /Customer/Edit/5
 
-        public ActionResult Edit(string id = null)
+        public ActionResult Edit(int ? id = 0)
         {
             Customer customer = db.Customers.Find(id);
             if (customer == null)
@@ -99,7 +106,7 @@ namespace DemoMVCEntityFramework.Controllers
         //
         // GET: /Customer/Delete/5
 
-        public ActionResult Delete(string id = null)
+        public ActionResult Delete(int ? id = 0)
         {
             Customer customer = db.Customers.Find(id);
             if (customer == null)
@@ -114,7 +121,7 @@ namespace DemoMVCEntityFramework.Controllers
 
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(string id)
+        public ActionResult DeleteConfirmed(int ? id = 0)
         {
             Customer customer = db.Customers.Find(id);
             db.Customers.Remove(customer);

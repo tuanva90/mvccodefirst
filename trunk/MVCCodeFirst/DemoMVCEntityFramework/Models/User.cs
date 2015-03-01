@@ -13,12 +13,13 @@ namespace DemoMVCEntityFramework.Models
         [Key]
         public int CustomerID { get; set; }
         public string UserName { get; set; }
-        [Required]
+        [Required(ErrorMessage="Pass must containt at least 6 characters and max is 14 characters!")]
+        [MinLength(6)]
+        [MaxLength(14)]
         public string Password { get; set; }
         [Display(Name="Remember Me")]
         public bool Bool { get; set; }
-        [NotMapped, Compare("Password")]
-        
+        [NotMapped, Compare("Password")]        
         public string ConfirmPassword { get; set; }
         [Required]
         public bool Roles { get; set; }

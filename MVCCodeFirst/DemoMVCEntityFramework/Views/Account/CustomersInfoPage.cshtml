@@ -12,13 +12,34 @@
 <table class="table">
     <tr>
         <th>
-            @Html.ActionLink("Ship Name", "CustomersInfoPage", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+            @Html.ActionLink("Order Date", "CustomersInfoPage", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
         </th>
         <th>
-            Shipped Date
+            Requied Date
         </th>
         <th>
-            @Html.ActionLink("Shipped Country", "CustomersInfoPage", new { sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter })
+            Ship Via
+        </th>
+        <th>
+            Freight
+        </th>
+        <th>
+            ShipName
+        </th>
+        <th>
+            ShipAddress
+        </th>
+        <th>
+            ShipCity
+        </th>
+        <th>
+            ShipRegion
+        </th>
+        <th>
+            ShipPostalCode
+        </th>
+        <th>
+            ShipCountry
         </th>
         <th></th>
     </tr>
@@ -28,10 +49,34 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.ShipName)
+                @Html.DisplayFor(modelItem => item.OrderDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RequiredDate)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.ShippedDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShipVia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Freight)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShipName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShipAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShipCity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShipRegion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShipPostalCode)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.ShipCountry)

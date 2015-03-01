@@ -21,9 +21,12 @@ namespace DemoMVCEntityFramework.Controllerss
         public ActionResult Index(int? page, int? categoryID)
         {
             //SelectListItem all = new SelectListItem() { Value="0",Text="All" };
+            //var all = new Category { CategoryID = 0, CategoryName="All",Description="Load all category"};
+            //db.Categories.Add(all);
+            var all = new SelectListItem() { Value = "0", Text = "All" };
+            ViewBag.All = all;
             ViewBag.CategoryID = new SelectList(db.Categories, "CategoryID", "CategoryName");
             var products = db.Products.Include(p => p.Category);
-            //db.Categories.(all);
             pageSize = 3;
             int pageNumber = (page ?? 1);
             
@@ -42,6 +45,8 @@ namespace DemoMVCEntityFramework.Controllerss
         [HttpGet]
         public PartialViewResult LoadProduct(int CategoryID)
         {
+            //var all = new Category { CategoryID = 0, CategoryName = "All", Description = "Load all category" };
+            //db.Categories.Add(all);
             if (CategoryID != 0)
             {
                 ViewBag.CategoryID = new SelectList(db.Categories, "CategoryID", "CategoryName");
@@ -75,125 +80,21 @@ namespace DemoMVCEntityFramework.Controllerss
                 return false;
             }
         }
-        [HttpPost]
-        public ActionResult AddOrder(Product pro)
+        [HttpGet]
+        public IEnumerable<Product> AddListPro(Product pro)
         {
-            var product = db.Products.Where(p => p.ProductID == pro.ProductID).FirstOrDefault();
-            var user = db.Users.Where(u => u.UserName == User.Identity.Name).FirstOrDefault();
-            var customer = db.Customers.Where(c => c.CustomerID == user.CustomerID).FirstOrDefault();
-            Order or = new Order();
-            OrderDetail odt = new OrderDetail();
-            or.OrderID = 1;
-            or.CustomerID = user.CustomerID;
-            or.OrderDate = DateTime.Today;
-            or.RequiredDate = DateTime.Today;
-            or.ShippedDate = DateTime.Today;
-            or.ShipName = customer.ContactName;
-            or.ShipAddress = customer.Address;
-            or.ShipCity = customer.City;
-            or.ShipCountry = customer.Country;
-            or.ShipPostalCode = customer.PostalCode;
-            or.ShipRegion = customer.Region;
-            or.ShipVia = 0;
-            or.Freight = 0;
-            var exist = chkOrder(or.OrderID);
-            if (exist == true)
-            {
-                odt.OrderID = or.OrderID;
-                odt.ProductID = product.ProductID;
-                odt.Quanlity = pro.Quantity;
-                odt.UnitPrice = product.UnitPrice;
-                odt.Discount = 0;
-                //if (ModelState.IsValid)
-                //{
-                    db.Orders.Add(or);
-                    db.OrderDetails.Add(odt);
-                    db.SaveChanges();
-                    return RedirectToAction("Index");
-                //}
-            }
-            else
-            {
-                odt.OrderID = or.OrderID;
-                odt.ProductID = product.ProductID;
-                odt.Quanlity = pro.Quantity;
-                odt.UnitPrice = product.UnitPrice;
-                odt.Discount = 0;
-                //if (ModelState.IsValid)
-                //{
-                    db.OrderDetails.Add(odt);
-                    db.SaveChanges();
-                    return RedirectToAction("Index");
-                //}
-            }
-
-            //return Index(1,1);
+            HttpCookieCollection procook = new HttpCookieCollection();
+            return db.Products.AsEnumerable();
         }
-
-
-        //[HttpPost]
-        //public ActionResult AddOrder(int ProductID=0, int quantity=0)
-        //{
-        //    var product = db.Products.Where(p => p.ProductID == ProductID).FirstOrDefault();
-        //    var user = db.Users.Where(u => u.UserName == User.Identity.Name).FirstOrDefault();
-        //    var customer = db.Customers.Where(c => c.CustomerID == user.CustomerID).FirstOrDefault();
-        //    //CustomerID = user.CustomerID;
-        //    Order or = new Order();
-        //    OrderDetail odt = new OrderDetail();
-        //    or.CustomerID = user.CustomerID;
-        //    or.OrderDate = DateTime.Today;
-        //    or.RequiredDate = DateTime.Today;
-        //    or.ShippedDate = DateTime.Today;
-        //    or.ShipName = customer.ContactName;
-        //    or.ShipAddress = customer.Address;
-        //    or.ShipCity = customer.City;
-        //    or.ShipCountry = customer.Country;
-        //    or.ShipPostalCode = customer.PostalCode;
-        //    or.ShipRegion = customer.Region;
-        //    or.ShipVia = 0;
-        //    or.Freight = 0;
-        //    var exist = chkOrder(or.OrderID);
-        //    if(exist == true)
-        //    {
-        //        odt.OrderID = or.OrderID;
-        //        odt.ProductID = product.ProductID;
-        //        odt.Quanlity = quantity;
-        //        odt.UnitPrice = product.UnitPrice;
-        //        odt.Discount = 0;
-        //        if(ModelState.IsValid)
-        //        {
-        //            db.Orders.Add(or);
-        //            db.OrderDetails.Add(odt);
-        //            db.SaveChanges();
-        //            return RedirectToAction("Index");
-        //        }
-        //    }
-        //    else
-        //    {
-        //        odt.OrderID = or.OrderID;
-        //        odt.ProductID = product.ProductID;
-        //        odt.Quanlity = quantity;
-        //        odt.UnitPrice = product.UnitPrice;
-        //        odt.Discount = 0;
-        //        if(ModelState.IsValid)
-        //        {
-        //            db.OrderDetails.Add(odt);
-        //            db.SaveChanges();
-        //            return RedirectToAction("Index");
-        //        }
-        //    }
-
-        //    return View(product);
-        //}
         // GET: /Product/Details/5
         public ActionResult Details(int id = 0)
         {
             Product product = db.Products.Find(id);
             if (product == null)
             {
-                return HttpNotFound();
+                return PartialView();
             }
-            return View(product);
+            return PartialView(product);
         }
 
         //
@@ -207,7 +108,6 @@ namespace DemoMVCEntityFramework.Controllerss
 
         //
         // POST: /Product/Create
-
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(Product product)

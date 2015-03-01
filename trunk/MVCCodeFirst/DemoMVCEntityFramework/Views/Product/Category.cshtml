@@ -2,7 +2,7 @@
 @using (Ajax.BeginForm("LoadProduct", "Product", new AjaxOptions { UpdateTargetId = "tblProduct" }))
 {
     <label>Categories</label>
-   @Html.DropDownList("CategoryID","All")
+   @Html.DropDownList("CategoryID",(SelectList)ViewBag.All)
     
     <script type="text/javascript">
         $(document).ready(function () {

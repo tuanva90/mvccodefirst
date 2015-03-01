@@ -17,7 +17,7 @@ namespace DemoMVCEntityFramework.Controllers
 
         //
         // GET: /Customer/
-        [Authorize(Roles="admin")]
+        [Authorize]
         public ActionResult Index()
         {
             return View(db.Customers.ToList());
@@ -46,7 +46,6 @@ namespace DemoMVCEntityFramework.Controllers
 
         //
         // POST: /Customer/Create
-        [Authorize]
         [HttpPost]
         public ActionResult Create(Customer customer)
         {

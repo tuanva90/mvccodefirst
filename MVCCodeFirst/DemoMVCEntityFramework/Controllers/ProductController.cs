@@ -18,7 +18,7 @@ namespace DemoMVCEntityFramework.Controllerss
 
         //
         // GET: /Product/
-        public ActionResult Index(int? page, int? categoryID=0)
+        public ActionResult Index(int? page=1, int? categoryID=0)
         {
             List<Category> lsCate = new List<Category>();
             var all = new Category { CategoryID = 0, CategoryName = "All", Description = "Load all category" };
@@ -41,31 +41,25 @@ namespace DemoMVCEntityFramework.Controllerss
                 var rsl = products.OrderBy(i => i.ProductID).ToPagedList(pageNumber, pageSize);
                 return View(rsl);
             }
-           
         }
+           
         [HttpGet]
         public PartialViewResult LoadProduct(int CategoryID)
         {
-            //var all = new Category { CategoryID = 0, CategoryName = "All", Description = "Load all category" };
-            //db.Categories.Add(all);
             if (CategoryID != 0)
             {
-                ViewBag.CategoryID = new SelectList(db.Categories, "CategoryID", "CategoryName");
                 ViewBag.SelectedCategoryID = CategoryID;
                 var products = db.Products.Where(p => p.CategoryID == CategoryID).ToList();
                 return PartialView("tableView", products.ToPagedList(1, pageSize));
             }
             else
             {
-                ViewBag.CategoryID = new SelectList(db.Categories, "CategoryID", "CategoryName");
                 ViewBag.SelectedCategoryID = CategoryID;
                 var products = db.Products.Include(p => p.Category).ToList();
                 return PartialView("tableView", products.ToPagedList(1, pageSize));
             }
-            //Product pro = new Product();
-            //return Json(products, JsonRequestBehavior.AllowGet);
-
         }
+
         //
         [NonAction]
         [HttpGet]

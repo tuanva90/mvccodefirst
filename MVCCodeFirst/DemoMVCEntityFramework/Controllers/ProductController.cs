@@ -18,19 +18,20 @@ namespace DemoMVCEntityFramework.Controllerss
 
         //
         // GET: /Product/
-        public ActionResult Index(int? page, int? categoryID)
+        public ActionResult Index(int? page, int? categoryID=0)
         {
-            //SelectListItem all = new SelectListItem() { Value="0",Text="All" };
-            //var all = new Category { CategoryID = 0, CategoryName="All",Description="Load all category"};
-            //db.Categories.Add(all);
-            var all = new SelectListItem() { Value = "0", Text = "All" };
-            ViewBag.All = all;
-            ViewBag.CategoryID = new SelectList(db.Categories, "CategoryID", "CategoryName");
-            var products = db.Products.Include(p => p.Category);
+            List<Category> lsCate = new List<Category>();
+            var all = new Category { CategoryID = 0, CategoryName = "All", Description = "Load all category" };
+            lsCate.Add(all);
+            lsCate.AddRange(db.Categories.ToList());
+            var selectedValue = lsCate.Find(c => c.CategoryID == categoryID);
+            ViewBag.CategoryID = new SelectList(lsCate, "CategoryID", "CategoryName", selectedValue);
+            ViewBag.SelectedCategoryID = categoryID;
+            var products = db.Products;
             pageSize = 3;
             int pageNumber = (page ?? 1);
             
-            if (categoryID != null)
+            if (categoryID != 0)
             {
                 var rsl = products.OrderBy(i => i.ProductID).Where(p => p.CategoryID == categoryID).ToPagedList(pageNumber, pageSize);
                 return View(rsl);
@@ -80,11 +81,16 @@ namespace DemoMVCEntityFramework.Controllerss
                 return false;
             }
         }
-        [HttpGet]
-        public IEnumerable<Product> AddListPro(Product pro)
+        //private HttpCookie procook = new HttpCookie();
+        private List<Product> prolist = new List<Product>();
+        [HttpPost]
+        public ActionResult AddListPro(Product pro)
         {
-            HttpCookieCollection procook = new HttpCookieCollection();
-            return db.Products.AsEnumerable();
+            if(ModelState.IsValid)
+            {
+                prolist.Add(pro);
+            }
+            return RedirectToAction("Index");
         }
         // GET: /Product/Details/5
         public ActionResult Details(int id = 0)

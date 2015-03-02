@@ -579,6 +579,7 @@
     <Content Include="Views\Product\Category.cshtml" />
     <Content Include="Views\Account\CustomersInfoPage.cshtml" />
     <Content Include="Views\Account\Detail.cshtml" />
+    <Content Include="Views\Order\_CurOrder.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

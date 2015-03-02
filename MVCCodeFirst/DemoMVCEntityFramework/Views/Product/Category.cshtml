@@ -1,6 +1,5 @@
 ﻿
-@using (Ajax.BeginForm("LoadProduct", "Product", new AjaxOptions { UpdateTargetId = "tblProduct" }))
-{
+
     <label>Categories</label>
    @Html.DropDownList("CategoryID")
     
@@ -24,4 +23,3 @@
             });
         });
     </script>
-}

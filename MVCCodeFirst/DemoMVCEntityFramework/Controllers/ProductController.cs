@@ -76,16 +76,58 @@ namespace DemoMVCEntityFramework.Controllerss
             }
         }
         //private HttpCookie procook = new HttpCookie();
-        private List<Product> prolist = new List<Product>();
+        
         [HttpPost]
         public ActionResult AddListPro(Product pro)
         {
             if(ModelState.IsValid)
             {
-                prolist.Add(pro);
+                var ss = Session["Order_" + User.Identity.Name];
+                if (ss == null)
+                {
+                    List<Product> prolist = new List<Product>();
+                    prolist.Add(pro);
+                    Session["Order_" + User.Identity.Name] = prolist;
+                }
+                else
+                {
+                    List<Product> prolist = (List<Product>)ss;
+                    prolist.Add(pro);
+                    Session["Order_" + User.Identity.Name] = prolist;
+                }
             }
             return RedirectToAction("Index");
         }
+
+        [HttpGet]
+        public int AddToCart(int ? proID = 0, int ? num = 0)
+        {
+            if (proID > 0 && num > 0)
+            {
+                var pro = db.Products.Find(proID);
+                pro.Quantity = (int)num;
+                var ss = Session["Order_" + User.Identity.Name];
+                if (ss == null)
+                {
+                    List<Product> prolist = new List<Product>();
+                    prolist.Add(pro);
+                    Session["Order_" + User.Identity.Name] = prolist;
+                }
+                else
+                {
+                    List<Product> prolist = (List<Product>)ss;
+                    prolist.Add(pro);
+                    Session["Order_" + User.Identity.Name] = prolist;
+                }
+                return 1;
+            }
+            else
+            {
+                return 0;
+            }
+            
+        }
+
         // GET: /Product/Details/5
         public ActionResult Details(int id = 0)
         {

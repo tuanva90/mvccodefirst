@@ -11,12 +11,6 @@
     <legend>Order</legend>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.Customer.CompanyName)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Customer.CompanyName)
-    </div>
-    <div class="display-label">
          @Html.DisplayNameFor(model => model.OrderDate)
     </div>
     <div class="display-field">
@@ -94,6 +88,6 @@
     </div>
 </fieldset>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.OrderID }) |
+    @*@Html.ActionLink("Edit", "Edit", new { id=Model.OrderID }) |*@
     @Html.ActionLink("Back to List", "Index")
 </p>

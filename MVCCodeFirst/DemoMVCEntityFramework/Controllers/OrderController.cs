@@ -27,7 +27,7 @@ namespace DemoMVCEntityFramework.Controllers
             return View(orders.ToList());
         }
 
-        
+        [Authorize]
         public ActionResult AddOrder()
         {
             var d = (from p in db.Users where p.UserName == User.Identity.Name select p.CustomerID).FirstOrDefault();
@@ -44,9 +44,10 @@ namespace DemoMVCEntityFramework.Controllers
                 
                 foreach (Product item in curOrder)
                 {
-                    db.OrderDetails.Add(new OrderDetail { Order = ord, Product = item, Quanlity = item.Quantity, OrderID = ord.OrderID, ProductID = item.ProductID});
+                    db.OrderDetails.Add(new OrderDetail { Order = ord, Product = item, UnitPrice=item.UnitPrice , Quanlity = item.Quantity, OrderID = ord.OrderID, ProductID = item.ProductID});
+                    db.SaveChanges();
                 }
-                db.SaveChanges();
+                
             }
             return RedirectToAction("Index");
         }

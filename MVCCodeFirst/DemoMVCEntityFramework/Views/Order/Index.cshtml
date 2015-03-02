@@ -11,7 +11,7 @@
     Current cart:
 </p>
     @Html.Partial("_CurOrder", @ViewData["CurOrder"])
-<table>
+<table cellpadding="10" cellspacing="5">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.OrderDate)
@@ -85,9 +85,9 @@
             @Html.DisplayFor(modelItem => item.ShipCountry)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.OrderID }) |
-            @Html.ActionLink("Detail", "Detail", new { id=item.OrderID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.OrderID })
+            @*@Html.ActionLink("Edit", "Edit", new { id=item.OrderID }) |*@
+            @Html.ActionLink("Details", "Details", new { id=item.OrderID })
+            @*@Html.ActionLink("Delete", "Delete", new { id=item.OrderID })*@
         </td>
     </tr>
 }

@@ -1,39 +1,68 @@
 ﻿@model DemoMVCEntityFramework.Models.Order
-
 @{
-    ViewBag.Title = "Details";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Detail";
 }
 
-<h2>Details - Order</h2>
-<table>
-    <tr>
-        <td>@Html.DisplayNameFor(model => model.OrderDate)</td>
-        <td>@Html.DisplayFor(model => model.OrderDate)</td>
-    </tr>
-    <tr>
-        <td>@Html.DisplayNameFor(model => model.RequiredDate)</td>
-        <td>@Html.DisplayFor(model => model.RequiredDate)</td>
-    </tr>
-    <tr>
-        <td>@Html.DisplayNameFor(model => model.ShippedDate)</td>
-        <td>@Html.DisplayFor(model => model.ShippedDate)</td>
-    </tr>
-    <tr>
-        <td>@Html.DisplayNameFor(model => model.ShipVia)</td>
-        <td>@Html.DisplayFor(model => model.ShipVia)</td>
-    </tr>
-    <tr>
-        <td>@Html.DisplayNameFor(model => model.Freight)</td>
-        <td>@Html.DisplayFor(model => model.Freight)</td>
-    </tr>
-</table>
+<h2>Detail</h2>
+<div>
+    <h4>Order Detail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerID)
+        </dt>
 
+        <dd>
+            @Html.DisplayFor(model => model.Customer.ContactName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShipName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShipName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShipAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShipAddress)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.OrderDetails)
+        </dt>
+        <dd>
+            <table class="table">
+                <tr>
+                    <th>Product Name</th>
+                    <th>Price</th>
+                    <th>Discount</th>
+                    <th>Quanlity</th>
+                </tr>
+                @foreach (var item in Model.OrderDetails)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Product.ProductName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Product.UnitPrice)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Discount)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Quanlity)
+                        </td>
+                    </tr>
+                }
+            </table>
+        </dd>
+    </dl>
+</div>
 <p>
-     @Html.Partial("_OrderDetail", Model.OrderDetails)
-</p>
- 
-<p>
-    @*@Html.ActionLink("Edit", "Edit", new { id=Model.OrderID }) |*@
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to List", "CustomerInfoPage")
 </p>

@@ -15,11 +15,13 @@ namespace DemoMVCEntityFramework.Controllerss
     {
         private NorthWNDContext db = new NorthWNDContext();
         private static int pageSize = 3;
+        private static int iRetry = 0;
 
         //
         // GET: /Product/
         public ActionResult Index(int? page=1, int? categoryID=0)
         {
+            db = new NorthWNDContext();
             List<Category> lsCate = new List<Category>();
             var all = new Category { CategoryID = 0, CategoryName = "All", Description = "Load all category" };
             lsCate.Add(all);
@@ -33,13 +35,30 @@ namespace DemoMVCEntityFramework.Controllerss
             
             if (categoryID != 0)
             {
-                var rsl = products.OrderBy(i => i.ProductID).Where(p => p.CategoryID == categoryID).ToPagedList(pageNumber, pageSize);
+                var rsl = db.Products.OrderBy(i => i.ProductID).Where(p => p.CategoryID == categoryID).ToPagedList(pageNumber, pageSize);
                 return View(rsl);
             }
             else
             {
-                var rsl = products.OrderBy(i => i.ProductID).ToPagedList(pageNumber, pageSize);
-                return View(rsl);
+                try
+                {
+                    var rsl = db.Products.OrderBy(i => i.ProductID).ToPagedList(pageNumber, pageSize);
+                    iRetry = 0;
+                    return View(rsl);
+                }
+                catch(Exception ex)
+                {
+                    if (iRetry < 3)
+                    {
+                        iRetry++;
+                        return Index(page, categoryID);
+                    }
+                    else
+                    {
+                        iRetry = 0;
+                        return View();
+                    }                    
+                }                
             }
         }
            

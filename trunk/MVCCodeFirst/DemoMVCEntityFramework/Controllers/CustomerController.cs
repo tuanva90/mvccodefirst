@@ -20,6 +20,8 @@ namespace DemoMVCEntityFramework.Controllers
         [Authorize]
         public ActionResult Index()
         {
+            if (String.IsNullOrEmpty(User.Identity.Name))
+                return RedirectToAction("Login", "Account");
             return View(db.Customers.ToList());
         }
 

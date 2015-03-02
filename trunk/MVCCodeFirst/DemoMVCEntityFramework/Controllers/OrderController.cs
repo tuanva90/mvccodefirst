@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 using DemoMVCEntityFramework.Models;
 using DemoMVCEntityFramework.Data_Access_Layer;
+using System.Web.Security;
 
 namespace DemoMVCEntityFramework.Controllers
 {
@@ -16,7 +17,7 @@ namespace DemoMVCEntityFramework.Controllers
 
         //
         // GET: /Order/
-
+        [Authorize]
         public ActionResult Index()
         {
             var curOrder = (List<Product>) Session["Order_" + User.Identity.Name];
@@ -31,8 +32,10 @@ namespace DemoMVCEntityFramework.Controllers
             }
             else
             {
-                var orders = db.Orders.Where(o => o.CustomerID == user.CustomerID);
-                return View(orders);
+                //WebSecurity.Logout();
+                FormsAuthentication.SignOut();
+                //return RedirectToAction("Index", "Home");
+                return Redirect("~/");
             }
         }
 
@@ -44,7 +47,7 @@ namespace DemoMVCEntityFramework.Controllers
 
             var cus = db.Customers.Find(id);
             var curOrder = (List<Product>)Session["Order_" + User.Identity.Name];
-            if (curOrder != null)
+            if (curOrder != null & cus != null)
             {
                 db.Orders.Add(new Order { Customer = cus, ShipVia = 1, Freight = 1, OrderDate = DateTime.Today, RequiredDate = DateTime.Today, ShippedDate = DateTime.Today, CustomerID = cus.CustomerID });
                 db.SaveChanges(); ;
@@ -56,7 +59,11 @@ namespace DemoMVCEntityFramework.Controllers
                     db.OrderDetails.Add(new OrderDetail { Order = ord, Product = item, UnitPrice=item.UnitPrice , Quanlity = item.Quantity, OrderID = ord.OrderID, ProductID = item.ProductID});
                     db.SaveChanges();
                 }
-                
+                Session["Order_" + User.Identity.Name] = null;
+            }
+            else
+            {
+                return RedirectToAction("Login", "Account");
             }
             return RedirectToAction("Index");
         }

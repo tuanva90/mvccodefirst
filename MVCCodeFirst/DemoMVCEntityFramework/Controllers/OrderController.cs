@@ -23,8 +23,17 @@ namespace DemoMVCEntityFramework.Controllers
             if (curOrder == null)
                 curOrder = new List<Product>();
             ViewData["CurOrder"] = curOrder;
-            var orders = db.Orders.Include(o => o.Customer);
-            return View(orders.ToList());
+            var user = db.Users.Where(u => u.UserName == User.Identity.Name).FirstOrDefault();
+            if (user != null)
+            {
+                var orders = db.Orders.Where(o => o.CustomerID == user.CustomerID).ToList();
+                return View(orders);
+            }
+            else
+            {
+                var orders = db.Orders.Where(o => o.CustomerID == user.CustomerID);
+                return View(orders);
+            }
         }
 
         [Authorize]

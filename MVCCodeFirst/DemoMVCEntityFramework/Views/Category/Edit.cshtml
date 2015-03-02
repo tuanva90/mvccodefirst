@@ -31,7 +31,7 @@
             @Html.ValidationMessageFor(model => model.Description)
         </div>
         <div class="editor-label">
-            @Html.LabelFor(model => model.Description)
+            @Html.LabelFor(model => model.Picture)
         </div>
         <div class="editor-field">
             @{
@@ -42,9 +42,8 @@
                     <img src="@imgsrc" height="40" width="30">
                 }
              }
-            <br />
-            @Html.TextBoxFor(model => model.Description, new {type = "file"})
-            @Html.ValidationMessageFor(model => model.Description)
+            @Html.TextBoxFor(model => model.Picture, new {type = "file"})
+            @Html.ValidationMessageFor(model => model.Picture)
         </div>
         <p>
             <input type="submit" value="Save" />

@@ -191,6 +191,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -580,6 +581,7 @@
     <Content Include="Views\Account\CustomersInfoPage.cshtml" />
     <Content Include="Views\Account\Detail.cshtml" />
     <Content Include="Views\Order\_CurOrder.cshtml" />
+    <Content Include="Views\Order\_OrderDetail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

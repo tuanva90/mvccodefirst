@@ -17,8 +17,8 @@ using System.Net;
 namespace DemoMVCEntityFramework.Controllers
 {
     [Authorize]
-    [InitializeSimpleMembership]
-    public class AccountController : Controller
+    //[InitializeSimpleMembership]
+    public class AccountController : BaseController
     {
         private NorthWNDContext db = new NorthWNDContext();
         //
@@ -42,8 +42,11 @@ namespace DemoMVCEntityFramework.Controllers
             if (user.IsValid(user.UserName, user.Password))
             {
                 //WebSecurity.CreateUserAndAccount(user.UserName, user.Password);
-                WebSecurity.Login(user.UserName, user.Password);
-                var d = from p in db.Users where p.UserName == User.Identity.Name select p.CustomerID;
+                //WebSecurity.Login(user.UserName, user.Password);
+                FormsAuthentication.SetAuthCookie(user.UserName, false);
+                //FormsAuthentication.SetAuthCookie(model.EmailAddress, false);
+                SetLoginCookie(user.UserName);
+                //var d = from p in db.Users where p.UserName == GetLoginUser() select p.CustomerID;
                 int id = (from u in db.Users where u.UserName == user.UserName select u.CustomerID).FirstOrDefault();
 
                 var cus = db.Customers.Find(id);
@@ -127,16 +130,10 @@ namespace DemoMVCEntityFramework.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult LogOff()
         {
+            //WebSecurity.Logout();
             FormsAuthentication.SignOut();
-            Session.Abandon();
-
-            // clear authentication cookie
-            HttpCookie cookie1 = new HttpCookie(FormsAuthentication.FormsCookieName, "");
-            cookie1.Expires = DateTime.Now.AddYears(-1);
-            Response.Cookies.Add(cookie1);
-
-
-            return RedirectToAction("Index", "Home");
+            //return RedirectToAction("Index", "Home");
+            return Redirect("~/");
         }
 
         //
@@ -162,8 +159,11 @@ namespace DemoMVCEntityFramework.Controllers
                 // Attempt to register the user
                 try
                 {
-
+                    //WebSecurity.CreateUserAndAccount(model.UserName, model.Password);
+                    //WebSecurity.Login(model.UserName, model.Password);
                     FormsAuthentication.SetAuthCookie(model.UserName, false);
+                    //FormsAuthentication.SetAuthCookie(model.EmailAddress, false);
+                    SetLoginCookie(model.UserName);
                     model.Roles = false;
                     db.Users.Add(model);
                     db.SaveChanges();

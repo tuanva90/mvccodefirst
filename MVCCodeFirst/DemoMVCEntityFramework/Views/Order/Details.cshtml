@@ -87,6 +87,11 @@
         @Html.DisplayFor(model => model.ShipCountry)
     </div>
 </fieldset>
+
+<p>
+     @Html.Partial("_OrderDetail", Model.OrderDetails)
+</p>
+ 
 <p>
     @*@Html.ActionLink("Edit", "Edit", new { id=Model.OrderID }) |*@
     @Html.ActionLink("Back to List", "Index")

@@ -127,7 +127,14 @@ namespace DemoMVCEntityFramework.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult LogOff()
         {
-            WebSecurity.Logout();
+            FormsAuthentication.SignOut();
+            Session.Abandon();
+
+            // clear authentication cookie
+            HttpCookie cookie1 = new HttpCookie(FormsAuthentication.FormsCookieName, "");
+            cookie1.Expires = DateTime.Now.AddYears(-1);
+            Response.Cookies.Add(cookie1);
+
 
             return RedirectToAction("Index", "Home");
         }
@@ -155,8 +162,8 @@ namespace DemoMVCEntityFramework.Controllers
                 // Attempt to register the user
                 try
                 {
-                    WebSecurity.CreateUserAndAccount(model.UserName, model.Password);
-                    WebSecurity.Login(model.UserName, model.Password);
+
+                    FormsAuthentication.SetAuthCookie(model.UserName, false);
                     model.Roles = false;
                     db.Users.Add(model);
                     db.SaveChanges();

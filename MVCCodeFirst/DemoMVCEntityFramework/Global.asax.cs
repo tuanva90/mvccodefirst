@@ -9,6 +9,7 @@ using System.Web.Routing;
 using DemoMVCEntityFramework.Migrations;
 using DemoMVCEntityFramework.Data_Access_Layer;
 using System.Data.Entity;
+using System.Web.Security;
 namespace DemoMVCEntityFramework
 {
     // Note: For instructions on enabling IIS6 or IIS7 classic mode, 
@@ -29,5 +30,18 @@ namespace DemoMVCEntityFramework
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             AuthConfig.RegisterAuth();
         }
+
+        protected void Session_Start(object sender, EventArgs e)
+        {
+            if (HttpContext.Current.Request.IsAuthenticated)
+            {
+
+                //old authentication, kill it
+                FormsAuthentication.SignOut();
+                //or use Response.Redirect to go to a different page
+
+            }
+        }
+        
     }
 }

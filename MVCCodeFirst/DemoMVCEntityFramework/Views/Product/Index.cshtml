@@ -18,9 +18,9 @@
         @Html.Partial("tableView", Model)
     </div>
     <div>
-        <dialog id="dialogform">
+        <div id="dialogform">
             <div id="tblpro"></div>
-        </dialog>
+        </div>
     </div>
 }
 
@@ -56,13 +56,15 @@
                         alert(error.state + " " + error.statusText)
                     }
                 });
-                document.getElementById("dialogform").showModal();
+                //document.getElementById("dialogform").showModal();
+                $('#dialogform').dialog({width: 500});
                 //window.open('http://localhost:5325/Product/Details?id=' + jobNum, '_self', false);
 
             }
         });
         $("#dialogform").dblclick(function () {
-            document.getElementById("dialogform").close();
+            //document.getElementById("dialogform").close();
+            $('#dialogform').dialog("close");
         });
 
 

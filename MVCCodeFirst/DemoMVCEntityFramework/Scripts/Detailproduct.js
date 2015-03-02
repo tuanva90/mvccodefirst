@@ -6,7 +6,8 @@
         success: function (data) {
             if (data == 1) {
                 alert("Added success!");
-                document.getElementById("dialogform").close();
+                //document.getElementById("dialogform").close();
+                $('#dialogform').dialog("close");
             } else {
                 alert("Failed");
             }

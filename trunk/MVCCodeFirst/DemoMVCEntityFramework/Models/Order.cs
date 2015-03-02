@@ -12,7 +12,6 @@ namespace DemoMVCEntityFramework.Models
         public Order() { }
         [Key]
         public int OrderID { get; set; }
-        [MaxLength(50),Required]
         public int CustomerID { get; set; }
         //[DataType(DataType.Date)]
         //[DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]

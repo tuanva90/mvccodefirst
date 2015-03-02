@@ -8,8 +8,9 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    Current cart:
 </p>
+    @Html.Partial("_CurOrder", @ViewData["CurOrder"])
 <table>
     <tr>
         <th>

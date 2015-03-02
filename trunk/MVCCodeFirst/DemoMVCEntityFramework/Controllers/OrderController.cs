@@ -19,10 +19,37 @@ namespace DemoMVCEntityFramework.Controllers
 
         public ActionResult Index()
         {
+            var curOrder = (List<Product>) Session["Order_" + User.Identity.Name];
+            if (curOrder == null)
+                curOrder = new List<Product>();
+            ViewData["CurOrder"] = curOrder;
             var orders = db.Orders.Include(o => o.Customer);
             return View(orders.ToList());
         }
 
+        
+        public ActionResult AddOrder()
+        {
+            var d = (from p in db.Users where p.UserName == User.Identity.Name select p.CustomerID).FirstOrDefault();
+            int id = (from u in db.Users where u.CustomerID == d select u.CustomerID).FirstOrDefault();
+
+            var cus = db.Customers.Find(id);
+            var curOrder = (List<Product>)Session["Order_" + User.Identity.Name];
+            if (curOrder != null)
+            {
+                db.Orders.Add(new Order { Customer = cus, ShipVia = 1, Freight = 1, OrderDate = DateTime.Today, RequiredDate = DateTime.Today, ShippedDate = DateTime.Today, CustomerID = cus.CustomerID });
+                db.SaveChanges(); ;
+                var ord1 = db.Orders.Where(c => c.CustomerID == cus.CustomerID).Max(c => c.OrderID);
+                var ord = db.Orders.Where(c => c.OrderID == ord1).First();
+                
+                foreach (Product item in curOrder)
+                {
+                    db.OrderDetails.Add(new OrderDetail { Order = ord, Product = item, Quanlity = item.Quantity, OrderID = ord.OrderID, ProductID = item.ProductID});
+                }
+                db.SaveChanges();
+            }
+            return RedirectToAction("Index");
+        }
         //
         // GET: /Order/Details/5
 

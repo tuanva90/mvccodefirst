@@ -5,109 +5,29 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
-@*<table>
+<h2>Details - Order</h2>
+<table>
     <tr>
         <td>@Html.DisplayNameFor(model => model.OrderDate)</td>
         <td>@Html.DisplayFor(model => model.OrderDate)</td>
     </tr>
     <tr>
-        <td>@Html.DisplayNameFor(model => model.OrderDate)</td>
-        <td>@Html.DisplayFor(model => model.OrderDate)</td>
+        <td>@Html.DisplayNameFor(model => model.RequiredDate)</td>
+        <td>@Html.DisplayFor(model => model.RequiredDate)</td>
     </tr>
     <tr>
-        <td>@Html.DisplayNameFor(model => model.OrderDate)</td>
-        <td>@Html.DisplayFor(model => model.OrderDate)</td>
+        <td>@Html.DisplayNameFor(model => model.ShippedDate)</td>
+        <td>@Html.DisplayFor(model => model.ShippedDate)</td>
     </tr>
     <tr>
-        <td>@Html.DisplayNameFor(model => model.OrderDate)</td>
-        <td>@Html.DisplayFor(model => model.OrderDate)</td>
+        <td>@Html.DisplayNameFor(model => model.ShipVia)</td>
+        <td>@Html.DisplayFor(model => model.ShipVia)</td>
     </tr>
     <tr>
-        <td>@Html.DisplayNameFor(model => model.OrderDate)</td>
-        <td>@Html.DisplayFor(model => model.OrderDate)</td>
+        <td>@Html.DisplayNameFor(model => model.Freight)</td>
+        <td>@Html.DisplayFor(model => model.Freight)</td>
     </tr>
-</table>*@
-<fieldset>
-    <legend>Order</legend>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.OrderDate)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.OrderDate)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.RequiredDate)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.RequiredDate)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.ShippedDate)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.ShippedDate)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.ShipVia)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.ShipVia)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Freight)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Freight)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.ShipName)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.ShipName)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.ShipAddress)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.ShipAddress)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.ShipCity)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.ShipCity)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.ShipRegion)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.ShipRegion)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.ShipPostalCode)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.ShipPostalCode)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.ShipCountry)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.ShipCountry)
-    </div>
-</fieldset>
+</table>
 
 <p>
      @Html.Partial("_OrderDetail", Model.OrderDetails)

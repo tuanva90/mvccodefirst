@@ -917,3 +917,4 @@ C:\Users\HoaiPhong\Desktop\MVC\MVCCodeFirst\DemoMVCEntityFramework\obj\Debug\Dem
 C:\Users\HoaiPhong\Desktop\MVC\MVCCodeFirst\DemoMVCEntityFramework\obj\Debug\DemoMVCEntityFramework.csproj.GenerateResource.Cache
 C:\Users\HoaiPhong\Desktop\MVC\MVCCodeFirst\DemoMVCEntityFramework\obj\Debug\DemoMVCEntityFramework.dll
 C:\Users\HoaiPhong\Desktop\MVC\MVCCodeFirst\DemoMVCEntityFramework\obj\Debug\DemoMVCEntityFramework.pdb
+C:\Users\HoaiPhong\Desktop\MVC\MVCCodeFirst\DemoMVCEntityFramework\obj\Debug\DemoMVCEntityFramework.csprojResolveAssemblyReference.cache

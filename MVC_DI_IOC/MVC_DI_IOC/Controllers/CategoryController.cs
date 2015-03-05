@@ -15,11 +15,11 @@ namespace MVC_DI_IOC.Web.Controllers
     {
         private UnitOfWork uow = new UnitOfWork();
         //private Repository<Category, CategoryID> cateRepository;
-        private readonly CategoryService _cateservice;
+        private readonly ICategoryService _cateservice;
 
-        public CategoryController(CategoryService cateservice)
+        public CategoryController(ICategoryService cateservice)
         {
-            _cateservice = cateservice;
+            this._cateservice = cateservice;
         }
         //
         // GET: /Category/

@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC_DI_IOC.Data", "MVC_DI_I
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{F084568E-CF7B-4F9C-98AD-FB06A8C0637C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC_DI_IOC.Dependency", "MVC_DI_IOC.Dependency\MVC_DI_IOC.Dependency.csproj", "{A5503AA4-AA0C-4D98-ACED-21848E53BB16}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{F084568E-CF7B-4F9C-98AD-FB06A8C0637C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F084568E-CF7B-4F9C-98AD-FB06A8C0637C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F084568E-CF7B-4F9C-98AD-FB06A8C0637C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5503AA4-AA0C-4D98-ACED-21848E53BB16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5503AA4-AA0C-4D98-ACED-21848E53BB16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5503AA4-AA0C-4D98-ACED-21848E53BB16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5503AA4-AA0C-4D98-ACED-21848E53BB16}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,4 +1,5 @@
 ﻿using MVC_DI_IOC.Data;
+using MVC_DI_IOC.Dependency;
 using MVC_DI_IOC.Web.App_Start;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,8 @@ namespace MVC_DI_IOC.Web
         protected void Application_Start()
         {
             Database.SetInitializer<NorthWNDContext>(new TestInitializer());
+
+            Bootstrapper.Initialise();
 
             AreaRegistration.RegisterAllAreas();
 

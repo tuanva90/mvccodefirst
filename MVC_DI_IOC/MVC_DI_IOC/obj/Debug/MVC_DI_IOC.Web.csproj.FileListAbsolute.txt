@@ -1,3 +1,4 @@
+C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\MVC_DI_IOC\MVC_DI_IOC\obj\Debug\MVC_DI_IOC.Web.csprojResolveAssemblyReference.cache
 C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\MVC_DI_IOC\MVC_DI_IOC\bin\MVC_DI_IOC.dll.config
 C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\MVC_DI_IOC\MVC_DI_IOC\bin\MVC_DI_IOC.dll
 C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\MVC_DI_IOC\MVC_DI_IOC\bin\MVC_DI_IOC.pdb
@@ -12,11 +13,15 @@ C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\MVC_DI_IOC\MVC_DI_IOC\
 C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\MVC_DI_IOC\MVC_DI_IOC\bin\EntityFramework.SqlServer.dll
 C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\MVC_DI_IOC\MVC_DI_IOC\bin\Microsoft.Data.Edm.dll
 C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\MVC_DI_IOC\MVC_DI_IOC\bin\Microsoft.Data.OData.dll
+C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\MVC_DI_IOC\MVC_DI_IOC\bin\Microsoft.Practices.ServiceLocation.dll
+C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\MVC_DI_IOC\MVC_DI_IOC\bin\Microsoft.Practices.Unity.Configuration.dll
+C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\MVC_DI_IOC\MVC_DI_IOC\bin\Microsoft.Practices.Unity.dll
 C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\MVC_DI_IOC\MVC_DI_IOC\bin\Microsoft.Web.Infrastructure.dll
 C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\MVC_DI_IOC\MVC_DI_IOC\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
 C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\MVC_DI_IOC\MVC_DI_IOC\bin\Microsoft.Web.WebPages.OAuth.dll
 C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\MVC_DI_IOC\MVC_DI_IOC\bin\MVC_DI_IOC.Core.dll
 C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\MVC_DI_IOC\MVC_DI_IOC\bin\MVC_DI_IOC.Data.dll
+C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\MVC_DI_IOC\MVC_DI_IOC\bin\MVC_DI_IOC.Dependency.exe
 C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\MVC_DI_IOC\MVC_DI_IOC\bin\Newtonsoft.Json.dll
 C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\MVC_DI_IOC\MVC_DI_IOC\bin\System.Net.Http.Formatting.dll
 C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\MVC_DI_IOC\MVC_DI_IOC\bin\System.Spatial.dll
@@ -30,12 +35,18 @@ C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\MVC_DI_IOC\MVC_DI_IOC\
 C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\MVC_DI_IOC\MVC_DI_IOC\bin\System.Web.WebPages.Deployment.dll
 C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\MVC_DI_IOC\MVC_DI_IOC\bin\System.Web.WebPages.dll
 C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\MVC_DI_IOC\MVC_DI_IOC\bin\System.Web.WebPages.Razor.dll
+C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\MVC_DI_IOC\MVC_DI_IOC\bin\Unity.Mvc4.dll
 C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\MVC_DI_IOC\MVC_DI_IOC\bin\WebGrease.dll
 C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\MVC_DI_IOC\MVC_DI_IOC\bin\WebMatrix.Data.dll
 C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\MVC_DI_IOC\MVC_DI_IOC\bin\WebMatrix.WebData.dll
 C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\MVC_DI_IOC\MVC_DI_IOC\bin\MVC_DI_IOC.Core.pdb
 C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\MVC_DI_IOC\MVC_DI_IOC\bin\MVC_DI_IOC.Data.pdb
+C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\MVC_DI_IOC\MVC_DI_IOC\bin\MVC_DI_IOC.Dependency.pdb
 C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\MVC_DI_IOC\MVC_DI_IOC\bin\EntityFramework.SqlServer.xml
+C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\MVC_DI_IOC\MVC_DI_IOC\bin\Microsoft.Practices.ServiceLocation.pdb
+C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\MVC_DI_IOC\MVC_DI_IOC\bin\Microsoft.Practices.ServiceLocation.xml
+C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\MVC_DI_IOC\MVC_DI_IOC\bin\Microsoft.Practices.Unity.xml
+C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\MVC_DI_IOC\MVC_DI_IOC\bin\Microsoft.Practices.Unity.Configuration.xml
 C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\MVC_DI_IOC\MVC_DI_IOC\bin\Newtonsoft.Json.xml
 C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\MVC_DI_IOC\MVC_DI_IOC\bin\System.Net.Http.Formatting.xml
 C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\MVC_DI_IOC\MVC_DI_IOC\bin\System.Web.Helpers.xml
@@ -86,6 +97,5 @@ C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\MVC_DI_IOC\MVC_DI_IOC\
 C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\MVC_DI_IOC\MVC_DI_IOC\bin\ru\System.Spatial.resources.dll
 C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\MVC_DI_IOC\MVC_DI_IOC\bin\zh-Hans\System.Spatial.resources.dll
 C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\MVC_DI_IOC\MVC_DI_IOC\bin\zh-Hant\System.Spatial.resources.dll
-C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\MVC_DI_IOC\MVC_DI_IOC\obj\Debug\MVC_DI_IOC.Web.csprojResolveAssemblyReference.cache
 C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\MVC_DI_IOC\MVC_DI_IOC\obj\Debug\MVC_DI_IOC.dll
 C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\MVC_DI_IOC\MVC_DI_IOC\obj\Debug\MVC_DI_IOC.pdb

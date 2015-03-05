@@ -1,0 +1,6 @@
+c:\users\thoaiphong\documents\visual studio 2013\Projects\MVC_DI_IOC\Entities\obj\Debug\Entities.csprojResolveAssemblyReference.cache
+c:\users\thoaiphong\documents\visual studio 2013\Projects\MVC_DI_IOC\Entities\bin\Entities.dll.config
+c:\users\thoaiphong\documents\visual studio 2013\Projects\MVC_DI_IOC\Entities\bin\Entities.dll
+c:\users\thoaiphong\documents\visual studio 2013\Projects\MVC_DI_IOC\Entities\bin\Entities.pdb
+c:\users\thoaiphong\documents\visual studio 2013\Projects\MVC_DI_IOC\Entities\obj\Debug\Entities.dll
+c:\users\thoaiphong\documents\visual studio 2013\Projects\MVC_DI_IOC\Entities\obj\Debug\Entities.pdb

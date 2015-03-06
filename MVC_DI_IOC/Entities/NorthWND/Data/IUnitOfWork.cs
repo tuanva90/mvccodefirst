@@ -20,5 +20,6 @@ namespace MVC_DI_IOC.Core.NorthWND.Data
 
         // Rollbacks transaction and closes database connection.
         void Rollback();
+        void Dispose();
     }
 }

@@ -34,7 +34,9 @@ namespace MVC_DI_IOC.Web.Controllers
 
         public ActionResult Details(int id)
         {
-            return View();
+            _uow.BeginTransaction();
+            var cate = _uow.Repository<Category, int>().Get(id);
+            return View(cate);
         }
 
         //
@@ -70,7 +72,10 @@ namespace MVC_DI_IOC.Web.Controllers
 
         public ActionResult Edit(int id)
         {
-            return View();
+            _uow.BeginTransaction();
+            var cate = _uow.Repository<Category, int>().Get(id);
+            //var cate = _uow.Commit();
+            return View(cate);
         }
 
         //
@@ -82,7 +87,9 @@ namespace MVC_DI_IOC.Web.Controllers
             try
             {
                 // TODO: Add update logic here
-                
+                _uow.BeginTransaction();
+                _uow.Repository<Category, int>().Update(cate);
+                _uow.Commit();
                 return RedirectToAction("Index");
             }
             catch
@@ -96,7 +103,9 @@ namespace MVC_DI_IOC.Web.Controllers
 
         public ActionResult Delete(int id)
         {
-            return View();
+            _uow.BeginTransaction();
+            var cate = _uow.Repository<Category, int>().Get(id);
+            return View(cate);
         }
 
         //
@@ -108,7 +117,9 @@ namespace MVC_DI_IOC.Web.Controllers
             try
             {
                 // TODO: Add delete logic here
-                
+                _uow.BeginTransaction();
+                _uow.Repository<Category, int>().Delete(cateID);
+                _uow.Commit();
                 return RedirectToAction("Index");
             }
             catch
@@ -116,5 +127,11 @@ namespace MVC_DI_IOC.Web.Controllers
                 return View();
             }
         }
+        public void Dispose()
+        {
+            _uow.BeginTransaction();
+            _uow.Dispose();
+        }
+
     }
 }

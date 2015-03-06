@@ -71,13 +71,6 @@
     <Compile Include="NorthWND\Data\IUnitOfWork.cs" />
     <Compile Include="NorthWND\Data\Repositories\IRepository.cs" />
     <Compile Include="NorthWND\Data\UnitOfWorkAttribute.cs" />
-    <Compile Include="NorthWND\Services\ICategoryService.cs" />
-    <Compile Include="NorthWND\Services\ICustomerService.cs" />
-    <Compile Include="NorthWND\Services\Implement\CategoryService.cs" />
-    <Compile Include="NorthWND\Services\IOrderDetailService.cs" />
-    <Compile Include="NorthWND\Services\IOrderService.cs" />
-    <Compile Include="NorthWND\Services\IProductService.cs" />
-    <Compile Include="NorthWND\Services\IUserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -88,7 +81,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="NorthWND\Services\Implement\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

@@ -9,7 +9,6 @@ C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\MVC_DI_IOC\Test\bin\De
 C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\MVC_DI_IOC\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
 C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\MVC_DI_IOC\Test\obj\Debug\Test.exe
 C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\MVC_DI_IOC\Test\obj\Debug\Test.pdb
-C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\Test\bin\Debug\Test.exe.config
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\Test\bin\Debug\Test.exe
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\Test\bin\Debug\Test.pdb
@@ -19,5 +18,6 @@ C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\Test\bin\Debug\EntityFramewo
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\Test\bin\Debug\MVC_DI_IOC.Core.pdb
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\Test\bin\Debug\MVC_DI_IOC.Data.pdb
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\Test\bin\Debug\EntityFramework.xml
+C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\Test\obj\Debug\Test.exe
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\Test\obj\Debug\Test.pdb

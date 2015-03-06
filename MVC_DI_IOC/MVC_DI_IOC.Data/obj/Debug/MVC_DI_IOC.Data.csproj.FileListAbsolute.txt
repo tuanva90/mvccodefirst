@@ -9,7 +9,6 @@ C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\MVC_DI_IOC\MVC_DI_IOC.
 C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\MVC_DI_IOC\MVC_DI_IOC.Data\obj\Debug\MVC_DI_IOC.Data.csprojResolveAssemblyReference.cache
 C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\MVC_DI_IOC\MVC_DI_IOC.Data\obj\Debug\MVC_DI_IOC.Data.dll
 C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\MVC_DI_IOC\MVC_DI_IOC.Data\obj\Debug\MVC_DI_IOC.Data.pdb
-C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC.Data\obj\Debug\MVC_DI_IOC.Data.csprojResolveAssemblyReference.cache
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC.Data\bin\MVC_DI_IOC.Data.dll.config
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC.Data\bin\MVC_DI_IOC.Data.dll
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC.Data\bin\MVC_DI_IOC.Data.pdb
@@ -19,5 +18,6 @@ C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC.Data\bin\MVC_DI_I
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC.Data\bin\MVC_DI_IOC.Core.pdb
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC.Data\bin\EntityFramework.xml
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC.Data\bin\EntityFramework.SqlServer.xml
+C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC.Data\obj\Debug\MVC_DI_IOC.Data.csprojResolveAssemblyReference.cache
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC.Data\obj\Debug\MVC_DI_IOC.Data.dll
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC.Data\obj\Debug\MVC_DI_IOC.Data.pdb

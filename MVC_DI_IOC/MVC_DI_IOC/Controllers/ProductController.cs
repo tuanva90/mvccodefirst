@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MVC_DI_IOC.Core.NorthWND.Data;
+using MVC_DI_IOC.Core.NorthWND.Data.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,12 +10,18 @@ namespace MVC_DI_IOC.Web.Controllers
 {
     public class ProductController : Controller
     {
+        private IUnitOfWork _uow;
+        public ProductController(IUnitOfWork uow)
+        {
+            this._uow = uow;
+        }
         //
         // GET: /Product/
 
         public ActionResult Index()
         {
-            return View();
+            var listpro = _uow.Repository<Product, int>().GetAll().ToList();
+            return View(listpro);
         }
 
         //
@@ -21,7 +29,9 @@ namespace MVC_DI_IOC.Web.Controllers
 
         public ActionResult Details(int id)
         {
-            return View();
+            _uow.BeginTransaction();
+            var pro = _uow.Repository<Product, int>().Get(id);
+            return View(pro);
         }
 
         //
@@ -36,12 +46,14 @@ namespace MVC_DI_IOC.Web.Controllers
         // POST: /Product/Create
 
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(Product pro)
         {
             try
             {
                 // TODO: Add insert logic here
-
+                _uow.BeginTransaction();
+                _uow.Repository<Product, int>().Insert(pro);
+                _uow.Commit();
                 return RedirectToAction("Index");
             }
             catch
@@ -55,19 +67,23 @@ namespace MVC_DI_IOC.Web.Controllers
 
         public ActionResult Edit(int id)
         {
-            return View();
+            _uow.BeginTransaction();
+            var pro = _uow.Repository<Product, int>().Get(id);
+            return View(pro);
         }
 
         //
         // POST: /Product/Edit/5
 
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(Product pro)
         {
             try
             {
                 // TODO: Add update logic here
-
+                _uow.BeginTransaction();
+                _uow.Repository<Product, int>().Update(pro);
+                _uow.Commit();
                 return RedirectToAction("Index");
             }
             catch
@@ -81,19 +97,23 @@ namespace MVC_DI_IOC.Web.Controllers
 
         public ActionResult Delete(int id)
         {
-            return View();
+            _uow.BeginTransaction();
+            var pro = _uow.Repository<Product, int>().Get(id);
+            return View(pro);
         }
 
         //
         // POST: /Product/Delete/5
 
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(int id, Product pro)
         {
             try
             {
                 // TODO: Add delete logic here
-
+                _uow.BeginTransaction();
+                _uow.Repository<Product, int>().Delete(id);
+                _uow.Commit();
                 return RedirectToAction("Index");
             }
             catch

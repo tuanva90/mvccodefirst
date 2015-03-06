@@ -69,13 +69,7 @@
     <Compile Include="NorthWND\Data\Entities\Product.cs" />
     <Compile Include="NorthWND\Data\Entities\User.cs" />
     <Compile Include="NorthWND\Data\IUnitOfWork.cs" />
-    <Compile Include="NorthWND\Data\Repositories\ICategoryRepository.cs" />
-    <Compile Include="NorthWND\Data\Repositories\ICustomerRepository.cs" />
-    <Compile Include="NorthWND\Data\Repositories\IOrderRepository.cs" />
-    <Compile Include="NorthWND\Data\Repositories\IOrderDetailRepository.cs" />
-    <Compile Include="NorthWND\Data\Repositories\IProductRepository.cs" />
     <Compile Include="NorthWND\Data\Repositories\IRepository.cs" />
-    <Compile Include="NorthWND\Data\Repositories\IUserRepository.cs" />
     <Compile Include="NorthWND\Data\UnitOfWorkAttribute.cs" />
     <Compile Include="NorthWND\Services\ICategoryService.cs" />
     <Compile Include="NorthWND\Services\ICustomerService.cs" />

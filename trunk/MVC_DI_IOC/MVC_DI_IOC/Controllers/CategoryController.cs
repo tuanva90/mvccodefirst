@@ -13,20 +13,16 @@ namespace MVC_DI_IOC.Web.Controllers
 {
     public class CategoryController : Controller
     {
-        private UnitOfWork uow = new UnitOfWork();
-        //private Repository<Category, CategoryID> cateRepository;
-        private readonly ICategoryService _cateservice;
-
         public CategoryController(ICategoryService cateservice)
         {
-            this._cateservice = cateservice;
+            //this._cateservice = cateservice;
         }
         //
         // GET: /Category/
 
         public ActionResult Index()
         {
-            return View(_cateservice.GetCateList());
+            return View();
         }
 
         //
@@ -54,21 +50,7 @@ namespace MVC_DI_IOC.Web.Controllers
             try
             {
                 // TODO: Add insert logic here
-                if (ModelState.IsValid)
-                {
-                    if (Request.Files.Count > 0)
-                    {
-                        var file = Request.Files["txtpicture"];
-                        if (file != null && file.ContentLength > 0)
-                        {
-                            var input = new BinaryReader(file.InputStream);
-                            var filed = input.ReadBytes(file.ContentLength);
-                            cate.Picture = filed;
-                        }
-                    }
-                    _cateservice.CreateCate(cate);
-                    uow.Save();
-                }
+                
                 return RedirectToAction("Index");
             }
             catch
@@ -94,11 +76,7 @@ namespace MVC_DI_IOC.Web.Controllers
             try
             {
                 // TODO: Add update logic here
-                if(ModelState.IsValid)
-                {
-                    _cateservice.UpdateCate(cate);
-                    uow.Save();
-                }
+                
                 return RedirectToAction("Index");
             }
             catch
@@ -124,8 +102,7 @@ namespace MVC_DI_IOC.Web.Controllers
             try
             {
                 // TODO: Add delete logic here
-                _cateservice.DeleteCate(cateID);
-                uow.Save();
+                
                 return RedirectToAction("Index");
             }
             catch

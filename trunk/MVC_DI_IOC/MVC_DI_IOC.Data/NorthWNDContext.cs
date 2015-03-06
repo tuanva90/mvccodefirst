@@ -21,8 +21,8 @@ namespace MVC_DI_IOC.Data
         public DbSet<Category> Categories { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-               
-                modelBuilder.Configurations.Add(new CategoryMapping());
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Configurations.Add(new CategoryMapping());
         }
     }
 }

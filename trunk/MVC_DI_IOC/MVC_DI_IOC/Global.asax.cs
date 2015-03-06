@@ -20,7 +20,7 @@ namespace MVC_DI_IOC.Web
     {
         protected void Application_Start()
         {
-            Database.SetInitializer<NorthWNDContext>(new TestInitializer());
+            //Database.SetInitializer<NorthWNDContext>(new TestInitializer());
 
             Bootstrapper.Initialise();
 

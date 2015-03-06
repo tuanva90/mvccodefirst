@@ -6,23 +6,27 @@ using System.Web.Mvc;
 using MVC_DI_IOC.Core.NorthWND.Services;
 using MVC_DI_IOC.Data;
 using MVC_DI_IOC.Core.NorthWND.Data.Entities;
+using MVC_DI_IOC.Core;
 using System.IO;
 using MVC_DI_IOC.Core.NorthWND.Services.Implement;
+using MVC_DI_IOC.Core.NorthWND.Data;
 
 namespace MVC_DI_IOC.Web.Controllers
 {
     public class CategoryController : Controller
     {
-        public CategoryController(ICategoryService cateservice)
+        private IUnitOfWork _uow;
+        public CategoryController(IUnitOfWork uow)
         {
             //this._cateservice = cateservice;
+            _uow = uow;
         }
         //
         // GET: /Category/
 
         public ActionResult Index()
         {
-            return View();
+            return View(_uow.Repository<Category, int>().GetAll().ToList());
         }
 
         //
@@ -50,7 +54,9 @@ namespace MVC_DI_IOC.Web.Controllers
             try
             {
                 // TODO: Add insert logic here
-                
+                _uow.BeginTransaction();
+                _uow.Repository<Category, int>().Insert(cate);
+                _uow.Commit();
                 return RedirectToAction("Index");
             }
             catch

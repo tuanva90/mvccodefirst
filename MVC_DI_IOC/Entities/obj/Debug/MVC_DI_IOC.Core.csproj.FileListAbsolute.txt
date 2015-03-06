@@ -3,3 +3,8 @@ C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\MVC_DI_IOC\Entities\bi
 C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\MVC_DI_IOC\Entities\bin\MVC_DI_IOC.Core.pdb
 C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\MVC_DI_IOC\Entities\obj\Debug\MVC_DI_IOC.Core.dll
 C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\MVC_DI_IOC\Entities\obj\Debug\MVC_DI_IOC.Core.pdb
+C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\Entities\bin\MVC_DI_IOC.Core.dll.config
+C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\Entities\bin\MVC_DI_IOC.Core.dll
+C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\Entities\bin\MVC_DI_IOC.Core.pdb
+C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\Entities\obj\Debug\MVC_DI_IOC.Core.dll
+C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\Entities\obj\Debug\MVC_DI_IOC.Core.pdb

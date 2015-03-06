@@ -8,10 +8,16 @@ using System.Web;
 
 namespace MVC_DI_IOC.Data
 {
-    public abstract class RepositoryBase<TEntity, TPrimaryKey> : IRepository<TEntity, TPrimaryKey> where TEntity : Entity<TPrimaryKey>
+    public class RepositoryBase<TEntity, TPrimaryKey> : IRepository<TEntity, TPrimaryKey> where TEntity : Entity<TPrimaryKey>
     {
         private readonly NorthWNDContext _context;
         private readonly IDbSet<TEntity> dbSet;
+
+        public RepositoryBase(NorthWNDContext context)
+        {
+            this._context = context;
+            dbSet = this._context.Set<TEntity>();
+        }
 
         public IQueryable<TEntity> GetAll()
         {

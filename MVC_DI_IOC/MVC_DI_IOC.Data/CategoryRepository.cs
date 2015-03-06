@@ -7,8 +7,8 @@ using System.Web;
 
 namespace MVC_DI_IOC.Data
 {
-    public class CategoryRepository : RepositoryBase<Category, int>, ICategoryRepository
-    {
+//    public class CategoryRepository : RepositoryBase<Category, int>, ICategoryRepository
+//    {
 
-    }
+//    }
 }

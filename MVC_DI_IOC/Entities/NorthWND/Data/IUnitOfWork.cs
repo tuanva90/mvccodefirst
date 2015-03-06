@@ -9,6 +9,7 @@ namespace MVC_DI_IOC.Core.NorthWND.Data
 {
     public interface IUnitOfWork
     {
+        IRepository<TEntity, TPrimaryKey> Repository<TEntity, TPrimaryKey>() where TEntity : Entity<TPrimaryKey>;
         //IRepository<Category, int> CategoryRepository { get; }
         
         // Opens database connection and begins transaction.

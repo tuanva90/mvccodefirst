@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using MVC_DI_IOC.Core.NorthWND.Services;
 using MVC_DI_IOC.Data;
 using MVC_DI_IOC.Core.NorthWND.Data.Entities;
 using MVC_DI_IOC.Core;
 using System.IO;
-using MVC_DI_IOC.Core.NorthWND.Services.Implement;
 using MVC_DI_IOC.Core.NorthWND.Data;
 
 namespace MVC_DI_IOC.Web.Controllers

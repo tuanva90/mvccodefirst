@@ -36,7 +36,8 @@ C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\MVC_DI_IOC\MVC_DI_IOC.
 C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\MVC_DI_IOC\MVC_DI_IOC.Dependency\obj\Debug\MVC_DI_IOC.Dependency.csprojResolveAssemblyReference.cache
 C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\MVC_DI_IOC\MVC_DI_IOC.Dependency\obj\Debug\MVC_DI_IOC.Dependency.exe
 C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\MVC_DI_IOC\MVC_DI_IOC.Dependency\obj\Debug\MVC_DI_IOC.Dependency.pdb
-C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC.Dependency\obj\Debug\MVC_DI_IOC.Dependency.csprojResolveAssemblyReference.cache
+C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC.Dependency\bin\Debug\MVC_DI_IOC.Dependency.dll.config
+C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC.Dependency\bin\Debug\MVC_DI_IOC.Dependency.dll
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC.Dependency\bin\Debug\MVC_DI_IOC.Dependency.pdb
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC.Dependency\bin\Debug\Microsoft.Practices.ServiceLocation.dll
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC.Dependency\bin\Debug\Microsoft.Practices.Unity.Configuration.dll
@@ -69,7 +70,6 @@ C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC.Dependency\bin\De
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC.Dependency\bin\Debug\System.Web.WebPages.Deployment.xml
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC.Dependency\bin\Debug\System.Web.WebPages.Razor.xml
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC.Dependency\bin\Debug\EntityFramework.xml
-C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC.Dependency\obj\Debug\MVC_DI_IOC.Dependency.pdb
-C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC.Dependency\bin\Debug\MVC_DI_IOC.Dependency.dll.config
-C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC.Dependency\bin\Debug\MVC_DI_IOC.Dependency.dll
+C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC.Dependency\obj\Debug\MVC_DI_IOC.Dependency.csprojResolveAssemblyReference.cache
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC.Dependency\obj\Debug\MVC_DI_IOC.Dependency.dll
+C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC.Dependency\obj\Debug\MVC_DI_IOC.Dependency.pdb

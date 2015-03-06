@@ -99,7 +99,6 @@ C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\MVC_DI_IOC\MVC_DI_IOC\
 C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\MVC_DI_IOC\MVC_DI_IOC\bin\zh-Hant\System.Spatial.resources.dll
 C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\MVC_DI_IOC\MVC_DI_IOC\obj\Debug\MVC_DI_IOC.dll
 C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\MVC_DI_IOC\MVC_DI_IOC\obj\Debug\MVC_DI_IOC.pdb
-C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC\obj\Debug\MVC_DI_IOC.Web.csprojResolveAssemblyReference.cache
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC\bin\MVC_DI_IOC.dll.config
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC\bin\MVC_DI_IOC.dll
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC\bin\MVC_DI_IOC.pdb
@@ -122,6 +121,7 @@ C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC\bin\Microsoft.Web
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC\bin\Microsoft.Web.WebPages.OAuth.dll
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC\bin\MVC_DI_IOC.Core.dll
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC\bin\MVC_DI_IOC.Data.dll
+C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC\bin\MVC_DI_IOC.Dependency.dll
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC\bin\Newtonsoft.Json.dll
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC\bin\System.Net.Http.Formatting.dll
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC\bin\System.Spatial.dll
@@ -135,10 +135,10 @@ C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC\bin\System.Web.Ra
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC\bin\System.Web.WebPages.Deployment.dll
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC\bin\System.Web.WebPages.dll
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC\bin\System.Web.WebPages.Razor.dll
-C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC\bin\Unity.Mvc4.dll
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC\bin\WebGrease.dll
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC\bin\WebMatrix.Data.dll
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC\bin\WebMatrix.WebData.dll
+C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC\bin\Unity.Mvc4.dll
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC\bin\MVC_DI_IOC.Core.pdb
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC\bin\MVC_DI_IOC.Data.pdb
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC\bin\MVC_DI_IOC.Dependency.pdb
@@ -198,6 +198,6 @@ C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC\bin\ko\System.Spa
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC\bin\ru\System.Spatial.resources.dll
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC\bin\zh-Hans\System.Spatial.resources.dll
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC\bin\zh-Hant\System.Spatial.resources.dll
+C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC\obj\Debug\MVC_DI_IOC.Web.csprojResolveAssemblyReference.cache
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC\obj\Debug\MVC_DI_IOC.dll
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC\obj\Debug\MVC_DI_IOC.pdb
-C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC\bin\MVC_DI_IOC.Dependency.dll

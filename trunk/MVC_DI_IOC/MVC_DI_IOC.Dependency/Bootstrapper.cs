@@ -1,8 +1,6 @@
 using System.Web.Mvc;
 using Microsoft.Practices.Unity;
 using Unity.Mvc4;
-using MVC_DI_IOC.Core.NorthWND.Services;
-using MVC_DI_IOC.Core.NorthWND.Services.Implement;
 using MVC_DI_IOC.Core.NorthWND.Data.Repositories;
 using MVC_DI_IOC.Core.NorthWND.Data;
 

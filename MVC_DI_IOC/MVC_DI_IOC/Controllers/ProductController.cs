@@ -5,12 +5,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PagedList;
+
 
 namespace MVC_DI_IOC.Web.Controllers
 {
     public class ProductController : Controller
     {
         private IUnitOfWork _uow;
+        private static int pageSize = 3;
+        private static int iRetry = 0;
         public ProductController(IUnitOfWork uow)
         {
             this._uow = uow;
@@ -18,8 +22,11 @@ namespace MVC_DI_IOC.Web.Controllers
         //
         // GET: /Product/
 
-        public ActionResult Index()
+        public ActionResult Index(int? page=1, int? cateid = 0)
         {
+            List<Category> lscate = new List<Category>();
+            //var all = new Category { CategoryID = 0, CategoryName = "All", Description = "Load all category" };
+            //lscate.Add(all);
             var listpro = _uow.Repository<Product, int>().GetAll().ToList();
             return View(listpro);
         }

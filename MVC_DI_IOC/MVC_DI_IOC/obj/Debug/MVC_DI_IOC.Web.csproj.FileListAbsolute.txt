@@ -123,6 +123,8 @@ C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC\bin\MVC_DI_IOC.Co
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC\bin\MVC_DI_IOC.Data.dll
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC\bin\MVC_DI_IOC.Dependency.dll
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC\bin\Newtonsoft.Json.dll
+C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC\bin\PagedList.dll
+C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC\bin\PagedList.Mvc.dll
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC\bin\System.Net.Http.Formatting.dll
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC\bin\System.Spatial.dll
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC\bin\System.Web.Helpers.dll
@@ -148,6 +150,8 @@ C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC\bin\Microsoft.Pra
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC\bin\Microsoft.Practices.ServiceLocation.xml
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC\bin\Microsoft.Practices.Unity.xml
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC\bin\Microsoft.Practices.Unity.Configuration.xml
+C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC\bin\PagedList.xml
+C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC\bin\PagedList.Mvc.xml
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC\bin\Newtonsoft.Json.xml
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC\bin\System.Net.Http.Formatting.xml
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC\bin\System.Web.Helpers.xml

@@ -7,7 +7,7 @@ namespace MVC_DI_IOC.Core.NorthWND.Data.Entities
 {
     public class Customer : Entity<int>
     {
-        public virtual int CustomerID { get; set; }
+        //public virtual int CustomerID { get; set; }
         public virtual string ContactName { get; set; }
         public virtual string ContactTitle { get; set; }
         public virtual string Address { get; set; }
@@ -17,5 +17,7 @@ namespace MVC_DI_IOC.Core.NorthWND.Data.Entities
         public virtual string Country { get; set; }
         public virtual string Phone { get; set; }
         public virtual string Fax { get; set; }
+        public virtual User User { get; set; }
+        public virtual ICollection<Order> Orders { get; set; }
     }
 }

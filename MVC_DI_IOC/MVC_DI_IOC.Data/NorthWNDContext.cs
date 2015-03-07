@@ -23,6 +23,11 @@ namespace MVC_DI_IOC.Data
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.Configurations.Add(new CategoryMapping());
+            modelBuilder.Configurations.Add(new ProductMapping());
+            modelBuilder.Configurations.Add(new CustomerMapping());
+            modelBuilder.Configurations.Add(new UserMapping());
+            modelBuilder.Configurations.Add(new OrderMapping());
+            modelBuilder.Configurations.Add(new OrderDetailMapping());
         }
     }
 }

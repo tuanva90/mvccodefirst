@@ -21,3 +21,15 @@ C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\Test\bin\Debug\EntityFramewo
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\Test\obj\Debug\Test.exe
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\Test\obj\Debug\Test.pdb
+C:\Users\nguyenminhtuan\Desktop\mvccodefirst\MVC_DI_IOC\Test\bin\Debug\Test.exe.config
+C:\Users\nguyenminhtuan\Desktop\mvccodefirst\MVC_DI_IOC\Test\bin\Debug\Test.exe
+C:\Users\nguyenminhtuan\Desktop\mvccodefirst\MVC_DI_IOC\Test\bin\Debug\Test.pdb
+C:\Users\nguyenminhtuan\Desktop\mvccodefirst\MVC_DI_IOC\Test\bin\Debug\MVC_DI_IOC.Core.dll
+C:\Users\nguyenminhtuan\Desktop\mvccodefirst\MVC_DI_IOC\Test\bin\Debug\MVC_DI_IOC.Data.dll
+C:\Users\nguyenminhtuan\Desktop\mvccodefirst\MVC_DI_IOC\Test\bin\Debug\EntityFramework.dll
+C:\Users\nguyenminhtuan\Desktop\mvccodefirst\MVC_DI_IOC\Test\bin\Debug\MVC_DI_IOC.Core.pdb
+C:\Users\nguyenminhtuan\Desktop\mvccodefirst\MVC_DI_IOC\Test\bin\Debug\MVC_DI_IOC.Data.pdb
+C:\Users\nguyenminhtuan\Desktop\mvccodefirst\MVC_DI_IOC\Test\bin\Debug\EntityFramework.xml
+C:\Users\nguyenminhtuan\Desktop\mvccodefirst\MVC_DI_IOC\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
+C:\Users\nguyenminhtuan\Desktop\mvccodefirst\MVC_DI_IOC\Test\obj\Debug\Test.exe
+C:\Users\nguyenminhtuan\Desktop\mvccodefirst\MVC_DI_IOC\Test\obj\Debug\Test.pdb

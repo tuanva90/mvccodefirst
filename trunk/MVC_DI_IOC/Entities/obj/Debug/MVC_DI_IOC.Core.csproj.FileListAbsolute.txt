@@ -9,3 +9,9 @@ C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\Entities\bin\MVC_DI_IOC.Core
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\Entities\obj\Debug\MVC_DI_IOC.Core.csprojResolveAssemblyReference.cache
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\Entities\obj\Debug\MVC_DI_IOC.Core.dll
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\Entities\obj\Debug\MVC_DI_IOC.Core.pdb
+C:\Users\nguyenminhtuan\Desktop\mvccodefirst\MVC_DI_IOC\Entities\bin\MVC_DI_IOC.Core.dll.config
+C:\Users\nguyenminhtuan\Desktop\mvccodefirst\MVC_DI_IOC\Entities\bin\MVC_DI_IOC.Core.dll
+C:\Users\nguyenminhtuan\Desktop\mvccodefirst\MVC_DI_IOC\Entities\bin\MVC_DI_IOC.Core.pdb
+C:\Users\nguyenminhtuan\Desktop\mvccodefirst\MVC_DI_IOC\Entities\obj\Debug\MVC_DI_IOC.Core.csprojResolveAssemblyReference.cache
+C:\Users\nguyenminhtuan\Desktop\mvccodefirst\MVC_DI_IOC\Entities\obj\Debug\MVC_DI_IOC.Core.dll
+C:\Users\nguyenminhtuan\Desktop\mvccodefirst\MVC_DI_IOC\Entities\obj\Debug\MVC_DI_IOC.Core.pdb

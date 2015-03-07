@@ -7,7 +7,7 @@ namespace MVC_DI_IOC.Core.NorthWND.Data.Entities
 {
     public class Order :Entity<int>
     {
-        public virtual int OrderID { get; set; }
+        //public virtual int OrderID { get; set; }
         public virtual int CustomerID { get; set; }
         public virtual DateTime OrderDate { get; set; }
         public virtual DateTime RequireDate { get; set; }
@@ -20,5 +20,7 @@ namespace MVC_DI_IOC.Core.NorthWND.Data.Entities
         public virtual string ShipRegion { get; set; }
         public virtual string ShipPostalCode { get; set; }
         public virtual string ShipCountry { get; set; }
+        public virtual Customer Customer { get; set; }
+        public virtual ICollection<OrderDetail> OrderDetails { get; set; }
     }
 }

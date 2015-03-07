@@ -7,7 +7,7 @@ namespace MVC_DI_IOC.Core.NorthWND.Data.Entities
 {
     public class Product : Entity<int>
     {
-        public virtual int ProductID { get; set; }
+        //public virtual int ProductID { get; set; }
         public virtual int CategoryID { get; set; }
         public virtual string ProductName { get; set; }
         public virtual string QuantityPerUnit { get; set; }
@@ -17,5 +17,7 @@ namespace MVC_DI_IOC.Core.NorthWND.Data.Entities
         public virtual int ReorderLevel { get; set; }
         public virtual bool Discontinued { get; set; }
         public virtual int Quantity { get; set; }
+        public virtual Category Category { get; set; }
+        public virtual ICollection<OrderDetail> OrderDetails { get; set; }
     }
 }

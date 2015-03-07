@@ -14,8 +14,8 @@ namespace MVC_DI_IOC.Data.Mapping
     {
         public CategoryMapping()
         {
-            HasKey(cate => cate.CategoryID);
-            Property(cate => cate.CategoryID).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+            HasKey(cate => cate.ID);
+            Property(cate => cate.ID).HasColumnName("CategoryID").HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             Property(cate => cate.CategoryName).IsRequired().HasMaxLength(50);
             Property(cate => cate.Description).IsRequired().HasMaxLength(50);
             Property(cate => cate.Picture);
@@ -26,9 +26,10 @@ namespace MVC_DI_IOC.Data.Mapping
     {
         public ProductMapping()
         {
-            HasKey(pro => pro.ProductID);
-            Property(pro => pro.ProductName).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
-            Property(pro => pro.CategoryID).IsRequired();
+            HasKey(pro => pro.ID).HasRequired(c=>c.Category).WithMany(s=>s.Products).HasForeignKey(s=>s.CategoryID);
+            Property(pro => pro.ID).HasColumnName("ProductID").HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+            Property(pro => pro.ProductName).IsRequired();
+            
             Property(pro => pro.QuantityPerUnit).IsRequired();
             Property(pro => pro.UnitPrice).IsRequired();
             Property(pro => pro.UnitsInStock).IsRequired();
@@ -42,8 +43,8 @@ namespace MVC_DI_IOC.Data.Mapping
     {
         public CustomerMapping()
         {
-            HasKey(c => c.CustomerID);
-            Property(c => c.CustomerID).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+            HasKey(c => c.ID).HasRequired(u => u.User).WithOptional(c => c.Customer);
+            Property(c => c.ID).HasColumnName("CustomerID").HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             Property(c => c.ContactName).IsRequired();
             Property(c => c.ContactTitle).IsRequired();
             Property(c => c.Address).IsRequired();
@@ -60,8 +61,8 @@ namespace MVC_DI_IOC.Data.Mapping
     {
         public UserMapping()
         {
-            HasKey(u => u.CustomerID);
-            Property(u => u.CustomerID).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+            HasKey(u => u.ID);
+            Property(u => u.ID).HasColumnName("CustomerID").HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             Property(u => u.UserName).IsRequired();
             Property(u => u.PassWord).IsRequired();
             Property(u => u.Role).IsRequired();
@@ -73,9 +74,8 @@ namespace MVC_DI_IOC.Data.Mapping
     {
         public OrderMapping()
         {
-            HasKey(o => o.OrderID);
-            Property(o => o.OrderID).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
-            Property(o => o.CustomerID).IsRequired();
+            HasKey(o => o.ID).HasRequired(c => c.Customer).WithMany(o => o.Orders).HasForeignKey(c => c.CustomerID);
+            Property(o => o.ID).HasColumnName("OrderID").HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             Property(o => o.OrderDate).IsRequired();
             Property(o => o.RequireDate).IsRequired();
             Property(o => o.ShippedDate).IsRequired();
@@ -87,7 +87,6 @@ namespace MVC_DI_IOC.Data.Mapping
             Property(o => o.ShipCountry).IsRequired();
             Property(o => o.ShipPostalCode).IsRequired();
             Property(o => o.ShipName).IsRequired();
-            //Property(o => o.).IsRequired();
             ToTable("Order");
         }
     }
@@ -96,8 +95,10 @@ namespace MVC_DI_IOC.Data.Mapping
     {
         public OrderDetailMapping()
         {
-            HasKey(od => od.OrderID);
-            HasKey(od => od.ProductID);
+            HasKey(od => od.ID).HasRequired(o => o.Order).WithMany(od => od.OrderDetails);
+            Property(od => od.ID).HasColumnName("OrderID");
+            HasKey(od => od.ProductID).HasRequired(p => p.Product).WithMany(od => od.OrderDetails);
+            Property(od => od.ProductID);
             Property(od => od.Quantity).IsRequired();
             Property(od => od.UnitPrice).IsRequired();
             Property(od => od.Discount);

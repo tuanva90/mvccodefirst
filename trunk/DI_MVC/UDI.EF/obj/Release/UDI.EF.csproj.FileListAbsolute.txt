@@ -1,0 +1,30 @@
+E:\Work\B\SVN\MVC\DI\UDI.EF\obj\Release\UDI.EF.csprojResolveAssemblyReference.cache
+E:\Work\B\SVN\MVC\DI\UDI.EF\bin\Release\UDI.EF.dll.config
+E:\Work\B\SVN\MVC\DI\UDI.EF\bin\Release\UDI.EF.dll
+E:\Work\B\SVN\MVC\DI\UDI.EF\bin\Release\UDI.EF.pdb
+E:\Work\B\SVN\MVC\DI\UDI.EF\bin\Release\EntityFramework.dll
+E:\Work\B\SVN\MVC\DI\UDI.EF\bin\Release\UDI.CORE.dll
+E:\Work\B\SVN\MVC\DI\UDI.EF\bin\Release\UDI.CORE.pdb
+E:\Work\B\SVN\MVC\DI\UDI.EF\bin\Release\EntityFramework.xml
+E:\Work\B\SVN\MVC\DI\UDI.EF\obj\Release\UDI.EF.dll
+E:\Work\B\SVN\MVC\DI\UDI.EF\obj\Release\UDI.EF.pdb
+E:\Data\Google Drive\TMA\EMEA\DI\UDI.EF\bin\Release\UDI.EF.dll.config
+E:\Data\Google Drive\TMA\EMEA\DI\UDI.EF\bin\Release\UDI.EF.dll
+E:\Data\Google Drive\TMA\EMEA\DI\UDI.EF\bin\Release\UDI.EF.pdb
+E:\Data\Google Drive\TMA\EMEA\DI\UDI.EF\bin\Release\EntityFramework.dll
+E:\Data\Google Drive\TMA\EMEA\DI\UDI.EF\bin\Release\UDI.CORE.dll
+E:\Data\Google Drive\TMA\EMEA\DI\UDI.EF\bin\Release\UDI.CORE.pdb
+E:\Data\Google Drive\TMA\EMEA\DI\UDI.EF\bin\Release\EntityFramework.xml
+E:\Data\Google Drive\TMA\EMEA\DI\UDI.EF\obj\Release\UDI.EF.csprojResolveAssemblyReference.cache
+E:\Data\Google Drive\TMA\EMEA\DI\UDI.EF\obj\Release\UDI.EF.dll
+E:\Data\Google Drive\TMA\EMEA\DI\UDI.EF\obj\Release\UDI.EF.pdb
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\UDI.EF\bin\Release\UDI.EF.dll.config
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\UDI.EF\bin\Release\UDI.EF.dll
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\UDI.EF\bin\Release\UDI.EF.pdb
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\UDI.EF\bin\Release\EntityFramework.dll
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\UDI.EF\bin\Release\UDI.CORE.dll
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\UDI.EF\bin\Release\UDI.CORE.pdb
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\UDI.EF\bin\Release\EntityFramework.xml
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\UDI.EF\obj\Release\UDI.EF.csprojResolveAssemblyReference.cache
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\UDI.EF\obj\Release\UDI.EF.dll
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\UDI.EF\obj\Release\UDI.EF.pdb

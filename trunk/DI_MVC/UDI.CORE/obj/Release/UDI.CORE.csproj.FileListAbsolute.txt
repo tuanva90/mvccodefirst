@@ -1,0 +1,23 @@
+E:\Work\B\SVN\MVC\DI\UDI.CORE\bin\Release\UDI.CORE.dll.config
+E:\Work\B\SVN\MVC\DI\UDI.CORE\bin\Release\UDI.CORE.dll
+E:\Work\B\SVN\MVC\DI\UDI.CORE\bin\Release\UDI.CORE.pdb
+E:\Work\B\SVN\MVC\DI\UDI.CORE\bin\Release\EntityFramework.dll
+E:\Work\B\SVN\MVC\DI\UDI.CORE\bin\Release\EntityFramework.xml
+E:\Work\B\SVN\MVC\DI\UDI.CORE\obj\Release\UDI.CORE.dll
+E:\Work\B\SVN\MVC\DI\UDI.CORE\obj\Release\UDI.CORE.pdb
+E:\Work\B\SVN\MVC\DI\UDI.CORE\obj\Release\UDI.CORE.csprojResolveAssemblyReference.cache
+E:\Data\Google Drive\TMA\EMEA\DI\UDI.CORE\bin\Release\UDI.CORE.dll.config
+E:\Data\Google Drive\TMA\EMEA\DI\UDI.CORE\bin\Release\UDI.CORE.dll
+E:\Data\Google Drive\TMA\EMEA\DI\UDI.CORE\bin\Release\UDI.CORE.pdb
+E:\Data\Google Drive\TMA\EMEA\DI\UDI.CORE\bin\Release\EntityFramework.dll
+E:\Data\Google Drive\TMA\EMEA\DI\UDI.CORE\bin\Release\EntityFramework.xml
+E:\Data\Google Drive\TMA\EMEA\DI\UDI.CORE\obj\Release\UDI.CORE.csprojResolveAssemblyReference.cache
+E:\Data\Google Drive\TMA\EMEA\DI\UDI.CORE\obj\Release\UDI.CORE.dll
+E:\Data\Google Drive\TMA\EMEA\DI\UDI.CORE\obj\Release\UDI.CORE.pdb
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\UDI.CORE\bin\Release\UDI.CORE.dll.config
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\UDI.CORE\bin\Release\UDI.CORE.dll
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\UDI.CORE\bin\Release\UDI.CORE.pdb
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\UDI.CORE\bin\Release\EntityFramework.dll
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\UDI.CORE\bin\Release\EntityFramework.xml
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\UDI.CORE\obj\Release\UDI.CORE.dll
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\UDI.CORE\obj\Release\UDI.CORE.pdb

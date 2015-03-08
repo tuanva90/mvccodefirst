@@ -1,0 +1,56 @@
+﻿@model UDI.CORE.Entities.Product
+
+<h2>Details</h2>
+<h4>Product</h4>
+
+    <table id="tblpro" width="500" border="1" align="left">
+        <tr>
+            <td colspan="2" id="prid">@Html.HiddenFor(model => model.ProductID)</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(model => model.ProductName)</td>
+            <td>@Html.DisplayFor(model => model.ProductName)</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(model => model.Category.CategoryName)</td>
+            <td>@Html.DisplayFor(model => model.Category.CategoryName)</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(model => model.QuantityPerUnit)</td>
+            <td>@Html.DisplayFor(model => model.QuantityPerUnit)</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(model => model.UnitPrice)</td>
+            <td>@Html.DisplayFor(model => model.UnitPrice)</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(model => model.UnitsInStock)</td>
+            <td>@Html.DisplayFor(model => model.UnitsInStock)</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(model => model.UnitsOnOrder)</td>
+            <td>@Html.DisplayFor(model => model.UnitsOnOrder)</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(model => model.ReorderLevel)</td>
+            <td>@Html.DisplayFor(model => model.ReorderLevel)</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(model => model.Discontinued)</td>
+            <td>@Html.DisplayFor(model => model.Discontinued)</td>
+        </tr>
+    </table>
+    <div style="text-align:left">
+        @*@Html.TextBoxFor(model => model.Quantity, new { @placeholder = "quantity"})
+        @Html.ValidationMessageFor(model => model.Quantity)*@
+        <input type="text" name="txtquantity" id="txtquantity" placeholder="quantity"/>
+        <input type="button" value="Add to cart" id="btnOrder" onclick="@(Html.Raw(String.Format("javascript: addToCart({0}, {1})",
+           Model.ProductID,
+           Model.Quantity
+       )))" />
+        @*<input type="button" value="Close" id="btnClose" />*@
+    </div>
+
+
+
+

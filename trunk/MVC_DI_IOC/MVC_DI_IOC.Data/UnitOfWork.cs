@@ -43,9 +43,9 @@ namespace MVC_DI_IOC.Data
             {
                 this._transaction = _objectContext.Connection.BeginTransaction();
             }
-            catch(Exception)
+            catch(Exception ex)
             {
-                throw;
+                throw ex;
             }
         }
 

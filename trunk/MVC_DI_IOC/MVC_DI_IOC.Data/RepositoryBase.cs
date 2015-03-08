@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Web;
 
 namespace MVC_DI_IOC.Data
@@ -23,12 +24,19 @@ namespace MVC_DI_IOC.Data
         {
             return _context.Set<TEntity>();
         }
+        public IQueryable<TEntity> GetAll(Expression<Func<TEntity, bool>> predicate = null)
+        {
+            if (predicate != null)
+            {
+                return dbSet.Where(predicate);
+            }
 
+            return dbSet.AsQueryable();
+        }
         public TEntity Get(TPrimaryKey key)
         {
             return dbSet.Find(key);
         }
-
         public void Insert(TEntity entity)
         {
             dbSet.Add(entity);

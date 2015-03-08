@@ -21,6 +21,19 @@ C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC.Data\bin\EntityFr
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC.Data\obj\Debug\MVC_DI_IOC.Data.csprojResolveAssemblyReference.cache
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC.Data\obj\Debug\MVC_DI_IOC.Data.dll
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC.Data\obj\Debug\MVC_DI_IOC.Data.pdb
+<<<<<<< .mine
+C:\Users\HoaiPhong\Desktop\my repo\MVC_DI_IOC\MVC_DI_IOC.Data\bin\MVC_DI_IOC.Data.dll
+C:\Users\HoaiPhong\Desktop\my repo\MVC_DI_IOC\MVC_DI_IOC.Data\bin\MVC_DI_IOC.Data.pdb
+C:\Users\HoaiPhong\Desktop\my repo\MVC_DI_IOC\MVC_DI_IOC.Data\bin\EntityFramework.dll
+C:\Users\HoaiPhong\Desktop\my repo\MVC_DI_IOC\MVC_DI_IOC.Data\bin\EntityFramework.SqlServer.dll
+C:\Users\HoaiPhong\Desktop\my repo\MVC_DI_IOC\MVC_DI_IOC.Data\bin\MVC_DI_IOC.Core.dll
+C:\Users\HoaiPhong\Desktop\my repo\MVC_DI_IOC\MVC_DI_IOC.Data\bin\MVC_DI_IOC.Core.pdb
+C:\Users\HoaiPhong\Desktop\my repo\MVC_DI_IOC\MVC_DI_IOC.Data\bin\EntityFramework.xml
+C:\Users\HoaiPhong\Desktop\my repo\MVC_DI_IOC\MVC_DI_IOC.Data\bin\EntityFramework.SqlServer.xml
+C:\Users\HoaiPhong\Desktop\my repo\MVC_DI_IOC\MVC_DI_IOC.Data\obj\Debug\MVC_DI_IOC.Data.csprojResolveAssemblyReference.cache
+C:\Users\HoaiPhong\Desktop\my repo\MVC_DI_IOC\MVC_DI_IOC.Data\obj\Debug\MVC_DI_IOC.Data.dll
+C:\Users\HoaiPhong\Desktop\my repo\MVC_DI_IOC\MVC_DI_IOC.Data\obj\Debug\MVC_DI_IOC.Data.pdb
+=======
 C:\Users\nguyenminhtuan\Desktop\mvccodefirst\MVC_DI_IOC\MVC_DI_IOC.Data\bin\MVC_DI_IOC.Data.dll.config
 C:\Users\nguyenminhtuan\Desktop\mvccodefirst\MVC_DI_IOC\MVC_DI_IOC.Data\bin\MVC_DI_IOC.Data.dll
 C:\Users\nguyenminhtuan\Desktop\mvccodefirst\MVC_DI_IOC\MVC_DI_IOC.Data\bin\MVC_DI_IOC.Data.pdb
@@ -33,3 +46,4 @@ C:\Users\nguyenminhtuan\Desktop\mvccodefirst\MVC_DI_IOC\MVC_DI_IOC.Data\bin\Enti
 C:\Users\nguyenminhtuan\Desktop\mvccodefirst\MVC_DI_IOC\MVC_DI_IOC.Data\obj\Debug\MVC_DI_IOC.Data.csprojResolveAssemblyReference.cache
 C:\Users\nguyenminhtuan\Desktop\mvccodefirst\MVC_DI_IOC\MVC_DI_IOC.Data\obj\Debug\MVC_DI_IOC.Data.dll
 C:\Users\nguyenminhtuan\Desktop\mvccodefirst\MVC_DI_IOC\MVC_DI_IOC.Data\obj\Debug\MVC_DI_IOC.Data.pdb
+>>>>>>> .r41

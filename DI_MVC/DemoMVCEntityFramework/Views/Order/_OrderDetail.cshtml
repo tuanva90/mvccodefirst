@@ -1,0 +1,40 @@
+﻿@model IEnumerable<UDI.CORE.Entities.OrderDetail>
+@using PagedList.Mvc;
+
+<form>
+    @if (Model != null && Model.Count() > 0)
+    {
+        <link href="~/Content/PagedList.css" rel="stylesheet" />
+        <table data-role="table" border="0" cellpadding="10" cellspacing="5">
+            <thead>
+            <th style="display:none"></th>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            </thead>
+            @foreach (var item in Model)
+            {
+                <tr id="item_@item.ProductID">
+                    <td style="display:none">
+                        @Html.HiddenFor(modelItem => item.ProductID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Product.ProductName)
+                    </td>
+                    <td align="center">
+                        @Html.DisplayFor(modelItem => item.Quanlity)
+                    </td>
+                    <td align="center">
+                        @Html.DisplayFor(modelItem => item.UnitPrice)
+                    </td>
+                </tr>
+            }
+        </table>
+        <br />
+    }
+    else
+    {
+        <div>Current cart has no item...</div>
+    }
+    
+</form>

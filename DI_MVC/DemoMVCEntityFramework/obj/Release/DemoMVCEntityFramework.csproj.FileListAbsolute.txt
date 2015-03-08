@@ -1,0 +1,387 @@
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\DemoMVCEntityFramework.dll
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\DemoMVCEntityFramework.pdb
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\Antlr3.Runtime.dll
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\DotNetOpenAuth.AspNet.dll
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\DotNetOpenAuth.Core.dll
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\DotNetOpenAuth.OAuth.Consumer.dll
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\DotNetOpenAuth.OAuth.dll
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\DotNetOpenAuth.OpenId.dll
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\EntityFramework.dll
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\jquery.mobile.mvc.dll
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\Microsoft.Data.Edm.dll
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\Microsoft.Data.OData.dll
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\Microsoft.Web.Infrastructure.dll
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\Microsoft.Web.WebPages.OAuth.dll
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\Newtonsoft.Json.dll
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\PagedList.dll
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\PagedList.Mvc.dll
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\System.Net.Http.Formatting.dll
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\System.Spatial.dll
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\System.Web.Helpers.dll
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\System.Web.Http.dll
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\System.Web.Http.OData.dll
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\System.Web.Http.WebHost.dll
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\System.Web.Mvc.dll
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\System.Web.Optimization.dll
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\System.Web.Razor.dll
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\System.Web.WebPages.Deployment.dll
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\System.Web.WebPages.dll
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\System.Web.WebPages.Razor.dll
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\WebGrease.dll
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\WebMatrix.Data.dll
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\WebMatrix.WebData.dll
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\PagedList.xml
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\PagedList.Mvc.xml
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\EntityFramework.xml
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\Newtonsoft.Json.xml
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\System.Net.Http.Formatting.xml
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\System.Web.Helpers.xml
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\System.Web.Http.xml
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\System.Web.Http.WebHost.xml
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\System.Web.Mvc.xml
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\System.Web.Razor.xml
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\System.Web.WebPages.xml
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\System.Web.WebPages.Deployment.xml
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\System.Web.WebPages.Razor.xml
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\WebMatrix.Data.xml
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\Microsoft.Web.WebPages.OAuth.xml
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\WebMatrix.WebData.xml
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\DotNetOpenAuth.AspNet.xml
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\DotNetOpenAuth.Core.xml
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\DotNetOpenAuth.OAuth.Consumer.xml
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\DotNetOpenAuth.OAuth.xml
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\DotNetOpenAuth.OpenId.xml
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\System.Web.Http.OData.xml
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\Microsoft.Data.Edm.xml
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\Microsoft.Data.OData.xml
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\System.Spatial.xml
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\de\Microsoft.Data.Edm.resources.dll
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\es\Microsoft.Data.Edm.resources.dll
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\fr\Microsoft.Data.Edm.resources.dll
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\it\Microsoft.Data.Edm.resources.dll
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\ja\Microsoft.Data.Edm.resources.dll
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\ko\Microsoft.Data.Edm.resources.dll
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\ru\Microsoft.Data.Edm.resources.dll
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\de\Microsoft.Data.OData.resources.dll
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\es\Microsoft.Data.OData.resources.dll
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\fr\Microsoft.Data.OData.resources.dll
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\it\Microsoft.Data.OData.resources.dll
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\ja\Microsoft.Data.OData.resources.dll
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\ko\Microsoft.Data.OData.resources.dll
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\ru\Microsoft.Data.OData.resources.dll
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\de\System.Spatial.resources.dll
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\es\System.Spatial.resources.dll
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\fr\System.Spatial.resources.dll
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\it\System.Spatial.resources.dll
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\ja\System.Spatial.resources.dll
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\ko\System.Spatial.resources.dll
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\ru\System.Spatial.resources.dll
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\zh-Hans\System.Spatial.resources.dll
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\bin\zh-Hant\System.Spatial.resources.dll
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\obj\Release\DemoMVCEntityFramework.Migrations.InitialCreate.resources
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\obj\Release\DemoMVCEntityFramework.csproj.GenerateResource.Cache
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\obj\Release\DemoMVCEntityFramework.dll
+E:\Work\B\SVN\MVC\MVCCodeFirst\DemoMVCEntityFramework\obj\Release\DemoMVCEntityFramework.pdb
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\obj\Release\DemoMVCEntityFramework.csprojResolveAssemblyReference.cache
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\obj\Release\DemoMVCEntityFramework.Migrations.InitialCreate.resources
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\obj\Release\DemoMVCEntityFramework.csproj.GenerateResource.Cache
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\obj\Release\DemoMVCEntityFramework.dll
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\obj\Release\DemoMVCEntityFramework.pdb
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\DemoMVCEntityFramework.dll
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\DemoMVCEntityFramework.pdb
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\Antlr3.Runtime.dll
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\DotNetOpenAuth.AspNet.dll
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\DotNetOpenAuth.Core.dll
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\DotNetOpenAuth.OAuth.Consumer.dll
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\DotNetOpenAuth.OAuth.dll
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\DotNetOpenAuth.OpenId.dll
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\EntityFramework.dll
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\jquery.mobile.mvc.dll
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\Microsoft.Data.Edm.dll
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\Microsoft.Data.OData.dll
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\Microsoft.Web.Infrastructure.dll
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\Microsoft.Web.WebPages.OAuth.dll
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\Newtonsoft.Json.dll
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\PagedList.dll
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\PagedList.Mvc.dll
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\System.Net.Http.Formatting.dll
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\System.Spatial.dll
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\System.Web.Helpers.dll
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\System.Web.Http.dll
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\System.Web.Http.OData.dll
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\System.Web.Http.WebHost.dll
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\System.Web.Mvc.dll
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\System.Web.Optimization.dll
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\System.Web.Razor.dll
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\System.Web.WebPages.Deployment.dll
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\System.Web.WebPages.dll
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\System.Web.WebPages.Razor.dll
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\UDI.CORE.dll
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\UDI.EF.dll
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\UDI.UnityDependency.dll
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\WebGrease.dll
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\WebMatrix.Data.dll
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\WebMatrix.WebData.dll
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\UDI.CORE.pdb
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\UDI.EF.pdb
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\UDI.UnityDependency.pdb
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\PagedList.xml
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\PagedList.Mvc.xml
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\EntityFramework.xml
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\Newtonsoft.Json.xml
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\System.Net.Http.Formatting.xml
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\System.Web.Helpers.xml
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\System.Web.Http.xml
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\System.Web.Http.WebHost.xml
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\System.Web.Mvc.xml
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\System.Web.Razor.xml
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\System.Web.WebPages.xml
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\System.Web.WebPages.Deployment.xml
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\System.Web.WebPages.Razor.xml
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\WebMatrix.Data.xml
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\Microsoft.Web.WebPages.OAuth.xml
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\WebMatrix.WebData.xml
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\DotNetOpenAuth.AspNet.xml
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\DotNetOpenAuth.Core.xml
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\DotNetOpenAuth.OAuth.Consumer.xml
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\DotNetOpenAuth.OAuth.xml
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\DotNetOpenAuth.OpenId.xml
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\System.Web.Http.OData.xml
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\Microsoft.Data.Edm.xml
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\Microsoft.Data.OData.xml
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\System.Spatial.xml
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\de\Microsoft.Data.Edm.resources.dll
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\es\Microsoft.Data.Edm.resources.dll
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\fr\Microsoft.Data.Edm.resources.dll
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\it\Microsoft.Data.Edm.resources.dll
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\ja\Microsoft.Data.Edm.resources.dll
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\ko\Microsoft.Data.Edm.resources.dll
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\ru\Microsoft.Data.Edm.resources.dll
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\de\Microsoft.Data.OData.resources.dll
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\es\Microsoft.Data.OData.resources.dll
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\fr\Microsoft.Data.OData.resources.dll
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\it\Microsoft.Data.OData.resources.dll
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\ja\Microsoft.Data.OData.resources.dll
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\ko\Microsoft.Data.OData.resources.dll
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\ru\Microsoft.Data.OData.resources.dll
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\de\System.Spatial.resources.dll
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\es\System.Spatial.resources.dll
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\fr\System.Spatial.resources.dll
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\it\System.Spatial.resources.dll
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\ja\System.Spatial.resources.dll
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\ko\System.Spatial.resources.dll
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\ru\System.Spatial.resources.dll
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\zh-Hans\System.Spatial.resources.dll
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\zh-Hant\System.Spatial.resources.dll
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\Microsoft.Practices.Unity.dll
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\Unity.Mvc4.dll
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\Microsoft.Practices.Unity.xml
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\Microsoft.Practices.ServiceLocation.dll
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\Microsoft.Practices.ServiceLocation.pdb
+E:\Work\B\SVN\MVC\DI\DemoMVCEntityFramework\bin\Microsoft.Practices.ServiceLocation.xml
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\DemoMVCEntityFramework.dll
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\DemoMVCEntityFramework.pdb
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\Antlr3.Runtime.dll
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\DotNetOpenAuth.AspNet.dll
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\DotNetOpenAuth.Core.dll
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\DotNetOpenAuth.OAuth.Consumer.dll
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\DotNetOpenAuth.OAuth.dll
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\DotNetOpenAuth.OpenId.dll
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\EntityFramework.dll
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\jquery.mobile.mvc.dll
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\Microsoft.Data.Edm.dll
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\Microsoft.Data.OData.dll
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\Microsoft.Web.Infrastructure.dll
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\Microsoft.Web.WebPages.OAuth.dll
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\Newtonsoft.Json.dll
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\PagedList.dll
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\PagedList.Mvc.dll
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\System.Spatial.dll
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\System.Web.Helpers.dll
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\System.Web.Http.OData.dll
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\System.Web.Mvc.dll
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\System.Web.Optimization.dll
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\System.Web.Razor.dll
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\System.Web.WebPages.Deployment.dll
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\System.Web.WebPages.dll
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\System.Web.WebPages.Razor.dll
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\UDI.CORE.dll
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\UDI.EF.dll
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\UDI.UnityDependency.dll
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\WebGrease.dll
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\WebMatrix.Data.dll
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\WebMatrix.WebData.dll
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\Microsoft.Practices.Unity.dll
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\Unity.Mvc4.dll
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\Microsoft.Practices.ServiceLocation.dll
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\UDI.CORE.pdb
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\UDI.EF.pdb
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\UDI.UnityDependency.pdb
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\PagedList.xml
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\PagedList.Mvc.xml
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\EntityFramework.xml
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\Newtonsoft.Json.xml
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\System.Web.Helpers.xml
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\System.Web.Mvc.xml
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\System.Web.Razor.xml
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\System.Web.WebPages.xml
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\System.Web.WebPages.Deployment.xml
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\System.Web.WebPages.Razor.xml
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\WebMatrix.Data.xml
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\Microsoft.Web.WebPages.OAuth.xml
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\WebMatrix.WebData.xml
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\DotNetOpenAuth.AspNet.xml
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\DotNetOpenAuth.Core.xml
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\DotNetOpenAuth.OAuth.Consumer.xml
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\DotNetOpenAuth.OAuth.xml
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\DotNetOpenAuth.OpenId.xml
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\System.Web.Http.OData.xml
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\Microsoft.Data.Edm.xml
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\Microsoft.Data.OData.xml
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\System.Spatial.xml
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\Microsoft.Practices.Unity.xml
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\Microsoft.Practices.ServiceLocation.pdb
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\Microsoft.Practices.ServiceLocation.xml
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\de\Microsoft.Data.Edm.resources.dll
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\es\Microsoft.Data.Edm.resources.dll
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\fr\Microsoft.Data.Edm.resources.dll
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\it\Microsoft.Data.Edm.resources.dll
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\ja\Microsoft.Data.Edm.resources.dll
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\ko\Microsoft.Data.Edm.resources.dll
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\ru\Microsoft.Data.Edm.resources.dll
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\de\Microsoft.Data.OData.resources.dll
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\es\Microsoft.Data.OData.resources.dll
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\fr\Microsoft.Data.OData.resources.dll
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\it\Microsoft.Data.OData.resources.dll
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\ja\Microsoft.Data.OData.resources.dll
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\ko\Microsoft.Data.OData.resources.dll
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\ru\Microsoft.Data.OData.resources.dll
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\de\System.Spatial.resources.dll
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\es\System.Spatial.resources.dll
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\fr\System.Spatial.resources.dll
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\it\System.Spatial.resources.dll
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\ja\System.Spatial.resources.dll
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\ko\System.Spatial.resources.dll
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\ru\System.Spatial.resources.dll
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\zh-Hans\System.Spatial.resources.dll
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\bin\zh-Hant\System.Spatial.resources.dll
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\obj\Release\DemoMVCEntityFramework.csprojResolveAssemblyReference.cache
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\obj\Release\DemoMVCEntityFramework.dll
+E:\Data\Google Drive\TMA\EMEA\DI\DemoMVCEntityFramework\obj\Release\DemoMVCEntityFramework.pdb
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\DemoMVCEntityFramework.dll
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\DemoMVCEntityFramework.pdb
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\Antlr3.Runtime.dll
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\DotNetOpenAuth.AspNet.dll
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\DotNetOpenAuth.Core.dll
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\DotNetOpenAuth.OAuth.Consumer.dll
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\DotNetOpenAuth.OAuth.dll
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\DotNetOpenAuth.OpenId.dll
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\EntityFramework.dll
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\jquery.mobile.mvc.dll
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\Microsoft.Data.Edm.dll
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\Microsoft.Data.OData.dll
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\Microsoft.Web.Infrastructure.dll
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\Microsoft.Web.WebPages.OAuth.dll
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\Newtonsoft.Json.dll
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\PagedList.dll
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\PagedList.Mvc.dll
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\System.Spatial.dll
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\System.Web.Helpers.dll
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\System.Web.Http.OData.dll
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\System.Web.Mvc.dll
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\System.Web.Optimization.dll
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\System.Web.Razor.dll
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\System.Web.WebPages.Deployment.dll
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\System.Web.WebPages.dll
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\System.Web.WebPages.Razor.dll
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\UDI.CORE.dll
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\UDI.EF.dll
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\UDI.UnityDependency.dll
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\WebGrease.dll
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\WebMatrix.Data.dll
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\WebMatrix.WebData.dll
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\Microsoft.Practices.Unity.dll
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\Unity.Mvc4.dll
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\Microsoft.Practices.ServiceLocation.dll
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\UDI.CORE.pdb
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\UDI.EF.pdb
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\UDI.UnityDependency.pdb
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\PagedList.xml
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\PagedList.Mvc.xml
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\EntityFramework.xml
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\Newtonsoft.Json.xml
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\System.Web.Helpers.xml
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\System.Web.Mvc.xml
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\System.Web.Razor.xml
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\System.Web.WebPages.xml
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\System.Web.WebPages.Deployment.xml
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\System.Web.WebPages.Razor.xml
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\WebMatrix.Data.xml
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\Microsoft.Web.WebPages.OAuth.xml
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\WebMatrix.WebData.xml
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\DotNetOpenAuth.AspNet.xml
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\DotNetOpenAuth.Core.xml
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\DotNetOpenAuth.OAuth.Consumer.xml
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\DotNetOpenAuth.OAuth.xml
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\DotNetOpenAuth.OpenId.xml
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\System.Web.Http.OData.xml
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\Microsoft.Data.Edm.xml
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\Microsoft.Data.OData.xml
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\System.Spatial.xml
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\Microsoft.Practices.Unity.xml
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\Microsoft.Practices.ServiceLocation.pdb
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\Microsoft.Practices.ServiceLocation.xml
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\de\Microsoft.Data.Edm.resources.dll
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\es\Microsoft.Data.Edm.resources.dll
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\fr\Microsoft.Data.Edm.resources.dll
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\it\Microsoft.Data.Edm.resources.dll
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\ja\Microsoft.Data.Edm.resources.dll
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\ko\Microsoft.Data.Edm.resources.dll
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\ru\Microsoft.Data.Edm.resources.dll
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\de\Microsoft.Data.OData.resources.dll
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\es\Microsoft.Data.OData.resources.dll
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\fr\Microsoft.Data.OData.resources.dll
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\it\Microsoft.Data.OData.resources.dll
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\ja\Microsoft.Data.OData.resources.dll
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\ko\Microsoft.Data.OData.resources.dll
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\ru\Microsoft.Data.OData.resources.dll
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\de\System.Spatial.resources.dll
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\es\System.Spatial.resources.dll
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\fr\System.Spatial.resources.dll
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\it\System.Spatial.resources.dll
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\ja\System.Spatial.resources.dll
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\ko\System.Spatial.resources.dll
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\ru\System.Spatial.resources.dll
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\zh-Hans\System.Spatial.resources.dll
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\bin\zh-Hant\System.Spatial.resources.dll
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\obj\Release\DemoMVCEntityFramework.csprojResolveAssemblyReference.cache
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\obj\Release\DemoMVCEntityFramework.dll
+E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\obj\Release\DemoMVCEntityFramework.pdb

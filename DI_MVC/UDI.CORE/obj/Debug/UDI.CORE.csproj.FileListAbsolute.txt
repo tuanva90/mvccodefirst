@@ -1,0 +1,8 @@
+E:\Work\B\SVN\MVC\DI\UDI.CORE\obj\Debug\UDI.CORE.csprojResolveAssemblyReference.cache
+E:\Work\B\SVN\MVC\DI\UDI.CORE\bin\Debug\UDI.CORE.dll.config
+E:\Work\B\SVN\MVC\DI\UDI.CORE\bin\Debug\UDI.CORE.dll
+E:\Work\B\SVN\MVC\DI\UDI.CORE\bin\Debug\UDI.CORE.pdb
+E:\Work\B\SVN\MVC\DI\UDI.CORE\bin\Debug\EntityFramework.dll
+E:\Work\B\SVN\MVC\DI\UDI.CORE\bin\Debug\EntityFramework.xml
+E:\Work\B\SVN\MVC\DI\UDI.CORE\obj\Debug\UDI.CORE.dll
+E:\Work\B\SVN\MVC\DI\UDI.CORE\obj\Debug\UDI.CORE.pdb

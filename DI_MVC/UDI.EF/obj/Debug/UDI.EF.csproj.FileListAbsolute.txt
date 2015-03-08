@@ -1,0 +1,10 @@
+E:\Work\B\SVN\MVC\DI\UDI.EF\bin\Debug\UDI.EF.dll.config
+E:\Work\B\SVN\MVC\DI\UDI.EF\bin\Debug\UDI.EF.dll
+E:\Work\B\SVN\MVC\DI\UDI.EF\bin\Debug\UDI.EF.pdb
+E:\Work\B\SVN\MVC\DI\UDI.EF\bin\Debug\EntityFramework.dll
+E:\Work\B\SVN\MVC\DI\UDI.EF\bin\Debug\UDI.CORE.dll
+E:\Work\B\SVN\MVC\DI\UDI.EF\bin\Debug\UDI.CORE.pdb
+E:\Work\B\SVN\MVC\DI\UDI.EF\bin\Debug\EntityFramework.xml
+E:\Work\B\SVN\MVC\DI\UDI.EF\obj\Debug\UDI.EF.csprojResolveAssemblyReference.cache
+E:\Work\B\SVN\MVC\DI\UDI.EF\obj\Debug\UDI.EF.dll
+E:\Work\B\SVN\MVC\DI\UDI.EF\obj\Debug\UDI.EF.pdb

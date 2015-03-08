@@ -1,0 +1,95 @@
+﻿@{
+    ViewBag.Title = "ORDER INFORMATION";
+}
+@model PagedList.IPagedList<UDI.CORE.Entities.Order>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+<h2>CustomersInfoPage</h2>
+
+
+<br />
+<table class="table">
+    <tr>
+        <th>
+            @Html.ActionLink("Order Date", "CustomersInfoPage", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+        </th>
+        <th>
+            Requied Date
+        </th>
+        <th>
+            Ship Via
+        </th>
+        <th>
+            Freight
+        </th>
+        <th>
+            ShipName
+        </th>
+        <th>
+            ShipAddress
+        </th>
+        <th>
+            ShipCity
+        </th>
+        <th>
+            ShipRegion
+        </th>
+        <th>
+            ShipPostalCode
+        </th>
+        <th>
+            ShipCountry
+        </th>
+        <th></th>
+    </tr>
+
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RequiredDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShippedDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShipVia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Freight)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShipName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShipAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShipCity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShipRegion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShipPostalCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShipCountry)
+            </td>
+            <td>
+                @Html.ActionLink("Detail", "Detail", new { id = item.OrderID }) |
+            </td>
+        </tr>
+    }
+
+</table>
+<br />
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+@Html.PagedListPager(Model, page => Url.Action("CustomersInfoPage",
+    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))

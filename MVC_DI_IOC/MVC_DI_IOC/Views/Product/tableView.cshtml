@@ -39,9 +39,9 @@
     </thead>
     @foreach (var item in Model)
     {
-        <tr id="item_@item.ProductID">
+        <tr id="item_@item.ID">
             <td style="display:none">
-                @Html.HiddenFor(modelItem => item.ProductID)
+                @Html.HiddenFor(modelItem => item.ID)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.ProductName)

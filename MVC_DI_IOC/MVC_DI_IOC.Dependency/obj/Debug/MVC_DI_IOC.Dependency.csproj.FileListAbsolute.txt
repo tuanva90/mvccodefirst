@@ -73,6 +73,45 @@ C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC.Dependency\bin\De
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC.Dependency\obj\Debug\MVC_DI_IOC.Dependency.csprojResolveAssemblyReference.cache
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC.Dependency\obj\Debug\MVC_DI_IOC.Dependency.dll
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\MVC_DI_IOC\MVC_DI_IOC.Dependency\obj\Debug\MVC_DI_IOC.Dependency.pdb
+<<<<<<< .mine
+C:\Users\HoaiPhong\Desktop\my repo\MVC_DI_IOC\MVC_DI_IOC.Dependency\bin\Debug\MVC_DI_IOC.Dependency.dll.config
+C:\Users\HoaiPhong\Desktop\my repo\MVC_DI_IOC\MVC_DI_IOC.Dependency\bin\Debug\MVC_DI_IOC.Dependency.dll
+C:\Users\HoaiPhong\Desktop\my repo\MVC_DI_IOC\MVC_DI_IOC.Dependency\bin\Debug\MVC_DI_IOC.Dependency.pdb
+C:\Users\HoaiPhong\Desktop\my repo\MVC_DI_IOC\MVC_DI_IOC.Dependency\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+C:\Users\HoaiPhong\Desktop\my repo\MVC_DI_IOC\MVC_DI_IOC.Dependency\bin\Debug\Microsoft.Practices.Unity.Configuration.dll
+C:\Users\HoaiPhong\Desktop\my repo\MVC_DI_IOC\MVC_DI_IOC.Dependency\bin\Debug\Microsoft.Practices.Unity.dll
+C:\Users\HoaiPhong\Desktop\my repo\MVC_DI_IOC\MVC_DI_IOC.Dependency\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\HoaiPhong\Desktop\my repo\MVC_DI_IOC\MVC_DI_IOC.Dependency\bin\Debug\MVC_DI_IOC.Core.dll
+C:\Users\HoaiPhong\Desktop\my repo\MVC_DI_IOC\MVC_DI_IOC.Dependency\bin\Debug\MVC_DI_IOC.Data.dll
+C:\Users\HoaiPhong\Desktop\my repo\MVC_DI_IOC\MVC_DI_IOC.Dependency\bin\Debug\Newtonsoft.Json.dll
+C:\Users\HoaiPhong\Desktop\my repo\MVC_DI_IOC\MVC_DI_IOC.Dependency\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\HoaiPhong\Desktop\my repo\MVC_DI_IOC\MVC_DI_IOC.Dependency\bin\Debug\System.Web.Helpers.dll
+C:\Users\HoaiPhong\Desktop\my repo\MVC_DI_IOC\MVC_DI_IOC.Dependency\bin\Debug\System.Web.Http.dll
+C:\Users\HoaiPhong\Desktop\my repo\MVC_DI_IOC\MVC_DI_IOC.Dependency\bin\Debug\System.Web.Razor.dll
+C:\Users\HoaiPhong\Desktop\my repo\MVC_DI_IOC\MVC_DI_IOC.Dependency\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\HoaiPhong\Desktop\my repo\MVC_DI_IOC\MVC_DI_IOC.Dependency\bin\Debug\System.Web.WebPages.dll
+C:\Users\HoaiPhong\Desktop\my repo\MVC_DI_IOC\MVC_DI_IOC.Dependency\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\HoaiPhong\Desktop\my repo\MVC_DI_IOC\MVC_DI_IOC.Dependency\bin\Debug\Unity.Mvc4.dll
+C:\Users\HoaiPhong\Desktop\my repo\MVC_DI_IOC\MVC_DI_IOC.Dependency\bin\Debug\EntityFramework.dll
+C:\Users\HoaiPhong\Desktop\my repo\MVC_DI_IOC\MVC_DI_IOC.Dependency\bin\Debug\MVC_DI_IOC.Core.pdb
+C:\Users\HoaiPhong\Desktop\my repo\MVC_DI_IOC\MVC_DI_IOC.Dependency\bin\Debug\MVC_DI_IOC.Data.pdb
+C:\Users\HoaiPhong\Desktop\my repo\MVC_DI_IOC\MVC_DI_IOC.Dependency\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+C:\Users\HoaiPhong\Desktop\my repo\MVC_DI_IOC\MVC_DI_IOC.Dependency\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+C:\Users\HoaiPhong\Desktop\my repo\MVC_DI_IOC\MVC_DI_IOC.Dependency\bin\Debug\Microsoft.Practices.Unity.xml
+C:\Users\HoaiPhong\Desktop\my repo\MVC_DI_IOC\MVC_DI_IOC.Dependency\bin\Debug\Microsoft.Practices.Unity.Configuration.xml
+C:\Users\HoaiPhong\Desktop\my repo\MVC_DI_IOC\MVC_DI_IOC.Dependency\bin\Debug\Newtonsoft.Json.xml
+C:\Users\HoaiPhong\Desktop\my repo\MVC_DI_IOC\MVC_DI_IOC.Dependency\bin\Debug\System.Net.Http.Formatting.xml
+C:\Users\HoaiPhong\Desktop\my repo\MVC_DI_IOC\MVC_DI_IOC.Dependency\bin\Debug\System.Web.Helpers.xml
+C:\Users\HoaiPhong\Desktop\my repo\MVC_DI_IOC\MVC_DI_IOC.Dependency\bin\Debug\System.Web.Http.xml
+C:\Users\HoaiPhong\Desktop\my repo\MVC_DI_IOC\MVC_DI_IOC.Dependency\bin\Debug\System.Web.Razor.xml
+C:\Users\HoaiPhong\Desktop\my repo\MVC_DI_IOC\MVC_DI_IOC.Dependency\bin\Debug\System.Web.WebPages.xml
+C:\Users\HoaiPhong\Desktop\my repo\MVC_DI_IOC\MVC_DI_IOC.Dependency\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\HoaiPhong\Desktop\my repo\MVC_DI_IOC\MVC_DI_IOC.Dependency\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Users\HoaiPhong\Desktop\my repo\MVC_DI_IOC\MVC_DI_IOC.Dependency\bin\Debug\EntityFramework.xml
+C:\Users\HoaiPhong\Desktop\my repo\MVC_DI_IOC\MVC_DI_IOC.Dependency\obj\Debug\MVC_DI_IOC.Dependency.csprojResolveAssemblyReference.cache
+C:\Users\HoaiPhong\Desktop\my repo\MVC_DI_IOC\MVC_DI_IOC.Dependency\obj\Debug\MVC_DI_IOC.Dependency.dll
+C:\Users\HoaiPhong\Desktop\my repo\MVC_DI_IOC\MVC_DI_IOC.Dependency\obj\Debug\MVC_DI_IOC.Dependency.pdb
+=======
 C:\Users\nguyenminhtuan\Desktop\mvccodefirst\MVC_DI_IOC\MVC_DI_IOC.Dependency\bin\Debug\MVC_DI_IOC.Dependency.dll.config
 C:\Users\nguyenminhtuan\Desktop\mvccodefirst\MVC_DI_IOC\MVC_DI_IOC.Dependency\bin\Debug\MVC_DI_IOC.Dependency.dll
 C:\Users\nguyenminhtuan\Desktop\mvccodefirst\MVC_DI_IOC\MVC_DI_IOC.Dependency\bin\Debug\MVC_DI_IOC.Dependency.pdb
@@ -110,3 +149,4 @@ C:\Users\nguyenminhtuan\Desktop\mvccodefirst\MVC_DI_IOC\MVC_DI_IOC.Dependency\bi
 C:\Users\nguyenminhtuan\Desktop\mvccodefirst\MVC_DI_IOC\MVC_DI_IOC.Dependency\obj\Debug\MVC_DI_IOC.Dependency.csprojResolveAssemblyReference.cache
 C:\Users\nguyenminhtuan\Desktop\mvccodefirst\MVC_DI_IOC\MVC_DI_IOC.Dependency\obj\Debug\MVC_DI_IOC.Dependency.dll
 C:\Users\nguyenminhtuan\Desktop\mvccodefirst\MVC_DI_IOC\MVC_DI_IOC.Dependency\obj\Debug\MVC_DI_IOC.Dependency.pdb
+>>>>>>> .r41

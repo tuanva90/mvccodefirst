@@ -50,6 +50,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAL\EFContext.cs" />
+    <Compile Include="Mapping\CategoryMapping.cs" />
+    <Compile Include="Mapping\CustomerMapping.cs" />
+    <Compile Include="Mapping\OrderDetailMapping.cs" />
+    <Compile Include="Mapping\OrderMapping.cs" />
+    <Compile Include="Mapping\ProductMapping.cs" />
+    <Compile Include="Mapping\UserMapping.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\EFUserRepository.cs" />
     <Compile Include="Repositories\EFCategoryRepository.cs" />

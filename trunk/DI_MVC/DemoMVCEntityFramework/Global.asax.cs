@@ -8,6 +8,7 @@ using System.Web.Optimization;
 using System.Web.Routing;
 using System.Data.Entity;
 using System.Web.Security;
+using UDI.EF.DAL;
 namespace DemoMVCEntityFramework
 {
     // Note: For instructions on enabling IIS6 or IIS7 classic mode, 
@@ -18,7 +19,7 @@ namespace DemoMVCEntityFramework
         protected void Application_Start()
         {
             //Check existence of Database
-            //Database.SetInitializer<NorthWNDContext>(new TestInitializer());
+            Database.SetInitializer<EFContext>(new TestInitializer());
 
             AreaRegistration.RegisterAllAreas();
 

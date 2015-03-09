@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using UDI.CORE.Entities;
 using System.Data.Entity.ModelConfiguration.Conventions;
+using UDI.EF.Mapping;
 
 namespace UDI.EF.DAL
 {
@@ -30,7 +31,13 @@ namespace UDI.EF.DAL
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Configurations.Add(new CategoryMapping());
+            modelBuilder.Configurations.Add(new ProductMapping());
+            modelBuilder.Configurations.Add(new CustomerMapping());
+            modelBuilder.Configurations.Add(new UserMapping());
+            modelBuilder.Configurations.Add(new OrderMapping());
+            modelBuilder.Configurations.Add(new OrderDetailMapping());
         }
     }
 

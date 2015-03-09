@@ -35,7 +35,7 @@ namespace UDI.CORE.Services.Impl
 
             foreach (Product item in lsProd)
             {
-                _uow.Repository<OrderDetail>().Add(new OrderDetail { Order = ord, Product = item, UnitPrice = item.UnitPrice, Quanlity = item.Quantity, OrderID = ord.OrderID, ProductID = item.ProductID });
+                _uow.Repository<OrderDetail>().Add(new OrderDetail { Order = ord, Product = item, UnitPrice = item.UnitPrice, Quantity = item.Quantity, OrderID = ord.OrderID, ProductID = item.ProductID });
             }
             _uow.Commit();
         }

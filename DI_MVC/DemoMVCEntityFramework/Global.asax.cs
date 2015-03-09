@@ -19,7 +19,6 @@ namespace DemoMVCEntityFramework
         protected void Application_Start()
         {
             //Check existence of Database
-            Database.SetInitializer<EFContext>(new TestInitializer());
 
             AreaRegistration.RegisterAllAreas();
 

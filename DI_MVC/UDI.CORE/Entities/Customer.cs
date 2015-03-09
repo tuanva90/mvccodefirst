@@ -13,8 +13,11 @@ namespace UDI.CORE.Entities
         public int CustomerID { get; set; }
         [StringLength(20),MinLength(3)]
         public string ContactName { get; set; }
+        [Required,StringLength(20)]
         public string ContactTitle { get; set; }
+        [Required]
         public string Address { get; set; }
+        [Required]
         public string City { get; set; }
         public string Region { get; set; }
         [RegularExpression(@"^[0-9]{0,15}$", ErrorMessage = "PostalCode should contain only numbers")]

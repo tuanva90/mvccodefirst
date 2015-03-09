@@ -39,7 +39,6 @@ namespace UDI.UnityDependency
             container.RegisterType<UDI.CORE.UnitOfWork.IUnitOfWork, UDI.EF.UnitOfWork.EFUnitOfWork>(new ContainerControlledLifetimeManager());
             container.Resolve<UDI.CORE.UnitOfWork.IUnitOfWork>();
             container.RegisterType<UDI.CORE.UnitOfWork.IUnitOfWorkManager, UDI.EF.UnitOfWork.EFUnitOfWorkManager>();
-
             //Register interfaces in EF
             container.RegisterType<UDI.EF.DAL.IEFContext, UDI.EF.DAL.EFContext>();
 

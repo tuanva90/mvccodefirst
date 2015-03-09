@@ -21,19 +21,12 @@ namespace UDI.CORE.Entities
         public DateTime RequiredDate { get; set; }
         public DateTime ShippedDate { get; set; }
         public int ShipVia { get; set; }
-        [DataType(DataType.Currency)]
         public decimal Freight { get; set; }
-        [MaxLength(50)]
         public string ShipName { get; set; }
-        [MaxLength(50)]
         public string ShipAddress { get; set; }
-        [MaxLength(50)]
         public string ShipCity { get; set; }
-        [MaxLength(50)]
         public string ShipRegion { get; set; }
-        [MaxLength(50)]
         public string ShipPostalCode { get; set; }
-        [MaxLength(50)]
         public string ShipCountry { get; set; }
         public virtual Customer Customer { get; set; }
         public virtual ICollection<OrderDetail> OrderDetails { get; set; }

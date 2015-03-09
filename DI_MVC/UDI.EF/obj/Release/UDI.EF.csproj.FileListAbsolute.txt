@@ -28,3 +28,13 @@ E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\UDI.EF\bin\Rele
 E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\UDI.EF\obj\Release\UDI.EF.csprojResolveAssemblyReference.cache
 E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\UDI.EF\obj\Release\UDI.EF.dll
 E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\UDI.EF\obj\Release\UDI.EF.pdb
+C:\Users\HoaiPhong\Desktop\my repo\DI_MVC\UDI.EF\bin\Release\UDI.EF.dll.config
+C:\Users\HoaiPhong\Desktop\my repo\DI_MVC\UDI.EF\bin\Release\UDI.EF.dll
+C:\Users\HoaiPhong\Desktop\my repo\DI_MVC\UDI.EF\bin\Release\UDI.EF.pdb
+C:\Users\HoaiPhong\Desktop\my repo\DI_MVC\UDI.EF\bin\Release\EntityFramework.dll
+C:\Users\HoaiPhong\Desktop\my repo\DI_MVC\UDI.EF\bin\Release\UDI.CORE.dll
+C:\Users\HoaiPhong\Desktop\my repo\DI_MVC\UDI.EF\bin\Release\UDI.CORE.pdb
+C:\Users\HoaiPhong\Desktop\my repo\DI_MVC\UDI.EF\bin\Release\EntityFramework.xml
+C:\Users\HoaiPhong\Desktop\my repo\DI_MVC\UDI.EF\obj\Release\UDI.EF.csprojResolveAssemblyReference.cache
+C:\Users\HoaiPhong\Desktop\my repo\DI_MVC\UDI.EF\obj\Release\UDI.EF.dll
+C:\Users\HoaiPhong\Desktop\my repo\DI_MVC\UDI.EF\obj\Release\UDI.EF.pdb

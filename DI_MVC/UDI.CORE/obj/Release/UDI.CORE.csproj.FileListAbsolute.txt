@@ -21,3 +21,10 @@ E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\UDI.CORE\bin\Re
 E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\UDI.CORE\bin\Release\EntityFramework.xml
 E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\UDI.CORE\obj\Release\UDI.CORE.dll
 E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\UDI.CORE\obj\Release\UDI.CORE.pdb
+C:\Users\HoaiPhong\Desktop\my repo\DI_MVC\UDI.CORE\bin\Release\UDI.CORE.dll.config
+C:\Users\HoaiPhong\Desktop\my repo\DI_MVC\UDI.CORE\bin\Release\UDI.CORE.dll
+C:\Users\HoaiPhong\Desktop\my repo\DI_MVC\UDI.CORE\bin\Release\UDI.CORE.pdb
+C:\Users\HoaiPhong\Desktop\my repo\DI_MVC\UDI.CORE\bin\Release\EntityFramework.dll
+C:\Users\HoaiPhong\Desktop\my repo\DI_MVC\UDI.CORE\bin\Release\EntityFramework.xml
+C:\Users\HoaiPhong\Desktop\my repo\DI_MVC\UDI.CORE\obj\Release\UDI.CORE.dll
+C:\Users\HoaiPhong\Desktop\my repo\DI_MVC\UDI.CORE\obj\Release\UDI.CORE.pdb

@@ -10,14 +10,17 @@ namespace UDI.CORE.Entities
     public class User
     {
         public int CustomerID { get; set; }
+        [MaxLength(20),MinLength(3)]
         public string UserName { get; set; }
+        [MaxLength(50),MinLength(3)]
         public string Password { get; set; }
-        //[EmailAddress(ErrorMessage="Invalid Email!")]
-        //[DataType(DataType.EmailAddress)]
-        //[RegularExpression(@"^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$", ErrorMessage = "Please enter a valid e-mail adress")]
+
+        [EmailAddress(ErrorMessage="Invalid Email!")]       
         public string Email { get; set; }
+        [Display(Name="Remember me")]
         public bool Bool { get; set; }
         //[NotMapped, Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]   
+        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
         public bool Roles { get; set; }
         public virtual Customer Customer { get; set; }

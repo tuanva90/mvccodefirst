@@ -28,3 +28,11 @@ C:\Users\HoaiPhong\Desktop\my repo\DI_MVC\UDI.CORE\bin\Release\EntityFramework.d
 C:\Users\HoaiPhong\Desktop\my repo\DI_MVC\UDI.CORE\bin\Release\EntityFramework.xml
 C:\Users\HoaiPhong\Desktop\my repo\DI_MVC\UDI.CORE\obj\Release\UDI.CORE.dll
 C:\Users\HoaiPhong\Desktop\my repo\DI_MVC\UDI.CORE\obj\Release\UDI.CORE.pdb
+C:\Users\nguyenminhtuan\Desktop\mvccodefirst\DI_MVC\UDI.CORE\bin\Release\UDI.CORE.dll.config
+C:\Users\nguyenminhtuan\Desktop\mvccodefirst\DI_MVC\UDI.CORE\bin\Release\UDI.CORE.dll
+C:\Users\nguyenminhtuan\Desktop\mvccodefirst\DI_MVC\UDI.CORE\bin\Release\UDI.CORE.pdb
+C:\Users\nguyenminhtuan\Desktop\mvccodefirst\DI_MVC\UDI.CORE\bin\Release\EntityFramework.dll
+C:\Users\nguyenminhtuan\Desktop\mvccodefirst\DI_MVC\UDI.CORE\bin\Release\EntityFramework.xml
+C:\Users\nguyenminhtuan\Desktop\mvccodefirst\DI_MVC\UDI.CORE\obj\Release\UDI.CORE.csprojResolveAssemblyReference.cache
+C:\Users\nguyenminhtuan\Desktop\mvccodefirst\DI_MVC\UDI.CORE\obj\Release\UDI.CORE.dll
+C:\Users\nguyenminhtuan\Desktop\mvccodefirst\DI_MVC\UDI.CORE\obj\Release\UDI.CORE.pdb

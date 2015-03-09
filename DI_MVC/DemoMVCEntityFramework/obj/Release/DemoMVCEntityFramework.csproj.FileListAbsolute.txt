@@ -487,3 +487,4 @@ C:\Users\HoaiPhong\Desktop\my repo\DI_MVC\DemoMVCEntityFramework\bin\zh-Hans\Sys
 C:\Users\HoaiPhong\Desktop\my repo\DI_MVC\DemoMVCEntityFramework\bin\zh-Hant\System.Spatial.resources.dll
 C:\Users\HoaiPhong\Desktop\my repo\DI_MVC\DemoMVCEntityFramework\obj\Release\DemoMVCEntityFramework.dll
 C:\Users\HoaiPhong\Desktop\my repo\DI_MVC\DemoMVCEntityFramework\obj\Release\DemoMVCEntityFramework.pdb
+C:\Users\HoaiPhong\Desktop\my repo\DI_MVC\DemoMVCEntityFramework\bin\RouteDebugger.dll

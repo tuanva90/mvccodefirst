@@ -1,10 +1,10 @@
 ﻿@model PagedList.IPagedList<UDI.CORE.Entities.Product>
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@section featured {
+@*@section featured {*@
     <h2>Index</h2>
     <p>
         @Html.ActionLink("Create New", "Create")
@@ -22,7 +22,7 @@
             <div id="tblpro"></div>
         </div>
     </div>
-}
+@*}*@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

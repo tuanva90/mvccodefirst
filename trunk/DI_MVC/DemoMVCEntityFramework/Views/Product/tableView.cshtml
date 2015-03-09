@@ -41,7 +41,7 @@
     @foreach (var item in Model)
     {
         <tr id="item_@item.ProductID">
-            <td>
+            <td align="center">
                 <input type="checkbox" id="ckb_@item.ProductID" onchange="CheckChange($(this));"/>
             </td>
             <td style="display:none">

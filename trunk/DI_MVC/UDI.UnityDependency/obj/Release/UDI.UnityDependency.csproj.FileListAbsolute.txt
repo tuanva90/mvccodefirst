@@ -101,6 +101,7 @@ E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\UDI.UnityDepend
 E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\UDI.UnityDependency\obj\Release\UDI.UnityDependency.csprojResolveAssemblyReference.cache
 E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\UDI.UnityDependency\obj\Release\UDI.UnityDependency.dll
 E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\UDI.UnityDependency\obj\Release\UDI.UnityDependency.pdb
+C:\Users\HoaiPhong\Desktop\my repo\DI_MVC\UDI.UnityDependency\obj\Release\UDI.UnityDependency.csprojResolveAssemblyReference.cache
 C:\Users\HoaiPhong\Desktop\my repo\DI_MVC\UDI.UnityDependency\bin\Release\UDI.UnityDependency.dll.config
 C:\Users\HoaiPhong\Desktop\my repo\DI_MVC\UDI.UnityDependency\bin\Release\UDI.UnityDependency.dll
 C:\Users\HoaiPhong\Desktop\my repo\DI_MVC\UDI.UnityDependency\bin\Release\UDI.UnityDependency.pdb
@@ -135,6 +136,5 @@ C:\Users\HoaiPhong\Desktop\my repo\DI_MVC\UDI.UnityDependency\bin\Release\System
 C:\Users\HoaiPhong\Desktop\my repo\DI_MVC\UDI.UnityDependency\bin\Release\System.Web.WebPages.xml
 C:\Users\HoaiPhong\Desktop\my repo\DI_MVC\UDI.UnityDependency\bin\Release\System.Web.WebPages.Deployment.xml
 C:\Users\HoaiPhong\Desktop\my repo\DI_MVC\UDI.UnityDependency\bin\Release\System.Web.WebPages.Razor.xml
-C:\Users\HoaiPhong\Desktop\my repo\DI_MVC\UDI.UnityDependency\obj\Release\UDI.UnityDependency.csprojResolveAssemblyReference.cache
 C:\Users\HoaiPhong\Desktop\my repo\DI_MVC\UDI.UnityDependency\obj\Release\UDI.UnityDependency.dll
 C:\Users\HoaiPhong\Desktop\my repo\DI_MVC\UDI.UnityDependency\obj\Release\UDI.UnityDependency.pdb

@@ -385,6 +385,7 @@ E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFr
 E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\obj\Release\DemoMVCEntityFramework.csprojResolveAssemblyReference.cache
 E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\obj\Release\DemoMVCEntityFramework.dll
 E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\obj\Release\DemoMVCEntityFramework.pdb
+C:\Users\HoaiPhong\Desktop\my repo\DI_MVC\DemoMVCEntityFramework\obj\Release\DemoMVCEntityFramework.csprojResolveAssemblyReference.cache
 C:\Users\HoaiPhong\Desktop\my repo\DI_MVC\DemoMVCEntityFramework\bin\DemoMVCEntityFramework.dll
 C:\Users\HoaiPhong\Desktop\my repo\DI_MVC\DemoMVCEntityFramework\bin\DemoMVCEntityFramework.pdb
 C:\Users\HoaiPhong\Desktop\my repo\DI_MVC\DemoMVCEntityFramework\bin\Antlr3.Runtime.dll
@@ -484,6 +485,5 @@ C:\Users\HoaiPhong\Desktop\my repo\DI_MVC\DemoMVCEntityFramework\bin\ko\System.S
 C:\Users\HoaiPhong\Desktop\my repo\DI_MVC\DemoMVCEntityFramework\bin\ru\System.Spatial.resources.dll
 C:\Users\HoaiPhong\Desktop\my repo\DI_MVC\DemoMVCEntityFramework\bin\zh-Hans\System.Spatial.resources.dll
 C:\Users\HoaiPhong\Desktop\my repo\DI_MVC\DemoMVCEntityFramework\bin\zh-Hant\System.Spatial.resources.dll
-C:\Users\HoaiPhong\Desktop\my repo\DI_MVC\DemoMVCEntityFramework\obj\Release\DemoMVCEntityFramework.csprojResolveAssemblyReference.cache
 C:\Users\HoaiPhong\Desktop\my repo\DI_MVC\DemoMVCEntityFramework\obj\Release\DemoMVCEntityFramework.dll
 C:\Users\HoaiPhong\Desktop\my repo\DI_MVC\DemoMVCEntityFramework\obj\Release\DemoMVCEntityFramework.pdb

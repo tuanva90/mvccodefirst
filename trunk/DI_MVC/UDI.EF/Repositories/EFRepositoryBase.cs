@@ -41,7 +41,7 @@ namespace UDI.EF.Repositories
             return _dbSet.AsQueryable();
         }
 
-        public virtual T Get(Func<T, bool> predicate)
+        public virtual T Get(Func<T, bool> predicate )
         {
             return _dbSet.First(predicate);
         }

@@ -69,5 +69,23 @@ namespace OfficalWCF
                 return "failed";
             }
         }
+
+        #region User
+
+        [OperationContract]
+        public string TestGetUser(string  user,string password)
+        {
+            var a = new IUserService();
+            var ret = a.Get(user,password);
+            if (ret !=null)
+            {
+                return "success";
+            }
+            else
+            {
+                return "failed";
+            }
+        } 
+        #endregion
     }
 }

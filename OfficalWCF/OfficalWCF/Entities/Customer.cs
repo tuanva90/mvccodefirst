@@ -14,6 +14,8 @@ namespace OfficalWCF.Entities
         [DataMember]
         public int CustomerID;
         [DataMember]
+        public string CompanyName;
+        [DataMember]
         public string ContactName;
         [DataMember]
         public string ContactTitle;
@@ -31,5 +33,93 @@ namespace OfficalWCF.Entities
         public string Phone;
         [DataMember]
         public string Fax;
+    }
+
+    [ServiceContract]
+    public interface ICustomer
+    {
+        [OperationContract]
+        IQueryable<Customer> GetAll();
+        [OperationContract]
+        Customer Get(int _cusid);
+        [OperationContract]
+        int Add(Customer _cus);
+        [OperationContract]
+        int Update(Customer _cus);
+        [OperationContract]
+        int Delete(Customer _cus);
+    }
+    public class ICustomerService : ICustomer
+    {
+        public Customer Get(int id)
+        {
+            Customer _cus = new Customer();
+            string sqlCommand = "Select * from _cusgories where CustomerID='" + id+"'";
+            using (IDataReader dataReader = ConnectionClass.GetInstance().ExecuteReader(sqlCommand))
+            {
+                if (dataReader.Read())
+                {
+                    _cus.CustomerID = dataReader.GetInt32(0);
+                    _cus.CompanyName = dataReader.GetString(1);
+                    _cus.ContactName = dataReader.GetString(2);
+                    _cus.ContactTitle = dataReader.GetString(3);
+                    _cus.Address = dataReader.GetString(4);
+                    _cus.City = dataReader.GetString(5);
+                    _cus.Region = dataReader.GetString(6);
+                    _cus.PostalCode = dataReader.GetString(7);
+                    _cus.Country= dataReader.GetString(8);
+                    _cus.Phone = dataReader.GetString(9);
+                    _cus.Fax = dataReader.GetString(10);
+                }
+                dataReader.Close();
+
+            }
+            return _cus;
+        }
+
+        public IQueryable<Customer> GetAll()
+        {
+            List<Customer> ls_cus = new List<Customer>();
+            string sqlcm = "Select * from _cusgories";
+            using (IDataReader dr = ConnectionClass.GetInstance().ExecuteReader(sqlcm))
+            {
+                while (dr.Read())
+                {
+                    Customer _cus = new Customer();
+                    _cus.CustomerID = dr.GetInt32(0);
+                    _cus.CompanyName = dr.GetString(1);
+                    _cus.ContactName = dr.GetString(2);
+                    _cus.ContactTitle = dr.GetString(3);
+                    _cus.Address = dr.GetString(4);
+                    _cus.City = dr.GetString(5);
+                    _cus.Region = dr.GetString(6);
+                    _cus.PostalCode = dr.GetString(7);
+                    _cus.Country = dr.GetString(8);
+                    _cus.Phone = dr.GetString(9);
+                    _cus.Fax = dr.GetString(10);
+                    ls_cus.Add(_cus);
+                }
+                dr.Close();
+            }
+            return ls_cus.AsQueryable();
+        }
+
+        public int Add(Customer _cus)
+        {
+            string sqlcm = "insert into Customers(CustomerID,CompanyName,) values('" + _cus.CustomerID + "','" + _cus.CompanyName + "')"; 
+            return ConnectionClass.GetInstance().ExecuteNonQuery(sqlcm);
+        }
+
+        public int Update(Customer _cus)
+        {
+            string sqlcm = "update Customers set CompanyName='" + _cus.CompanyName + "',ContactName='" + _cus.ContactName + "',ContactTitle='" + _cus.ContactTitle + "',Address='" + _cus.Address + "',City='" + _cus.City + "',Region='" + _cus.Region + "',PosttalCode='" + _cus.PostalCode + "',Country='" + _cus.Country + "' where CustomerID=" + _cus.CustomerID;
+            return ConnectionClass.GetInstance().ExecuteNonQuery(sqlcm);
+        }
+
+        public int Delete(Customer _cus)
+        {
+            string sqlcm = "Delete from Customer where CustomerID=" + _cus.CustomerID;
+            return ConnectionClass.GetInstance().ExecuteNonQuery(sqlcm);
+        }
     }
 }

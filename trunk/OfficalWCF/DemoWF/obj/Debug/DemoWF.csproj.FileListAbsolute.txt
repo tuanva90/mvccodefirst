@@ -1,0 +1,13 @@
+C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\OfficalWCF\DemoWF\bin\Debug\DemoWF.exe.config
+C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\OfficalWCF\DemoWF\bin\Debug\DemoWF.exe
+C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\OfficalWCF\DemoWF\bin\Debug\DemoWF.pdb
+C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\OfficalWCF\DemoWF\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\OfficalWCF\DemoWF\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\OfficalWCF\DemoWF\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
+C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\OfficalWCF\DemoWF\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.xml
+C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\OfficalWCF\DemoWF\obj\Debug\DemoWF.csprojResolveAssemblyReference.cache
+C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\OfficalWCF\DemoWF\obj\Debug\DemoWF.Form1.resources
+C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\OfficalWCF\DemoWF\obj\Debug\DemoWF.Properties.Resources.resources
+C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\OfficalWCF\DemoWF\obj\Debug\DemoWF.csproj.GenerateResource.Cache
+C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\OfficalWCF\DemoWF\obj\Debug\DemoWF.exe
+C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\OfficalWCF\DemoWF\obj\Debug\DemoWF.pdb

@@ -13,7 +13,7 @@ namespace OfficalWCF.Entities
     public class User
     {
         [DataMember]
-        public int UserID;
+        public int CustomerID;
         [DataMember]
         public string UserName;
         [DataMember]
@@ -41,14 +41,13 @@ namespace OfficalWCF.Entities
         public User Get(string Username, string Password)
         {
             User user = new User();
-            string sqlCommand = "Select * from user where UserName='" + Username+"' AND Password='"+Password+"'";
+            string sqlCommand = "SELECT * FROM [User] where CustomerID='" + Username+"' AND PassWord='"+Password+"'";
             using (IDataReader dataReader = ConnectionClass.GetInstance().ExecuteReader(sqlCommand))
             {
                 if (dataReader.Read())
                 {
-                    user.UserID = dataReader.GetInt32(0);
-                    user.UserName = dataReader.GetString(1);
-                    user.PassWord = dataReader.GetString(2);
+                    user.UserName = dataReader.GetString(0);
+                    user.PassWord = dataReader.GetString(1);
                 }
                 dataReader.Close();
 
@@ -59,14 +58,13 @@ namespace OfficalWCF.Entities
         public IQueryable<User> GetAll()
         {
             List<User> lsuser = new List<User>();
-            string sqlcm = "Select * from user";
+            string sqlcm = "Select * from [user]";
             using (IDataReader dr = ConnectionClass.GetInstance().ExecuteReader(sqlcm))
             {
                 while (dr.Read())
                 {
                     User user = new User();
-                    user.UserID = dr.GetInt32(0);
-                    user.UserName = dr.GetString(1);
+                    user.CustomerID = dr.GetInt32(0);
                     user.PassWord = dr.GetString(2);
                     lsuser.Add(user);
                 }
@@ -77,19 +75,19 @@ namespace OfficalWCF.Entities
 
         public int Add(User user)
         {
-            string sqlcm = "insert into user(UserName,Password) values('" + user.UserName + "','" + user.PassWord + "')"; //+ user.Picture == null ? " " : ",Picture=" + user.Picture + ")";
+            string sqlcm = "insert into [User](UserName,Password) values('" + user.UserName + "','" + user.PassWord + "')"; //+ user.Picture == null ? " " : ",Picture=" + user.Picture + ")";
             return ConnectionClass.GetInstance().ExecuteNonQuery(sqlcm);
         }
 
         public int Update(User user)
         {
-            string sqlcm = "update user set UserName='" + user.UserName + "',Password='" + user.PassWord + "' where UserID=" + user.UserID;
+            string sqlcm = "update [user] set UserName='" + user.UserName + "',Password='" + user.PassWord + "' where UserID=" + user.CustomerID;
             return ConnectionClass.GetInstance().ExecuteNonQuery(sqlcm);
         }
 
         public int Delete(User user)
         {
-            string sqlcm = "Delete from user where UserID=" + user.UserID;
+            string sqlcm = "Delete from [user] where UserID=" + user.CustomerID;
             return ConnectionClass.GetInstance().ExecuteNonQuery(sqlcm);
         }
     }

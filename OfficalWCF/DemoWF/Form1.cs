@@ -21,21 +21,13 @@ namespace DemoWF
 
         private void btnGet_Click(object sender, EventArgs e)
         {
-            Category cate = new Category();
-            DatabaseProviderFactory factory = new DatabaseProviderFactory();
-            Database defaultDB = factory.Create("EFContext");
-            string sqlCommand = "Select * from Categories where CategoryID=" + txtInputID.Text;
-            DbCommand dbCommand = defaultDB.GetSqlStringCommand(sqlCommand);
-            using (IDataReader dataReader = defaultDB.ExecuteReader(dbCommand))
-            {
-                if (dataReader.Read())
-                {
-                    txtID.Text = dataReader.GetInt32(0).ToString();
-                    txtName.Text = dataReader.GetString(1);
-                    txtDescription.Text = dataReader.GetString(2);
-                }
-
+            ServiceReference2.Service1Client age = new ServiceReference2.Service1Client();
+            int id = int.Parse(txtInputID.Text);
+            var s = age.Test1(id);
+            txtID.Text = s.CategoryID.ToString();
+            txtName.Text = s.CategoryName;
+            txtDescription.Text = s.Description;
             }
         }
-    }
 }
+

@@ -17,75 +17,218 @@ namespace OfficalWCF
     [ServiceContract]
     public class Service1
     {
-        
-        //private readonly ICategoryService _cate;
-        [OperationContract]
-        public List<Order> Test()
-        {
-            var a = new OrderService();
-            var ret = a.GetAll();
-            return ret.ToList();
-        }
+        private CategoryService _Cateservice;
+        private OrderService _Orderservice;
+        private ProductService _Proservice;
+        private CustomerService _Cuservice;
+        private OrderDetailService _Detailsevice;
 
+        //private readonly ICategoryService _cate;
+        
+        #region Category
         [OperationContract]
-        public Order Test1(int id)
+        public Category GetCategogy(int id)
         {
-            var a = new OrderService();
-            var ret = a.Get(id);
+            _Cateservice = new CategoryService();
+            var ret = _Cateservice.Get(id);
             return ret;
         }
 
         [OperationContract]
-        public string TestAdd(Order cate)
+        public IQueryable<Category> GetAllCategory()
         {
-            var a = new OrderService();
-            var ret = a.Add(cate);
-            if(ret == 1)
-            {
-                return "success";
-            }
-            else
-            {
-                return "failed";
-            }
+            _Cateservice = new CategoryService();
+            IQueryable<Category> _a = _Cateservice.GetAll();
+            return _a;
         }
+
         [OperationContract]
-        public string TestUpdate(Order cate)
+        public  int AddCategory(Category cate)
         {
-            var a = new OrderService();
-            var ret = a.Update(cate);
-            if (ret == 1)
-            {
-                return "success";
-            }
+            _Cateservice = new CategoryService();
+            if (_Cateservice.Add(cate) == 1)
+                return 1;
             else
-            {
-                return "failed";
-            }
+                return 0;
         }
+
+        public int UpdateCategory(Category cate)
+        {
+            _Cateservice = new CategoryService();
+            if (_Cateservice.Update(cate) == 1)
+                return 1;
+            else
+                return 0;
+        }
+
+        public int DeleteCategory(Category cate)
+        {
+            _Cateservice = new CategoryService();
+            if (_Cateservice.Delete(cate) == 1)
+                return 1;
+            else
+                return 0;
+        }
+
+
+        #endregion
+
+        #region Order
+
         [OperationContract]
-        public string TestDelete(Order cate)
+        public Order GetOrder(int id)
         {
-            var a = new OrderService();
-            var ret = a.Delete(cate);
-            if (ret == 1)
-            {
-                return "success";
-            }
-            else
-            {
-                return "failed";
-            }
+            _Orderservice = new OrderService();
+            var ret = _Orderservice.Get(id);
+            return ret;
         }
+
+        [OperationContract]
+        public IQueryable<Order> GetAllOrder()
+        {
+            _Orderservice = new OrderService();
+            IQueryable<Order> _a = _Orderservice.GetAll();
+            return _a;
+        }
+
+        [OperationContract]
+        public int AddOrder(Order or)
+        {
+            _Orderservice = new OrderService();
+            if (_Orderservice.Add(or) == 1)
+                return 1;
+            else
+                return 0;
+        }
+
+        public int UpdateOrder(Order or)
+        {
+            _Orderservice = new OrderService();
+            if (_Orderservice.Update(or) == 1)
+                return 1;
+            else
+                return 0;
+        }
+
+        public int DeleteOrder(Order or)
+        {
+            _Orderservice = new OrderService();
+            if (_Orderservice.Delete(or) == 1)
+                return 1;
+            else
+                return 0;
+        }
+
+
+        #endregion
+
+        #region Product
+
+        [OperationContract]
+        public Product GetProduct(int id)
+        {
+            _Proservice = new ProductService();
+            var ret = _Proservice.Get(id);
+            return ret;
+        }
+
+        [OperationContract]
+        public IQueryable<Product> GetAllProduct()
+        {
+            _Proservice = new ProductService();
+            IQueryable<Product> _a = _Proservice.GetAll();
+            return _a;
+        }
+
+        [OperationContract]
+        public int AddProduct(Product or)
+        {
+            _Proservice = new ProductService();
+            if (_Proservice.Add(or) == 1)
+                return 1;
+            else
+                return 0;
+        }
+
+        public int UpdateProduct(Product or)
+        {
+            _Proservice = new ProductService();
+            if (_Proservice.Update(or) == 1)
+                return 1;
+            else
+                return 0;
+        }
+
+        public int DeleteProduct(Product or)
+        {
+            _Proservice = new ProductService();
+            if (_Proservice.Delete(or) == 1)
+                return 1;
+            else
+                return 0;
+        }
+
+
+        #endregion
+
+        #region Customer
+
+        [OperationContract]
+        public Customer GetCustomer(int id)
+        {
+            _Cuservice = new CustomerService();
+            var ret = _Cuservice.Get(id);
+            return ret;
+        }
+
+        [OperationContract]
+        public IQueryable<Customer> GetAllCustomer()
+        {
+            _Cuservice = new CustomerService();
+            IQueryable<Customer> _a = _Cuservice.GetAll();
+            return _a;
+        }
+
+        [OperationContract]
+        public int AddCustomer(Customer or)
+        {
+            _Cuservice = new CustomerService();
+            if (_Cuservice.Add(or) == 1)
+                return 1;
+            else
+                return 0;
+        }
+
+        public int UpdateCustomer(Customer or)
+        {
+            _Cuservice = new CustomerService();
+            if (_Cuservice.Update(or) == 1)
+                return 1;
+            else
+                return 0;
+        }
+
+        public int DeleteCustomer(Customer or)
+        {
+            _Cuservice = new CustomerService();
+            if (_Cuservice.Delete(or) == 1)
+                return 1;
+            else
+                return 0;
+        }
+
+
+        #endregion
+
 
         #region User
 
         [OperationContract]
-        public string TestGetUser(string  user,string password)
+        public string TestGetUser(string user, string password)
         {
             var a = new IUserService();
-            var ret = a.Get(user,password);
-            if (ret !=null)
+            var ret = a.Get(user, password);
+            if (ret != null)
             {
                 return "success";
             }
@@ -93,7 +236,23 @@ namespace OfficalWCF
             {
                 return "failed";
             }
-        } 
+        }
+
+
+        [OperationContract]
+        public string TestAddUser(User user)
+        {
+            var a = new IUserService();
+            var ret = a.Add(user);
+            if (ret == 1)
+            {
+                return "success";
+            }
+            else
+            {
+                return "failed";
+            }
         #endregion
+        }
     }
 }

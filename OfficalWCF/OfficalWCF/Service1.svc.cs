@@ -1,5 +1,6 @@
 ﻿using Microsoft.Practices.EnterpriseLibrary.Data;
 using OfficalWCF.Entities;
+using OfficalWCF.Entities.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -174,10 +175,10 @@ namespace OfficalWCF
         #region Customer
 
         [OperationContract]
-        public Customer GetCustomer(int id)
+        public Customer GetCustomer(int id,string pass)
         {
             _Cuservice = new CustomerService();
-            var ret = _Cuservice.Get(id);
+            var ret = _Cuservice.Get(id,pass);
             return ret;
         }
 
@@ -217,6 +218,17 @@ namespace OfficalWCF
                 return 0;
         }
 
+
+        #endregion
+
+        #region OrderDetail
+        [OperationContract]
+        public List<DetailProducts> getCusID(int CusID)
+        {
+            var a = new DetailProductsService();
+            var re = a.Get(CusID);
+            return re;
+        }
 
         #endregion
 

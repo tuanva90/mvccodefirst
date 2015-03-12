@@ -34,7 +34,7 @@ namespace OfficalWCF.Entities
         [OperationContract]
         int Delete(Category cate);
     }
-    public class ICategoryService : ICategory
+    public class CategoryService : ICategory
     {
         public Category Get(int id)
         {

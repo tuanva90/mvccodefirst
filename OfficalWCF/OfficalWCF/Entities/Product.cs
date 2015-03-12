@@ -48,7 +48,7 @@ namespace OfficalWCF.Entities
         int Delete(Product pro);
     }
 
-    public class IProductService : IProduct
+    public class ProductService : IProduct
     {
         public Product Get(int id)
         {
@@ -61,12 +61,12 @@ namespace OfficalWCF.Entities
                     pro.ProductID = dr.GetInt32(0);
                     pro.ProductName = dr.GetString(1);
                     pro.CategoryID = dr.GetInt32(2);
-                    pro.QuantityPerUnit = dr.GetString(3);
-                    pro.UnitPrice = dr.GetDecimal(4);
-                    pro.UnitsInStock = dr.GetInt16(5);
-                    pro.UnitsOnOrder = dr.GetInt16(6);
-                    pro.ReorderLevel = dr.GetInt16(7);
-                    pro.Discontinued = dr.GetBoolean(8);
+                    pro.QuantityPerUnit = dr.GetString(4);
+                    pro.UnitPrice = dr.GetDecimal(5);
+                    pro.UnitsInStock = dr.GetInt16(6);
+                    pro.UnitsOnOrder = dr.GetInt16(7);
+                    pro.ReorderLevel = dr.GetInt16(8);
+                    pro.Discontinued = dr.GetBoolean(9);
                 }
             }
             return pro;
@@ -75,21 +75,21 @@ namespace OfficalWCF.Entities
         public IQueryable<Product> GetAll()
         {
             List<Product> lspro = new List<Product>();
-            Product pro = new Product();
             string sqlcm = "Select * from Products";
             using (IDataReader dr = ConnectionClass.GetInstance().ExecuteReader(sqlcm))
             {
                 while (dr.Read())
                 {
+                    Product pro = new Product();
                     pro.ProductID = dr.GetInt32(0);
                     pro.ProductName = dr.GetString(1);
-                    pro.CategoryID = dr.GetInt32(2);
-                    pro.QuantityPerUnit = dr.GetString(3);
-                    pro.UnitPrice = dr.GetDecimal(4);
-                    pro.UnitsInStock = dr.GetInt16(5);
-                    pro.UnitsOnOrder = dr.GetInt16(6);
-                    pro.ReorderLevel = dr.GetInt16(7);
-                    pro.Discontinued = dr.GetBoolean(8);
+                    pro.CategoryID = dr.GetInt32(3);
+                    pro.QuantityPerUnit = dr.GetString(4);
+                    pro.UnitPrice = dr.GetDecimal(5);
+                    pro.UnitsInStock = dr.GetInt16(6);
+                    pro.UnitsOnOrder = dr.GetInt16(7);
+                    pro.ReorderLevel = dr.GetInt16(8);
+                    pro.Discontinued = dr.GetBoolean(9);
                     lspro.Add(pro);
                 }
                 dr.Close();
@@ -99,21 +99,41 @@ namespace OfficalWCF.Entities
 
         public int Add(Product pro)
         {
-            string sqlcm = "Insert into Products "+
-                           "value (ProductID=" + pro.ProductID + ",ProductName=" + pro.ProductName + ",CategoryID=" + pro.CategoryID +
-                           ",QuantityPerUnit=" + pro.QuantityPerUnit + ",UnitPrice= "+ pro.UnitPrice +
-                           ",UnitsInStock="+ pro.UnitsInStock +",UnitsOnOrder="+ pro.UnitsOnOrder +",ReorderLevel="+ pro.ReorderLevel +",Discontinued="+ pro.Discontinued +")";
-            return ConnectionClass.GetInstance().ExecuteNonQuery(sqlcm);
-
+            if(pro.Discontinued==true)
+            {
+                string sqlcm = "Insert into Products(ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued) " +
+                           "values ('" + pro.ProductName + "',1,'" + pro.CategoryID + "','" + pro.QuantityPerUnit + "'," + pro.UnitPrice +
+                           "," + pro.UnitsInStock + "," + pro.UnitsOnOrder + "," + pro.ReorderLevel + ",1)";
+                return ConnectionClass.GetInstance().ExecuteNonQuery(sqlcm);
+            }
+            else
+            {
+                string sqlcm = "Insert into Products(ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice,UnitsInStock,UnitsOnOrder,ReorderLevel,Discontinued) " +
+                           "values ('" + pro.ProductName + "',1,'" + pro.CategoryID + "','" + pro.QuantityPerUnit + "'," + pro.UnitPrice +
+                           "," + pro.UnitsInStock + "," + pro.UnitsOnOrder + "," + pro.ReorderLevel + ",0)";
+                return ConnectionClass.GetInstance().ExecuteNonQuery(sqlcm);
+            }
         }
 
         public int Update(Product pro)
         {
-            string sqlcm = "Update Products set" +
-                           ",ProductName=" + pro.ProductName + ",CategoryID=" + pro.CategoryID +
+            if(pro.Discontinued == true)
+            {
+                string sqlcm = "Update Products set" +
+                           "ProductName=" + pro.ProductName + ",SupplierID=1,CategoryID=" + pro.CategoryID +
                            ",QuantityPerUnit=" + pro.QuantityPerUnit + ",UnitPrice= " + pro.UnitPrice +
-                           ",UnitsInStock=" + pro.UnitsInStock + ",UnitsOnOrder=" + pro.UnitsOnOrder + ",ReorderLevel=" + pro.ReorderLevel + ",Discontinued=" + pro.Discontinued + "where ProductID="+pro.ProductID;
-            return ConnectionClass.GetInstance().ExecuteNonQuery(sqlcm);
+                           ",UnitsInStock=" + pro.UnitsInStock + ",UnitsOnOrder=" + pro.UnitsOnOrder + ",ReorderLevel=" + pro.ReorderLevel + ",Discontinued=1 where ProductID=" + pro.ProductID;
+                return ConnectionClass.GetInstance().ExecuteNonQuery(sqlcm);
+            }
+            else
+            {
+                string sqlcm = "Update Products set" +
+                           "ProductName=" + pro.ProductName + ",SupplierID=1,CategoryID=" + pro.CategoryID +
+                           ",QuantityPerUnit=" + pro.QuantityPerUnit + ",UnitPrice= " + pro.UnitPrice +
+                           ",UnitsInStock=" + pro.UnitsInStock + ",UnitsOnOrder=" + pro.UnitsOnOrder + ",ReorderLevel=" + pro.ReorderLevel + ",Discontinued=0 where ProductID=" + pro.ProductID;
+                return ConnectionClass.GetInstance().ExecuteNonQuery(sqlcm);
+            }
+            
         }
 
         public int Delete(Product pro)

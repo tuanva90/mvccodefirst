@@ -20,17 +20,25 @@ namespace OfficalWCF
         
         //private readonly ICategoryService _cate;
         [OperationContract]
-        public List<Category> Test()
+        public List<Order> Test()
         {
-            var a = new ICategoryService();
+            var a = new OrderService();
             var ret = a.GetAll();
             return ret.ToList();
         }
 
         [OperationContract]
-        public string TestAdd(Category cate)
+        public Order Test1(int id)
         {
-            var a = new ICategoryService();
+            var a = new OrderService();
+            var ret = a.Get(id);
+            return ret;
+        }
+
+        [OperationContract]
+        public string TestAdd(Order cate)
+        {
+            var a = new OrderService();
             var ret = a.Add(cate);
             if(ret == 1)
             {
@@ -42,9 +50,9 @@ namespace OfficalWCF
             }
         }
         [OperationContract]
-        public string TestUpdate(Category cate)
+        public string TestUpdate(Order cate)
         {
-            var a = new ICategoryService();
+            var a = new OrderService();
             var ret = a.Update(cate);
             if (ret == 1)
             {
@@ -56,10 +64,10 @@ namespace OfficalWCF
             }
         }
         [OperationContract]
-        public string TestDelete(Category cate)
+        public string TestDelete(Order cate)
         {
-            var a = new ICategoryService();
-            var ret = a.Update(cate);
+            var a = new OrderService();
+            var ret = a.Delete(cate);
             if (ret == 1)
             {
                 return "success";

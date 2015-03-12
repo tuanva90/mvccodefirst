@@ -12,7 +12,7 @@ namespace OfficalWCF.Entities
     public class Customer
     {
         [DataMember]
-        public int CustomerID;
+        public string CustomerID;
         [DataMember]
         public string CompanyName;
         [DataMember]
@@ -33,6 +33,8 @@ namespace OfficalWCF.Entities
         public string Phone;
         [DataMember]
         public string Fax;
+        [DataMember]
+        public string Password;
     }
 
     [ServiceContract]
@@ -49,27 +51,27 @@ namespace OfficalWCF.Entities
         [OperationContract]
         int Delete(Customer _cus);
     }
-    public class ICustomerService : ICustomer
+    public class CustomerService : ICustomer
     {
-        public Customer Get(int id)
+        public Customer Get(int id,string password)
         {
             Customer _cus = new Customer();
-            string sqlCommand = "Select * from _cusgories where CustomerID='" + id+"'";
+            string sqlCommand = "Select * from Customers where CustomerID='" + id+"' AND Password='"+password+"'";
             using (IDataReader dataReader = ConnectionClass.GetInstance().ExecuteReader(sqlCommand))
             {
                 if (dataReader.Read())
                 {
-                    _cus.CustomerID = dataReader.GetInt32(0);
+                    _cus.CustomerID = dataReader.GetString(0);
                     _cus.CompanyName = dataReader.GetString(1);
                     _cus.ContactName = dataReader.GetString(2);
-                    _cus.ContactTitle = dataReader.GetString(3);
-                    _cus.Address = dataReader.GetString(4);
-                    _cus.City = dataReader.GetString(5);
-                    _cus.Region = dataReader.GetString(6);
-                    _cus.PostalCode = dataReader.GetString(7);
-                    _cus.Country= dataReader.GetString(8);
-                    _cus.Phone = dataReader.GetString(9);
-                    _cus.Fax = dataReader.GetString(10);
+                    //_cus.contacttitle = datareader.getstring(3);
+                    //_cus.address = datareader.getstring(4);
+                    //_cus.city = datareader.getstring(5);
+                    //_cus.region = datareader.getstring(6);
+                    //_cus.postalcode = datareader.getstring(7);
+                    //_cus.country= datareader.getstring(8);
+                    //_cus.phone = datareader.getstring(9);
+                    //_cus.fax = datareader.getstring(10);
                 }
                 dataReader.Close();
 
@@ -80,13 +82,13 @@ namespace OfficalWCF.Entities
         public IQueryable<Customer> GetAll()
         {
             List<Customer> ls_cus = new List<Customer>();
-            string sqlcm = "Select * from _cusgories";
+            string sqlcm = "Select * from Customers";
             using (IDataReader dr = ConnectionClass.GetInstance().ExecuteReader(sqlcm))
             {
                 while (dr.Read())
                 {
                     Customer _cus = new Customer();
-                    _cus.CustomerID = dr.GetInt32(0);
+                    _cus.CustomerID = dr.GetString(0);
                     _cus.CompanyName = dr.GetString(1);
                     _cus.ContactName = dr.GetString(2);
                     _cus.ContactTitle = dr.GetString(3);

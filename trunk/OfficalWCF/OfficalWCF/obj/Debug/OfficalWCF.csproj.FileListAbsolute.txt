@@ -8,3 +8,13 @@ C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\OfficalWCF\OfficalWCF\
 C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\OfficalWCF\OfficalWCF\obj\Debug\OfficalWCF.csprojResolveAssemblyReference.cache
 C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\OfficalWCF\OfficalWCF\obj\Debug\OfficalWCF.dll
 C:\Users\thoaiphong\Documents\Visual Studio 2013\Projects\OfficalWCF\OfficalWCF\obj\Debug\OfficalWCF.pdb
+C:\Users\nguyenminhtuan\Desktop\mvccodefirst\OfficalWCF\OfficalWCF\bin\OfficalWCF.dll.config
+C:\Users\nguyenminhtuan\Desktop\mvccodefirst\OfficalWCF\OfficalWCF\bin\OfficalWCF.dll
+C:\Users\nguyenminhtuan\Desktop\mvccodefirst\OfficalWCF\OfficalWCF\bin\OfficalWCF.pdb
+C:\Users\nguyenminhtuan\Desktop\mvccodefirst\OfficalWCF\OfficalWCF\bin\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Users\nguyenminhtuan\Desktop\mvccodefirst\OfficalWCF\OfficalWCF\bin\Microsoft.Practices.EnterpriseLibrary.Data.dll
+C:\Users\nguyenminhtuan\Desktop\mvccodefirst\OfficalWCF\OfficalWCF\bin\Microsoft.Practices.EnterpriseLibrary.Common.xml
+C:\Users\nguyenminhtuan\Desktop\mvccodefirst\OfficalWCF\OfficalWCF\bin\Microsoft.Practices.EnterpriseLibrary.Data.xml
+C:\Users\nguyenminhtuan\Desktop\mvccodefirst\OfficalWCF\OfficalWCF\obj\Debug\OfficalWCF.dll
+C:\Users\nguyenminhtuan\Desktop\mvccodefirst\OfficalWCF\OfficalWCF\obj\Debug\OfficalWCF.pdb
+C:\Users\nguyenminhtuan\Desktop\mvccodefirst\OfficalWCF\OfficalWCF\obj\Debug\OfficalWCF.csprojResolveAssemblyReference.cache

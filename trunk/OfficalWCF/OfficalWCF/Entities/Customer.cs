@@ -43,7 +43,7 @@ namespace OfficalWCF.Entities
         [OperationContract]
         IQueryable<Customer> GetAll();
         [OperationContract]
-        Customer Get(int _cusid);
+        Customer Get(int _cusid,string pass);
         [OperationContract]
         int Add(Customer _cus);
         [OperationContract]

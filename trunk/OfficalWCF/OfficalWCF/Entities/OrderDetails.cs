@@ -26,11 +26,11 @@ namespace OfficalWCF.Entities
     [ServiceContract]
     public interface IOrderDetail
     {
-        [OperationContract]
-        IQueryable<OrderDetail> GetAll();
-        [OperationContract]
-        OrderDetail Get(int orid);
-        [OperationContract]
+        //[OperationContract]
+        //IQueryable<OrderDetail> GetAll();
+        
+        //OrderDetail Get(int orid);
+        //[OperationContract]
         int Add(OrderDetail or);
         [OperationContract]
         int Update(OrderDetail or);
@@ -42,27 +42,27 @@ namespace OfficalWCF.Entities
     {
 
 
-        public OrderDetail Get(int orid)
-        {
-            //Product pro = new Product();
-            string sqlCommand = "Select  from Products where ProductID=" + orid;
-            using (IDataReader dr = ConnectionClass.GetInstance().ExecuteReader(sqlCommand))
-            {
-                if (dr.Read())
-                {
-                    pro.ProductID = dr.GetInt32(0);
-                    pro.ProductName = dr.GetString(1);
-                    pro.CategoryID = dr.GetInt32(2);
-                    pro.QuantityPerUnit = dr.GetString(4);
-                    pro.UnitPrice = dr.GetDecimal(5);
-                    pro.UnitsInStock = dr.GetInt16(6);
-                    pro.UnitsOnOrder = dr.GetInt16(7);
-                    pro.ReorderLevel = dr.GetInt16(8);
-                    pro.Discontinued = dr.GetBoolean(9);
-                }
-            }
-            return pro;
-        }
+        //public OrderDetail Get(int orid)
+        //{
+        //    //Product pro = new Product();
+        //    string sqlCommand = "Select  from Products where ProductID=" + orid;
+        //    using (IDataReader dr = ConnectionClass.GetInstance().ExecuteReader(sqlCommand))
+        //    {
+        //        if (dr.Read())
+        //        {
+        //            pro.ProductID = dr.GetInt32(0);
+        //            pro.ProductName = dr.GetString(1);
+        //            pro.CategoryID = dr.GetInt32(2);
+        //            pro.QuantityPerUnit = dr.GetString(4);
+        //            pro.UnitPrice = dr.GetDecimal(5);
+        //            pro.UnitsInStock = dr.GetInt16(6);
+        //            pro.UnitsOnOrder = dr.GetInt16(7);
+        //            pro.ReorderLevel = dr.GetInt16(8);
+        //            pro.Discontinued = dr.GetBoolean(9);
+        //        }
+        //    }
+        //    return pro;
+        //}
 
         public int Add(OrderDetail or)
         {

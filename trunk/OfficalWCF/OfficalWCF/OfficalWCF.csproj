@@ -80,6 +80,7 @@
     <Compile Include="Entities\OrderDetails.cs" />
     <Compile Include="Entities\Product.cs" />
     <Compile Include="Entities\User.cs" />
+    <Compile Include="Entities\ViewModel\DetailProducts.cs" />
     <Compile Include="Service1.svc.cs">
       <DependentUpon>Service1.svc</DependentUpon>
     </Compile>

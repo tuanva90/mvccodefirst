@@ -90,5 +90,24 @@ namespace OfficalWCF.Entities
             string sqlcm = "Delete from Categories where CategoryID=" + cate.CategoryID;
             return ConnectionClass.GetInstance().ExecuteNonQuery(sqlcm);
         }
+
+        public IQueryable<Category> GetByName(string name)
+        {
+            List<Category> lscate = new List<Category>();
+            string sqlcm = "Select * from Categories where CategoryName like '%" + name + "%'";
+            using (IDataReader dr = ConnectionClass.GetInstance().ExecuteReader(sqlcm))
+            {
+                while (dr.Read())
+                {
+                    Category cate = new Category();
+                    cate.CategoryID = dr.GetInt32(0);
+                    cate.CategoryName = dr.GetString(1);
+                    cate.Description = dr.GetString(2);
+                    lscate.Add(cate);
+                }
+                dr.Close();
+            }
+            return lscate.AsQueryable();
+        }
     }
 }

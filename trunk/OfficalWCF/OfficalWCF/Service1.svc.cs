@@ -36,6 +36,14 @@ namespace OfficalWCF
         }
 
         [OperationContract]
+        public IQueryable<Category> GetCategogyByName(string name)
+        {
+            _Cateservice = new CategoryService();
+            IQueryable<Category> _a = _Cateservice.GetByName(name);
+            return _a;
+        }
+
+        [OperationContract]
         public IQueryable<Category> GetAllCategory()
         {
             _Cateservice = new CategoryService();
@@ -142,6 +150,14 @@ namespace OfficalWCF
         }
 
         [OperationContract]
+        public IQueryable<Product> GetProductByName(string name)
+        {
+            _Proservice = new ProductService();
+            IQueryable<Product> _a = _Proservice.GetByName(name);
+            return _a;
+        }
+
+        [OperationContract]
         public int AddProduct(Product or)
         {
             _Proservice = new ProductService();
@@ -222,6 +238,15 @@ namespace OfficalWCF
         #endregion
 
         #region OrderDetail
+
+        [OperationContract]
+        public IQueryable<Order> GetListOrderByDate(DateTime fromdate, DateTime todate)
+        {
+            _Orderservice = new OrderService();
+            IQueryable<Order> _a = _Orderservice.GetOrderByDate(fromdate, todate);
+            return _a;
+        }
+
         [OperationContract]
         public List<DetailProducts> getCusID(int CusID)
         {

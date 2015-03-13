@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service1" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:2176/Service1.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:2176/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:2176/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/OfficalWCF.Entities" />
+      <xsd:import schemaLocation="http://localhost:2176/Service1.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/OfficalWCF.Entities.ViewModel" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="Service1_GetCategogy_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCategogy" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetCategogy_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCategogyResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetCategogyByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCategogyByName" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetCategogyByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCategogyByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetAllCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCategory" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetAllCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_AddCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddCategory" />
+  </wsdl:message>
+  <wsdl:message name="Service1_AddCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrder" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetAllOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllOrder" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetAllOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_AddOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddOrder" />
+  </wsdl:message>
+  <wsdl:message name="Service1_AddOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProduct" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetAllProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllProduct" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetAllProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetProductByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductByName" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetProductByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_AddProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddProduct" />
+  </wsdl:message>
+  <wsdl:message name="Service1_AddProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomer" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetAllCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCustomer" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetAllCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_AddCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddCustomer" />
+  </wsdl:message>
+  <wsdl:message name="Service1_AddCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetListOrderByDate_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListOrderByDate" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetListOrderByDate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListOrderByDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_getCusID_InputMessage">
+    <wsdl:part name="parameters" element="tns:getCusID" />
+  </wsdl:message>
+  <wsdl:message name="Service1_getCusID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getCusIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_TestGetUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:TestGetUser" />
+  </wsdl:message>
+  <wsdl:message name="Service1_TestGetUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TestGetUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_TestAddUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:TestAddUser" />
+  </wsdl:message>
+  <wsdl:message name="Service1_TestAddUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TestAddUserResponse" />
+  </wsdl:message>
+  <wsdl:portType name="Service1">
+    <wsdl:operation name="GetCategogy">
+      <wsdl:input wsaw:Action="http://tempuri.org/Service1/GetCategogy" message="tns:Service1_GetCategogy_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Service1/GetCategogyResponse" message="tns:Service1_GetCategogy_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCategogyByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/Service1/GetCategogyByName" message="tns:Service1_GetCategogyByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Service1/GetCategogyByNameResponse" message="tns:Service1_GetCategogyByName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/Service1/GetAllCategory" message="tns:Service1_GetAllCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Service1/GetAllCategoryResponse" message="tns:Service1_GetAllCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/Service1/AddCategory" message="tns:Service1_AddCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Service1/AddCategoryResponse" message="tns:Service1_AddCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/Service1/GetOrder" message="tns:Service1_GetOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Service1/GetOrderResponse" message="tns:Service1_GetOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/Service1/GetAllOrder" message="tns:Service1_GetAllOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Service1/GetAllOrderResponse" message="tns:Service1_GetAllOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/Service1/AddOrder" message="tns:Service1_AddOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Service1/AddOrderResponse" message="tns:Service1_AddOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/Service1/GetProduct" message="tns:Service1_GetProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Service1/GetProductResponse" message="tns:Service1_GetProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/Service1/GetAllProduct" message="tns:Service1_GetAllProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Service1/GetAllProductResponse" message="tns:Service1_GetAllProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/Service1/GetProductByName" message="tns:Service1_GetProductByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Service1/GetProductByNameResponse" message="tns:Service1_GetProductByName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/Service1/AddProduct" message="tns:Service1_AddProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Service1/AddProductResponse" message="tns:Service1_AddProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomer">
+      <wsdl:input wsaw:Action="http://tempuri.org/Service1/GetCustomer" message="tns:Service1_GetCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Service1/GetCustomerResponse" message="tns:Service1_GetCustomer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCustomer">
+      <wsdl:input wsaw:Action="http://tempuri.org/Service1/GetAllCustomer" message="tns:Service1_GetAllCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Service1/GetAllCustomerResponse" message="tns:Service1_GetAllCustomer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCustomer">
+      <wsdl:input wsaw:Action="http://tempuri.org/Service1/AddCustomer" message="tns:Service1_AddCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Service1/AddCustomerResponse" message="tns:Service1_AddCustomer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListOrderByDate">
+      <wsdl:input wsaw:Action="http://tempuri.org/Service1/GetListOrderByDate" message="tns:Service1_GetListOrderByDate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Service1/GetListOrderByDateResponse" message="tns:Service1_GetListOrderByDate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getCusID">
+      <wsdl:input wsaw:Action="http://tempuri.org/Service1/getCusID" message="tns:Service1_getCusID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Service1/getCusIDResponse" message="tns:Service1_getCusID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TestGetUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/Service1/TestGetUser" message="tns:Service1_TestGetUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Service1/TestGetUserResponse" message="tns:Service1_TestGetUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TestAddUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/Service1/TestAddUser" message="tns:Service1_TestAddUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Service1/TestAddUserResponse" message="tns:Service1_TestAddUser_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_Service1" type="tns:Service1">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetCategogy">
+      <soap:operation soapAction="http://tempuri.org/Service1/GetCategogy" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCategogyByName">
+      <soap:operation soapAction="http://tempuri.org/Service1/GetCategogyByName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCategory">
+      <soap:operation soapAction="http://tempuri.org/Service1/GetAllCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCategory">
+      <soap:operation soapAction="http://tempuri.org/Service1/AddCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrder">
+      <soap:operation soapAction="http://tempuri.org/Service1/GetOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllOrder">
+      <soap:operation soapAction="http://tempuri.org/Service1/GetAllOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddOrder">
+      <soap:operation soapAction="http://tempuri.org/Service1/AddOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProduct">
+      <soap:operation soapAction="http://tempuri.org/Service1/GetProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllProduct">
+      <soap:operation soapAction="http://tempuri.org/Service1/GetAllProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductByName">
+      <soap:operation soapAction="http://tempuri.org/Service1/GetProductByName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddProduct">
+      <soap:operation soapAction="http://tempuri.org/Service1/AddProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomer">
+      <soap:operation soapAction="http://tempuri.org/Service1/GetCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCustomer">
+      <soap:operation soapAction="http://tempuri.org/Service1/GetAllCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCustomer">
+      <soap:operation soapAction="http://tempuri.org/Service1/AddCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListOrderByDate">
+      <soap:operation soapAction="http://tempuri.org/Service1/GetListOrderByDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCusID">
+      <soap:operation soapAction="http://tempuri.org/Service1/getCusID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestGetUser">
+      <soap:operation soapAction="http://tempuri.org/Service1/TestGetUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestAddUser">
+      <soap:operation soapAction="http://tempuri.org/Service1/TestAddUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="BasicHttpBinding_Service1" binding="tns:BasicHttpBinding_Service1">
+      <soap:address location="http://localhost:2176/Service1.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

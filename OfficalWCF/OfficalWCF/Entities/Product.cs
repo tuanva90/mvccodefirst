@@ -141,5 +141,29 @@ namespace OfficalWCF.Entities
             string sqlcm = "Delete from Products where ProductID=" + pro.ProductID;
             return ConnectionClass.GetInstance().ExecuteNonQuery(sqlcm);
         }
+        public IQueryable<Product> GetByName(string name)
+        {
+            List<Product> lspro = new List<Product>();
+            string sqlcm = "Select * from Products where ProductName like '"+name+"'";
+            using (IDataReader dr = ConnectionClass.GetInstance().ExecuteReader(sqlcm))
+            {
+                while (dr.Read())
+                {
+                    Product pro = new Product();
+                    pro.ProductID = dr.GetInt32(0);
+                    pro.ProductName = dr.GetString(1);
+                    pro.CategoryID = dr.GetInt32(3);
+                    pro.QuantityPerUnit = dr.GetString(4);
+                    pro.UnitPrice = dr.GetDecimal(5);
+                    pro.UnitsInStock = dr.GetInt16(6);
+                    pro.UnitsOnOrder = dr.GetInt16(7);
+                    pro.ReorderLevel = dr.GetInt16(8);
+                    pro.Discontinued = dr.GetBoolean(9);
+                    lspro.Add(pro);
+                }
+                dr.Close();
+            }
+            return lspro.AsQueryable();
+        }
     }
 }

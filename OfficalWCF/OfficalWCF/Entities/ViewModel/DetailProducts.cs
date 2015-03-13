@@ -28,8 +28,8 @@ namespace OfficalWCF.Entities.ViewModel
     [ServiceContract]
     public interface IDetailProducts
     {
-        [OperationContract]      
-        DetailProducts Get(int orid);
+        [OperationContract]
+        List<DetailProducts> Get(int orid);
  
     }
 

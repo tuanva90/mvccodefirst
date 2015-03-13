@@ -87,6 +87,37 @@ namespace OfficalWCF.Entities
             return lsor.AsQueryable();
         }
 
+        public IQueryable<Order> GetOrderByDate(DateTime fromdate, DateTime todate)
+        {
+            List<Order> lsor = new List<Order>();
+            string sqlcm = "select distinct OrderID, a.CustomerID, OrderDate, RequiredDate, ShippedDate, Shipvia, Freight from Orders a, Customers where a.OrderDate between '" + fromdate.ToString("yyyy-MM-dd") + "' and '" + todate.ToString("yyyy-MM-dd") + "'";
+            using (IDataReader dr = ConnectionClass.GetInstance().ExecuteReader(sqlcm))
+            {
+                while (dr.Read())
+                {
+                    Order or = new Order();
+                    or.OrderID = dr.GetInt32(0);
+                    or.CustomerID = dr.GetString(1);
+                    or.OrderDate = dr.GetDateTime(2);
+                    or.RequireDate = dr.GetDateTime(3);
+                    if (dr.IsDBNull(4))
+                    {
+                        or.ShippedDate = null;
+                    }
+                    else
+                    {
+                        or.ShippedDate = dr.GetDateTime(4);
+                    }
+
+                    or.ShipVia = dr.GetInt32(5);
+                    or.Freight = dr.GetDecimal(6);
+                    lsor.Add(or);
+                }
+                dr.Close();
+            }
+            return lsor.AsQueryable();
+        }
+
         public Order Get(int orid)
         {
             Order or = new Order();

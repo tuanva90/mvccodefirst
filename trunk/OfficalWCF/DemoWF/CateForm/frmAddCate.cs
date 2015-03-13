@@ -58,7 +58,13 @@ namespace DemoWF.CateForm
             {
                 if (Convert.ToBoolean(dtgCategory.Rows[i].Cells[4].Value)==true)
                 {
-                    MessageBox.Show(dtgCategory.Rows[i].Cells[1].ToString());
+                   int a =  test.DeleteCategory(int.Parse(dtgCategory.Rows[i].Cells[0].Value.ToString()));
+                   if (a == 1)
+                   {
+                       MessageBox.Show("Delete Susscess");
+                   }
+                   else
+                       MessageBox.Show("Error!");
                 }
             }
                 
@@ -69,6 +75,11 @@ namespace DemoWF.CateForm
             string cate = "Category";
             frmSearch search = new frmSearch(cate);
             search.ShowDialog();
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

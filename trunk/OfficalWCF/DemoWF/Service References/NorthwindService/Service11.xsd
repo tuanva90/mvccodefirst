@@ -56,6 +56,34 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="UpdateCategory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/OfficalWCF.Entities" minOccurs="0" name="cate" nillable="true" type="q5:Category" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCategoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateCategoryResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteCategory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteCategoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteCategoryResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="GetOrder">
     <xs:complexType>
       <xs:sequence>
@@ -66,7 +94,7 @@
   <xs:element name="GetOrderResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/OfficalWCF.Entities" minOccurs="0" name="GetOrderResult" nillable="true" type="q5:Order" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/OfficalWCF.Entities" minOccurs="0" name="GetOrderResult" nillable="true" type="q6:Order" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -78,14 +106,14 @@
   <xs:element name="GetAllOrderResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/OfficalWCF.Entities" minOccurs="0" name="GetAllOrderResult" nillable="true" type="q6:ArrayOfOrder" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/OfficalWCF.Entities" minOccurs="0" name="GetAllOrderResult" nillable="true" type="q7:ArrayOfOrder" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="AddOrder">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/OfficalWCF.Entities" minOccurs="0" name="or" nillable="true" type="q7:Order" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/OfficalWCF.Entities" minOccurs="0" name="or" nillable="true" type="q8:Order" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -106,7 +134,7 @@
   <xs:element name="GetProductResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/OfficalWCF.Entities" minOccurs="0" name="GetProductResult" nillable="true" type="q8:Product" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/OfficalWCF.Entities" minOccurs="0" name="GetProductResult" nillable="true" type="q9:Product" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -118,7 +146,7 @@
   <xs:element name="GetAllProductResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/OfficalWCF.Entities" minOccurs="0" name="GetAllProductResult" nillable="true" type="q9:ArrayOfProduct" />
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/OfficalWCF.Entities" minOccurs="0" name="GetAllProductResult" nillable="true" type="q10:ArrayOfProduct" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -132,14 +160,14 @@
   <xs:element name="GetProductByNameResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/OfficalWCF.Entities" minOccurs="0" name="GetProductByNameResult" nillable="true" type="q10:ArrayOfProduct" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/OfficalWCF.Entities" minOccurs="0" name="GetProductByNameResult" nillable="true" type="q11:ArrayOfProduct" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="AddProduct">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/OfficalWCF.Entities" minOccurs="0" name="or" nillable="true" type="q11:Product" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/OfficalWCF.Entities" minOccurs="0" name="or" nillable="true" type="q12:Product" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -161,7 +189,7 @@
   <xs:element name="GetCustomerResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/OfficalWCF.Entities" minOccurs="0" name="GetCustomerResult" nillable="true" type="q12:Customer" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/OfficalWCF.Entities" minOccurs="0" name="GetCustomerResult" nillable="true" type="q13:Customer" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -173,14 +201,14 @@
   <xs:element name="GetAllCustomerResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/OfficalWCF.Entities" minOccurs="0" name="GetAllCustomerResult" nillable="true" type="q13:ArrayOfCustomer" />
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/OfficalWCF.Entities" minOccurs="0" name="GetAllCustomerResult" nillable="true" type="q14:ArrayOfCustomer" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="AddCustomer">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/OfficalWCF.Entities" minOccurs="0" name="or" nillable="true" type="q14:Customer" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/OfficalWCF.Entities" minOccurs="0" name="or" nillable="true" type="q15:Customer" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -202,7 +230,7 @@
   <xs:element name="GetListOrderByDateResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/OfficalWCF.Entities" minOccurs="0" name="GetListOrderByDateResult" nillable="true" type="q15:ArrayOfOrder" />
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/OfficalWCF.Entities" minOccurs="0" name="GetListOrderByDateResult" nillable="true" type="q16:ArrayOfOrder" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -216,7 +244,7 @@
   <xs:element name="getCusIDResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/OfficalWCF.Entities.ViewModel" minOccurs="0" name="getCusIDResult" nillable="true" type="q16:ArrayOfDetailProducts" />
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/OfficalWCF.Entities.ViewModel" minOccurs="0" name="getCusIDResult" nillable="true" type="q17:ArrayOfDetailProducts" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -238,7 +266,7 @@
   <xs:element name="TestAddUser">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/OfficalWCF.Entities" minOccurs="0" name="user" nillable="true" type="q17:User" />
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/OfficalWCF.Entities" minOccurs="0" name="user" nillable="true" type="q18:User" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

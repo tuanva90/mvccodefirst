@@ -32,6 +32,18 @@
   <wsdl:message name="Service1_AddCategory_OutputMessage">
     <wsdl:part name="parameters" element="tns:AddCategoryResponse" />
   </wsdl:message>
+  <wsdl:message name="Service1_UpdateCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCategory" />
+  </wsdl:message>
+  <wsdl:message name="Service1_UpdateCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_DeleteCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCategory" />
+  </wsdl:message>
+  <wsdl:message name="Service1_DeleteCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCategoryResponse" />
+  </wsdl:message>
   <wsdl:message name="Service1_GetOrder_InputMessage">
     <wsdl:part name="parameters" element="tns:GetOrder" />
   </wsdl:message>
@@ -133,6 +145,14 @@
       <wsdl:input wsaw:Action="http://tempuri.org/Service1/AddCategory" message="tns:Service1_AddCategory_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/Service1/AddCategoryResponse" message="tns:Service1_AddCategory_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="UpdateCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/Service1/UpdateCategory" message="tns:Service1_UpdateCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Service1/UpdateCategoryResponse" message="tns:Service1_UpdateCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/Service1/DeleteCategory" message="tns:Service1_DeleteCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Service1/DeleteCategoryResponse" message="tns:Service1_DeleteCategory_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="GetOrder">
       <wsdl:input wsaw:Action="http://tempuri.org/Service1/GetOrder" message="tns:Service1_GetOrder_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/Service1/GetOrderResponse" message="tns:Service1_GetOrder_OutputMessage" />
@@ -221,6 +241,24 @@
     </wsdl:operation>
     <wsdl:operation name="AddCategory">
       <soap:operation soapAction="http://tempuri.org/Service1/AddCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCategory">
+      <soap:operation soapAction="http://tempuri.org/Service1/UpdateCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCategory">
+      <soap:operation soapAction="http://tempuri.org/Service1/DeleteCategory" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

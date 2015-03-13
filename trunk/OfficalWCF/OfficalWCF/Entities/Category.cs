@@ -32,7 +32,7 @@ namespace OfficalWCF.Entities
         [OperationContract]
         int Update(Category cate);
         [OperationContract]
-        int Delete(Category cate);
+        int Delete(int d);
     }
     public class CategoryService : ICategory
     {
@@ -85,9 +85,9 @@ namespace OfficalWCF.Entities
             return ConnectionClass.GetInstance().ExecuteNonQuery(sqlcm);
         }
 
-        public int Delete(Category cate)
+        public int Delete(int d)
         {
-            string sqlcm = "Delete from Categories where CategoryID=" + cate.CategoryID;
+            string sqlcm = "Delete from Categories where CategoryID=" + d;
             return ConnectionClass.GetInstance().ExecuteNonQuery(sqlcm);
         }
 

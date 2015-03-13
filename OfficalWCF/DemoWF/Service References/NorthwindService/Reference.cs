@@ -903,6 +903,18 @@ namespace DemoWF.NorthwindService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Service1/AddCategory", ReplyAction="http://tempuri.org/Service1/AddCategoryResponse")]
         System.Threading.Tasks.Task<int> AddCategoryAsync(DemoWF.NorthwindService.Category cate);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Service1/UpdateCategory", ReplyAction="http://tempuri.org/Service1/UpdateCategoryResponse")]
+        int UpdateCategory(DemoWF.NorthwindService.Category cate);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Service1/UpdateCategory", ReplyAction="http://tempuri.org/Service1/UpdateCategoryResponse")]
+        System.Threading.Tasks.Task<int> UpdateCategoryAsync(DemoWF.NorthwindService.Category cate);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Service1/DeleteCategory", ReplyAction="http://tempuri.org/Service1/DeleteCategoryResponse")]
+        int DeleteCategory(int ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Service1/DeleteCategory", ReplyAction="http://tempuri.org/Service1/DeleteCategoryResponse")]
+        System.Threading.Tasks.Task<int> DeleteCategoryAsync(int ID);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Service1/GetOrder", ReplyAction="http://tempuri.org/Service1/GetOrderResponse")]
         DemoWF.NorthwindService.Order GetOrder(int id);
         
@@ -1045,6 +1057,22 @@ namespace DemoWF.NorthwindService {
         
         public System.Threading.Tasks.Task<int> AddCategoryAsync(DemoWF.NorthwindService.Category cate) {
             return base.Channel.AddCategoryAsync(cate);
+        }
+        
+        public int UpdateCategory(DemoWF.NorthwindService.Category cate) {
+            return base.Channel.UpdateCategory(cate);
+        }
+        
+        public System.Threading.Tasks.Task<int> UpdateCategoryAsync(DemoWF.NorthwindService.Category cate) {
+            return base.Channel.UpdateCategoryAsync(cate);
+        }
+        
+        public int DeleteCategory(int ID) {
+            return base.Channel.DeleteCategory(ID);
+        }
+        
+        public System.Threading.Tasks.Task<int> DeleteCategoryAsync(int ID) {
+            return base.Channel.DeleteCategoryAsync(ID);
         }
         
         public DemoWF.NorthwindService.Order GetOrder(int id) {

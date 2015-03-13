@@ -27,3 +27,13 @@ C:\Users\HoaiPhong\Desktop\my repo\OfficalWCF\OfficalWCF\bin\Microsoft.Practices
 C:\Users\HoaiPhong\Desktop\my repo\OfficalWCF\OfficalWCF\obj\Debug\OfficalWCF.dll
 C:\Users\HoaiPhong\Desktop\my repo\OfficalWCF\OfficalWCF\obj\Debug\OfficalWCF.pdb
 C:\Users\HoaiPhong\Desktop\my repo\OfficalWCF\OfficalWCF\obj\Debug\OfficalWCF.csprojResolveAssemblyReference.cache
+C:\Users\nguyenminhtuan\Desktop\New folder (2)\OfficalWCF\bin\OfficalWCF.dll.config
+C:\Users\nguyenminhtuan\Desktop\New folder (2)\OfficalWCF\bin\OfficalWCF.dll
+C:\Users\nguyenminhtuan\Desktop\New folder (2)\OfficalWCF\bin\OfficalWCF.pdb
+C:\Users\nguyenminhtuan\Desktop\New folder (2)\OfficalWCF\bin\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Users\nguyenminhtuan\Desktop\New folder (2)\OfficalWCF\bin\Microsoft.Practices.EnterpriseLibrary.Data.dll
+C:\Users\nguyenminhtuan\Desktop\New folder (2)\OfficalWCF\bin\Microsoft.Practices.EnterpriseLibrary.Common.xml
+C:\Users\nguyenminhtuan\Desktop\New folder (2)\OfficalWCF\bin\Microsoft.Practices.EnterpriseLibrary.Data.xml
+C:\Users\nguyenminhtuan\Desktop\New folder (2)\OfficalWCF\obj\Debug\OfficalWCF.dll
+C:\Users\nguyenminhtuan\Desktop\New folder (2)\OfficalWCF\obj\Debug\OfficalWCF.pdb
+C:\Users\nguyenminhtuan\Desktop\New folder (2)\OfficalWCF\obj\Debug\OfficalWCF.csprojResolveAssemblyReference.cache

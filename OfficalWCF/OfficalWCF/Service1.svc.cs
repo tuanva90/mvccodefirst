@@ -61,6 +61,7 @@ namespace OfficalWCF
                 return 0;
         }
 
+        [OperationContract]
         public int UpdateCategory(Category cate)
         {
             _Cateservice = new CategoryService();
@@ -69,11 +70,11 @@ namespace OfficalWCF
             else
                 return 0;
         }
-
-        public int DeleteCategory(Category cate)
+        [OperationContract]
+        public int DeleteCategory(int ID)
         {
             _Cateservice = new CategoryService();
-            if (_Cateservice.Delete(cate) == 1)
+            if (_Cateservice.Delete(ID) == 1)
                 return 1;
             else
                 return 0;

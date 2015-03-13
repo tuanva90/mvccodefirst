@@ -32,11 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DevComponents.DotNetBar.Keyboard, Version=11.0.0.0, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL" />
-    <Reference Include="DevComponents.DotNetBar.Schedule, Version=11.0.0.0, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL" />
-    <Reference Include="DevComponents.DotNetBar.SuperGrid, Version=11.0.0.0, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL" />
-    <Reference Include="DevComponents.DotNetBar2, Version=11.0.0.0, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL" />
-    <Reference Include="DevComponents.SuperGrid.Design, Version=11.0.0.0, Culture=neutral, PublicKeyToken=1fea3f5d8d482bff, processorArchitecture=MSIL" />
+    <Reference Include="DevComponents.DotNetBar2, Version=11.0.0.0, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL">
+      <HintPath>..\..\..\AppData\Roaming\Skype\My Skype Received Files\DevComponents.DotNetBar2.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>

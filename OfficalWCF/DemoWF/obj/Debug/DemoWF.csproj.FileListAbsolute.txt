@@ -40,3 +40,20 @@ C:\Users\HoaiPhong\Desktop\my repo\OfficalWCF\DemoWF\obj\Debug\DemoWF.exe
 C:\Users\HoaiPhong\Desktop\my repo\OfficalWCF\DemoWF\obj\Debug\DemoWF.pdb
 C:\Users\HoaiPhong\Desktop\my repo\OfficalWCF\DemoWF\obj\Debug\DemoWF.csprojResolveAssemblyReference.cache
 C:\Users\HoaiPhong\Desktop\my repo\OfficalWCF\DemoWF\obj\Debug\DemoWF.CateForm.frmSearch.resources
+C:\Users\nguyenminhtuan\Desktop\New folder (2)\DemoWF\bin\Debug\DemoWF.exe.config
+C:\Users\nguyenminhtuan\Desktop\New folder (2)\DemoWF\obj\Debug\DemoWF.exe
+C:\Users\nguyenminhtuan\Desktop\New folder (2)\DemoWF\obj\Debug\DemoWF.pdb
+C:\Users\nguyenminhtuan\Desktop\New folder (2)\DemoWF\obj\Debug\DemoWF.csprojResolveAssemblyReference.cache
+C:\Users\nguyenminhtuan\Desktop\New folder (2)\DemoWF\obj\Debug\DemoWF.CateForm.frmAddCate.resources
+C:\Users\nguyenminhtuan\Desktop\New folder (2)\DemoWF\obj\Debug\DemoWF.CateForm.frmSearch.resources
+C:\Users\nguyenminhtuan\Desktop\New folder (2)\DemoWF\obj\Debug\DemoWF.CateForm.frmUpdateCate.resources
+C:\Users\nguyenminhtuan\Desktop\New folder (2)\DemoWF\obj\Debug\DemoWF.MainForm.resources
+C:\Users\nguyenminhtuan\Desktop\New folder (2)\DemoWF\obj\Debug\DemoWF.Properties.Resources.resources
+C:\Users\nguyenminhtuan\Desktop\New folder (2)\DemoWF\obj\Debug\DemoWF.csproj.GenerateResource.Cache
+C:\Users\nguyenminhtuan\Desktop\New folder (2)\DemoWF\bin\Debug\DemoWF.exe
+C:\Users\nguyenminhtuan\Desktop\New folder (2)\DemoWF\bin\Debug\DemoWF.pdb
+C:\Users\nguyenminhtuan\Desktop\New folder (2)\DemoWF\bin\Debug\DevComponents.DotNetBar2.dll
+C:\Users\nguyenminhtuan\Desktop\New folder (2)\DemoWF\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Users\nguyenminhtuan\Desktop\New folder (2)\DemoWF\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+C:\Users\nguyenminhtuan\Desktop\New folder (2)\DemoWF\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
+C:\Users\nguyenminhtuan\Desktop\New folder (2)\DemoWF\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.xml

@@ -958,10 +958,10 @@ namespace DemoWF.NorthwindService {
         System.Threading.Tasks.Task<int> AddProductAsync(DemoWF.NorthwindService.Product or);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Service1/GetCustomer", ReplyAction="http://tempuri.org/Service1/GetCustomerResponse")]
-        DemoWF.NorthwindService.Customer GetCustomer(int id, string pass);
+        string GetCustomer(string id, string pass);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Service1/GetCustomer", ReplyAction="http://tempuri.org/Service1/GetCustomerResponse")]
-        System.Threading.Tasks.Task<DemoWF.NorthwindService.Customer> GetCustomerAsync(int id, string pass);
+        System.Threading.Tasks.Task<string> GetCustomerAsync(string id, string pass);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Service1/GetAllCustomer", ReplyAction="http://tempuri.org/Service1/GetAllCustomerResponse")]
         DemoWF.NorthwindService.Customer[] GetAllCustomer();
@@ -1131,11 +1131,11 @@ namespace DemoWF.NorthwindService {
             return base.Channel.AddProductAsync(or);
         }
         
-        public DemoWF.NorthwindService.Customer GetCustomer(int id, string pass) {
+        public string GetCustomer(string id, string pass) {
             return base.Channel.GetCustomer(id, pass);
         }
         
-        public System.Threading.Tasks.Task<DemoWF.NorthwindService.Customer> GetCustomerAsync(int id, string pass) {
+        public System.Threading.Tasks.Task<string> GetCustomerAsync(string id, string pass) {
             return base.Channel.GetCustomerAsync(id, pass);
         }
         

@@ -1,4 +1,5 @@
 ﻿using DemoWF.CateForm;
+using DemoWF.LoginForm;
 using DemoWF.ProductForm;
 using System;
 using System.Collections.Generic;
@@ -18,7 +19,7 @@ namespace DemoWF
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmSearch());
+            Application.Run(new LoginFrm());
         }
     }
 }

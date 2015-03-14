@@ -43,7 +43,7 @@ namespace OfficalWCF.Entities
         [OperationContract]
         IQueryable<Customer> GetAll();
         [OperationContract]
-        Customer Get(int _cusid,string pass);
+        string Get(string _cusid,string pass);
         [OperationContract]
         int Add(Customer _cus);
         [OperationContract]
@@ -53,17 +53,15 @@ namespace OfficalWCF.Entities
     }
     public class CustomerService : ICustomer
     {
-        public Customer Get(int id,string password)
+        public string Get(string id,string password)
         {
-            Customer _cus = new Customer();
+            string _cusID=null;
             string sqlCommand = "Select * from Customers where CustomerID='" + id+"' AND Password='"+password+"'";
             using (IDataReader dataReader = ConnectionClass.GetInstance().ExecuteReader(sqlCommand))
             {
                 if (dataReader.Read())
                 {
-                    _cus.CustomerID = dataReader.GetString(0);
-                    _cus.CompanyName = dataReader.GetString(1);
-                    _cus.ContactName = dataReader.GetString(2);
+                    _cusID = dataReader.GetString(0);                    
                     //_cus.contacttitle = datareader.getstring(3);
                     //_cus.address = datareader.getstring(4);
                     //_cus.city = datareader.getstring(5);
@@ -76,7 +74,7 @@ namespace OfficalWCF.Entities
                 dataReader.Close();
 
             }
-            return _cus;
+            return _cusID;
         }
 
         public IQueryable<Customer> GetAll()

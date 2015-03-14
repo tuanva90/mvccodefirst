@@ -192,7 +192,7 @@ namespace OfficalWCF
         #region Customer
 
         [OperationContract]
-        public Customer GetCustomer(int id,string pass)
+        public string GetCustomer(string id,string pass)
         {
             _Cuservice = new CustomerService();
             var ret = _Cuservice.Get(id,pass);

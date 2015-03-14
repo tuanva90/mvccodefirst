@@ -12,9 +12,11 @@ namespace DemoWF.OrderForm
 {
     public partial class frmMainOrder : DevComponents.DotNetBar.Office2007Form
     {
-        public frmMainOrder()
+        private string _Cusid;
+        public frmMainOrder(string id)
         {
             InitializeComponent();
+            _Cusid = id;
         }
     }
 }

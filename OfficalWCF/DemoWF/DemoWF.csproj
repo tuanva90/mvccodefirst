@@ -33,7 +33,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevComponents.DotNetBar2, Version=11.0.0.0, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL">
-      <HintPath>..\..\..\AppData\Roaming\Skype\My Skype Received Files\DevComponents.DotNetBar2.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\DotNetBar for Windows Forms\DevComponents.DotNetBar2.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -81,6 +82,12 @@
     <Compile Include="CateForm\frmUpdateCate.Designer.cs">
       <DependentUpon>frmUpdateCate.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoginForm\LoginFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm\LoginFrm.Designer.cs">
+      <DependentUpon>LoginFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +121,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CateForm\frmUpdateCate.resx">
       <DependentUpon>frmUpdateCate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm\LoginFrm.resx">
+      <DependentUpon>LoginFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

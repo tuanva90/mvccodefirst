@@ -65,7 +65,7 @@ namespace DemoWF.CateForm
             List<NorthwindService.Product> lspro = new List<NorthwindService.Product>();
             lspro = test.GetProductByName(txtSearchPro.Text).ToList();
             productBindingSource.DataSource = lspro;
-            dtgProduct.DataSource = categoryBindingSource;
+            dtgProduct.DataSource = productBindingSource;
         }
 
         private void buttonX2_Click(object sender, EventArgs e)
@@ -73,7 +73,7 @@ namespace DemoWF.CateForm
             List<NorthwindService.Order> lsorder = new List<NorthwindService.Order>();
             lsorder = test.GetListOrderByDate(DateTime.Parse(txtDateFrom.Text), DateTime.Parse(txtDateTo.Text)).ToList();
             orderBindingSource.DataSource = lsorder;
-            dtgOrder.DataSource = categoryBindingSource;
+            dtgOrder.DataSource = orderBindingSource;
         }
     }
 }

@@ -68,6 +68,18 @@
   <wsdl:message name="Service1_AddOrder_OutputMessage">
     <wsdl:part name="parameters" element="tns:AddOrderResponse" />
   </wsdl:message>
+  <wsdl:message name="Service1_UpdateOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateOrder" />
+  </wsdl:message>
+  <wsdl:message name="Service1_UpdateOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_DeleteOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteOrder" />
+  </wsdl:message>
+  <wsdl:message name="Service1_DeleteOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteOrderResponse" />
+  </wsdl:message>
   <wsdl:message name="Service1_GetProduct_InputMessage">
     <wsdl:part name="parameters" element="tns:GetProduct" />
   </wsdl:message>
@@ -91,6 +103,18 @@
   </wsdl:message>
   <wsdl:message name="Service1_AddProduct_OutputMessage">
     <wsdl:part name="parameters" element="tns:AddProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_UpdateProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProduct" />
+  </wsdl:message>
+  <wsdl:message name="Service1_UpdateProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_DeleteProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteProduct" />
+  </wsdl:message>
+  <wsdl:message name="Service1_DeleteProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteProductResponse" />
   </wsdl:message>
   <wsdl:message name="Service1_GetCustomer_InputMessage">
     <wsdl:part name="parameters" element="tns:GetCustomer" />
@@ -169,6 +193,14 @@
       <wsdl:input wsaw:Action="http://tempuri.org/Service1/AddOrder" message="tns:Service1_AddOrder_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/Service1/AddOrderResponse" message="tns:Service1_AddOrder_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="UpdateOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/Service1/UpdateOrder" message="tns:Service1_UpdateOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Service1/UpdateOrderResponse" message="tns:Service1_UpdateOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/Service1/DeleteOrder" message="tns:Service1_DeleteOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Service1/DeleteOrderResponse" message="tns:Service1_DeleteOrder_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="GetProduct">
       <wsdl:input wsaw:Action="http://tempuri.org/Service1/GetProduct" message="tns:Service1_GetProduct_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/Service1/GetProductResponse" message="tns:Service1_GetProduct_OutputMessage" />
@@ -184,6 +216,14 @@
     <wsdl:operation name="AddProduct">
       <wsdl:input wsaw:Action="http://tempuri.org/Service1/AddProduct" message="tns:Service1_AddProduct_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/Service1/AddProductResponse" message="tns:Service1_AddProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/Service1/UpdateProduct" message="tns:Service1_UpdateProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Service1/UpdateProductResponse" message="tns:Service1_UpdateProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/Service1/DeleteProduct" message="tns:Service1_DeleteProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Service1/DeleteProductResponse" message="tns:Service1_DeleteProduct_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetCustomer">
       <wsdl:input wsaw:Action="http://tempuri.org/Service1/GetCustomer" message="tns:Service1_GetCustomer_InputMessage" />
@@ -302,6 +342,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="UpdateOrder">
+      <soap:operation soapAction="http://tempuri.org/Service1/UpdateOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteOrder">
+      <soap:operation soapAction="http://tempuri.org/Service1/DeleteOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetProduct">
       <soap:operation soapAction="http://tempuri.org/Service1/GetProduct" style="document" />
       <wsdl:input>
@@ -331,6 +389,24 @@
     </wsdl:operation>
     <wsdl:operation name="AddProduct">
       <soap:operation soapAction="http://tempuri.org/Service1/AddProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProduct">
+      <soap:operation soapAction="http://tempuri.org/Service1/UpdateProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProduct">
+      <soap:operation soapAction="http://tempuri.org/Service1/DeleteProduct" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

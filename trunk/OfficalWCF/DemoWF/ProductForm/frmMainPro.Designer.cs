@@ -54,6 +54,7 @@
             this.txtProductQuantity = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtProductName = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.dtgProduct = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.categoryIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,7 +64,7 @@
             this.unitsInStockDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.unitsOnOrderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.discontinuedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.DeleteColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgProduct)).BeginInit();
@@ -150,6 +151,7 @@
             this.btnDelete.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnDelete.TabIndex = 17;
             this.btnDelete.Text = "Delete";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnClean
             // 
@@ -356,6 +358,7 @@
             // 
             this.dtgProduct.AllowUserToAddRows = false;
             this.dtgProduct.AllowUserToDeleteRows = false;
+            this.dtgProduct.AllowUserToOrderColumns = true;
             this.dtgProduct.AutoGenerateColumns = false;
             this.dtgProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgProduct.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -367,7 +370,8 @@
             this.unitPriceDataGridViewTextBoxColumn,
             this.unitsInStockDataGridViewTextBoxColumn,
             this.unitsOnOrderDataGridViewTextBoxColumn,
-            this.discontinuedDataGridViewCheckBoxColumn});
+            this.discontinuedDataGridViewCheckBoxColumn,
+            this.DeleteColumn});
             this.dtgProduct.DataSource = this.productBindingSource;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
@@ -381,76 +385,75 @@
             this.dtgProduct.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dtgProduct.Location = new System.Drawing.Point(0, 280);
             this.dtgProduct.Name = "dtgProduct";
-            this.dtgProduct.ReadOnly = true;
             this.dtgProduct.Size = new System.Drawing.Size(734, 146);
             this.dtgProduct.TabIndex = 1;
+            this.dtgProduct.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgProduct_CellContentClick);
+            this.dtgProduct.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgProduct_CellContentDoubleClick);
+            // 
+            // productBindingSource
+            // 
+            this.productBindingSource.DataSource = typeof(DemoWF.NorthwindService.Product);
             // 
             // categoryIDDataGridViewTextBoxColumn
             // 
             this.categoryIDDataGridViewTextBoxColumn.DataPropertyName = "CategoryID";
             this.categoryIDDataGridViewTextBoxColumn.HeaderText = "CategoryID";
             this.categoryIDDataGridViewTextBoxColumn.Name = "categoryIDDataGridViewTextBoxColumn";
-            this.categoryIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.categoryIDDataGridViewTextBoxColumn.Visible = false;
             // 
             // productIDDataGridViewTextBoxColumn
             // 
             this.productIDDataGridViewTextBoxColumn.DataPropertyName = "ProductID";
             this.productIDDataGridViewTextBoxColumn.HeaderText = "ProductID";
             this.productIDDataGridViewTextBoxColumn.Name = "productIDDataGridViewTextBoxColumn";
-            this.productIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.productIDDataGridViewTextBoxColumn.Visible = false;
             // 
             // productNameDataGridViewTextBoxColumn
             // 
             this.productNameDataGridViewTextBoxColumn.DataPropertyName = "ProductName";
             this.productNameDataGridViewTextBoxColumn.HeaderText = "ProductName";
             this.productNameDataGridViewTextBoxColumn.Name = "productNameDataGridViewTextBoxColumn";
-            this.productNameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // quantityPerUnitDataGridViewTextBoxColumn
             // 
             this.quantityPerUnitDataGridViewTextBoxColumn.DataPropertyName = "QuantityPerUnit";
             this.quantityPerUnitDataGridViewTextBoxColumn.HeaderText = "QuantityPerUnit";
             this.quantityPerUnitDataGridViewTextBoxColumn.Name = "quantityPerUnitDataGridViewTextBoxColumn";
-            this.quantityPerUnitDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // reorderLevelDataGridViewTextBoxColumn
             // 
             this.reorderLevelDataGridViewTextBoxColumn.DataPropertyName = "ReorderLevel";
             this.reorderLevelDataGridViewTextBoxColumn.HeaderText = "ReorderLevel";
             this.reorderLevelDataGridViewTextBoxColumn.Name = "reorderLevelDataGridViewTextBoxColumn";
-            this.reorderLevelDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // unitPriceDataGridViewTextBoxColumn
             // 
             this.unitPriceDataGridViewTextBoxColumn.DataPropertyName = "UnitPrice";
             this.unitPriceDataGridViewTextBoxColumn.HeaderText = "UnitPrice";
             this.unitPriceDataGridViewTextBoxColumn.Name = "unitPriceDataGridViewTextBoxColumn";
-            this.unitPriceDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // unitsInStockDataGridViewTextBoxColumn
             // 
             this.unitsInStockDataGridViewTextBoxColumn.DataPropertyName = "UnitsInStock";
             this.unitsInStockDataGridViewTextBoxColumn.HeaderText = "UnitsInStock";
             this.unitsInStockDataGridViewTextBoxColumn.Name = "unitsInStockDataGridViewTextBoxColumn";
-            this.unitsInStockDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // unitsOnOrderDataGridViewTextBoxColumn
             // 
             this.unitsOnOrderDataGridViewTextBoxColumn.DataPropertyName = "UnitsOnOrder";
             this.unitsOnOrderDataGridViewTextBoxColumn.HeaderText = "UnitsOnOrder";
             this.unitsOnOrderDataGridViewTextBoxColumn.Name = "unitsOnOrderDataGridViewTextBoxColumn";
-            this.unitsOnOrderDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // discontinuedDataGridViewCheckBoxColumn
             // 
             this.discontinuedDataGridViewCheckBoxColumn.DataPropertyName = "Discontinued";
             this.discontinuedDataGridViewCheckBoxColumn.HeaderText = "Discontinued";
             this.discontinuedDataGridViewCheckBoxColumn.Name = "discontinuedDataGridViewCheckBoxColumn";
-            this.discontinuedDataGridViewCheckBoxColumn.ReadOnly = true;
             // 
-            // productBindingSource
+            // DeleteColumn
             // 
-            this.productBindingSource.DataSource = typeof(DemoWF.NorthwindService.Product);
+            this.DeleteColumn.HeaderText = "Delete";
+            this.DeleteColumn.Name = "DeleteColumn";
             // 
             // frmMainPro
             // 
@@ -508,5 +511,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn unitsInStockDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn unitsOnOrderDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn discontinuedDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn DeleteColumn;
     }
 }

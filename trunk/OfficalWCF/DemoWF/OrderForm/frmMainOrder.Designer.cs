@@ -48,6 +48,7 @@
             this.shippedDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.shipViaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.freightDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DeleteComlumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.orderBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Search.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtDateShipped)).BeginInit();
@@ -96,6 +97,7 @@
             this.btnDelete.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnDelete.TabIndex = 7;
             this.btnDelete.Text = "Delete";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnAdd
             // 
@@ -268,7 +270,8 @@
             this.requireDateDataGridViewTextBoxColumn,
             this.shippedDateDataGridViewTextBoxColumn,
             this.shipViaDataGridViewTextBoxColumn,
-            this.freightDataGridViewTextBoxColumn});
+            this.freightDataGridViewTextBoxColumn,
+            this.DeleteComlumn});
             this.dtgOrder.DataSource = this.orderBindingSource;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
@@ -279,12 +282,13 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dtgOrder.DefaultCellStyle = dataGridViewCellStyle1;
             this.dtgOrder.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtgOrder.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            this.dtgOrder.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dtgOrder.Location = new System.Drawing.Point(0, 127);
             this.dtgOrder.Name = "dtgOrder";
             this.dtgOrder.ReadOnly = true;
             this.dtgOrder.Size = new System.Drawing.Size(704, 284);
             this.dtgOrder.TabIndex = 1;
+            this.dtgOrder.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgOrder_CellContentDoubleClick);
             // 
             // orderIDDataGridViewTextBoxColumn
             // 
@@ -335,6 +339,12 @@
             this.freightDataGridViewTextBoxColumn.Name = "freightDataGridViewTextBoxColumn";
             this.freightDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // DeleteComlumn
+            // 
+            this.DeleteComlumn.HeaderText = "Delete";
+            this.DeleteComlumn.Name = "DeleteComlumn";
+            this.DeleteComlumn.ReadOnly = true;
+            // 
             // orderBindingSource
             // 
             this.orderBindingSource.DataSource = typeof(DemoWF.NorthwindService.Order);
@@ -372,6 +382,7 @@
         private DevComponents.Editors.DateTimeAdv.DateTimeInput txtDateShipped;
         private DevComponents.Editors.DateTimeAdv.DateTimeInput txtDateRequired;
         private DevComponents.DotNetBar.Controls.DataGridViewX dtgOrder;
+        private System.Windows.Forms.BindingSource orderBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn orderIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn customerIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn orderDateDataGridViewTextBoxColumn;
@@ -379,6 +390,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn shippedDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn shipViaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn freightDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource orderBindingSource;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn DeleteComlumn;
     }
 }

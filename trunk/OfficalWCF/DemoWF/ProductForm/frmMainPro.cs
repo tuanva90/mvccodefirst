@@ -49,7 +49,12 @@ namespace DemoWF.ProductForm
             cbCategory.DataSource = categoryBindingSource;
             cbCategory.ValueMember = "CategoryID";
             cbCategory.DisplayMember = "CategoryName";
+            LoadProducts();
+            
+        }
 
+        private void LoadProducts()
+        {
             List<NorthwindService.Product> lspro = new List<NorthwindService.Product>();
             lspro = test.GetAllProduct().ToList();
             productBindingSource.DataSource = lspro;
@@ -61,6 +66,61 @@ namespace DemoWF.ProductForm
             string pro = "Product";
             frmSearch search = new frmSearch(pro);
             search.ShowDialog();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            int rowcount = dtgProduct.Rows.Count;
+            try
+            {
+                DialogResult result = MessageBox.Show("Do you wanna delete rows were selected?", "Warning", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
+                {
+                    //code for Yes
+                    for (int i = 0; i < rowcount; i++)
+                    {
+                        if (Convert.ToBoolean(dtgProduct.Rows[i].Cells[9].Value) == true)
+                        {
+                            test.DeleteProduct(int.Parse(dtgProduct.Rows[i].Cells[1].Value.ToString()));
+                        }
+                    }
+                    LoadProducts();
+                }
+                if(result == DialogResult.No || result == DialogResult.Cancel)
+                {
+                    for(int i = 0;i < rowcount;i++)
+                    {
+                        dtgProduct.Rows[i].Cells[9].Value = false;
+                    }
+                }
+               
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            
+        }
+
+        private void dtgProduct_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+            
+        }
+
+        private void dtgProduct_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int CurrentIndex = dtgProduct.CurrentCell.RowIndex;
+            NorthwindService.Product _product = new NorthwindService.Product();
+            _product.CategoryID = Convert.ToInt32(dtgProduct.Rows[CurrentIndex].Cells[0].Value.ToString());
+            _product.ProductID = Convert.ToInt32(dtgProduct.Rows[CurrentIndex].Cells[1].Value.ToString());
+            _product.ProductName = Convert.ToString(dtgProduct.Rows[CurrentIndex].Cells[2].Value.ToString());
+            _product.QuantityPerUnit = Convert.ToString(dtgProduct.Rows[CurrentIndex].Cells[3].Value.ToString());
+            _product.ReorderLevel = Convert.ToInt16(dtgProduct.Rows[CurrentIndex].Cells[4].Value.ToString());
+            _product.UnitPrice = Convert.ToDecimal(dtgProduct.Rows[CurrentIndex].Cells[5].Value.ToString());
+            _product.UnitsInStock = Convert.ToInt16(dtgProduct.Rows[CurrentIndex].Cells[6].Value.ToString());
+            _product.UnitsOnOrder = Convert.ToInt16(dtgProduct.Rows[CurrentIndex].Cells[7].Value.ToString());
+            test.UpdateProduct(_product);
         }
     }
 }

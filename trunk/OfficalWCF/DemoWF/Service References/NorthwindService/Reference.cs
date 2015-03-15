@@ -939,6 +939,18 @@ namespace DemoWF.NorthwindService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Service1/AddOrder", ReplyAction="http://tempuri.org/Service1/AddOrderResponse")]
         System.Threading.Tasks.Task<int> AddOrderAsync(DemoWF.NorthwindService.Order or);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Service1/UpdateOrder", ReplyAction="http://tempuri.org/Service1/UpdateOrderResponse")]
+        int UpdateOrder(DemoWF.NorthwindService.Order or);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Service1/UpdateOrder", ReplyAction="http://tempuri.org/Service1/UpdateOrderResponse")]
+        System.Threading.Tasks.Task<int> UpdateOrderAsync(DemoWF.NorthwindService.Order or);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Service1/DeleteOrder", ReplyAction="http://tempuri.org/Service1/DeleteOrderResponse")]
+        int DeleteOrder(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Service1/DeleteOrder", ReplyAction="http://tempuri.org/Service1/DeleteOrderResponse")]
+        System.Threading.Tasks.Task<int> DeleteOrderAsync(int id);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Service1/GetProduct", ReplyAction="http://tempuri.org/Service1/GetProductResponse")]
         DemoWF.NorthwindService.Product GetProduct(int id);
         
@@ -962,6 +974,18 @@ namespace DemoWF.NorthwindService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Service1/AddProduct", ReplyAction="http://tempuri.org/Service1/AddProductResponse")]
         System.Threading.Tasks.Task<int> AddProductAsync(DemoWF.NorthwindService.Product or);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Service1/UpdateProduct", ReplyAction="http://tempuri.org/Service1/UpdateProductResponse")]
+        int UpdateProduct(DemoWF.NorthwindService.Product or);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Service1/UpdateProduct", ReplyAction="http://tempuri.org/Service1/UpdateProductResponse")]
+        System.Threading.Tasks.Task<int> UpdateProductAsync(DemoWF.NorthwindService.Product or);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Service1/DeleteProduct", ReplyAction="http://tempuri.org/Service1/DeleteProductResponse")]
+        int DeleteProduct(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Service1/DeleteProduct", ReplyAction="http://tempuri.org/Service1/DeleteProductResponse")]
+        System.Threading.Tasks.Task<int> DeleteProductAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Service1/GetCustomer", ReplyAction="http://tempuri.org/Service1/GetCustomerResponse")]
         string GetCustomer(string id, string pass);
@@ -1107,6 +1131,22 @@ namespace DemoWF.NorthwindService {
             return base.Channel.AddOrderAsync(or);
         }
         
+        public int UpdateOrder(DemoWF.NorthwindService.Order or) {
+            return base.Channel.UpdateOrder(or);
+        }
+        
+        public System.Threading.Tasks.Task<int> UpdateOrderAsync(DemoWF.NorthwindService.Order or) {
+            return base.Channel.UpdateOrderAsync(or);
+        }
+        
+        public int DeleteOrder(int id) {
+            return base.Channel.DeleteOrder(id);
+        }
+        
+        public System.Threading.Tasks.Task<int> DeleteOrderAsync(int id) {
+            return base.Channel.DeleteOrderAsync(id);
+        }
+        
         public DemoWF.NorthwindService.Product GetProduct(int id) {
             return base.Channel.GetProduct(id);
         }
@@ -1137,6 +1177,22 @@ namespace DemoWF.NorthwindService {
         
         public System.Threading.Tasks.Task<int> AddProductAsync(DemoWF.NorthwindService.Product or) {
             return base.Channel.AddProductAsync(or);
+        }
+        
+        public int UpdateProduct(DemoWF.NorthwindService.Product or) {
+            return base.Channel.UpdateProduct(or);
+        }
+        
+        public System.Threading.Tasks.Task<int> UpdateProductAsync(DemoWF.NorthwindService.Product or) {
+            return base.Channel.UpdateProductAsync(or);
+        }
+        
+        public int DeleteProduct(int id) {
+            return base.Channel.DeleteProduct(id);
+        }
+        
+        public System.Threading.Tasks.Task<int> DeleteProductAsync(int id) {
+            return base.Channel.DeleteProductAsync(id);
         }
         
         public string GetCustomer(string id, string pass) {

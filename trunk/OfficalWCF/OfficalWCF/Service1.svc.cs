@@ -118,7 +118,7 @@ namespace OfficalWCF
             else
                 return 0;
         }
-
+        [OperationContract]
         public int UpdateOrder(Order or)
         {
             _Orderservice = new OrderService();
@@ -127,11 +127,11 @@ namespace OfficalWCF
             else
                 return 0;
         }
-
-        public int DeleteOrder(Order or)
+        [OperationContract]
+        public int DeleteOrder(int id)
         {
             _Orderservice = new OrderService();
-            if (_Orderservice.Delete(or) == 1)
+            if (_Orderservice.Delete(id) == 1)
                 return 1;
             else
                 return 0;
@@ -175,7 +175,7 @@ namespace OfficalWCF
             else
                 return 0;
         }
-
+        [OperationContract]
         public int UpdateProduct(Product or)
         {
             _Proservice = new ProductService();
@@ -184,11 +184,11 @@ namespace OfficalWCF
             else
                 return 0;
         }
-
-        public int DeleteProduct(Product or)
+        [OperationContract]
+        public int DeleteProduct(int id)
         {
             _Proservice = new ProductService();
-            if (_Proservice.Delete(or) == 1)
+            if (_Proservice.Delete(id) == 1)
                 return 1;
             else
                 return 0;

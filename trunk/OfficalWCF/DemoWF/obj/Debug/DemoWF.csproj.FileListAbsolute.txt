@@ -24,23 +24,6 @@ C:\Users\nguyenminhtuan\Desktop\mvccodefirst\OfficalWCF\DemoWF\obj\Debug\DemoWF.
 C:\Users\nguyenminhtuan\Desktop\mvccodefirst\OfficalWCF\DemoWF\obj\Debug\DemoWF.Form1.resources
 C:\Users\nguyenminhtuan\Desktop\mvccodefirst\OfficalWCF\DemoWF\obj\Debug\DemoWF.Properties.Resources.resources
 C:\Users\nguyenminhtuan\Desktop\mvccodefirst\OfficalWCF\DemoWF\obj\Debug\DemoWF.csproj.GenerateResource.Cache
-C:\Users\HoaiPhong\Desktop\my repo\OfficalWCF\DemoWF\obj\Debug\DemoWF.CateForm.frmAddCate.resources
-C:\Users\HoaiPhong\Desktop\my repo\OfficalWCF\DemoWF\obj\Debug\DemoWF.CateForm.frmUpdateCate.resources
-C:\Users\HoaiPhong\Desktop\my repo\OfficalWCF\DemoWF\obj\Debug\DemoWF.MainForm.resources
-C:\Users\HoaiPhong\Desktop\my repo\OfficalWCF\DemoWF\obj\Debug\DemoWF.Properties.Resources.resources
-C:\Users\HoaiPhong\Desktop\my repo\OfficalWCF\DemoWF\obj\Debug\DemoWF.csproj.GenerateResource.Cache
-C:\Users\HoaiPhong\Desktop\my repo\OfficalWCF\DemoWF\bin\Debug\DemoWF.exe.config
-C:\Users\HoaiPhong\Desktop\my repo\OfficalWCF\DemoWF\bin\Debug\DemoWF.exe
-C:\Users\HoaiPhong\Desktop\my repo\OfficalWCF\DemoWF\bin\Debug\DemoWF.pdb
-C:\Users\HoaiPhong\Desktop\my repo\OfficalWCF\DemoWF\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
-C:\Users\HoaiPhong\Desktop\my repo\OfficalWCF\DemoWF\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
-C:\Users\HoaiPhong\Desktop\my repo\OfficalWCF\DemoWF\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
-C:\Users\HoaiPhong\Desktop\my repo\OfficalWCF\DemoWF\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.xml
-C:\Users\HoaiPhong\Desktop\my repo\OfficalWCF\DemoWF\obj\Debug\DemoWF.exe
-C:\Users\HoaiPhong\Desktop\my repo\OfficalWCF\DemoWF\obj\Debug\DemoWF.pdb
-C:\Users\HoaiPhong\Desktop\my repo\OfficalWCF\DemoWF\obj\Debug\DemoWF.csprojResolveAssemblyReference.cache
-C:\Users\HoaiPhong\Desktop\my repo\OfficalWCF\DemoWF\obj\Debug\DemoWF.CateForm.frmSearch.resources
-C:\Users\HoaiPhong\Desktop\my repo\OfficalWCF\DemoWF\obj\Debug\DemoWF.ProductForm.frmMainPro.resources
 C:\Users\tp\Desktop\mvccodefirst\OfficalWCF\DemoWF\bin\Debug\DemoWF.exe.config
 C:\Users\tp\Desktop\mvccodefirst\OfficalWCF\DemoWF\obj\Debug\DemoWF.exe
 C:\Users\tp\Desktop\mvccodefirst\OfficalWCF\DemoWF\obj\Debug\DemoWF.pdb
@@ -60,3 +43,22 @@ C:\Users\tp\Desktop\mvccodefirst\OfficalWCF\DemoWF\bin\Debug\Microsoft.Practices
 C:\Users\tp\Desktop\mvccodefirst\OfficalWCF\DemoWF\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
 C:\Users\tp\Desktop\mvccodefirst\OfficalWCF\DemoWF\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
 C:\Users\tp\Desktop\mvccodefirst\OfficalWCF\DemoWF\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.xml
+C:\Users\HoaiPhong\Desktop\my repo\OfficalWCF\DemoWF\bin\Debug\DemoWF.exe.config
+C:\Users\HoaiPhong\Desktop\my repo\OfficalWCF\DemoWF\bin\Debug\DemoWF.exe
+C:\Users\HoaiPhong\Desktop\my repo\OfficalWCF\DemoWF\bin\Debug\DemoWF.pdb
+C:\Users\HoaiPhong\Desktop\my repo\OfficalWCF\DemoWF\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Users\HoaiPhong\Desktop\my repo\OfficalWCF\DemoWF\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+C:\Users\HoaiPhong\Desktop\my repo\OfficalWCF\DemoWF\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
+C:\Users\HoaiPhong\Desktop\my repo\OfficalWCF\DemoWF\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.xml
+C:\Users\HoaiPhong\Desktop\my repo\OfficalWCF\DemoWF\obj\Debug\DemoWF.CateForm.frmAddCate.resources
+C:\Users\HoaiPhong\Desktop\my repo\OfficalWCF\DemoWF\obj\Debug\DemoWF.CateForm.frmSearch.resources
+C:\Users\HoaiPhong\Desktop\my repo\OfficalWCF\DemoWF\obj\Debug\DemoWF.CateForm.frmUpdateCate.resources
+C:\Users\HoaiPhong\Desktop\my repo\OfficalWCF\DemoWF\obj\Debug\DemoWF.LoginForm.LoginFrm.resources
+C:\Users\HoaiPhong\Desktop\my repo\OfficalWCF\DemoWF\obj\Debug\DemoWF.MainForm.resources
+C:\Users\HoaiPhong\Desktop\my repo\OfficalWCF\DemoWF\obj\Debug\DemoWF.OrderForm.frmMainOrder.resources
+C:\Users\HoaiPhong\Desktop\my repo\OfficalWCF\DemoWF\obj\Debug\DemoWF.ProductForm.frmMainPro.resources
+C:\Users\HoaiPhong\Desktop\my repo\OfficalWCF\DemoWF\obj\Debug\DemoWF.Properties.Resources.resources
+C:\Users\HoaiPhong\Desktop\my repo\OfficalWCF\DemoWF\obj\Debug\DemoWF.csproj.GenerateResource.Cache
+C:\Users\HoaiPhong\Desktop\my repo\OfficalWCF\DemoWF\obj\Debug\DemoWF.exe
+C:\Users\HoaiPhong\Desktop\my repo\OfficalWCF\DemoWF\obj\Debug\DemoWF.pdb
+C:\Users\HoaiPhong\Desktop\my repo\OfficalWCF\DemoWF\obj\Debug\DemoWF.csprojResolveAssemblyReference.cache

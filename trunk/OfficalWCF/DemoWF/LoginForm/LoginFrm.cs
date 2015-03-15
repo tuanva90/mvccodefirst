@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace DemoWF.LoginForm
 {
-    public partial class LoginFrm : Form
+    public partial class LoginFrm : DevComponents.DotNetBar.Office2007Form
     {
         public string CusID;
         public LoginFrm()
@@ -27,6 +27,7 @@ namespace DemoWF.LoginForm
             {
                 frmMainOrder order = new frmMainOrder(CusID);
                 order.Show();
+                this.Hide();
             }
             else
                 lblStatus.Text = "Invalid ID or Password ";

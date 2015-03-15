@@ -56,7 +56,7 @@ namespace OfficalWCF.Entities
         public string Get(string id,string password)
         {
             string _cusID=null;
-            string sqlCommand = "Select * from Customers where CustomerID='" + id+"' AND Password='"+password+"'";
+            string sqlCommand = "Select * from Customers where CustomerID='"+ id +"'";
             using (IDataReader dataReader = ConnectionClass.GetInstance().ExecuteReader(sqlCommand))
             {
                 if (dataReader.Read())

@@ -86,11 +86,19 @@ namespace OfficalWCF
         #region Order
 
         [OperationContract]
-        public Order GetOrder(int id)
+        public IQueryable<Order> GetOrder(string id)
         {
             _Orderservice = new OrderService();
-            var ret = _Orderservice.Get(id);
+            IQueryable<Order> ret = _Orderservice.Get(id);
             return ret;
+        }
+
+        [OperationContract]
+        public IQueryable<Order> GetListOrderByDate(string cusid,DateTime fromdate, DateTime todate)
+        {
+            _Orderservice = new OrderService();
+            IQueryable<Order> _a = _Orderservice.GetOrderByDate(cusid, fromdate, todate);
+            return _a;
         }
 
         [OperationContract]
@@ -240,13 +248,7 @@ namespace OfficalWCF
 
         #region OrderDetail
 
-        [OperationContract]
-        public IQueryable<Order> GetListOrderByDate(DateTime fromdate, DateTime todate)
-        {
-            _Orderservice = new OrderService();
-            IQueryable<Order> _a = _Orderservice.GetOrderByDate(fromdate, todate);
-            return _a;
-        }
+        
 
         [OperationContract]
         public List<DetailProducts> getCusID(int CusID)

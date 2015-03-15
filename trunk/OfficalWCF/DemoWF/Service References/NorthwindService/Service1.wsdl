@@ -50,6 +50,12 @@
   <wsdl:message name="Service1_GetOrder_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetOrderResponse" />
   </wsdl:message>
+  <wsdl:message name="Service1_GetListOrderByDate_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListOrderByDate" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetListOrderByDate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListOrderByDateResponse" />
+  </wsdl:message>
   <wsdl:message name="Service1_GetAllOrder_InputMessage">
     <wsdl:part name="parameters" element="tns:GetAllOrder" />
   </wsdl:message>
@@ -104,12 +110,6 @@
   <wsdl:message name="Service1_AddCustomer_OutputMessage">
     <wsdl:part name="parameters" element="tns:AddCustomerResponse" />
   </wsdl:message>
-  <wsdl:message name="Service1_GetListOrderByDate_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetListOrderByDate" />
-  </wsdl:message>
-  <wsdl:message name="Service1_GetListOrderByDate_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetListOrderByDateResponse" />
-  </wsdl:message>
   <wsdl:message name="Service1_getCusID_InputMessage">
     <wsdl:part name="parameters" element="tns:getCusID" />
   </wsdl:message>
@@ -157,6 +157,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/Service1/GetOrder" message="tns:Service1_GetOrder_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/Service1/GetOrderResponse" message="tns:Service1_GetOrder_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetListOrderByDate">
+      <wsdl:input wsaw:Action="http://tempuri.org/Service1/GetListOrderByDate" message="tns:Service1_GetListOrderByDate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Service1/GetListOrderByDateResponse" message="tns:Service1_GetListOrderByDate_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="GetAllOrder">
       <wsdl:input wsaw:Action="http://tempuri.org/Service1/GetAllOrder" message="tns:Service1_GetAllOrder_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/Service1/GetAllOrderResponse" message="tns:Service1_GetAllOrder_OutputMessage" />
@@ -192,10 +196,6 @@
     <wsdl:operation name="AddCustomer">
       <wsdl:input wsaw:Action="http://tempuri.org/Service1/AddCustomer" message="tns:Service1_AddCustomer_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/Service1/AddCustomerResponse" message="tns:Service1_AddCustomer_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetListOrderByDate">
-      <wsdl:input wsaw:Action="http://tempuri.org/Service1/GetListOrderByDate" message="tns:Service1_GetListOrderByDate_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/Service1/GetListOrderByDateResponse" message="tns:Service1_GetListOrderByDate_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="getCusID">
       <wsdl:input wsaw:Action="http://tempuri.org/Service1/getCusID" message="tns:Service1_getCusID_InputMessage" />
@@ -268,6 +268,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetOrder">
       <soap:operation soapAction="http://tempuri.org/Service1/GetOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListOrderByDate">
+      <soap:operation soapAction="http://tempuri.org/Service1/GetListOrderByDate" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -349,15 +358,6 @@
     </wsdl:operation>
     <wsdl:operation name="AddCustomer">
       <soap:operation soapAction="http://tempuri.org/Service1/AddCustomer" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetListOrderByDate">
-      <soap:operation soapAction="http://tempuri.org/Service1/GetListOrderByDate" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

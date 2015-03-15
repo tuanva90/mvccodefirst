@@ -18,15 +18,6 @@ C:\Users\nguyenminhtuan\Desktop\mvccodefirst\OfficalWCF\OfficalWCF\bin\Microsoft
 C:\Users\nguyenminhtuan\Desktop\mvccodefirst\OfficalWCF\OfficalWCF\obj\Debug\OfficalWCF.dll
 C:\Users\nguyenminhtuan\Desktop\mvccodefirst\OfficalWCF\OfficalWCF\obj\Debug\OfficalWCF.pdb
 C:\Users\nguyenminhtuan\Desktop\mvccodefirst\OfficalWCF\OfficalWCF\obj\Debug\OfficalWCF.csprojResolveAssemblyReference.cache
-C:\Users\HoaiPhong\Desktop\my repo\OfficalWCF\OfficalWCF\bin\OfficalWCF.dll
-C:\Users\HoaiPhong\Desktop\my repo\OfficalWCF\OfficalWCF\bin\OfficalWCF.pdb
-C:\Users\HoaiPhong\Desktop\my repo\OfficalWCF\OfficalWCF\bin\Microsoft.Practices.EnterpriseLibrary.Common.dll
-C:\Users\HoaiPhong\Desktop\my repo\OfficalWCF\OfficalWCF\bin\Microsoft.Practices.EnterpriseLibrary.Data.dll
-C:\Users\HoaiPhong\Desktop\my repo\OfficalWCF\OfficalWCF\bin\Microsoft.Practices.EnterpriseLibrary.Common.xml
-C:\Users\HoaiPhong\Desktop\my repo\OfficalWCF\OfficalWCF\bin\Microsoft.Practices.EnterpriseLibrary.Data.xml
-C:\Users\HoaiPhong\Desktop\my repo\OfficalWCF\OfficalWCF\obj\Debug\OfficalWCF.dll
-C:\Users\HoaiPhong\Desktop\my repo\OfficalWCF\OfficalWCF\obj\Debug\OfficalWCF.pdb
-C:\Users\HoaiPhong\Desktop\my repo\OfficalWCF\OfficalWCF\obj\Debug\OfficalWCF.csprojResolveAssemblyReference.cache
 C:\Users\nguyenminhtuan\Desktop\New folder (2)\OfficalWCF\bin\OfficalWCF.dll.config
 C:\Users\nguyenminhtuan\Desktop\New folder (2)\OfficalWCF\bin\OfficalWCF.dll
 C:\Users\nguyenminhtuan\Desktop\New folder (2)\OfficalWCF\bin\OfficalWCF.pdb
@@ -47,3 +38,12 @@ C:\Users\tp\Desktop\mvccodefirst\OfficalWCF\OfficalWCF\bin\Microsoft.Practices.E
 C:\Users\tp\Desktop\mvccodefirst\OfficalWCF\OfficalWCF\obj\Debug\OfficalWCF.csprojResolveAssemblyReference.cache
 C:\Users\tp\Desktop\mvccodefirst\OfficalWCF\OfficalWCF\obj\Debug\OfficalWCF.dll
 C:\Users\tp\Desktop\mvccodefirst\OfficalWCF\OfficalWCF\obj\Debug\OfficalWCF.pdb
+C:\Users\HoaiPhong\Desktop\my repo\OfficalWCF\OfficalWCF\bin\OfficalWCF.dll
+C:\Users\HoaiPhong\Desktop\my repo\OfficalWCF\OfficalWCF\bin\OfficalWCF.pdb
+C:\Users\HoaiPhong\Desktop\my repo\OfficalWCF\OfficalWCF\bin\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Users\HoaiPhong\Desktop\my repo\OfficalWCF\OfficalWCF\bin\Microsoft.Practices.EnterpriseLibrary.Data.dll
+C:\Users\HoaiPhong\Desktop\my repo\OfficalWCF\OfficalWCF\bin\Microsoft.Practices.EnterpriseLibrary.Common.xml
+C:\Users\HoaiPhong\Desktop\my repo\OfficalWCF\OfficalWCF\bin\Microsoft.Practices.EnterpriseLibrary.Data.xml
+C:\Users\HoaiPhong\Desktop\my repo\OfficalWCF\OfficalWCF\obj\Debug\OfficalWCF.dll
+C:\Users\HoaiPhong\Desktop\my repo\OfficalWCF\OfficalWCF\obj\Debug\OfficalWCF.pdb
+C:\Users\HoaiPhong\Desktop\my repo\OfficalWCF\OfficalWCF\obj\Debug\OfficalWCF.csprojResolveAssemblyReference.cache

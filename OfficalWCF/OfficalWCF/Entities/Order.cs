@@ -44,7 +44,7 @@ namespace OfficalWCF.Entities
         [OperationContract]
         IQueryable<Order> GetAll();
         [OperationContract]
-        Order Get(int orid);
+        IQueryable<Order> Get(string orid);
         [OperationContract]
         int Add(Order or);
         [OperationContract]
@@ -87,10 +87,10 @@ namespace OfficalWCF.Entities
             return lsor.AsQueryable();
         }
 
-        public IQueryable<Order> GetOrderByDate(DateTime fromdate, DateTime todate)
+        public IQueryable<Order> GetOrderByDate(string cusid,DateTime fromdate, DateTime todate)
         {
             List<Order> lsor = new List<Order>();
-            string sqlcm = "select distinct OrderID, a.CustomerID, OrderDate, RequiredDate, ShippedDate, Shipvia, Freight from Orders a, Customers where a.OrderDate between '" + fromdate.ToString("yyyy-MM-dd") + "' and '" + todate.ToString("yyyy-MM-dd") + "'";
+            string sqlcm = "select distinct OrderID, a.CustomerID, OrderDate, RequiredDate, ShippedDate, Shipvia, Freight from Orders a, Customers where a.CustomerID='"+ cusid +"' and  a.OrderDate between '" + fromdate.ToString("yyyy-MM-dd") + "' and '" + todate.ToString("yyyy-MM-dd") + "'";
             using (IDataReader dr = ConnectionClass.GetInstance().ExecuteReader(sqlcm))
             {
                 while (dr.Read())
@@ -118,14 +118,15 @@ namespace OfficalWCF.Entities
             return lsor.AsQueryable();
         }
 
-        public Order Get(int orid)
+        public IQueryable<Order> Get(string cusID)
         {
-            Order or = new Order();
-            string sqlCommand = "Select OrderID,CustomerID,OrderDate,RequiredDate,ShippedDate,Shipvia,Freight from Orders where OrderID=" + orid;
+            List<Order> lsor = new List<Order>();
+            string sqlCommand = "Select OrderID,CustomerID,OrderDate,RequiredDate,ShippedDate,Shipvia,Freight from Orders where CustomerID='"+ cusID +"'";
             using (IDataReader dr = ConnectionClass.GetInstance().ExecuteReader(sqlCommand))
             {
-                if (dr.Read())
+                while (dr.Read())
                 {
+                    Order or = new Order();
                     or.OrderID = dr.GetInt32(0);
                     or.CustomerID = dr.GetString(1);
                     or.OrderDate = dr.GetDateTime(2);
@@ -138,17 +139,24 @@ namespace OfficalWCF.Entities
                     {
                         or.ShippedDate = dr.GetDateTime(4);
                     }
+
                     or.ShipVia = dr.GetInt32(5);
                     or.Freight = dr.GetDecimal(6);
+                    lsor.Add(or);
                 }
                 dr.Close();
             }
-            return or;
+            return lsor.AsQueryable();
         }
+
 
         public int Add(Order or)
         {
-            string sqlcm = "insert into Orders(CustomerID,OrderDate,RequiredDate,ShippedDate,Shipvia,Freight) values('" + or.CustomerID + "','" + or.OrderDate + "','" + or.RequireDate + "','" + or.ShippedDate + "','" + or.ShipVia + "','" + or.Freight + "')";
+            string shipped;
+            DateTime ship;
+            shipped = or.ShippedDate.ToString();
+            ship = DateTime.Parse(shipped);
+            string sqlcm = "insert into Orders(CustomerID,OrderDate,RequiredDate,ShippedDate,Shipvia,Freight) values('" + or.CustomerID + "','" + or.OrderDate.ToString("yyyy-MM-dd") + "','" + or.RequireDate.ToString("yyyy-MM-dd") + "','" + ship.ToString("yyyy-MM-dd") + "',3," + or.Freight + ")";
             return ConnectionClass.GetInstance().ExecuteNonQuery(sqlcm);
         }
 

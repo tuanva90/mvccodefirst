@@ -14,6 +14,7 @@ namespace DemoWF.CateForm
     public partial class frmSearch : DevComponents.DotNetBar.Office2007RibbonForm
     {
         NorthwindService.Service1Client test = new NorthwindService.Service1Client();
+        public string cusid = "";
         public frmSearch()
         {
             InitializeComponent();
@@ -39,6 +40,7 @@ namespace DemoWF.CateForm
             }
             else
             {
+                cusid = strType;
                 Ordertab.Focus();
                 Ordertab.Visible = true;
                 Catetab.Visible = false;
@@ -71,7 +73,7 @@ namespace DemoWF.CateForm
         private void buttonX2_Click(object sender, EventArgs e)
         {
             List<NorthwindService.Order> lsorder = new List<NorthwindService.Order>();
-            lsorder = test.GetListOrderByDate(DateTime.Parse(txtDateFrom.Text), DateTime.Parse(txtDateTo.Text)).ToList();
+            lsorder = test.GetListOrderByDate(cusid, DateTime.Parse(txtDateFrom.Text), DateTime.Parse(txtDateTo.Text)).ToList();
             orderBindingSource.DataSource = lsorder;
             dtgOrder.DataSource = orderBindingSource;
         }

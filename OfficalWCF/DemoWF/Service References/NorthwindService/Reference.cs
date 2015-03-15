@@ -916,10 +916,16 @@ namespace DemoWF.NorthwindService {
         System.Threading.Tasks.Task<int> DeleteCategoryAsync(int ID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Service1/GetOrder", ReplyAction="http://tempuri.org/Service1/GetOrderResponse")]
-        DemoWF.NorthwindService.Order GetOrder(int id);
+        DemoWF.NorthwindService.Order[] GetOrder(string id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Service1/GetOrder", ReplyAction="http://tempuri.org/Service1/GetOrderResponse")]
-        System.Threading.Tasks.Task<DemoWF.NorthwindService.Order> GetOrderAsync(int id);
+        System.Threading.Tasks.Task<DemoWF.NorthwindService.Order[]> GetOrderAsync(string id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Service1/GetListOrderByDate", ReplyAction="http://tempuri.org/Service1/GetListOrderByDateResponse")]
+        DemoWF.NorthwindService.Order[] GetListOrderByDate(string cusid, System.DateTime fromdate, System.DateTime todate);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Service1/GetListOrderByDate", ReplyAction="http://tempuri.org/Service1/GetListOrderByDateResponse")]
+        System.Threading.Tasks.Task<DemoWF.NorthwindService.Order[]> GetListOrderByDateAsync(string cusid, System.DateTime fromdate, System.DateTime todate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Service1/GetAllOrder", ReplyAction="http://tempuri.org/Service1/GetAllOrderResponse")]
         DemoWF.NorthwindService.Order[] GetAllOrder();
@@ -974,12 +980,6 @@ namespace DemoWF.NorthwindService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Service1/AddCustomer", ReplyAction="http://tempuri.org/Service1/AddCustomerResponse")]
         System.Threading.Tasks.Task<int> AddCustomerAsync(DemoWF.NorthwindService.Customer or);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Service1/GetListOrderByDate", ReplyAction="http://tempuri.org/Service1/GetListOrderByDateResponse")]
-        DemoWF.NorthwindService.Order[] GetListOrderByDate(System.DateTime fromdate, System.DateTime todate);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Service1/GetListOrderByDate", ReplyAction="http://tempuri.org/Service1/GetListOrderByDateResponse")]
-        System.Threading.Tasks.Task<DemoWF.NorthwindService.Order[]> GetListOrderByDateAsync(System.DateTime fromdate, System.DateTime todate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Service1/getCusID", ReplyAction="http://tempuri.org/Service1/getCusIDResponse")]
         DemoWF.NorthwindService.DetailProducts[] getCusID(int CusID);
@@ -1075,12 +1075,20 @@ namespace DemoWF.NorthwindService {
             return base.Channel.DeleteCategoryAsync(ID);
         }
         
-        public DemoWF.NorthwindService.Order GetOrder(int id) {
+        public DemoWF.NorthwindService.Order[] GetOrder(string id) {
             return base.Channel.GetOrder(id);
         }
         
-        public System.Threading.Tasks.Task<DemoWF.NorthwindService.Order> GetOrderAsync(int id) {
+        public System.Threading.Tasks.Task<DemoWF.NorthwindService.Order[]> GetOrderAsync(string id) {
             return base.Channel.GetOrderAsync(id);
+        }
+        
+        public DemoWF.NorthwindService.Order[] GetListOrderByDate(string cusid, System.DateTime fromdate, System.DateTime todate) {
+            return base.Channel.GetListOrderByDate(cusid, fromdate, todate);
+        }
+        
+        public System.Threading.Tasks.Task<DemoWF.NorthwindService.Order[]> GetListOrderByDateAsync(string cusid, System.DateTime fromdate, System.DateTime todate) {
+            return base.Channel.GetListOrderByDateAsync(cusid, fromdate, todate);
         }
         
         public DemoWF.NorthwindService.Order[] GetAllOrder() {
@@ -1153,14 +1161,6 @@ namespace DemoWF.NorthwindService {
         
         public System.Threading.Tasks.Task<int> AddCustomerAsync(DemoWF.NorthwindService.Customer or) {
             return base.Channel.AddCustomerAsync(or);
-        }
-        
-        public DemoWF.NorthwindService.Order[] GetListOrderByDate(System.DateTime fromdate, System.DateTime todate) {
-            return base.Channel.GetListOrderByDate(fromdate, todate);
-        }
-        
-        public System.Threading.Tasks.Task<DemoWF.NorthwindService.Order[]> GetListOrderByDateAsync(System.DateTime fromdate, System.DateTime todate) {
-            return base.Channel.GetListOrderByDateAsync(fromdate, todate);
         }
         
         public DemoWF.NorthwindService.DetailProducts[] getCusID(int CusID) {

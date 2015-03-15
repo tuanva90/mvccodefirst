@@ -45,7 +45,7 @@ namespace OfficalWCF.Entities
         [OperationContract]
         int Update(Product pro);
         [OperationContract]
-        int Delete(Product pro);
+        int Delete(int id);
     }
 
     public class ProductService : IProduct
@@ -128,18 +128,20 @@ namespace OfficalWCF.Entities
             else
             {
                 string sqlcm = "Update Products set" +
-                           "ProductName=" + pro.ProductName + ",SupplierID=1,CategoryID=" + pro.CategoryID +
-                           ",QuantityPerUnit=" + pro.QuantityPerUnit + ",UnitPrice= " + pro.UnitPrice +
+                           " ProductName='" + pro.ProductName + "',SupplierID=1,CategoryID=" + pro.CategoryID +
+                           ",QuantityPerUnit='" + pro.QuantityPerUnit + "',UnitPrice= " + pro.UnitPrice +
                            ",UnitsInStock=" + pro.UnitsInStock + ",UnitsOnOrder=" + pro.UnitsOnOrder + ",ReorderLevel=" + pro.ReorderLevel + ",Discontinued=0 where ProductID=" + pro.ProductID;
                 return ConnectionClass.GetInstance().ExecuteNonQuery(sqlcm);
             }
             
         }
 
-        public int Delete(Product pro)
+        public int Delete(int id)
         {
-            string sqlcm = "Delete from Products where ProductID=" + pro.ProductID;
-            return ConnectionClass.GetInstance().ExecuteNonQuery(sqlcm);
+            string sqlcm = "Delete OrderDetails  from OrderDetails INNER JOIN Products ON OrderDetails.ProductID = Products.ProductID where OrderDetails.ProductID=" + id;
+            string sqlcm2 = "delete from Products where ProductID=" + id;
+            ConnectionClass.GetInstance().ExecuteNonQuery(sqlcm);
+            return ConnectionClass.GetInstance().ExecuteNonQuery(sqlcm2);
         }
         public IQueryable<Product> GetByName(string name)
         {

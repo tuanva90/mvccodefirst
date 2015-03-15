@@ -87,8 +87,11 @@ namespace OfficalWCF.Entities
 
         public int Delete(int d)
         {
-            string sqlcm = "Delete from Categories where CategoryID=" + d;
-            return ConnectionClass.GetInstance().ExecuteNonQuery(sqlcm);
+            string sqlcm = "Delete Products FROM Products INNER JOIN Categories  ON Categories.CategoryID = Products.CategoryID where Products.CategoryID=" + d;
+            string sqlcm2 = "delete from Categories WHERE CategoryID=" + d;
+            ConnectionClass.GetInstance().ExecuteNonQuery(sqlcm);
+            return ConnectionClass.GetInstance().ExecuteNonQuery(sqlcm2);
+            
         }
 
         public IQueryable<Category> GetByName(string name)

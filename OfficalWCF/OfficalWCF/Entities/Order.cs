@@ -50,7 +50,7 @@ namespace OfficalWCF.Entities
         [OperationContract]
         int Update(Order or);
         [OperationContract]
-        int Delete(Order or);
+        int Delete(int or);
     }
     public class OrderService : IOrder
     {
@@ -169,10 +169,12 @@ namespace OfficalWCF.Entities
             return ConnectionClass.GetInstance().ExecuteNonQuery(sqlcm);
         }
 
-        public int Delete(Order or)
+        public int Delete(int id)
         {
-            string sqlcm = "Delete from Orders where OrderID=" + or.OrderID; ;
-            return ConnectionClass.GetInstance().ExecuteNonQuery(sqlcm);
+            string sqlcm = "Delete OrderDetails from OrderDetails INNER JOIN Orders ON OrderDetails.OrderID = Orders.OrderID where OrderDetails.OrderID=" + id;
+            string sqlcm2 = "DELETE FROM Orders where OrderiD=" + id;
+            ConnectionClass.GetInstance().ExecuteNonQuery(sqlcm);
+            return ConnectionClass.GetInstance().ExecuteNonQuery(sqlcm2);
         }
     }
 }

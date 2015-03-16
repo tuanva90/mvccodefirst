@@ -74,6 +74,7 @@
             this.Search.Size = new System.Drawing.Size(704, 127);
             this.Search.TabIndex = 0;
             this.Search.TabStop = false;
+            this.Search.Enter += new System.EventHandler(this.Search_Enter);
             // 
             // buttonX3
             // 

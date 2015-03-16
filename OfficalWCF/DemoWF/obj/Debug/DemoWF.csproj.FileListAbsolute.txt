@@ -62,3 +62,22 @@ C:\Users\HoaiPhong\Desktop\my repo\OfficalWCF\DemoWF\obj\Debug\DemoWF.csproj.Gen
 C:\Users\HoaiPhong\Desktop\my repo\OfficalWCF\DemoWF\obj\Debug\DemoWF.exe
 C:\Users\HoaiPhong\Desktop\my repo\OfficalWCF\DemoWF\obj\Debug\DemoWF.pdb
 C:\Users\HoaiPhong\Desktop\my repo\OfficalWCF\DemoWF\obj\Debug\DemoWF.csprojResolveAssemblyReference.cache
+C:\Users\nguyenminhtuan\Desktop\New folder (2)\DemoWF\bin\Debug\DemoWF.exe.config
+C:\Users\nguyenminhtuan\Desktop\New folder (2)\DemoWF\obj\Debug\DemoWF.exe
+C:\Users\nguyenminhtuan\Desktop\New folder (2)\DemoWF\obj\Debug\DemoWF.pdb
+C:\Users\nguyenminhtuan\Desktop\New folder (2)\DemoWF\bin\Debug\DemoWF.exe
+C:\Users\nguyenminhtuan\Desktop\New folder (2)\DemoWF\bin\Debug\DemoWF.pdb
+C:\Users\nguyenminhtuan\Desktop\New folder (2)\DemoWF\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Users\nguyenminhtuan\Desktop\New folder (2)\DemoWF\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+C:\Users\nguyenminhtuan\Desktop\New folder (2)\DemoWF\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
+C:\Users\nguyenminhtuan\Desktop\New folder (2)\DemoWF\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.xml
+C:\Users\nguyenminhtuan\Desktop\New folder (2)\DemoWF\obj\Debug\DemoWF.csprojResolveAssemblyReference.cache
+C:\Users\nguyenminhtuan\Desktop\New folder (2)\DemoWF\obj\Debug\DemoWF.CateForm.frmAddCate.resources
+C:\Users\nguyenminhtuan\Desktop\New folder (2)\DemoWF\obj\Debug\DemoWF.CateForm.frmSearch.resources
+C:\Users\nguyenminhtuan\Desktop\New folder (2)\DemoWF\obj\Debug\DemoWF.CateForm.frmUpdateCate.resources
+C:\Users\nguyenminhtuan\Desktop\New folder (2)\DemoWF\obj\Debug\DemoWF.LoginForm.LoginFrm.resources
+C:\Users\nguyenminhtuan\Desktop\New folder (2)\DemoWF\obj\Debug\DemoWF.MainForm.resources
+C:\Users\nguyenminhtuan\Desktop\New folder (2)\DemoWF\obj\Debug\DemoWF.OrderForm.frmMainOrder.resources
+C:\Users\nguyenminhtuan\Desktop\New folder (2)\DemoWF\obj\Debug\DemoWF.ProductForm.frmMainPro.resources
+C:\Users\nguyenminhtuan\Desktop\New folder (2)\DemoWF\obj\Debug\DemoWF.Properties.Resources.resources
+C:\Users\nguyenminhtuan\Desktop\New folder (2)\DemoWF\obj\Debug\DemoWF.csproj.GenerateResource.Cache

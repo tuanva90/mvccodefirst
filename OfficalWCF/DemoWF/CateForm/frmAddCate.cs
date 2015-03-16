@@ -59,15 +59,9 @@ namespace DemoWF.CateForm
                 if (Convert.ToBoolean(dtgCategory.Rows[i].Cells[4].Value)==true)
                 {
                    int a =  test.DeleteCategory(int.Parse(dtgCategory.Rows[i].Cells[0].Value.ToString()));
-                   if (a == 1)
-                   {
-                       MessageBox.Show("Delete Susscess");
-                   }
-                   else
-                       MessageBox.Show("Error!");
                 }
-            }
-                
+            } 
+               
         }
 
         private void btnSearch_Click(object sender, EventArgs e)

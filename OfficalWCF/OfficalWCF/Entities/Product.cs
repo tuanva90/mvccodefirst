@@ -138,10 +138,21 @@ namespace OfficalWCF.Entities
 
         public int Delete(int id)
         {
-            string sqlcm = "Delete OrderDetails  from OrderDetails INNER JOIN Products ON OrderDetails.ProductID = Products.ProductID where OrderDetails.ProductID=" + id;
-            string sqlcm2 = "delete from Products where ProductID=" + id;
-            ConnectionClass.GetInstance().ExecuteNonQuery(sqlcm);
-            return ConnectionClass.GetInstance().ExecuteNonQuery(sqlcm2);
+
+            string sql = "select * from OrderDetails where ProductID=" + id;
+            IDataReader dr = ConnectionClass.GetInstance().ExecuteReader(sql);
+            if (dr != null)
+            {
+                string sqlcm = "Delete OrderDetails  from OrderDetails INNER JOIN Products ON OrderDetails.ProductID = Products.ProductID where OrderDetails.ProductID=" + id;
+                ConnectionClass.GetInstance().ExecuteNonQuery(sqlcm);
+                string sqlcm2 = "delete from Products where ProductID=" + id;
+                return ConnectionClass.GetInstance().ExecuteNonQuery(sqlcm2);
+            }
+            else
+            {
+                string sqlcm2 = "delete from Products where ProductID=" + id;
+                return ConnectionClass.GetInstance().ExecuteNonQuery(sqlcm2);
+            }
         }
         public IQueryable<Product> GetByName(string name)
         {

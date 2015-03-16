@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevComponents.WinForms;
 using DemoWF.CateForm;
+using DemoWF.LoginForm;
+using DemoWF.OrderForm;
+using DemoWF.ProductForm;
 
 namespace DemoWF
 {
@@ -36,6 +39,22 @@ namespace DemoWF
             frmSearch search = new frmSearch();
             search.ShowDialog();
             search.MdiParent = this;
+        }
+
+        private void addOrderToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string cusid;
+            cusid = LoginFrm.CusID;
+            frmMainOrder or = new frmMainOrder(cusid);
+            or.MdiParent = this;
+            or.Show();
+        }
+
+        private void addProductToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmMainPro pro = new frmMainPro();
+            pro.MdiParent = this;
+            pro.Show();
         }
     }
 }

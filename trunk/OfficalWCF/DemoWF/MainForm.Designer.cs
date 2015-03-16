@@ -112,6 +112,7 @@
             this.addProductToolStripMenuItem.Name = "addProductToolStripMenuItem";
             this.addProductToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.addProductToolStripMenuItem.Text = "Add Product";
+            this.addProductToolStripMenuItem.Click += new System.EventHandler(this.addProductToolStripMenuItem_Click);
             // 
             // updateProductToolStripMenuItem
             // 
@@ -145,25 +146,26 @@
             // addOrderToolStripMenuItem
             // 
             this.addOrderToolStripMenuItem.Name = "addOrderToolStripMenuItem";
-            this.addOrderToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.addOrderToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.addOrderToolStripMenuItem.Text = "Add Order";
+            this.addOrderToolStripMenuItem.Click += new System.EventHandler(this.addOrderToolStripMenuItem_Click);
             // 
             // updateOrderToolStripMenuItem
             // 
             this.updateOrderToolStripMenuItem.Name = "updateOrderToolStripMenuItem";
-            this.updateOrderToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.updateOrderToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.updateOrderToolStripMenuItem.Text = "Update Order";
             // 
             // deleteOrderToolStripMenuItem
             // 
             this.deleteOrderToolStripMenuItem.Name = "deleteOrderToolStripMenuItem";
-            this.deleteOrderToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.deleteOrderToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.deleteOrderToolStripMenuItem.Text = "Delete Order";
             // 
             // searchOrderToolStripMenuItem
             // 
             this.searchOrderToolStripMenuItem.Name = "searchOrderToolStripMenuItem";
-            this.searchOrderToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.searchOrderToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.searchOrderToolStripMenuItem.Text = "Search Order";
             // 
             // MainForm

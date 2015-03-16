@@ -16,7 +16,7 @@ namespace DemoWF.OrderForm
         public static string _Cusid;
         NorthwindService.Service1Client test = new NorthwindService.Service1Client();
         int numofrow = 1;
-        int numofnext = 15;
+        int numofnext = 5;
         public frmMainOrder()
         {
             InitializeComponent();
@@ -111,27 +111,25 @@ namespace DemoWF.OrderForm
         int scroll_heigh = 0;
         private void dtgOrder_Scroll(object sender, ScrollEventArgs e)
         {
-            //dtgOrder.ScrollBars = ScrollBars.Vertical;
             if (e.NewValue > scroll_heigh)
             {
-                scroll_heigh = e.NewValue;
+                int scrollPosition = dtgOrder.FirstDisplayedScrollingRowIndex;
+                scroll_heigh = dtgOrder.Rows.Count;
                 index += 1;
                 List<NorthwindService.Order> lsor = new List<NorthwindService.Order>();
                 lsor = test.LoadOrder(_Cusid, index * 5 + 1, 5).ToList();
                 if (lsor.Count == 0)
                 {
-                    //scroll_heigh = e.OldValue;
-                    //e.NewValue = e.OldValue;
                     index -= 1;
                     return;
                 }
-                List<NorthwindService.Order> lsor_old = (List<NorthwindService.Order>)dtgOrder.DataSource;
+                List<NorthwindService.Order> lsor_old = (List<NorthwindService.Order>)orderBindingSource.DataSource;
                 lsor_old.AddRange(lsor);
                 orderBindingSource.DataSource = lsor_old;
-
-                dtgOrder.DataSource = lsor_old; // orderBindingSource;
+                dtgOrder.DataSource = null;
+                dtgOrder.DataSource = orderBindingSource;
+                dtgOrder.FirstDisplayedScrollingRowIndex = scrollPosition; //lsor_old.Count - lsor.Count; // dtgOrder.Rows.Count;
             }
-
         }
     }
 }

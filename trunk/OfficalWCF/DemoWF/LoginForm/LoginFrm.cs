@@ -13,7 +13,7 @@ namespace DemoWF.LoginForm
 {
     public partial class LoginFrm : DevComponents.DotNetBar.Office2007Form
     {
-        public string CusID;
+        public static string CusID;
         public LoginFrm()
         {
             InitializeComponent();
@@ -25,8 +25,11 @@ namespace DemoWF.LoginForm
             CusID = northwind.GetCustomer(txtCusID.Text,txtCusPassword.Text);
             if (CusID != null)
             {
-                frmMainOrder order = new frmMainOrder(CusID);
-                order.Show();
+                //frmMainOrder order = new frmMainOrder(CusID);
+                //order.MdiParent = this.
+                //order.Show();
+                MainForm main = new MainForm();
+                main.Show();
                 this.Hide();
             }
             else

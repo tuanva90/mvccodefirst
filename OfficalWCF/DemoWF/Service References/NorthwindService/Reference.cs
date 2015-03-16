@@ -921,6 +921,12 @@ namespace DemoWF.NorthwindService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Service1/GetOrder", ReplyAction="http://tempuri.org/Service1/GetOrderResponse")]
         System.Threading.Tasks.Task<DemoWF.NorthwindService.Order[]> GetOrderAsync(string id);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Service1/LoadOrder", ReplyAction="http://tempuri.org/Service1/LoadOrderResponse")]
+        DemoWF.NorthwindService.Order[] LoadOrder(string id, int numofrow, int numofnext);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Service1/LoadOrder", ReplyAction="http://tempuri.org/Service1/LoadOrderResponse")]
+        System.Threading.Tasks.Task<DemoWF.NorthwindService.Order[]> LoadOrderAsync(string id, int numofrow, int numofnext);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Service1/GetListOrderByDate", ReplyAction="http://tempuri.org/Service1/GetListOrderByDateResponse")]
         DemoWF.NorthwindService.Order[] GetListOrderByDate(string cusid, System.DateTime fromdate, System.DateTime todate);
         
@@ -1105,6 +1111,14 @@ namespace DemoWF.NorthwindService {
         
         public System.Threading.Tasks.Task<DemoWF.NorthwindService.Order[]> GetOrderAsync(string id) {
             return base.Channel.GetOrderAsync(id);
+        }
+        
+        public DemoWF.NorthwindService.Order[] LoadOrder(string id, int numofrow, int numofnext) {
+            return base.Channel.LoadOrder(id, numofrow, numofnext);
+        }
+        
+        public System.Threading.Tasks.Task<DemoWF.NorthwindService.Order[]> LoadOrderAsync(string id, int numofrow, int numofnext) {
+            return base.Channel.LoadOrderAsync(id, numofrow, numofnext);
         }
         
         public DemoWF.NorthwindService.Order[] GetListOrderByDate(string cusid, System.DateTime fromdate, System.DateTime todate) {

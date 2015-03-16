@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Search = new System.Windows.Forms.GroupBox();
             this.buttonX3 = new DevComponents.DotNetBar.ButtonX();
             this.btnDelete = new DevComponents.DotNetBar.ButtonX();
@@ -40,7 +42,7 @@
             this.txtFreight = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtDateShipped = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.txtDateRequired = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
-            this.dtgOrder = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.dtgOrder = new System.Windows.Forms.DataGridView();
             this.orderIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.customerIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orderDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -71,7 +73,7 @@
             this.Search.Dock = System.Windows.Forms.DockStyle.Top;
             this.Search.Location = new System.Drawing.Point(0, 0);
             this.Search.Name = "Search";
-            this.Search.Size = new System.Drawing.Size(704, 127);
+            this.Search.Size = new System.Drawing.Size(760, 127);
             this.Search.TabIndex = 0;
             this.Search.TabStop = false;
             this.Search.Enter += new System.EventHandler(this.Search_Enter);
@@ -263,6 +265,14 @@
             this.dtgOrder.AllowUserToAddRows = false;
             this.dtgOrder.AllowUserToDeleteRows = false;
             this.dtgOrder.AutoGenerateColumns = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgOrder.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dtgOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgOrder.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.orderIDDataGridViewTextBoxColumn,
@@ -274,22 +284,32 @@
             this.freightDataGridViewTextBoxColumn,
             this.DeleteComlumn});
             this.dtgOrder.DataSource = this.orderBindingSource;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgOrder.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(57)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgOrder.DefaultCellStyle = dataGridViewCellStyle2;
             this.dtgOrder.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtgOrder.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
+            this.dtgOrder.EnableHeadersVisualStyles = false;
+            this.dtgOrder.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.dtgOrder.Location = new System.Drawing.Point(0, 127);
             this.dtgOrder.Name = "dtgOrder";
             this.dtgOrder.ReadOnly = true;
-            this.dtgOrder.Size = new System.Drawing.Size(704, 284);
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgOrder.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dtgOrder.Size = new System.Drawing.Size(760, 123);
             this.dtgOrder.TabIndex = 1;
             this.dtgOrder.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgOrder_CellContentDoubleClick);
+            this.dtgOrder.Scroll += new System.Windows.Forms.ScrollEventHandler(this.dtgOrder_Scroll);
             // 
             // orderIDDataGridViewTextBoxColumn
             // 
@@ -354,10 +374,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(704, 411);
+            this.ClientSize = new System.Drawing.Size(760, 250);
             this.Controls.Add(this.dtgOrder);
             this.Controls.Add(this.Search);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmMainOrder";
             this.Text = "frmMainOrder";
             this.Load += new System.EventHandler(this.frmMainOrder_Load);
@@ -382,7 +403,7 @@
         private DevComponents.DotNetBar.Controls.TextBoxX txtFreight;
         private DevComponents.Editors.DateTimeAdv.DateTimeInput txtDateShipped;
         private DevComponents.Editors.DateTimeAdv.DateTimeInput txtDateRequired;
-        private DevComponents.DotNetBar.Controls.DataGridViewX dtgOrder;
+        private System.Windows.Forms.DataGridView dtgOrder;
         private System.Windows.Forms.BindingSource orderBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn orderIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn customerIDDataGridViewTextBoxColumn;

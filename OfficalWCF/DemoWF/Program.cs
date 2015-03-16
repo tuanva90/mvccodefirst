@@ -20,7 +20,7 @@ namespace DemoWF
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmMainOrder());
+            Application.Run(new LoginFrm());
         }
     }
 }

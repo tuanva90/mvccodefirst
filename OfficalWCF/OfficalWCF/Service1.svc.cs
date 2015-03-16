@@ -94,6 +94,14 @@ namespace OfficalWCF
         }
 
         [OperationContract]
+        public IQueryable<Order> LoadOrder(string id, int numofrow, int numofnext)
+        {
+            _Orderservice = new OrderService();
+            IQueryable<Order> ret = _Orderservice.LoadOrderBySP(id, numofrow, numofnext);
+            return ret;
+        }
+
+        [OperationContract]
         public IQueryable<Order> GetListOrderByDate(string cusid,DateTime fromdate, DateTime todate)
         {
             _Orderservice = new OrderService();

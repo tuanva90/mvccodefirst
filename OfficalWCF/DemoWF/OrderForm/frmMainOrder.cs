@@ -15,6 +15,8 @@ namespace DemoWF.OrderForm
     {
         public static string _Cusid;
         NorthwindService.Service1Client test = new NorthwindService.Service1Client();
+        int numofrow = 1;
+        int numofnext = 15;
         public frmMainOrder()
         {
             InitializeComponent();
@@ -28,18 +30,9 @@ namespace DemoWF.OrderForm
         private void frmMainOrder_Load(object sender, EventArgs e)
         {
             List<NorthwindService.Order> lsor = new List<NorthwindService.Order>();
-            lsor = test.GetOrder(_Cusid).ToList();
+            lsor = test.LoadOrder(_Cusid,numofrow, numofnext).ToList();
             orderBindingSource.DataSource = lsor;
-            dtgOrder.DataSource = orderBindingSource;
-        }
-
-
-        private void LoadOrder()
-        {
-            List<NorthwindService.Order> lsor = new List<NorthwindService.Order>();
-            lsor = test.GetOrder(_Cusid).ToList();
-            orderBindingSource.DataSource = lsor;
-            dtgOrder.DataSource = orderBindingSource;
+            dtgOrder.DataSource = lsor; // orderBindingSource;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -72,23 +65,17 @@ namespace DemoWF.OrderForm
             int rowcount = dtgOrder.Rows.Count;
             try
             {
-                DialogResult result = MessageBox.Show("Do you wanna delete rows were select?", "Warning", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
-                if (result == DialogResult.Yes)
+                for (int i = 0; i < rowcount; i++)
                 {
-                    for (int i = 0; i < rowcount; i++)
+                    if (Convert.ToBoolean(dtgOrder.Rows[i].Cells[7].Value) == true)
                     {
-                        if (Convert.ToBoolean(dtgOrder.Rows[i].Cells[7].Value) == true)
+                        int a = test.DeleteCategory(int.Parse(dtgOrder.Rows[i].Cells[0].Value.ToString()));
+                        if (a == 1)
                         {
-                            test.DeleteOrder(int.Parse(dtgOrder.Rows[i].Cells[0].Value.ToString()));
+                            MessageBox.Show("Delete Susscess");
                         }
-                    }
-                    LoadOrder();
-                }
-                if (result == DialogResult.No || result == DialogResult.Cancel)
-                {
-                    for (int i = 0; i < rowcount; i++)
-                    {
-                        dtgOrder.Rows[i].Cells[7].Value = false;
+                        else
+                            MessageBox.Show("Error!");
                     }
                 }
             }
@@ -120,9 +107,30 @@ namespace DemoWF.OrderForm
             }
                       
         }
-
-        private void Search_Enter(object sender, EventArgs e)
+        int index = 0;
+        int scroll_heigh = 0;
+        private void dtgOrder_Scroll(object sender, ScrollEventArgs e)
         {
+            //dtgOrder.ScrollBars = ScrollBars.Vertical;
+            if (e.NewValue > scroll_heigh)
+            {
+                scroll_heigh = e.NewValue;
+                index += 1;
+                List<NorthwindService.Order> lsor = new List<NorthwindService.Order>();
+                lsor = test.LoadOrder(_Cusid, index * 5 + 1, 5).ToList();
+                if (lsor.Count == 0)
+                {
+                    //scroll_heigh = e.OldValue;
+                    //e.NewValue = e.OldValue;
+                    index -= 1;
+                    return;
+                }
+                List<NorthwindService.Order> lsor_old = (List<NorthwindService.Order>)dtgOrder.DataSource;
+                lsor_old.AddRange(lsor);
+                orderBindingSource.DataSource = lsor_old;
+
+                dtgOrder.DataSource = lsor_old; // orderBindingSource;
+            }
 
         }
     }

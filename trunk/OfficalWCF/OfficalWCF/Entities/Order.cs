@@ -150,6 +150,36 @@ namespace OfficalWCF.Entities
         }
 
 
+        public IQueryable<Order> LoadOrderBySP(string cusid, int numofrow,int numofnext)
+        {
+            List<Order> lsor = new List<Order>();
+            using (IDataReader dr = ConnectionClass.GetInstance().ExcuteSP("loadorder", cusid, numofrow, numofnext))
+            {
+                while (dr.Read())
+                {
+                    Order or = new Order();
+                    or.OrderID = dr.GetInt32(0);
+                    or.CustomerID = dr.GetString(1);
+                    or.OrderDate = dr.GetDateTime(2);
+                    or.RequireDate = dr.GetDateTime(3);
+                    if (dr.IsDBNull(4))
+                    {
+                        or.ShippedDate = null;
+                    }
+                    else
+                    {
+                        or.ShippedDate = dr.GetDateTime(4);
+                    }
+
+                    or.ShipVia = dr.GetInt32(5);
+                    or.Freight = dr.GetDecimal(6);
+                    lsor.Add(or);
+                }
+                dr.Close();
+            }
+            return lsor.AsQueryable();
+        }
+
         public int Add(Order or)
         {
             string shipped;

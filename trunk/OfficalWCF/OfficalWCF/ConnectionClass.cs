@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 
@@ -38,6 +39,17 @@ namespace OfficalWCF
             int a;
             a = defaultDB.ExecuteNonQuery(dbCommand);
             return a;
+        }
+
+        public IDataReader ExcuteSP(string spname, string cusid, int numofrow, int numofnext)
+        {
+            using (DbCommand sprocCmd = defaultDB.GetStoredProcCommand(spname))
+            {
+                defaultDB.AddInParameter(sprocCmd, "customerid", DbType.String, cusid);
+                defaultDB.AddInParameter(sprocCmd, "numofrow", DbType.Int16, numofrow);
+                defaultDB.AddInParameter(sprocCmd, "numofnext", DbType.Int16, numofnext);
+                return defaultDB.ExecuteReader(sprocCmd);
+            }
         }
 
         public void Dispose()

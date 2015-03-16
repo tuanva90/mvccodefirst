@@ -73,7 +73,7 @@ namespace DemoWF.ProductForm
             int rowcount = dtgProduct.Rows.Count;
             try
             {
-                DialogResult result = MessageBox.Show("Do you wanna delete rows were selected?", "Warning", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+                DialogResult result = MessageBox.Show("Do you wanna delete rows were select?", "Warning", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
                 if (result == DialogResult.Yes)
                 {
                     //code for Yes

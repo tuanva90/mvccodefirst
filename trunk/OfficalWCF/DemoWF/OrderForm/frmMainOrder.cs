@@ -33,6 +33,15 @@ namespace DemoWF.OrderForm
             dtgOrder.DataSource = orderBindingSource;
         }
 
+
+        private void LoadOrder()
+        {
+            List<NorthwindService.Order> lsor = new List<NorthwindService.Order>();
+            lsor = test.GetOrder(_Cusid).ToList();
+            orderBindingSource.DataSource = lsor;
+            dtgOrder.DataSource = orderBindingSource;
+        }
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
             NorthwindService.Order or = new NorthwindService.Order();
@@ -63,17 +72,23 @@ namespace DemoWF.OrderForm
             int rowcount = dtgOrder.Rows.Count;
             try
             {
-                for (int i = 0; i < rowcount; i++)
+                DialogResult result = MessageBox.Show("Do you wanna delete rows were select?", "Warning", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
                 {
-                    if (Convert.ToBoolean(dtgOrder.Rows[i].Cells[7].Value) == true)
+                    for (int i = 0; i < rowcount; i++)
                     {
-                        int a = test.DeleteCategory(int.Parse(dtgOrder.Rows[i].Cells[0].Value.ToString()));
-                        if (a == 1)
+                        if (Convert.ToBoolean(dtgOrder.Rows[i].Cells[7].Value) == true)
                         {
-                            MessageBox.Show("Delete Susscess");
+                            test.DeleteOrder(int.Parse(dtgOrder.Rows[i].Cells[0].Value.ToString()));
                         }
-                        else
-                            MessageBox.Show("Error!");
+                    }
+                    LoadOrder();
+                }
+                if (result == DialogResult.No || result == DialogResult.Cancel)
+                {
+                    for (int i = 0; i < rowcount; i++)
+                    {
+                        dtgOrder.Rows[i].Cells[7].Value = false;
                     }
                 }
             }
@@ -104,6 +119,11 @@ namespace DemoWF.OrderForm
                 MessageBox.Show(ex.ToString());
             }
                       
+        }
+
+        private void Search_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

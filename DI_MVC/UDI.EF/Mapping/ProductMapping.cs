@@ -15,6 +15,7 @@ namespace UDI.EF.Mapping
         {
             HasKey(pro => pro.ProductID).HasRequired(c => c.Category).WithMany(s => s.Products).HasForeignKey(s => s.CategoryID);
             Property(pro => pro.ProductID).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+            Property(pro => pro.CategoryID).IsRequired();
             Property(pro => pro.ProductName).IsRequired();
             Property(pro => pro.QuantityPerUnit).IsRequired();
             Property(pro => pro.UnitPrice).IsRequired();

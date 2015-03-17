@@ -11,21 +11,23 @@ namespace UDI.CORE.Entities
     {
         public Customer() { }
         public int CustomerID { get; set; }
-        [StringLength(20),MinLength(3)]
+        [Required]
         public string ContactName { get; set; }
-        [Required,StringLength(20)]
+        [Required]
         public string ContactTitle { get; set; }
         [Required]
         public string Address { get; set; }
         [Required]
         public string City { get; set; }
+        [Required]
         public string Region { get; set; }
-        [RegularExpression(@"^[0-9]{0,15}$", ErrorMessage = "PostalCode should contain only numbers")]
+        [Required]
         public string PostalCode { get; set; }
+        [Required]
         public string Country { get; set; }
-        [RegularExpression(@"^[0-9]{0,15}$", ErrorMessage = "PhoneNumber should contain only numbers")]
+        [Required]
         public string Phone { get; set; }
-        [RegularExpression(@"^[0-9]{0,15}$", ErrorMessage = "Fax should contain only numbers")]
+        [Required]
         public string Fax { get; set; }
         public virtual ICollection<Order> Orders { get; set; }
         public virtual User User { get; set; }

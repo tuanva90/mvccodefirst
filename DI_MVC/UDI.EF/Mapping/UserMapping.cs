@@ -16,7 +16,7 @@ namespace UDI.EF.Mapping
             HasKey(u => u.CustomerID);
             Property(u => u.CustomerID).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             Property(u => u.UserName).IsRequired();
-            Property(u => u.Password).IsRequired();
+            Property(u => u.Password).IsRequired().HasMaxLength(16);
             Property(u => u.Roles).IsRequired();
             Property(u => u.Email).IsRequired();
             Property(u => u.Bool).IsRequired().HasColumnName("Remember");

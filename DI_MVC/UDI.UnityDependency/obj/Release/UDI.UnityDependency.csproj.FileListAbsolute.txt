@@ -101,7 +101,6 @@ E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\UDI.UnityDepend
 E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\UDI.UnityDependency\obj\Release\UDI.UnityDependency.csprojResolveAssemblyReference.cache
 E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\UDI.UnityDependency\obj\Release\UDI.UnityDependency.dll
 E:\Data\Work\SVN\Other projects\MVC-Training\MVCCodeFirst\DI_MVC\UDI.UnityDependency\obj\Release\UDI.UnityDependency.pdb
-C:\Users\HoaiPhong\Desktop\my repo\DI_MVC\UDI.UnityDependency\obj\Release\UDI.UnityDependency.csprojResolveAssemblyReference.cache
 C:\Users\HoaiPhong\Desktop\my repo\DI_MVC\UDI.UnityDependency\bin\Release\UDI.UnityDependency.dll.config
 C:\Users\HoaiPhong\Desktop\my repo\DI_MVC\UDI.UnityDependency\bin\Release\UDI.UnityDependency.dll
 C:\Users\HoaiPhong\Desktop\my repo\DI_MVC\UDI.UnityDependency\bin\Release\UDI.UnityDependency.pdb
@@ -136,6 +135,7 @@ C:\Users\HoaiPhong\Desktop\my repo\DI_MVC\UDI.UnityDependency\bin\Release\System
 C:\Users\HoaiPhong\Desktop\my repo\DI_MVC\UDI.UnityDependency\bin\Release\System.Web.WebPages.xml
 C:\Users\HoaiPhong\Desktop\my repo\DI_MVC\UDI.UnityDependency\bin\Release\System.Web.WebPages.Deployment.xml
 C:\Users\HoaiPhong\Desktop\my repo\DI_MVC\UDI.UnityDependency\bin\Release\System.Web.WebPages.Razor.xml
+C:\Users\HoaiPhong\Desktop\my repo\DI_MVC\UDI.UnityDependency\obj\Release\UDI.UnityDependency.csprojResolveAssemblyReference.cache
 C:\Users\HoaiPhong\Desktop\my repo\DI_MVC\UDI.UnityDependency\obj\Release\UDI.UnityDependency.dll
 C:\Users\HoaiPhong\Desktop\my repo\DI_MVC\UDI.UnityDependency\obj\Release\UDI.UnityDependency.pdb
 C:\Users\nguyenminhtuan\Desktop\mvccodefirst\DI_MVC\UDI.UnityDependency\bin\Release\UDI.UnityDependency.dll.config
@@ -175,3 +175,40 @@ C:\Users\nguyenminhtuan\Desktop\mvccodefirst\DI_MVC\UDI.UnityDependency\bin\Rele
 C:\Users\nguyenminhtuan\Desktop\mvccodefirst\DI_MVC\UDI.UnityDependency\obj\Release\UDI.UnityDependency.csprojResolveAssemblyReference.cache
 C:\Users\nguyenminhtuan\Desktop\mvccodefirst\DI_MVC\UDI.UnityDependency\obj\Release\UDI.UnityDependency.dll
 C:\Users\nguyenminhtuan\Desktop\mvccodefirst\DI_MVC\UDI.UnityDependency\obj\Release\UDI.UnityDependency.pdb
+C:\Users\nguyenminhtuan\Desktop\2Tuan_Phong\DI_MVC\UDI.UnityDependency\bin\Release\UDI.UnityDependency.dll.config
+C:\Users\nguyenminhtuan\Desktop\2Tuan_Phong\DI_MVC\UDI.UnityDependency\bin\Release\UDI.UnityDependency.dll
+C:\Users\nguyenminhtuan\Desktop\2Tuan_Phong\DI_MVC\UDI.UnityDependency\bin\Release\UDI.UnityDependency.pdb
+C:\Users\nguyenminhtuan\Desktop\2Tuan_Phong\DI_MVC\UDI.UnityDependency\bin\Release\EntityFramework.dll
+C:\Users\nguyenminhtuan\Desktop\2Tuan_Phong\DI_MVC\UDI.UnityDependency\bin\Release\Microsoft.Practices.ServiceLocation.dll
+C:\Users\nguyenminhtuan\Desktop\2Tuan_Phong\DI_MVC\UDI.UnityDependency\bin\Release\Microsoft.Practices.Unity.Configuration.dll
+C:\Users\nguyenminhtuan\Desktop\2Tuan_Phong\DI_MVC\UDI.UnityDependency\bin\Release\Microsoft.Practices.Unity.dll
+C:\Users\nguyenminhtuan\Desktop\2Tuan_Phong\DI_MVC\UDI.UnityDependency\bin\Release\Microsoft.Web.Infrastructure.dll
+C:\Users\nguyenminhtuan\Desktop\2Tuan_Phong\DI_MVC\UDI.UnityDependency\bin\Release\Newtonsoft.Json.dll
+C:\Users\nguyenminhtuan\Desktop\2Tuan_Phong\DI_MVC\UDI.UnityDependency\bin\Release\System.Net.Http.Formatting.dll
+C:\Users\nguyenminhtuan\Desktop\2Tuan_Phong\DI_MVC\UDI.UnityDependency\bin\Release\System.Web.Helpers.dll
+C:\Users\nguyenminhtuan\Desktop\2Tuan_Phong\DI_MVC\UDI.UnityDependency\bin\Release\System.Web.Http.dll
+C:\Users\nguyenminhtuan\Desktop\2Tuan_Phong\DI_MVC\UDI.UnityDependency\bin\Release\System.Web.Razor.dll
+C:\Users\nguyenminhtuan\Desktop\2Tuan_Phong\DI_MVC\UDI.UnityDependency\bin\Release\System.Web.WebPages.Deployment.dll
+C:\Users\nguyenminhtuan\Desktop\2Tuan_Phong\DI_MVC\UDI.UnityDependency\bin\Release\System.Web.WebPages.dll
+C:\Users\nguyenminhtuan\Desktop\2Tuan_Phong\DI_MVC\UDI.UnityDependency\bin\Release\System.Web.WebPages.Razor.dll
+C:\Users\nguyenminhtuan\Desktop\2Tuan_Phong\DI_MVC\UDI.UnityDependency\bin\Release\UDI.CORE.dll
+C:\Users\nguyenminhtuan\Desktop\2Tuan_Phong\DI_MVC\UDI.UnityDependency\bin\Release\UDI.EF.dll
+C:\Users\nguyenminhtuan\Desktop\2Tuan_Phong\DI_MVC\UDI.UnityDependency\bin\Release\Unity.Mvc4.dll
+C:\Users\nguyenminhtuan\Desktop\2Tuan_Phong\DI_MVC\UDI.UnityDependency\bin\Release\UDI.CORE.pdb
+C:\Users\nguyenminhtuan\Desktop\2Tuan_Phong\DI_MVC\UDI.UnityDependency\bin\Release\UDI.EF.pdb
+C:\Users\nguyenminhtuan\Desktop\2Tuan_Phong\DI_MVC\UDI.UnityDependency\bin\Release\EntityFramework.xml
+C:\Users\nguyenminhtuan\Desktop\2Tuan_Phong\DI_MVC\UDI.UnityDependency\bin\Release\Microsoft.Practices.ServiceLocation.pdb
+C:\Users\nguyenminhtuan\Desktop\2Tuan_Phong\DI_MVC\UDI.UnityDependency\bin\Release\Microsoft.Practices.ServiceLocation.xml
+C:\Users\nguyenminhtuan\Desktop\2Tuan_Phong\DI_MVC\UDI.UnityDependency\bin\Release\Microsoft.Practices.Unity.xml
+C:\Users\nguyenminhtuan\Desktop\2Tuan_Phong\DI_MVC\UDI.UnityDependency\bin\Release\Microsoft.Practices.Unity.Configuration.xml
+C:\Users\nguyenminhtuan\Desktop\2Tuan_Phong\DI_MVC\UDI.UnityDependency\bin\Release\Newtonsoft.Json.xml
+C:\Users\nguyenminhtuan\Desktop\2Tuan_Phong\DI_MVC\UDI.UnityDependency\bin\Release\System.Net.Http.Formatting.xml
+C:\Users\nguyenminhtuan\Desktop\2Tuan_Phong\DI_MVC\UDI.UnityDependency\bin\Release\System.Web.Helpers.xml
+C:\Users\nguyenminhtuan\Desktop\2Tuan_Phong\DI_MVC\UDI.UnityDependency\bin\Release\System.Web.Http.xml
+C:\Users\nguyenminhtuan\Desktop\2Tuan_Phong\DI_MVC\UDI.UnityDependency\bin\Release\System.Web.Razor.xml
+C:\Users\nguyenminhtuan\Desktop\2Tuan_Phong\DI_MVC\UDI.UnityDependency\bin\Release\System.Web.WebPages.xml
+C:\Users\nguyenminhtuan\Desktop\2Tuan_Phong\DI_MVC\UDI.UnityDependency\bin\Release\System.Web.WebPages.Deployment.xml
+C:\Users\nguyenminhtuan\Desktop\2Tuan_Phong\DI_MVC\UDI.UnityDependency\bin\Release\System.Web.WebPages.Razor.xml
+C:\Users\nguyenminhtuan\Desktop\2Tuan_Phong\DI_MVC\UDI.UnityDependency\obj\Release\UDI.UnityDependency.csprojResolveAssemblyReference.cache
+C:\Users\nguyenminhtuan\Desktop\2Tuan_Phong\DI_MVC\UDI.UnityDependency\obj\Release\UDI.UnityDependency.dll
+C:\Users\nguyenminhtuan\Desktop\2Tuan_Phong\DI_MVC\UDI.UnityDependency\obj\Release\UDI.UnityDependency.pdb

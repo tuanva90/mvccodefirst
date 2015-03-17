@@ -41,7 +41,7 @@ namespace UDI.EF.Repositories
             return _dbSet.AsQueryable();
         }
 
-        public virtual T Get(Func<T, bool> predicate )
+        public virtual T Get(Func<T, bool> predicate =null)
         {
             return _dbSet.First(predicate);
         }
@@ -49,25 +49,21 @@ namespace UDI.EF.Repositories
         public virtual void Add(T entity)
         {
             _dbSet.Add(entity);
-            _dbContext.SaveChanges();
         }
 
         public virtual void Attach(T entity)
         {
             _dbSet.Attach(entity);
-            _dbContext.SaveChanges();
         }
 
         public virtual void Delete(T entity)
         {
             _dbSet.Remove(entity);
-            _dbContext.SaveChanges();
         }
 
         public virtual void Edit(T entity)
         {
             _dbContext.Entry(entity).State = EntityState.Modified;
-            _dbContext.SaveChanges();
         }
     }
 }

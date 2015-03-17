@@ -93,7 +93,9 @@ namespace UDI.EF.UnitOfWork
         {
             try
             {
+                _context.SaveChanges();
                 this._transaction.Commit();
+
             }
             catch (Exception ex)
             {

@@ -15,17 +15,17 @@ namespace UDI.EF.Mapping
         {
             HasKey(o => o.OrderID).HasRequired(c => c.Customer).WithMany(o => o.Orders).HasForeignKey(c => c.CustomerID);
             Property(o => o.OrderID).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
-            Property(o => o.OrderDate).IsRequired();
-            Property(o => o.RequiredDate).IsRequired();
-            Property(o => o.ShippedDate).IsRequired();
-            Property(o => o.ShipVia).IsRequired();
-            Property(o => o.Freight).IsRequired();
-            Property(o => o.ShipAddress).IsRequired();
-            Property(o => o.ShipCity).IsRequired();
-            Property(o => o.ShipRegion).IsRequired();
-            Property(o => o.ShipCountry).IsRequired();
-            Property(o => o.ShipPostalCode).IsRequired();
-            Property(o => o.ShipName).IsRequired();
+            Property(o => o.OrderDate);
+            Property(o => o.RequiredDate);
+            Property(o => o.ShippedDate);
+            Property(o => o.ShipVia);
+            Property(o => o.Freight);
+            Property(o => o.ShipAddress);
+            Property(o => o.ShipCity);
+            Property(o => o.ShipRegion);
+            Property(o => o.ShipCountry);
+            Property(o => o.ShipPostalCode);
+            Property(o => o.ShipName);
             ToTable("Order");
         }
     }

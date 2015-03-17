@@ -59,7 +59,7 @@ namespace DemoMVCEntityFramework.Controllers
                 //var d = from p in db.Users where p.UserName == GetLoginUser() select p.CustomerID;
                 //int id = (from u in db.Users where u.UserName == user.UserName select u.CustomerID).FirstOrDefault();
 
-                var cus = _cus.Get(loginUser.CustomerID); // db.Customers.Find(id);
+                var cus = _cus.Find(loginUser.CustomerID); // db.Customers.Find(id);
                 if (cus == null)
                     return RedirectToAction("Create", "Customer");
                 else

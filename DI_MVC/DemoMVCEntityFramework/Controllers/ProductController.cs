@@ -171,7 +171,7 @@ namespace DemoMVCEntityFramework.Controllerss
         public ActionResult Create(Product product)
         {
             if (ModelState.IsValid)
-            {               
+            {
                 _prod.Add(product);
                 return RedirectToAction("Create");
             }

@@ -13,7 +13,7 @@ namespace UDI.CORE.Entities
             
         }
         public int CategoryID { get; set; }
-        [Required, MinLength(3),MaxLength(20)]
+        [Required]
         public string CategoryName { get; set; }
         [Required]
         public string Description { get; set; }

@@ -14,7 +14,7 @@ namespace UDI.EF.Mapping
         public CustomerMapping()
         {
             HasKey(c => c.CustomerID).HasRequired(u => u.User).WithOptional(c => c.Customer);
-            Property(c => c.CustomerID).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+            Property(c => c.CustomerID);
             Property(c => c.ContactName).IsRequired();
             Property(c => c.ContactTitle).IsRequired();
             Property(c => c.Address).IsRequired();

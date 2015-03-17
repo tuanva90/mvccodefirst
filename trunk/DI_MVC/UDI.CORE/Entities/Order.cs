@@ -10,7 +10,6 @@ namespace UDI.CORE.Entities
     public class Order
     {
         public Order() { }
-        [Key]
         public int OrderID { get; set; }
         public int CustomerID { get; set; }
         //[DataType(DataType.Date)]

@@ -37,3 +37,10 @@ C:\Users\nguyenminhtuan\Desktop\2Tuan_Phong\DI_MVC\UDI.CORE\bin\Release\EntityFr
 C:\Users\nguyenminhtuan\Desktop\2Tuan_Phong\DI_MVC\UDI.CORE\obj\Release\UDI.CORE.csprojResolveAssemblyReference.cache
 C:\Users\nguyenminhtuan\Desktop\2Tuan_Phong\DI_MVC\UDI.CORE\obj\Release\UDI.CORE.dll
 C:\Users\nguyenminhtuan\Desktop\2Tuan_Phong\DI_MVC\UDI.CORE\obj\Release\UDI.CORE.pdb
+C:\Users\thoaiphong\Desktop\MVCCodeFirst\DI_MVC\UDI.CORE\bin\Release\UDI.CORE.dll.config
+C:\Users\thoaiphong\Desktop\MVCCodeFirst\DI_MVC\UDI.CORE\bin\Release\UDI.CORE.dll
+C:\Users\thoaiphong\Desktop\MVCCodeFirst\DI_MVC\UDI.CORE\bin\Release\UDI.CORE.pdb
+C:\Users\thoaiphong\Desktop\MVCCodeFirst\DI_MVC\UDI.CORE\bin\Release\EntityFramework.dll
+C:\Users\thoaiphong\Desktop\MVCCodeFirst\DI_MVC\UDI.CORE\bin\Release\EntityFramework.xml
+C:\Users\thoaiphong\Desktop\MVCCodeFirst\DI_MVC\UDI.CORE\obj\Release\UDI.CORE.dll
+C:\Users\thoaiphong\Desktop\MVCCodeFirst\DI_MVC\UDI.CORE\obj\Release\UDI.CORE.pdb

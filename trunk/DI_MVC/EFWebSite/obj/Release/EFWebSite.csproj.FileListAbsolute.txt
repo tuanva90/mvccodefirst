@@ -30,3 +30,4 @@ C:\Users\nguyenminhtuan\Desktop\2Tuan_Phong\DI_MVC\EFWebSite\obj\Release\EFWebSi
 C:\Users\nguyenminhtuan\Desktop\2Tuan_Phong\DI_MVC\EFWebSite\obj\Release\EFWebSite.pdb
 C:\Users\nguyenminhtuan\Desktop\2Tuan_Phong\DI_MVC\EFWebSite\bin\EntityFramework.SqlServer.dll
 C:\Users\nguyenminhtuan\Desktop\2Tuan_Phong\DI_MVC\EFWebSite\bin\EntityFramework.SqlServer.xml
+C:\Users\thoaiphong\Desktop\MVCCodeFirst\DI_MVC\EFWebSite\obj\Release\EFWebSite.csprojResolveAssemblyReference.cache

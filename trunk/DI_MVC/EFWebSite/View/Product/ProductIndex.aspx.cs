@@ -17,6 +17,6 @@ namespace EFWebSite.View.Product
 
         }
 
-        protected void LoadProduct
+        
     }
 }

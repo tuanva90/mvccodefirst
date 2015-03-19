@@ -15,9 +15,9 @@ namespace UDI.CORE.Services.Impl
         {
         }
 
-        public bool IsValid(string _username, string _password)
+        public bool IsValid(string userName, string passWord)
         {
-            var check = _uow.Repository<User>().GetAll(u => u.UserName == _username && u.Password == _password); // from p in db.Users where p.UserName == _username && p.Password == _password select p.UserName;
+            var check = _uow.Repository<User>().GetAll(u => u.UserName == userName && u.Password == passWord); // from p in db.Users where p.UserName == _username && p.Password == _password select p.UserName;
             if (check.Count() > 0)
             {
                 return true;
@@ -28,15 +28,15 @@ namespace UDI.CORE.Services.Impl
             }
         }
 
-        public User GetLoginUser(string _username, string _password)
+        public User GetLoginUser(string userName, string passWord)
         {
-            var check = _uow.Repository<User>().Get(u => u.UserName == _username && u.Password == _password); // from p in db.Users where p.UserName == _username && p.Password == _password select p.UserName;
+            var check = _uow.Repository<User>().Get(u => u.UserName == userName && u.Password == passWord); // from p in db.Users where p.UserName == _username && p.Password == _password select p.UserName;
             return check;
         }
 
-        public User GetLoginUser(string _username)
+        public User GetLoginUser(string userName)
         {
-            var check = _uow.Repository<User>().Get(u => u.UserName == _username); // from p in db.Users where p.UserName == _username && p.Password == _password select p.UserName;
+            var check = _uow.Repository<User>().Get(u => u.UserName == userName); // from p in db.Users where p.UserName == _username && p.Password == _password select p.UserName;
             return check;
         }
 
@@ -45,7 +45,7 @@ namespace UDI.CORE.Services.Impl
             return _uow.Repository<User>().Get(u => u.CustomerID == customerID);
         }
 
-        public User Find(String userName)
+        public User Find(string userName)
         {
             return _uow.Repository<User>().GetAll(u => u.UserName == userName).FirstOrDefault();
         }

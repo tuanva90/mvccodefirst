@@ -10,8 +10,8 @@ namespace UDI.EF.Repositories
 {
     class EFCustomerRepository : EFRepositoryBase<Customer>
     {
-        public EFCustomerRepository(EFContext _inputDBContext)
-            : base(_inputDBContext)
+        public EFCustomerRepository(EFContext inputDBContext)
+            : base(inputDBContext)
         {
         }
     }

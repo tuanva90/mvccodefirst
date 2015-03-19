@@ -10,8 +10,8 @@ namespace UDI.EF.Repositories
 {
     class EFOrderRepository : EFRepositoryBase<Order>
     {
-        public EFOrderRepository(EFContext _inputDBContext)
-            : base(_inputDBContext)
+        public EFOrderRepository(EFContext inputDBContext)
+            : base(inputDBContext)
         {
         }
     }

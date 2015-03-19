@@ -1,7 +1,7 @@
 using System.Web.Mvc;
 using Microsoft.Practices.Unity;
 using UDI.CORE.Repositories;
-using Unity.Mvc4;
+using Unity.WebForms;
 
 namespace UDI.UnityDependency
 {
@@ -9,9 +9,9 @@ namespace UDI.UnityDependency
     {
         public static void Initialise()
         {
-            var container = BuildUnityContainer();
+            //var container = BuildUnityContainer();
 
-            DependencyResolver.SetResolver(new UnityDependencyResolver(container));
+            //DependencyResolver.SetResolver(new UnityDependencyResolver(container));
         }
 
         private static IUnityContainer BuildUnityContainer()

@@ -6,12 +6,17 @@ using System;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
+using UDI.CORE.Services;
+using UDI.CORE.Services.Impl;
+using UDI.EF.DAL;
 using UDI.WebASP.Models;
 
 namespace UDI.WebASP.Account
 {
     public partial class Login : Page
     {
+        private IUserService _usr;
+        private ICustomerService _cus;
         protected void Page_Load(object sender, EventArgs e)
         {
             RegisterHyperLink.NavigateUrl = "Register";
@@ -23,23 +28,42 @@ namespace UDI.WebASP.Account
             }
         }
 
+        public Login()
+        {
+            _usr = new UserService(new UDI.EF.UnitOfWork.EFUnitOfWork(new EFContext()));
+            _cus = new CustomerService(new UDI.EF.UnitOfWork.EFUnitOfWork(new EFContext()));
+        }
+
         protected void LogIn(object sender, EventArgs e)
         {
             if (IsValid)
             {
-                // Validate the user password
-                var manager = new UserManager();
-                ApplicationUser user = manager.Find(UserName.Text, Password.Text);
-                if (user != null)
+                if (_usr.IsValid(UserName.Text, Password.Text))
                 {
-                    IdentityHelper.SignIn(manager, user, RememberMe.Checked);
-                    IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
+                    var manager = new UserManager();
+                    ApplicationUser user = manager.Find(UserName.Text, Password.Text);
+                    if (user != null)
+                    {
+                        IdentityHelper.SignIn(manager, user, RememberMe.Checked);
+                        //IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
+                    }
+                    var loginUser = _usr.GetLoginUser(UserName.Text, Password.Text);
+                    var cus = _cus.Find(loginUser.CustomerID);
+                    if (cus == null)
+                    {
+                        Response.Redirect("~/Views/Customer/CustomerIndex.aspx");
+                    }
+                    else Response.Redirect("/Views/Product/ProductIndex.aspx");
+                    
                 }
+                // Validate the user password
                 else
                 {
                     FailureText.Text = "Invalid username or password.";
                     ErrorMessage.Visible = true;
                 }
+               
+                
             }
         }
     }

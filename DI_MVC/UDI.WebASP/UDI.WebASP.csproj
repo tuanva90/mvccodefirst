@@ -327,10 +327,6 @@
       <Project>{aeb66340-3bb6-483e-ac20-0e8e7a53fa06}</Project>
       <Name>UDI.CORE</Name>
     </ProjectReference>
-    <ProjectReference Include="..\UDI.Dependency\UDI.Dependency.csproj">
-      <Project>{d6d39c49-690e-4d3b-b9ba-ea1e9aab8fca}</Project>
-      <Name>UDI.Dependency</Name>
-    </ProjectReference>
     <ProjectReference Include="..\UDI.EF\UDI.EF.csproj">
       <Project>{6a759fb2-1d4d-4326-b201-c7810202a23a}</Project>
       <Name>UDI.EF</Name>

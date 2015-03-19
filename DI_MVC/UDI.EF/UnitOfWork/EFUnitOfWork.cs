@@ -23,7 +23,7 @@ namespace UDI.EF.UnitOfWork
 
         public EFUnitOfWork(IEFContext context)
         {
-            //Database.SetInitializer<EFContext>(new TestInitializer());
+            Database.SetInitializer<EFContext>(new TestInitializer());
 
             this._context = context as EFContext ?? new EFContext();
 

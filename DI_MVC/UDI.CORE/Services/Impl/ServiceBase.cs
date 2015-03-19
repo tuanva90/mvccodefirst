@@ -21,7 +21,7 @@ namespace UDI.CORE.Services.Impl
 
         public List<T> GetAll()
         {
-            return _uow.Repository<T>().GetAll().ToList(); ;
+            return _uow.Repository<T>().GetAll().ToList();
         }
 
         public void Add(T entity)

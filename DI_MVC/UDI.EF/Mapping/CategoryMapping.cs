@@ -15,8 +15,8 @@ namespace UDI.EF.Mapping
         {
             HasKey(cate => cate.CategoryID);
             Property(cate => cate.CategoryID).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
-            Property(cate => cate.CategoryName).IsRequired().HasMaxLength(50);
-            Property(cate => cate.Description).IsRequired().HasMaxLength(50);
+            Property(cate => cate.CategoryName);
+            Property(cate => cate.Description);
             Property(cate => cate.Picture);
             ToTable("Category");
         }

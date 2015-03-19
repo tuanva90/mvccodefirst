@@ -50,7 +50,7 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/">CATEGORY</a></li>
+                        <li><a runat="server" href="~/Views/Category/CategoryIndex.aspx">CATEGORY</a></li>
                         <li><a runat="server" href="~/">PRODUCT</a></li>
                         <li><a runat="server" href="~/">CUSTOMER</a></li>
                         <li><a runat="server" href="~/">ORDER</a></li>

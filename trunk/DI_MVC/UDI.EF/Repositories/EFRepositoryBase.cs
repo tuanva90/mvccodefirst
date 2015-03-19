@@ -15,9 +15,9 @@ namespace UDI.EF.Repositories
         protected EFContext _dbContext = null;
         protected DbSet<T> _dbSet;
 
-        public EFRepositoryBase(EFContext _inputDBContext)
+        public EFRepositoryBase(EFContext inputDBContext)
         {
-            _dbContext = _inputDBContext;
+            _dbContext = inputDBContext;
             _dbSet = _dbContext.Set<T>();
         }
 

@@ -14,6 +14,8 @@ namespace UDI.WebASP
         void Application_Start(object sender, EventArgs e)
         {
             // Code that runs on application startup
+            UDI.Dependency.App_Start.UnityWebFormsStart.PostStart();
+
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }

@@ -41,6 +41,8 @@ C:\Users\thoaiphong\Desktop\MVCCodeFirst\DI_MVC\UDI.CORE\bin\Release\UDI.CORE.dl
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\DI_MVC\UDI.CORE\bin\Release\UDI.CORE.dll
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\DI_MVC\UDI.CORE\bin\Release\UDI.CORE.pdb
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\DI_MVC\UDI.CORE\bin\Release\EntityFramework.dll
+C:\Users\thoaiphong\Desktop\MVCCodeFirst\DI_MVC\UDI.CORE\bin\Release\EntityFramework.SqlServer.dll
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\DI_MVC\UDI.CORE\bin\Release\EntityFramework.xml
+C:\Users\thoaiphong\Desktop\MVCCodeFirst\DI_MVC\UDI.CORE\bin\Release\EntityFramework.SqlServer.xml
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\DI_MVC\UDI.CORE\obj\Release\UDI.CORE.dll
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\DI_MVC\UDI.CORE\obj\Release\UDI.CORE.pdb

@@ -10,7 +10,7 @@ namespace UDI.EF.Repositories
 {
     public class EFProductRepository : EFRepositoryBase<Product>
     {
-        public EFProductRepository(EFContext _inputDBContext) : base(_inputDBContext)
+        public EFProductRepository(EFContext inputDBContext) : base(inputDBContext)
         {
         }        
     }

@@ -62,9 +62,11 @@ C:\Users\thoaiphong\Desktop\MVCCodeFirst\DI_MVC\UDI.EF\bin\Release\UDI.EF.dll.co
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\DI_MVC\UDI.EF\bin\Release\UDI.EF.dll
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\DI_MVC\UDI.EF\bin\Release\UDI.EF.pdb
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\DI_MVC\UDI.EF\bin\Release\EntityFramework.dll
+C:\Users\thoaiphong\Desktop\MVCCodeFirst\DI_MVC\UDI.EF\bin\Release\EntityFramework.SqlServer.dll
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\DI_MVC\UDI.EF\bin\Release\UDI.CORE.dll
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\DI_MVC\UDI.EF\bin\Release\UDI.CORE.pdb
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\DI_MVC\UDI.EF\bin\Release\EntityFramework.xml
+C:\Users\thoaiphong\Desktop\MVCCodeFirst\DI_MVC\UDI.EF\bin\Release\EntityFramework.SqlServer.xml
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\DI_MVC\UDI.EF\obj\Release\UDI.EF.csprojResolveAssemblyReference.cache
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\DI_MVC\UDI.EF\obj\Release\UDI.EF.dll
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\DI_MVC\UDI.EF\obj\Release\UDI.EF.pdb

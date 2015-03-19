@@ -9,10 +9,10 @@ namespace UDI.CORE.Services
 {
     public interface IUserService : IServiceBase<User>
     {
-        bool IsValid(string _username, string _password);
-        User GetLoginUser(string _username, string _password);
-        User GetLoginUser(string _username);
+        bool IsValid(string userName, string passWord);
+        User GetLoginUser(string userName, string passWord);
+        User GetLoginUser(string userName);
         User Get(int userID);
-        User Find(String userName);
+        User Find(string userName);
     }
 }

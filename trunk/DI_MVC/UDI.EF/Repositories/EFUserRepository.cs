@@ -10,8 +10,8 @@ namespace UDI.EF.Repositories
 {
     class EFUserRepository: EFRepositoryBase<User>
     {
-        public EFUserRepository(EFContext _inputDBContext)
-            : base(_inputDBContext)
+        public EFUserRepository(EFContext inputDBContext)
+            : base(inputDBContext)
         {
         }
         

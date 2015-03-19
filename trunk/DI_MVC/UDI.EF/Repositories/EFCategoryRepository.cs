@@ -10,8 +10,8 @@ namespace UDI.EF.Repositories
 {
     class EFCategoryRepository : EFRepositoryBase<Category>
     {
-        public EFCategoryRepository(EFContext _inputDBContext)
-            : base(_inputDBContext)
+        public EFCategoryRepository(EFContext inputDBContext)
+            : base(inputDBContext)
         {
         }
     }

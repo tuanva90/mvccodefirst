@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
-using System.Data.Objects;
+using System.Data.Entity.Core.Objects;
 using System.Linq;
 using System.Text;
 using UDI.CORE.Entities;
@@ -23,7 +23,7 @@ namespace UDI.EF.UnitOfWork
 
         public EFUnitOfWork(IEFContext context)
         {
-            Database.SetInitializer<EFContext>(new TestInitializer());
+            //Database.SetInitializer<EFContext>(new TestInitializer());
 
             this._context = context as EFContext ?? new EFContext();
 

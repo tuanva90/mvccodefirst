@@ -104,3 +104,7 @@ C:\Users\thoaiphong\Desktop\MVCCodeFirst\DI_MVC\UDI.WebASP\bin\Microsoft.Owin.Se
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\DI_MVC\UDI.WebASP\obj\Release\UDI.WebASP.csprojResolveAssemblyReference.cache
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\DI_MVC\UDI.WebASP\obj\Release\UDI.WebASP.dll
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\DI_MVC\UDI.WebASP\obj\Release\UDI.WebASP.pdb
+C:\Users\nguyenminhtuan\Desktop\mvccodefirst\DI_MVC\UDI.WebASP\bin\UDI.CORE.dll
+C:\Users\nguyenminhtuan\Desktop\mvccodefirst\DI_MVC\UDI.WebASP\bin\UDI.EF.dll
+C:\Users\nguyenminhtuan\Desktop\mvccodefirst\DI_MVC\UDI.WebASP\bin\UDI.CORE.pdb
+C:\Users\nguyenminhtuan\Desktop\mvccodefirst\DI_MVC\UDI.WebASP\bin\UDI.EF.pdb

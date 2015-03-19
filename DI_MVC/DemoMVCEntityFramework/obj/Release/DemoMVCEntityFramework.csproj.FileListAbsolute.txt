@@ -593,3 +593,4 @@ C:\Users\nguyenminhtuan\Desktop\2Tuan_Phong\DI_MVC\DemoMVCEntityFramework\obj\Re
 C:\Users\nguyenminhtuan\Desktop\2Tuan_Phong\DI_MVC\DemoMVCEntityFramework\obj\Release\DemoMVCEntityFramework.dll
 C:\Users\nguyenminhtuan\Desktop\2Tuan_Phong\DI_MVC\DemoMVCEntityFramework\obj\Release\DemoMVCEntityFramework.pdb
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\DI_MVC\DemoMVCEntityFramework\obj\Release\DemoMVCEntityFramework.csprojResolveAssemblyReference.cache
+C:\Users\nguyenminhtuan\Desktop\mvccodefirst\DI_MVC\DemoMVCEntityFramework\obj\Release\DemoMVCEntityFramework.csprojResolveAssemblyReference.cache

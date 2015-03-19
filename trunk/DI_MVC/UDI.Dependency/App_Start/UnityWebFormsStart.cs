@@ -1,5 +1,5 @@
 using System.Web;
-using UDI.CORE.Repositories;
+
 using Microsoft.Practices.Unity;
 using Unity.WebForms;
 
@@ -9,7 +9,7 @@ namespace UDI.Dependency.App_Start
 	/// <summary>
 	///		Startup class for the Unity.WebForms NuGet package.
 	/// </summary>
-	public static class UnityWebFormsStart
+	internal static class UnityWebFormsStart
 	{
 		/// <summary>
 		///     Initializes the unity container when the application starts up.
@@ -18,7 +18,7 @@ namespace UDI.Dependency.App_Start
 		///		Do not edit this method. Perform any modifications in the
 		///		<see cref="RegisterDependencies" /> method.
 		/// </remarks>
-		public static void PostStart()
+		internal static void PostStart()
 		{
 			IUnityContainer container = new UnityContainer();
 			HttpContext.Current.Application.SetContainer( container );

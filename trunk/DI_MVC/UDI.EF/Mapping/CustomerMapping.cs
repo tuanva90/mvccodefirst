@@ -19,11 +19,11 @@ namespace UDI.EF.Mapping
             Property(c => c.ContactTitle).IsRequired();
             Property(c => c.Address).IsRequired();
             Property(c => c.City).IsRequired();
-            Property(c => c.Country).IsRequired();
-            Property(c => c.Fax).IsRequired();
-            Property(c => c.Phone).IsRequired();
-            Property(c => c.Region).IsRequired();
-            Property(c => c.PostalCode).IsRequired();
+            Property(c => c.Country);
+            Property(c => c.Fax);
+            Property(c => c.Phone);
+            Property(c => c.Region);
+            Property(c => c.PostalCode);
             ToTable("Customer");
         }
     }

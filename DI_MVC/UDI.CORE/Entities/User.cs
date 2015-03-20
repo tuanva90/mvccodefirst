@@ -22,7 +22,7 @@ namespace UDI.CORE.Entities
         [Required]
         public bool Bool { get; set; }
         //[NotMapped, Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
-        [Required]
+        [Required,NotMapped]
         public string ConfirmPassword { get; set; }
         [Required]
         public bool Roles { get; set; }

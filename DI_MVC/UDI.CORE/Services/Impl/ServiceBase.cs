@@ -26,23 +26,23 @@ namespace UDI.CORE.Services.Impl
 
         public void Add(T entity)
         {
-            //_uow.BeginTransaction();
+            _uow.BeginTransaction();
             _uow.Repository<T>().Add(entity);
-            //_uow.Commit();
+            _uow.Commit();
         }
 
         public void Edit(T entity)
         {
-            //_uow.BeginTransaction();
+            _uow.BeginTransaction();
             _uow.Repository<T>().Edit(entity);
-            //_uow.Commit();
+            _uow.Commit();
         }
 
         public void Delete(T entity)
         {
-            //_uow.BeginTransaction();
+            _uow.BeginTransaction();
             _uow.Repository<T>().Delete(entity);
-            //_uow.Commit();
+            _uow.Commit();
         }
 
         #endregion

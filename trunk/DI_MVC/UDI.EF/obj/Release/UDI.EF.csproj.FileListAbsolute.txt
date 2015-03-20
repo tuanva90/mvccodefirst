@@ -58,6 +58,8 @@ C:\Users\nguyenminhtuan\Desktop\2Tuan_Phong\DI_MVC\UDI.EF\bin\Release\EntityFram
 C:\Users\nguyenminhtuan\Desktop\2Tuan_Phong\DI_MVC\UDI.EF\bin\Release\UDI.CORE.dll
 C:\Users\nguyenminhtuan\Desktop\2Tuan_Phong\DI_MVC\UDI.EF\bin\Release\UDI.CORE.pdb
 C:\Users\nguyenminhtuan\Desktop\2Tuan_Phong\DI_MVC\UDI.EF\bin\Release\EntityFramework.xml
+C:\Users\nguyenminhtuan\Desktop\mvccodefirst\DI_MVC\UDI.EF\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\nguyenminhtuan\Desktop\mvccodefirst\DI_MVC\UDI.EF\bin\Release\EntityFramework.SqlServer.xml
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\DI_MVC\UDI.EF\bin\Release\UDI.EF.dll.config
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\DI_MVC\UDI.EF\bin\Release\UDI.EF.dll
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\DI_MVC\UDI.EF\bin\Release\UDI.EF.pdb
@@ -70,5 +72,3 @@ C:\Users\thoaiphong\Desktop\MVCCodeFirst\DI_MVC\UDI.EF\bin\Release\EntityFramewo
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\DI_MVC\UDI.EF\obj\Release\UDI.EF.csprojResolveAssemblyReference.cache
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\DI_MVC\UDI.EF\obj\Release\UDI.EF.dll
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\DI_MVC\UDI.EF\obj\Release\UDI.EF.pdb
-C:\Users\nguyenminhtuan\Desktop\mvccodefirst\DI_MVC\UDI.EF\bin\Release\EntityFramework.SqlServer.dll
-C:\Users\nguyenminhtuan\Desktop\mvccodefirst\DI_MVC\UDI.EF\bin\Release\EntityFramework.SqlServer.xml

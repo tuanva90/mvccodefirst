@@ -52,7 +52,7 @@ namespace UDI.WebASP.Views.Customer
             if (ModelState.IsValid)
             {
                 _cus.Add(customer);
-                Response.Redirect("~/View/Product/ProductIndex.aspx");
+                Response.Redirect("~/Views/Product/ProductIndex.aspx");
             }   
         }
     }

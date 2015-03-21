@@ -51,15 +51,15 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/Views/Category/CategoryIndex.aspx">CATEGORY</a></li>
-                        <li><a runat="server" href="~/">PRODUCT</a></li>
-                        <li><a runat="server" href="~/">CUSTOMER</a></li>
+                        <li><a runat="server" href="~Views/Product/ProductIndex.aspx/">PRODUCT</a></li>
+                        <li><a runat="server" href="#">CUSTOMER</a></li>
                         <li><a runat="server" href="~/">ORDER</a></li>
                     </ul>
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>
                            <ul class="nav navbar-nav navbar-right">
-                                <li><a href="#"><span class="glyphicon glyphicon-user"></span>Sign Up</a></li>
-                                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+                                <li><a href="~/Account/Manage"><span class="glyphicon glyphicon-user"></span>Sign Up</a></li>
+                                <li><a href="Account/Login.aspx"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
                            </ul>
                         </AnonymousTemplate>
                         <LoggedInTemplate>

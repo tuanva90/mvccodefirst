@@ -55,3 +55,13 @@ C:\Users\thoaiphong\Desktop\MVCCodeFirst\DI_MVC\UDI.CORE\bin\Release\EntityFrame
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\DI_MVC\UDI.CORE\bin\Release\EntityFramework.SqlServer.xml
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\DI_MVC\UDI.CORE\obj\Release\UDI.CORE.dll
 C:\Users\thoaiphong\Desktop\MVCCodeFirst\DI_MVC\UDI.CORE\obj\Release\UDI.CORE.pdb
+C:\Users\tp\Desktop\mvccodefirst\DI_MVC\UDI.CORE\bin\Release\UDI.CORE.dll.config
+C:\Users\tp\Desktop\mvccodefirst\DI_MVC\UDI.CORE\bin\Release\UDI.CORE.dll
+C:\Users\tp\Desktop\mvccodefirst\DI_MVC\UDI.CORE\bin\Release\UDI.CORE.pdb
+C:\Users\tp\Desktop\mvccodefirst\DI_MVC\UDI.CORE\bin\Release\EntityFramework.dll
+C:\Users\tp\Desktop\mvccodefirst\DI_MVC\UDI.CORE\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\tp\Desktop\mvccodefirst\DI_MVC\UDI.CORE\bin\Release\EntityFramework.xml
+C:\Users\tp\Desktop\mvccodefirst\DI_MVC\UDI.CORE\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\tp\Desktop\mvccodefirst\DI_MVC\UDI.CORE\obj\Release\UDI.CORE.csprojResolveAssemblyReference.cache
+C:\Users\tp\Desktop\mvccodefirst\DI_MVC\UDI.CORE\obj\Release\UDI.CORE.dll
+C:\Users\tp\Desktop\mvccodefirst\DI_MVC\UDI.CORE\obj\Release\UDI.CORE.pdb

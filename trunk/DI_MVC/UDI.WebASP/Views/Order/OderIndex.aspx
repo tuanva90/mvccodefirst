@@ -10,7 +10,7 @@
             <h1>Order's History of Customer</h1>
          </div>
          <div class="form-group">
-      <asp:DataGrid ID="dtgOrder" CssClass="table table-condensed" HeaderStyle-CssClass="Bold" runat="server" OnItemCommand="dtgOrder_ItemCommand"> 
+      <asp:DataGrid ID="dtgOrder" CssClass="table table-condensed" HeaderStyle-CssClass="Bold" runat="server" OnItemCommand="dtgOrder_ItemCommand">          
           <Columns>
               <asp:ButtonColumn CommandName="DetailCmd" Text="Detail"></asp:ButtonColumn>
           </Columns>
@@ -26,7 +26,14 @@
         <h4 class="modal-title" id="myModalLabel">Detail of Order</h4>
       </div>
       <div class="modal-body">
-        <asp:DataGrid ID="dtgOrderDetail" CssClass="table table-condensed" HeaderStyle-CssClass="Bold" runat="server"></asp:DataGrid>
+        <asp:DataGrid ID="dtgOrderDetail" CssClass="table table-condensed" HeaderStyle-CssClass="Bold" runat="server">
+            <Columns>
+              <asp:BoundColumn DataField="UnitPrice" HeaderText="Unit Price"></asp:BoundColumn>
+              <asp:BoundColumn DataField="Quantity" HeaderText="Quantity"></asp:BoundColumn>
+              <asp:BoundColumn DataField="Discount" HeaderText="Discount"></asp:BoundColumn>
+          </Columns>
+        </asp:DataGrid>
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

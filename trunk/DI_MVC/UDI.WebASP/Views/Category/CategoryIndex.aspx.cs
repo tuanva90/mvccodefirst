@@ -14,30 +14,27 @@ namespace UDI.WebASP.Views.Categories
 {
     public partial class CategoryIndex : System.Web.UI.Page
     {
-        private ICategoryService _cate;
+        [Microsoft.Practices.Unity.Dependency]
+        public ICategoryService Cate { get; set; }
 
-        public CategoryIndex()
-        {
-            _cate = new CategoryService(new UDI.EF.UnitOfWork.EFUnitOfWork(new EFContext()));
-        }
-
-        //public CategoryIndex(ICategoryService cate)
+        //public CategoryIndex()
         //{
-        //    _cate = cate;
+        //    Cate = new CategoryService(new UDI.EF.UnitOfWork.EFUnitOfWork(new EFContext()));
         //}
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if(!IsPostBack)
             {
                 //_cate.GetAll();
-                CateGrid.DataSource = _cate.GetAll();
+                CateGrid.DataSource = Cate.GetAll();
                 CateGrid.DataBind();
             }
             
         }
         public Category Getpro(int id)
         {
-            var ca = _cate.Get(id);
+            var ca = Cate.Get(id);
             return ca;
         }
         //protected void btnAdd_Click(object sender, EventArgs e)
@@ -66,7 +63,7 @@ namespace UDI.WebASP.Views.Categories
                         cate.Picture = red.ReadBytes(file.ContentLength);
                     }
                 }
-                _cate.Add(cate);
+                Cate.Add(cate);
             }
             else
             {
@@ -83,7 +80,7 @@ namespace UDI.WebASP.Views.Categories
                         cate.Picture = red.ReadBytes(file.ContentLength);
                     }
                 }
-                _cate.Edit(cate);
+                Cate.Edit(cate);
             }
             
         }

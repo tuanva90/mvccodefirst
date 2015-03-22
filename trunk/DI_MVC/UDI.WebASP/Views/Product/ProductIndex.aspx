@@ -73,7 +73,7 @@
                                 <div class="input-group">
                                     <span class="input-group-addon" id="basic-addon7">Reorder Level</span>
                                     <asp:TextBox ID="ReorderLevel" CssClass="form-control" runat="server"></asp:TextBox>
-                                    <asp:RequiredFieldValidator runat="server" ControlToValidate="ReoderLevel"
+                                    <asp:RequiredFieldValidator runat="server" ControlToValidate="ReorderLevel"
                                         CssClass="text-danger" ErrorMessage="The ReoderLevel field is required." />
                                  </div>
                                 <br />

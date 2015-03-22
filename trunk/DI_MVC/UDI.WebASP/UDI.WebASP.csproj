@@ -219,6 +219,7 @@
     <Content Include="MasterPage\ViewSwitcher.ascx" />
     <Content Include="Views\Category\CategoryIndex.aspx" />
     <Content Include="Views\Customer\CustomerIndex.aspx" />
+    <Content Include="Views\Customer\ManagerCustomer.aspx" />
     <Content Include="Views\Order\OderIndex.aspx" />
     <Content Include="Views\Product\ProductIndex.aspx" />
     <Content Include="Web.config">
@@ -315,6 +316,13 @@
     </Compile>
     <Compile Include="Views\Customer\CustomerIndex.aspx.designer.cs">
       <DependentUpon>CustomerIndex.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Customer\ManagerCustomer.aspx.cs">
+      <DependentUpon>ManagerCustomer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Customer\ManagerCustomer.aspx.designer.cs">
+      <DependentUpon>ManagerCustomer.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Order\OderIndex.aspx.cs">
       <DependentUpon>OderIndex.aspx</DependentUpon>

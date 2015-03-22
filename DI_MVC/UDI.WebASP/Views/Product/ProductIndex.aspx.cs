@@ -34,5 +34,11 @@ namespace UDI.WebASP.Views.Product
                DropDownList1.Text = "All";
             }
         }
+
+        protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dtgProduct.DataSource = _pro.GetAll(int.Parse(DropDownList1.SelectedItem.Value));
+            dtgProduct.DataBind();
+        }
     }
 }

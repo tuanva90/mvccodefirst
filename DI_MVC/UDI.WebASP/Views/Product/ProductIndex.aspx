@@ -7,7 +7,7 @@
                  <div class="page-header">
                     <h2>Product</h2>
                         <div class="form-group">
-                           <asp:DropDownList ID="DropDownList1" CssClass="form-control" runat="server">       
+                           <asp:DropDownList ID="DropDownList1" CssClass="form-control" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" AutoPostBack="True">       
                             </asp:DropDownList>   
                         </div>
                         <br />

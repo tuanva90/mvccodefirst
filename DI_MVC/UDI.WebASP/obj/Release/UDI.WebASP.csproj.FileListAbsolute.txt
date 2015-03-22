@@ -163,3 +163,12 @@ C:\Users\tp\Desktop\mvccodefirst\DI_MVC\UDI.WebASP\bin\Microsoft.Owin.Security.O
 C:\Users\tp\Desktop\mvccodefirst\DI_MVC\UDI.WebASP\obj\Release\UDI.WebASP.csprojResolveAssemblyReference.cache
 C:\Users\tp\Desktop\mvccodefirst\DI_MVC\UDI.WebASP\obj\Release\UDI.WebASP.dll
 C:\Users\tp\Desktop\mvccodefirst\DI_MVC\UDI.WebASP\obj\Release\UDI.WebASP.pdb
+C:\Users\nguyenminhtuan\Desktop\mvccodefirst\DI_MVC\UDI.WebASP\bin\Microsoft.Practices.ServiceLocation.dll
+C:\Users\nguyenminhtuan\Desktop\mvccodefirst\DI_MVC\UDI.WebASP\bin\Microsoft.Practices.Unity.Configuration.dll
+C:\Users\nguyenminhtuan\Desktop\mvccodefirst\DI_MVC\UDI.WebASP\bin\Microsoft.Practices.Unity.dll
+C:\Users\nguyenminhtuan\Desktop\mvccodefirst\DI_MVC\UDI.WebASP\bin\Unity.WebForms.dll
+C:\Users\nguyenminhtuan\Desktop\mvccodefirst\DI_MVC\UDI.WebASP\bin\WebActivator.dll
+C:\Users\nguyenminhtuan\Desktop\mvccodefirst\DI_MVC\UDI.WebASP\bin\Microsoft.Practices.ServiceLocation.pdb
+C:\Users\nguyenminhtuan\Desktop\mvccodefirst\DI_MVC\UDI.WebASP\bin\Microsoft.Practices.ServiceLocation.xml
+C:\Users\nguyenminhtuan\Desktop\mvccodefirst\DI_MVC\UDI.WebASP\bin\Microsoft.Practices.Unity.xml
+C:\Users\nguyenminhtuan\Desktop\mvccodefirst\DI_MVC\UDI.WebASP\bin\Microsoft.Practices.Unity.Configuration.xml

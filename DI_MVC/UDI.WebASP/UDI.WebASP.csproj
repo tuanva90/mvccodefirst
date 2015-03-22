@@ -220,7 +220,9 @@
     <Content Include="Views\Customer\CustomerIndex.aspx" />
     <Content Include="Views\Order\OderIndex.aspx" />
     <Content Include="Views\Product\ProductIndex.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Bundle.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />

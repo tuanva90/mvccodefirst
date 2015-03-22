@@ -15,6 +15,8 @@ namespace UDI.WebASP.Views.Order
 
         [Microsoft.Practices.Unity.Dependency]
         public IUserService _usr { get; set; }
+        [Microsoft.Practices.Unity.Dependency]
+
         protected void Page_Load(object sender, EventArgs e)
         {
             var user = _usr.GetLoginUser(Context.User.Identity.Name); // db.Users.Where(u => u.UserName == User.Identity.Name).FirstOrDefault();
@@ -36,6 +38,11 @@ namespace UDI.WebASP.Views.Order
             if (e.CommandName == "DetailCmd")
             {
                 ScriptManager.RegisterStartupScript(this, GetType(), "callModal", "callModal();", true);
+                string ID = e.Item.Cells[1].Text;
+                UDI.CORE.Entities.Order order = new CORE.Entities.Order();
+                order = _ord.Get(int.Parse(ID));
+                dtgOrderDetail.DataSource = order.OrderDetails;
+                dtgOrderDetail.DataBind();
             }
         }
     }

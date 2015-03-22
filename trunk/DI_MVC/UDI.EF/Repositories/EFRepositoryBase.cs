@@ -43,27 +43,33 @@ namespace UDI.EF.Repositories
 
         public virtual T Get(Func<T, bool> predicate =null)
         {
-            return _dbSet.First(predicate);
+            return _dbSet.FirstOrDefault(predicate);
+            //return _dbSet.AsNoTracking().First(predicate);
         }
 
         public virtual void Add(T entity)
         {
-            _dbSet.Add(entity);
+            if (entity != null)
+                _dbSet.Add(entity);
         }
 
         public virtual void Attach(T entity)
         {
-            _dbSet.Attach(entity);
+            if (entity != null)
+                _dbSet.Attach(entity);
         }
 
         public virtual void Delete(T entity)
         {
-            _dbSet.Remove(entity);
+            //_dbSet.Remove(entity);
+            if (entity != null)
+                _dbContext.Entry(entity).State = EntityState.Deleted;
         }
 
         public virtual void Edit(T entity)
         {
-            _dbContext.Entry(entity).State = EntityState.Modified;
+            if (entity != null)
+                _dbContext.Entry(entity).State = EntityState.Modified;
         }
     }
 }

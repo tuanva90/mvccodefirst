@@ -17,21 +17,21 @@ namespace UDI.WebASP.Views.Categories
         [Microsoft.Practices.Unity.Dependency]
         public ICategoryService Cate { get; set; }
 
-        //public CategoryIndex()
-        //{
-        //    Cate = new CategoryService(new UDI.EF.UnitOfWork.EFUnitOfWork(new EFContext()));
-        //}
-
         protected void Page_Load(object sender, EventArgs e)
         {
             if(!IsPostBack)
             {
-                //_cate.GetAll();
-                CateGrid.DataSource = Cate.GetAll();
-                CateGrid.DataBind();
+                ReloadCateGrid();
             }
             
         }
+
+        private void ReloadCateGrid()
+        {
+            CateGrid.DataSource = Cate.GetAll();
+            CateGrid.DataBind();
+        }
+
         public Category Getpro(int id)
         {
             var ca = Cate.Get(id);
@@ -56,12 +56,7 @@ namespace UDI.WebASP.Views.Categories
                 cate.Description = txtDescription.Text;
                 if (txtPicture.HasFile == true)
                 {
-                    var file = Request.Files["txtPicture"];
-                    if (file != null && file.ContentLength > 0)
-                    {
-                        var red = new BinaryReader(file.InputStream);
-                        cate.Picture = red.ReadBytes(file.ContentLength);
-                    }
+                    cate.Picture = txtPicture.FileBytes;
                 }
                 Cate.Add(cate);
             }
@@ -73,15 +68,13 @@ namespace UDI.WebASP.Views.Categories
                 cate.Description = txtDescription.Text;
                 if (txtPicture.HasFile == true)
                 {
-                    var file = Request.Files["txtPicture"];
-                    if (file != null && file.ContentLength > 0)
-                    {
-                        var red = new BinaryReader(file.InputStream);
-                        cate.Picture = red.ReadBytes(file.ContentLength);
-                    }
+                    cate.Picture = txtPicture.FileBytes;
                 }
                 Cate.Edit(cate);
             }
+
+            ReloadCateGrid();
+            ScriptManager.RegisterStartupScript(this, GetType(), "CloseAlert", "CloseAlert();", true); 
             
         }
 
@@ -91,5 +84,54 @@ namespace UDI.WebASP.Views.Categories
             txtDescription.Text = "";
             //txtPicture.
         }
+               
+        protected void CateGrid_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                var DtRow = e.Row.DataItem as Category;
+                Image Img = e.Row.FindControl("CategoryImg") as Image;
+
+                if (DtRow.Picture != null)
+                {
+                    Img.ImageUrl = "data:image/png;base64," + Convert.ToBase64String(DtRow.Picture);
+                }
+                else
+                {
+                    Img.DescriptionUrl = "~/Images/noImages.jpg";
+                }
+            }
+        }
+
+        protected void CateGrid_PageIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void CateGrid_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            CateGrid.PageIndex = e.NewPageIndex;
+            ReloadCateGrid();
+        }
+
+        protected void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (ListDelteID.Value.Trim().Length == 0)
+                return;
+
+            var lsStrID = ListDelteID.Value.Substring(1).Split(',');
+
+            foreach (String item in lsStrID)
+            {
+                if (item.Trim().Length > 0)
+                {
+                    var product = Cate.Get(int.Parse(item.Trim())) as Category;
+                    Cate.Delete(product);
+                }
+            }
+
+            ReloadCateGrid();
+        }
+
     }
 }

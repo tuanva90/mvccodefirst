@@ -33,8 +33,8 @@ namespace UDI.WebASP.App_Start
 		private static void RegisterDependencies( IUnityContainer container )
 		{
 			// TODO: Add any dependencies needed here
-            container.RegisterType<UDI.EF.DAL.IEFContext, UDI.EF.DAL.EFContext>(new ContainerControlledLifetimeManager());
-            container.Resolve<UDI.EF.DAL.IEFContext>();
+            container.RegisterType<UDI.EF.DAL.IEFContext, UDI.EF.DAL.EFContext>(new PerResolveLifetimeManager());
+            //container.Resolve<UDI.EF.DAL.IEFContext>();
             //container.RegisterType(typeof(IRepository<>), typeof(EFGenericRepository<>));
             //Bind the various domain model services and repositories that e.g. our controllers require   
 
@@ -45,8 +45,8 @@ namespace UDI.WebASP.App_Start
             container.RegisterType<UDI.CORE.Services.IOrderService, UDI.CORE.Services.Impl.OrderService>();
             container.RegisterType<UDI.CORE.Services.IProductService, UDI.CORE.Services.Impl.ProductService>();
             container.RegisterType<UDI.CORE.Services.IUserService, UDI.CORE.Services.Impl.UserService>();
-            container.RegisterType<UDI.CORE.UnitOfWork.IUnitOfWork, UDI.EF.UnitOfWork.EFUnitOfWork>(new ContainerControlledLifetimeManager());
-            container.Resolve<UDI.CORE.UnitOfWork.IUnitOfWork>();
+            container.RegisterType<UDI.CORE.UnitOfWork.IUnitOfWork, UDI.EF.UnitOfWork.EFUnitOfWork>(new PerResolveLifetimeManager());
+            //container.Resolve<UDI.CORE.UnitOfWork.IUnitOfWork>();
             container.RegisterType<UDI.CORE.UnitOfWork.IUnitOfWorkManager, UDI.EF.UnitOfWork.EFUnitOfWorkManager>();
             //Register interfaces in EF
             container.RegisterType<UDI.EF.DAL.IEFContext, UDI.EF.DAL.EFContext>();

@@ -41,12 +41,20 @@ namespace UDI.WebASP.Account
                 if (_usr.IsValid(UserName.Text, Password.Text))
                 {
                     var manager = new UserManager();
-                    ApplicationUser user = manager.Find(UserName.Text, Password.Text);
-                    if (user != null)
+                    ApplicationUser CheckUser = manager.Find(UserName.Text, Password.Text);
+                    if (CheckUser == null)
                     {
-                        IdentityHelper.SignIn(manager, user, RememberMe.Checked);
-                        //IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
+                        var user = new ApplicationUser() { UserName = UserName.Text };
+                        IdentityResult result = manager.Create(user, Password.Text);
+                        if (result.Succeeded)
+                        {
+                            IdentityHelper.SignIn(manager, user, isPersistent: false);
+                        }
+
                     }
+                    else
+                    { IdentityHelper.SignIn(manager, CheckUser, RememberMe.Checked); }
+                    
                     var loginUser = _usr.GetLoginUser(UserName.Text, Password.Text);
                     var cus = _cus.Find(loginUser.CustomerID);
                     if (cus == null)

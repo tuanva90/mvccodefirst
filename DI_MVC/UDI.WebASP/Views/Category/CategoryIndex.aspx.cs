@@ -26,6 +26,11 @@ namespace UDI.WebASP.Views.Categories
             
         }
 
+        protected void Page_UnLoad(object sender, EventArgs e)
+        {
+            //Cate.Dispose();
+        }
+
         private void ReloadCateGrid()
         {
             CateGrid.DataSource = Cate.GetAll();

@@ -5,6 +5,20 @@
         function callModal() {
             $('#myModal').modal('show')
         }
+
+        function CloseAlert() {
+            $('#myModal').modal('hide');
+            return false;
+        }
+
+        function OpenAlert() {
+            $('#myModal').modal('show');
+            return false;
+        }
+
+       function ShowMessage(msg) {
+           alert(msg);
+       }
     </script>
 
     <div class="container">

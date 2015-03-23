@@ -15,7 +15,7 @@ namespace UDI.WebASP.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection")
+            : base("EFContext")
         {
         }
     }

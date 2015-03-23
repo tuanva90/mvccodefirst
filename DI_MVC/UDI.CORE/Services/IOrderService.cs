@@ -11,6 +11,6 @@ namespace UDI.CORE.Services
     {
         Order Get(int orderID);
         List<Order> GetListOrder(int customerID);
-        void AddOrder(Customer cus, List<Product> lsProd);
+        int AddOrder(Customer cus, List<Product> lsProd);
     }
 }

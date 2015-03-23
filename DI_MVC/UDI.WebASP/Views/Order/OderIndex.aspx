@@ -62,7 +62,7 @@
                     <div class="modal-body">
                         <asp:DataGrid ID="dtgOrderDetail" CssClass="table table-bordered" HeaderStyle-CssClass="Bold" runat="server">
                             <Columns>
-                                <asp:BoundColumn DataField="Product.ProductName" HeaderText="Product Name"></asp:BoundColumn>
+                                <asp:BoundColumn DataField="ProductID" HeaderText="Product ID"></asp:BoundColumn>
                                 <asp:BoundColumn DataField="UnitPrice" HeaderText="Unit Price"></asp:BoundColumn>
                                 <asp:BoundColumn DataField="Quantity" HeaderText="Quantity"></asp:BoundColumn>
                                 <asp:BoundColumn DataField="Discount" HeaderText="Discount"></asp:BoundColumn>                               

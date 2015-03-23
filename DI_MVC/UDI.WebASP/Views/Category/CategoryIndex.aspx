@@ -97,7 +97,7 @@
        }
    </script>
     <style type="text/css">
-        #MainContent_CateGrid tr:hover
+        .tb-hover tr:hover
         {
             background-color:seagreen;
         }

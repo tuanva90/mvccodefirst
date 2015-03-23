@@ -16,17 +16,22 @@ namespace UDI.WebASP.Views.Customer
 {
     public partial class CustomerIndex : System.Web.UI.Page
     {
-        private ICustomerService _cus;
-        private IUserService _usr;
+        [Microsoft.Practices.Unity.Dependency]
+        public ICustomerService Cus { get; set; }
 
-        public CustomerIndex()
-        {
-            _cus = new CustomerService(new UDI.EF.UnitOfWork.EFUnitOfWork(new EFContext()));
-            _usr = new UserService(new UDI.EF.UnitOfWork.EFUnitOfWork(new EFContext()));
-        }
+        [Microsoft.Practices.Unity.Dependency]
+        public IUserService Usr { get; set; }
+
+        //public CustomerIndex()
+        //{
+        //    Cus = new CustomerService(new UDI.EF.UnitOfWork.EFUnitOfWork(new EFContext()));
+        //    Usr = new UserService(new UDI.EF.UnitOfWork.EFUnitOfWork(new EFContext()));
+        //}
+
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (string.IsNullOrEmpty(User.Identity.Name))
+                Response.Redirect("~/Account/Login.aspx");
         }
 
         protected void btnCreat_Click(object sender, EventArgs e)
@@ -43,7 +48,7 @@ namespace UDI.WebASP.Views.Customer
             customer.Country = txtCountry.Text;
 
             
-            var loginUser = _usr.GetLoginUser(Context.User.Identity.GetUserName()); // db.Users.Where(i => i.UserName == User.Identity.Name).FirstOrDefault();
+            var loginUser = Usr.GetLoginUser(Context.User.Identity.GetUserName()); // db.Users.Where(i => i.UserName == User.Identity.Name).FirstOrDefault();
             if (loginUser != null)
             {
                 customer.CustomerID = loginUser.CustomerID;
@@ -51,7 +56,7 @@ namespace UDI.WebASP.Views.Customer
 
             if (ModelState.IsValid)
             {
-                _cus.Add(customer);
+                Cus.Add(customer);
                 Response.Redirect("~/Views/Product/ProductIndex.aspx");
             }   
         }

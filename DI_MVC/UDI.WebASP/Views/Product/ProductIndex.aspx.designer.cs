@@ -13,6 +13,24 @@ namespace UDI.WebASP.Views.Product {
     public partial class ProductIndex {
         
         /// <summary>
+        /// ListDelteID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField ListDelteID;
+        
+        /// <summary>
+        /// SelectedItem control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField SelectedItem;
+        
+        /// <summary>
         /// DropDownList1 control.
         /// </summary>
         /// <remarks>
@@ -22,13 +40,13 @@ namespace UDI.WebASP.Views.Product {
         protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
         
         /// <summary>
-        /// dtgProduct control.
+        /// ProductGridView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DataGrid dtgProduct;
+        protected global::System.Web.UI.WebControls.GridView ProductGridView;
         
         /// <summary>
         /// btnCreate control.
@@ -40,93 +58,138 @@ namespace UDI.WebASP.Views.Product {
         protected global::System.Web.UI.WebControls.Button btnCreate;
         
         /// <summary>
-        /// productName control.
+        /// btnDelete control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox productName;
+        protected global::System.Web.UI.WebControls.Button btnDelete;
         
         /// <summary>
-        /// DDL2 control.
+        /// ProductIDHidenField control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DDL2;
+        protected global::System.Web.UI.WebControls.HiddenField ProductIDHidenField;
         
         /// <summary>
-        /// QuantityPerUnit control.
+        /// ProductNameTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox QuantityPerUnit;
+        protected global::System.Web.UI.WebControls.TextBox ProductNameTextBox;
         
         /// <summary>
-        /// UnitPrice control.
+        /// CategoriesDDL2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox UnitPrice;
+        protected global::System.Web.UI.WebControls.DropDownList CategoriesDDL2;
         
         /// <summary>
-        /// UnitsInStock control.
+        /// QuantityPerUnitTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox UnitsInStock;
+        protected global::System.Web.UI.WebControls.TextBox QuantityPerUnitTextBox;
         
         /// <summary>
-        /// UnitsOnOrder control.
+        /// UnitPriceTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox UnitsOnOrder;
+        protected global::System.Web.UI.WebControls.TextBox UnitPriceTextBox;
         
         /// <summary>
-        /// ReorderLevel control.
+        /// UnitsInStockTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ReorderLevel;
+        protected global::System.Web.UI.WebControls.TextBox UnitsInStockTextBox;
         
         /// <summary>
-        /// Quantity control.
+        /// UnitsOnOrderTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Quantity;
+        protected global::System.Web.UI.WebControls.TextBox UnitsOnOrderTextBox;
         
         /// <summary>
-        /// chkDiscontinue control.
+        /// ReorderLevelTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkDiscontinue;
+        protected global::System.Web.UI.WebControls.TextBox ReorderLevelTextBox;
         
         /// <summary>
-        /// btnCrPro control.
+        /// QuantityTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCrPro;
+        protected global::System.Web.UI.WebControls.TextBox QuantityTextBox;
+        
+        /// <summary>
+        /// DiscontinueCheckBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox DiscontinueCheckBox;
+        
+        /// <summary>
+        /// OrderQuantityTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox OrderQuantityTextBox;
+        
+        /// <summary>
+        /// AddOrderBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button AddOrderBtn;
+        
+        /// <summary>
+        /// CreateProductButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button CreateProductButton;
+        
+        /// <summary>
+        /// SubmitBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button SubmitBtn;
     }
 }

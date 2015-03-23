@@ -131,6 +131,7 @@ namespace UDI.EF.UnitOfWork
             {
                 this._context.Database.Connection.Close();
             }
+            this._context.Dispose();
         }
     }
 }

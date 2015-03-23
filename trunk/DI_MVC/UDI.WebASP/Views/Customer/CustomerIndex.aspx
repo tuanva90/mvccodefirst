@@ -5,7 +5,7 @@
     <div class="page-header">
             <h1>Create New Customer</h1>
         </div>
-    
+    <asp:HiddenField ID="CustomerID" runat="server" />
     <div class="row">
         <div class="col-md-12">
             <asp:Button ID="btnCreat" Text="CREATE" CssClass="btn btn-primary" runat="server" OnClick="btnCreat_Click" />

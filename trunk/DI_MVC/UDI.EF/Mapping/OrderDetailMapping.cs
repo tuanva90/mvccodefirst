@@ -12,9 +12,10 @@ namespace UDI.EF.Mapping
     {
         public OrderDetailMapping()
         {
-            HasKey(od => new { od.OrderID, od.ProductID }).HasRequired(o => o.Order); //.WithMany(od => od.OrderDetails);
+            HasKey(od => new { od.OrderID, od.ProductID }).HasRequired(p => p.Product); //.WithMany(od => od.OrderDetails);
+            //HasRequired(p => p.Product); //.WithMany(od => od.OrderDetails);
             Property(od => od.OrderID);
-            //HasKey(od => od.ProductID).HasRequired(p => p.Product); //.WithMany(od => od.OrderDetails);
+            //HasKey(od => od.ProductID).HasRequired(p => p.Product).WithMany(od => od.OrderDetails);
             Property(od => od.ProductID);
             Property(od => od.Quantity).IsRequired();
             Property(od => od.UnitPrice).IsRequired();

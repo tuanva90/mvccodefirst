@@ -11,24 +11,35 @@ namespace UDI.WebASP.Views.Order
     public partial class OderIndex : System.Web.UI.Page
     {
         [Microsoft.Practices.Unity.Dependency]
-        public IOrderService _ord { get; set; }
+        public IOrderService Ord { get; set; }
 
         [Microsoft.Practices.Unity.Dependency]
-        public IUserService _usr { get; set; }
+        public IUserService Usr { get; set; }
+
         [Microsoft.Practices.Unity.Dependency]
+        public ICustomerService Cus { get; set; }
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            var user = _usr.GetLoginUser(Context.User.Identity.Name); // db.Users.Where(u => u.UserName == User.Identity.Name).FirstOrDefault();
-            if (user != null)
+            if (!IsPostBack)
             {
-                var orders = _ord.GetListOrder(user.CustomerID); // db.Orders.Where(o => o.CustomerID == user.CustomerID).ToList();
-                dtgOrder.DataSource = orders;
-                dtgOrder.DataBind();
-            }
-            else
-            {
-                Response.Redirect("Account/Login.aspx");
+                if (string.IsNullOrEmpty(User.Identity.Name))
+                    Response.Redirect("~/Account/Login.aspx");
+
+                var user = Usr.GetLoginUser(Context.User.Identity.Name); // db.Users.Where(u => u.UserName == User.Identity.Name).FirstOrDefault();
+                if (user != null)
+                {
+                    //Show current order
+                    LoadCurProduct();
+
+                    var orders = Ord.GetListOrder(user.CustomerID); // db.Orders.Where(o => o.CustomerID == user.CustomerID).ToList();
+                    dtgOrder.DataSource = orders;
+                    dtgOrder.DataBind();
+                }
+                else
+                {
+                    Response.Redirect("~/Account/Login.aspx");
+                }
             }
             
         }
@@ -40,10 +51,60 @@ namespace UDI.WebASP.Views.Order
                 ScriptManager.RegisterStartupScript(this, GetType(), "callModal", "callModal();", true);
                 string ID = e.Item.Cells[1].Text;
                 UDI.CORE.Entities.Order order = new CORE.Entities.Order();
-                order = _ord.Get(int.Parse(ID));
+                order = Ord.Get(int.Parse(ID));
                 dtgOrderDetail.DataSource = order.OrderDetails;
                 dtgOrderDetail.DataBind();
             }
+        }
+
+        protected void CurOrderGridView_SelectedIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            CurOrderGridView.PageIndex = e.NewPageIndex;
+            LoadCurProduct();
+        }
+
+        private void LoadCurProduct()
+        {
+            if (string.IsNullOrEmpty(User.Identity.Name))
+                Response.Redirect("~/Account/Login.aspx");
+
+            var ss = Session["Order_" + User.Identity.Name];
+            if (ss == null)
+            {
+                AddOrderBtn.Visible = false;
+                CurOrderGridView.DataSource = null;
+                CurOrderGridView.DataBind();
+            }
+            else
+            {
+                AddOrderBtn.Visible = true;
+                List<UDI.CORE.Entities.Product> prolist = (List<UDI.CORE.Entities.Product>)ss;
+                CurOrderGridView.DataSource = prolist;
+                CurOrderGridView.DataBind();
+            }
+        }
+
+        protected void AddOrderBtn_Click(object sender, EventArgs e)
+        {
+            var ss = Session["Order_" + User.Identity.Name];
+
+            if (ss != null)
+            {
+                 var userlogin = Usr.GetLoginUser(User.Identity.Name);
+                var cus = Cus.Get(userlogin.CustomerID); // db.Customers.Find(id);
+                var curOrder = (List<UDI.CORE.Entities.Product>)Session["Order_" + User.Identity.Name];
+                if (curOrder != null & cus != null)
+                {
+                    Ord.AddOrder(cus, curOrder);
+                    Session["Order_" + User.Identity.Name] = null;
+                }
+                else
+                {
+                    Response.Redirect("~/Account/Login.aspx");
+                }
+            }
+
+            LoadCurProduct();
         }
     }
 }

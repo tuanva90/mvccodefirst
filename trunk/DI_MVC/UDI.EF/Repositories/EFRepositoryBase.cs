@@ -35,15 +35,15 @@ namespace UDI.EF.Repositories
         {
             if (predicate != null)
             {
-                return _dbSet.Where(predicate);
+                return _dbSet.AsNoTracking().Where(predicate);
             }
 
-            return _dbSet.AsQueryable();
+            return _dbSet.AsNoTracking().AsQueryable();
         }
 
         public virtual T Get(Func<T, bool> predicate =null)
         {
-            return _dbSet.FirstOrDefault(predicate);
+            return _dbSet.AsNoTracking().FirstOrDefault(predicate);
             //return _dbSet.AsNoTracking().First(predicate);
         }
 

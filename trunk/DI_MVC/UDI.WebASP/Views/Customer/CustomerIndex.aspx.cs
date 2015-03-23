@@ -37,15 +37,15 @@ namespace UDI.WebASP.Views.Customer
         protected void btnCreat_Click(object sender, EventArgs e)
         {
             var customer = new UDI.CORE.Entities.Customer();
-            customer.ContactName = txtContactName.Text;
-            customer.ContactTitle = txtContacTitle.Text;
-            customer.Address = txtAdress.Text;
-            customer.City = txtCity.Text;
-            customer.Phone = txtPhone.Text;
-            customer.Region = txtRegion.Text;
-            customer.Fax = txtRegion.Text;
-            customer.PostalCode = txtPostalcode.Text;
-            customer.Country = txtCountry.Text;
+            customer.ContactName = ContactName.Text;
+            customer.ContactTitle = ContactTitle.Text;
+            customer.Address = Address.Text;
+            customer.City = City.Text;
+            customer.Phone = Phone.Text;
+            customer.Region = Region.Text;
+            customer.Fax = Fax.Text;
+            customer.PostalCode = PostalCode.Text;
+            customer.Country = Country.Text;
 
             
             var loginUser = Usr.GetLoginUser(Context.User.Identity.GetUserName()); // db.Users.Where(i => i.UserName == User.Identity.Name).FirstOrDefault();

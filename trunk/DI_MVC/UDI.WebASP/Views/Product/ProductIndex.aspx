@@ -135,65 +135,86 @@
                             <h4 class="modal-title" id="myModalLabel">Add New Product</h4>
                           </div>
                           <div class="modal-body">
- 
-                                 <div class="input-group">
-                                     <asp:HiddenField ID="ProductIDHidenField" runat="server" />
-                                    <span class="input-group-addon" id="basic-addon1">Product Name</span>
-                                    <%--<input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">--%>
-                                     <asp:TextBox ID="ProductNameTextBox" CssClass="form-control" runat="server"></asp:TextBox>
-                                     <asp:RequiredFieldValidator runat="server" ControlToValidate="ProductNameTextBox"
+                                    <table >
+                                <tr style="display:none"> 
+                                    <td>Category ID</td>
+                                    <td>
+                                        <asp:HiddenField ID="ProductIDHidenField" runat="server" />
+
+                                    </td>
+                                </tr>
+                                <tr> 
+                                    <td>Product Name</td>
+                                    <td>
+                                        <asp:TextBox ID="ProductNameTextBox" CssClass="form-control" runat="server"></asp:TextBox>
+                                        <asp:RequiredFieldValidator runat="server" ControlToValidate="ProductNameTextBox"
                                         CssClass="text-danger" ErrorMessage="The product Name field is required." />
-                                 </div>
-                                <br />
-                                <div class="input-group">
-                                    <span class="input-group-addon" id="basic-addon2">Caterogy</span>
-                                    <asp:DropDownList ID="CategoriesDDL2" CssClass="form-control"  runat="server"></asp:DropDownList>
-                                 </div>
-                                <br />
-                                <div class="input-group">
-                                    <span class="input-group-addon" id="basic-addon3">QuantityPerUnit</span>
-                                    <asp:TextBox ID="QuantityPerUnitTextBox" CssClass="form-control" runat="server"></asp:TextBox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Category Name</td>
+                                    <td>
+                                        <asp:DropDownList ID="CategoriesDDL2" CssClass="form-control"  runat="server"></asp:DropDownList>
+                                        <asp:RequiredFieldValidator runat="server" ControlToValidate="QuantityPerUnitTextBox"
+                                        CssClass="text-danger" ErrorMessage="The QuantityPerUnit field is required." />
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Quantity Per Unit</td>
+                                    <td>
+                                        <asp:TextBox ID="QuantityPerUnitTextBox" CssClass="form-control" runat="server"></asp:TextBox>
                                     <asp:RequiredFieldValidator runat="server" ControlToValidate="QuantityPerUnitTextBox"
                                         CssClass="text-danger" ErrorMessage="The QuantityPerUnit field is required." />
-                                 </div>
-                                <br />
-                                <div class="input-group">
-                                    <span class="input-group-addon" id="basic-addon4">Unit Price</span>
-                                    <asp:TextBox ID="UnitPriceTextBox" CssClass="form-control" runat="server"></asp:TextBox>
-                                    <asp:RequiredFieldValidator runat="server" ControlToValidate="UnitPriceTextBox"
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Units In Stock</td>
+                                    <td>
+                                         <asp:TextBox ID="UnitPriceTextBox" CssClass="form-control" runat="server"></asp:TextBox>
+                                         <asp:RequiredFieldValidator runat="server" ControlToValidate="UnitPriceTextBox"
                                         CssClass="text-danger" ErrorMessage="The Unit Price field is required." />
-                                 </div>
-                                <br />
-                                <div class="input-group">
-                                    <span class="input-group-addon" id="basic-addon5">Units In Stock</span>
-                                    <asp:TextBox ID="UnitsInStockTextBox" CssClass="form-control" runat="server"></asp:TextBox>
-                                    <asp:RequiredFieldValidator runat="server" ControlToValidate="UnitsInStockTextBox"
-                                        CssClass="text-danger" ErrorMessage="The UnitsInStock field is required." />
-                                 </div>
-                                <br />
-                                <div class="input-group">
-                                    <span class="input-group-addon" id="basic-addon6">Units On Order</span>
-                                    <asp:TextBox ID="UnitsOnOrderTextBox" CssClass="form-control" runat="server"></asp:TextBox>
-                                    <asp:RequiredFieldValidator runat="server" ControlToValidate="UnitsOnOrderTextBox"
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Units On Order</td>
+                                    <td>
+                                        <asp:TextBox ID="UnitsOnOrderTextBox" CssClass="form-control" runat="server"></asp:TextBox>
+                                        <asp:RequiredFieldValidator runat="server" ControlToValidate="UnitsOnOrderTextBox"
                                         CssClass="text-danger" ErrorMessage="The UnitsOnOrder field is required." />
-                                 </div>
-                                <br />
-                                <div class="input-group">
-                                    <span class="input-group-addon" id="basic-addon7">Reorder Level</span>
-                                    <asp:TextBox ID="ReorderLevelTextBox" CssClass="form-control" runat="server"></asp:TextBox>
-                                    <asp:RequiredFieldValidator runat="server" ControlToValidate="ReorderLevelTextBox"
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Unit On Price</td>
+                                    <td>
+                                        <asp:TextBox ID="UnitsInStockTextBox" CssClass="form-control" runat="server"></asp:TextBox>
+                                        <asp:RequiredFieldValidator runat="server" ControlToValidate="UnitsInStockTextBox"
+                                        CssClass="text-danger" ErrorMessage="The UnitsInStock field is required." />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Reorderlever</td>
+                                    <td>
+                                        <asp:TextBox ID="ReorderLevelTextBox" CssClass="form-control" runat="server"></asp:TextBox>
+                                        <asp:RequiredFieldValidator runat="server" ControlToValidate="ReorderLevelTextBox"
                                         CssClass="text-danger" ErrorMessage="The ReorderLevel field is required." />
-                                 </div>
-                                <br />
-                                <div class="input-group">
-                                    <span class="input-group-addon" id="basic-addon8">Quantity</span>
-                                    <asp:TextBox ID="QuantityTextBox" CssClass="form-control" runat="server"></asp:TextBox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Quantity</td>
+                                    <td>
+                                        <asp:TextBox ID="QuantityTextBox" CssClass="form-control" runat="server"></asp:TextBox>
                                     <asp:RequiredFieldValidator runat="server" ControlToValidate="QuantityTextBox"
                                         CssClass="text-danger" ErrorMessage="The Quantity field is required." />
-                                 </div>
-                                <br />
-                                <asp:CheckBox ID="DiscontinueCheckBox" runat="server" CssClass="form-control"  Checked ="false" Text="Discontinued"/>
-                              </div>   
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Discontinued</td>
+                                    <td>
+                                        <asp:CheckBox ID="DiscontinueCheckBox" runat="server"  Checked ="false" Text="Discontinued"/>
+                                    </td>
+                                </tr>
+                            </table>  
                             
                             <div class="modal-body">
                                 <asp:TextBox ID="OrderQuantityTextBox" runat="server" Width ="50" />
@@ -205,14 +226,14 @@
                             <asp:Button ID="CreateProductButton" runat="server" CssClass="btn btn-info" Text="Save Change" OnClick="btnCrPro_Click" />
                           </div>
                         </div>
-                      </div>
+                      </div> <%--End Modal body--%>
                     </div>
                      
                              
                 </div>  
              </div>
          </div>
-          
+          </div></div>
     </div>
 
     <asp:Button ID="SubmitBtn" runat="server" CssClass="hiden" Text="Summit" OnClick="submit_Click" ValidationGroup="None" />

@@ -112,15 +112,6 @@ namespace UDI.WebASP.Views.Product {
         protected global::System.Web.UI.WebControls.TextBox UnitPriceTextBox;
         
         /// <summary>
-        /// UnitsInStockTextBox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox UnitsInStockTextBox;
-        
-        /// <summary>
         /// UnitsOnOrderTextBox control.
         /// </summary>
         /// <remarks>
@@ -128,6 +119,15 @@ namespace UDI.WebASP.Views.Product {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox UnitsOnOrderTextBox;
+        
+        /// <summary>
+        /// UnitsInStockTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox UnitsInStockTextBox;
         
         /// <summary>
         /// ReorderLevelTextBox control.

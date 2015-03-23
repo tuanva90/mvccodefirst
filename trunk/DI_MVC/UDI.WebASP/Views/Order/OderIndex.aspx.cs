@@ -24,24 +24,32 @@ namespace UDI.WebASP.Views.Order
             if (!IsPostBack)
             {
                 if (string.IsNullOrEmpty(User.Identity.Name))
-                    Response.Redirect("~/Account/Login.aspx");
-
-                var user = Usr.GetLoginUser(Context.User.Identity.Name); // db.Users.Where(u => u.UserName == User.Identity.Name).FirstOrDefault();
-                if (user != null)
-                {
-                    //Show current order
-                    LoadCurProduct();
-
-                    var orders = Ord.GetListOrder(user.CustomerID); // db.Orders.Where(o => o.CustomerID == user.CustomerID).ToList();
-                    dtgOrder.DataSource = orders;
-                    dtgOrder.DataBind();
-                }
-                else
                 {
                     Response.Redirect("~/Account/Login.aspx");
+                    return;
                 }
+
+                LoadData();
             }
             
+        }
+
+        private void LoadData()
+        {
+            var user = Usr.GetLoginUser(Context.User.Identity.Name); // db.Users.Where(u => u.UserName == User.Identity.Name).FirstOrDefault();
+            if (user != null)
+            {
+                //Show current order
+                LoadCurProduct();
+
+                var orders = Ord.GetListOrder(user.CustomerID); // db.Orders.Where(o => o.CustomerID == user.CustomerID).ToList();
+                dtgOrder.DataSource = orders;
+                dtgOrder.DataBind();
+            }
+            else
+            {
+                Response.Redirect("~/Account/Login.aspx");
+            }
         }
 
         protected void dtgOrder_ItemCommand(object source, DataGridCommandEventArgs e)
@@ -95,8 +103,13 @@ namespace UDI.WebASP.Views.Order
                 var curOrder = (List<UDI.CORE.Entities.Product>)Session["Order_" + User.Identity.Name];
                 if (curOrder != null & cus != null)
                 {
-                    Ord.AddOrder(cus, curOrder);
+                    var rsl = Ord.AddOrder(cus, curOrder);
                     Session["Order_" + User.Identity.Name] = null;
+
+                    if (rsl == 0)
+                        ScriptManager.RegisterStartupScript(this, GetType(), "ShowMessage", "ShowMessage('Add failed!');", true);
+                    else
+                        ScriptManager.RegisterStartupScript(this, GetType(), "ShowMessage", "ShowMessage('Add successed!');", true);
                 }
                 else
                 {
@@ -104,7 +117,7 @@ namespace UDI.WebASP.Views.Order
                 }
             }
 
-            LoadCurProduct();
+            LoadData();
         }
     }
 }

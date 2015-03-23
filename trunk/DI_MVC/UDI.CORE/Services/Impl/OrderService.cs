@@ -25,22 +25,28 @@ namespace UDI.CORE.Services.Impl
             return _uow.Repository<Order>().GetAll(o => o.CustomerID == customerID).ToList() ;
         }
 
-        public void AddOrder(Customer cus, List<Product> lsProd)
+        public int AddOrder(Customer cus, List<Product> lsProd)
         {
-            _uow.BeginTransaction();
-            var order = new Order { Customer = cus, ShipVia = 1, Freight = 1, OrderDate = DateTime.Today, RequiredDate = DateTime.Today, ShippedDate = DateTime.Today, CustomerID = cus.CustomerID };
-            //order.OrderDetails.Add
-            
-            //var ord1 = _uow.Repository<Order>().GetAll().Where(c => c.CustomerID == cus.CustomerID).Max(c => c.OrderID);
-            //var ord = Get(ord1); // db.Orders.Where(c => c.OrderID == ord1).First();
-            order.OrderDetails = new List<OrderDetail>();
-            foreach (Product item in lsProd)
+            try
             {
-                order.OrderDetails.Add(new OrderDetail { Product = item, UnitPrice = item.UnitPrice, Quantity = item.Quantity, ProductID = item.ProductID });
-                //_uow.Repository<OrderDetail>().Add(new OrderDetail { Order = ord, Product = item, UnitPrice = item.UnitPrice, Quantity = item.Quantity, OrderID = ord.OrderID, ProductID = item.ProductID });
+                _uow.BeginTransaction();
+                var order = new Order { ShipVia = 1, Freight = 1, OrderDate = DateTime.Today, RequiredDate = DateTime.Today, ShippedDate = DateTime.Today, CustomerID = cus.CustomerID };
+
+                order.OrderDetails = new List<OrderDetail>();
+                foreach (Product item in lsProd)
+                {
+                    order.OrderDetails.Add(new OrderDetail { UnitPrice = item.UnitPrice, Quantity = item.Quantity, ProductID = item.ProductID });
+                    //_uow.Repository<OrderDetail>().Add(new OrderDetail { Order = ord, Product = item, UnitPrice = item.UnitPrice, Quantity = item.Quantity, OrderID = ord.OrderID, ProductID = item.ProductID });
+                }
+                _uow.Repository<Order>().Add(order);
+                _uow.Commit();
+                return 1;
             }
-            _uow.Repository<Order>().Add(order);
-            _uow.Commit();
+            catch (Exception ex)
+            {
+                return 0;
+            }
+            
         }
     }
 }

@@ -21,6 +21,10 @@
        }
     </script>
 
+    <style type="text/css">
+
+    </style>
+
     <div class="container">
         <div class="form-group">
             <asp:GridView ID="CurOrderGridView"  runat="server" CellPadding="05" CellSpacing="10" CssClass="tb-hover" AutoGenerateColumns="false" AllowPaging="true" PageSize="5" OnPageIndexChanging="CurOrderGridView_SelectedIndexChanging"> 
@@ -44,11 +48,11 @@
             <h1>Order's History of Customer</h1>
         </div>
         <div class="form-group">
-            <asp:DataGrid ID="dtgOrder" CssClass="table table-bordered" HeaderStyle-CssClass="Bold" runat="server" OnItemCommand="dtgOrder_ItemCommand">
+            <asp:DataGrid ID="dtgOrder" CssClass="table table-bordered tb-hover" HeaderStyle-CssClass="Bold" runat="server" OnItemCommand="dtgOrder_ItemCommand">
                 <Columns>
                     <asp:ButtonColumn CommandName="DetailCmd" Text="Detail"></asp:ButtonColumn>
                 </Columns>
-                <HeaderStyle CssClass="Bold"></HeaderStyle>
+                <HeaderStyle CssClass="Bold" BackColor="#507CD1" ForeColor="White"></HeaderStyle>
             </asp:DataGrid>
         </div>
 
@@ -60,14 +64,17 @@
                         <h4 class="modal-title" id="myModalLabel">Detail of Order</h4>
                     </div>
                     <div class="modal-body">
-                        <asp:DataGrid ID="dtgOrderDetail" CssClass="table table-bordered" HeaderStyle-CssClass="Bold" runat="server">
+
+                        <asp:GridView ID="dtgOrderDetail"  runat="server" CellPadding="05" CellSpacing="10" CssClass="tb-hover" AutoGenerateColumns="false"> 
+                            <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                            <%--<alternatingrowstyle backcolor="#BFE4FF" />--%>
                             <Columns>
-                                <asp:BoundColumn DataField="ProductID" HeaderText="Product ID"></asp:BoundColumn>
-                                <asp:BoundColumn DataField="UnitPrice" HeaderText="Unit Price"></asp:BoundColumn>
-                                <asp:BoundColumn DataField="Quantity" HeaderText="Quantity"></asp:BoundColumn>
-                                <asp:BoundColumn DataField="Discount" HeaderText="Discount"></asp:BoundColumn>                               
+                                <asp:BoundField DataField="Product.ProductName" HeaderText="Product Name" ItemStyle-Width="200" />
+                                <asp:BoundField DataField="UnitPrice" HeaderText="Unit Price" ItemStyle-Width="200"  />
+                                <asp:BoundField DataField="Quantity" HeaderText="Quantity"  ItemStyle-Width="100" />
+                                <asp:BoundField DataField="Discount" HeaderText="Discount"  ItemStyle-Width="100" />
                             </Columns>
-                        </asp:DataGrid>
+                        </asp:GridView>                        
 
                     </div>
                     <div class="modal-footer">

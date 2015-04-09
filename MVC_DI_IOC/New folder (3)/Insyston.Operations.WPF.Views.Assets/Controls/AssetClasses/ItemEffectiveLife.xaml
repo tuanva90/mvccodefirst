@@ -1,0 +1,191 @@
+﻿<UserControl x:Class="Insyston.Operations.WPF.Views.Assets.Controls.AssetClasses.ItemEffectiveLife"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:behaviours="clr-namespace:Insyston.Operations.WPF.Views.Common.Behaviours;assembly=Insyston.Operations.WPF.Views.Common"
+             d:DesignHeight="40" d:DesignWidth="400" Margin="0,20,20,0">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="35"></ColumnDefinition>
+            <ColumnDefinition Width="130"></ColumnDefinition>
+            <ColumnDefinition Width="220"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.Style>
+            <Style TargetType="Grid">
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding IsEffectiveLifeEnable}" Value="True">
+                        <Setter Property="IsEnabled" Value="True"></Setter>
+                    </DataTrigger>
+                    <DataTrigger Binding="{Binding IsEffectiveLifeEnable}" Value="False">
+                        <Setter Property="IsEnabled" Value="False"></Setter>
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+        </Grid.Style>
+        <CheckBox Grid.Column="0" Margin="0,6,0,0" IsChecked="{Binding IsAllEffectiveLifeChecked, Mode=TwoWay}">
+            <CheckBox.Style>
+                <Style TargetType="CheckBox">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsCheckBoxAllShowUp, Mode=TwoWay}" Value="True">
+                            <Setter Property="Visibility" Value="Visible"></Setter>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding IsCheckBoxAllShowUp, Mode=TwoWay}" Value="False">
+                            <Setter Property="Visibility" Value="Hidden"></Setter>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </CheckBox.Style>
+        </CheckBox>
+        <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="0">
+            <StackPanel.Style>
+                <Style TargetType="StackPanel">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsAllEffectiveLifeChecked, Mode=TwoWay}" Value="True">
+                            <Setter Property="IsEnabled" Value="True"></Setter>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding IsAllEffectiveLifeChecked, Mode=TwoWay}" Value="False">
+                            <Setter Property="IsEnabled" Value="False"></Setter>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </StackPanel.Style>
+            <RadioButton Margin="0,0,10,0" IsChecked="{Binding IsConTractTermActive, Mode=TwoWay}"/>
+            <TextBlock Text="Contract Term"></TextBlock>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1" Height="20">
+            <StackPanel.Style>
+                <Style TargetType="StackPanel">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsAllEffectiveLifeChecked, Mode=TwoWay}" Value="True">
+                            <Setter Property="IsEnabled" Value="True"></Setter>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding IsAllEffectiveLifeChecked, Mode=TwoWay}" Value="False">
+                            <Setter Property="IsEnabled" Value="False"></Setter>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </StackPanel.Style>
+            <RadioButton Margin="0,0,10,0" IsChecked="{Binding IsEffectiveLifeActive, Mode=TwoWay}"/>
+            <TextBlock Text="Effective Life"></TextBlock>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Left">
+            <StackPanel.Style>
+                <Style TargetType="StackPanel">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsEffectiveLifeActive, Mode=TwoWay}" Value="True">
+                            <Setter Property="IsEnabled" Value="True"></Setter>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding IsEffectiveLifeActive, Mode=TwoWay}" Value="False">
+                            <Setter Property="IsEnabled" Value="False"></Setter>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </StackPanel.Style>
+            <Grid>
+                <Grid.Style>
+                    <Style TargetType="Grid">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding IsAllEffectiveLifeChecked, Mode=TwoWay}" Value="True">
+                                <Setter Property="IsEnabled" Value="True"></Setter>
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding IsAllEffectiveLifeChecked, Mode=TwoWay}" Value="False">
+                                <Setter Property="IsEnabled" Value="False"></Setter>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Grid.Style>
+                <TextBox Width="50" Height="25" BorderBrush="Transparent" BorderThickness="0" Text="{Binding EffectiveYear, Mode=TwoWay, TargetNullValue=''}" HorizontalContentAlignment="Right" Validation.ErrorTemplate="{StaticResource validationTemplate}">
+                    <i:Interaction.Behaviors>
+                        <behaviours:WholeNumberBehaviour />
+                    </i:Interaction.Behaviors>
+                </TextBox>
+            </Grid>
+            <TextBlock Margin="3,0,0,0">(<Run Text="Years"></Run>)</TextBlock>
+
+            <Grid>
+                <Grid.Style>
+                    <Style TargetType="Grid">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding IsAllEffectiveLifeChecked, Mode=TwoWay}" Value="True">
+                                <Setter Property="IsEnabled" Value="True"></Setter>
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding IsAllEffectiveLifeChecked, Mode=TwoWay}" Value="False">
+                                <Setter Property="IsEnabled" Value="False"></Setter>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Grid.Style>
+                <TextBox Margin="3,0,0,0" Width="50" Height="25" BorderBrush="Transparent" BorderThickness="0" Text="{Binding EffectiveMonth, Mode=TwoWay, TargetNullValue=''}" HorizontalContentAlignment="Right" Validation.ErrorTemplate="{StaticResource validationTemplate}">
+                    <i:Interaction.Behaviors>
+                        <behaviours:WholeNumberBehaviour />
+                    </i:Interaction.Behaviors>
+                </TextBox>
+            </Grid>
+            <TextBlock Margin="3,0,0,0">(<Run Text="Months"></Run>)</TextBlock>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" Margin="0,3,0,0">
+            <StackPanel.Style>
+                <Style TargetType="StackPanel">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsAllEffectiveLifeChecked}" Value="True">
+                            <Setter Property="IsEnabled" Value="True"></Setter>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding IsAllEffectiveLifeChecked}" Value="False">
+                            <Setter Property="IsEnabled" Value="False"></Setter>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </StackPanel.Style>
+            <RadioButton Name="RadioDepnRate" Margin="0,0,10,0" IsChecked="{Binding IsDenpRateActive}"/>
+            <TextBlock Text="Rate"></TextBlock>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="2" HorizontalAlignment="Left" Orientation="Horizontal">
+            <StackPanel.Style>
+                <Style TargetType="StackPanel">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsAllEffectiveLifeChecked}" Value="True">
+                            <Setter Property="IsEnabled" Value="True"></Setter>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding IsAllEffectiveLifeChecked}" Value="False">
+                            <Setter Property="IsEnabled" Value="False"></Setter>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </StackPanel.Style>
+            <StackPanel>
+
+                <StackPanel.Style>
+                    <Style TargetType="StackPanel">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding IsDenpRateActive}" Value="True">
+                                <Setter Property="IsEnabled" Value="True"></Setter>
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding IsDenpRateActive}" Value="False">
+                                <Setter Property="IsEnabled" Value="False"></Setter>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </StackPanel.Style>
+                <telerik:RadNumericUpDown Width="100" Height="25"
+                                          Margin="0,3,0,0" 
+                                          HorizontalAlignment="Right"
+                                          HorizontalContentAlignment="Right"
+                                          IsEnabled="{Binding IsCheckedOut}"
+                                          ShowButtons="False"
+                                          ShowTextBox="True"
+                                          Validation.ErrorTemplate="{StaticResource validationTemplate}"
+                                          Value="{Binding DepnRatePercent, Mode=TwoWay, TargetNullValue=''}" NumberDecimalDigits="4" Minimum="0" ValueFormat="Numeric" CustomUnit="%"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>

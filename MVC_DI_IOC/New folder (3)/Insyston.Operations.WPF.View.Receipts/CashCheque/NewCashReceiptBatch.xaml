@@ -1,0 +1,44 @@
+﻿<common:OperationsView x:Class="Insyston.Operations.WPF.View.Receipts.CashCheque.NewCashReceiptBatch"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:common="clr-namespace:Insyston.Operations.WPF.View.Common;assembly=Insyston.Operations.WPF.View.Common"
+             xmlns:con="http://schemas.kent.boogaart.com/converters"                     
+             mc:Ignorable="d">   
+    <Grid Margin="5,0,0,10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="92"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="17"></RowDefinition>
+            <RowDefinition Height="5"></RowDefinition>
+            <RowDefinition Height="17"></RowDefinition>
+            <RowDefinition Height="5"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>                
+        </Grid.RowDefinitions>
+        <RadioButton Grid.Row="0" Grid.Column="0" Content="By Bank" IsChecked="{Binding IsBankSelected}" Click="ClearGridFilter" />
+        <RadioButton Grid.Row="0" Grid.Column="1" Content="By Internal Company" IsChecked="{Binding IsIntercompanySelected}" Click="ClearGridFilter" />
+        <WrapPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
+            <TextBlock Text="Select a" Foreground="#FF545461" />
+            <TextBlock Text=" Bank" Visibility="{Binding IsBankSelected, Converter={con:BooleanToVisibilityConverter}}" Foreground="#FF545461" />
+            <TextBlock Text="n Internal Company"  Visibility="{Binding IsIntercompanySelected, Converter={con:BooleanToVisibilityConverter}}" Foreground="#FF545461" />
+            <TextBlock Text=" from the list below." Foreground="#FF545461" />
+        </WrapPanel>
+        <telerik:RadGridView Name="grdBankInternalCompany" ItemsSource="{Binding InternalCompanyBankList}" VerticalAlignment="Stretch" 
+                        SelectedItem="{Binding InternalCompanyBank, NotifyOnValidationError=True, ValidatesOnDataErrors=True, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                        FilteringMode="Popup" Width="Auto" BorderThickness="1" GridLinesVisibility="Both" CanUserInsertRows="False" CanUserDeleteRows="False" ShowGroupPanel="False"
+                        IsReadOnly="True" SelectionMode="Single" AutoGenerateColumns="False" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" RowIndicatorVisibility="Collapsed">            
+            <telerik:RadGridView.Columns>
+                <telerik:GridViewDataColumn IsReadOnly="True" Width="*" Header="Internal Company" UniqueName="InternalCompany"  TextAlignment="Left" DataMemberBinding="{Binding InternalCompany}"
+                                            IsVisible="{Binding IsIntercompanySelected}" />
+                <telerik:GridViewDataColumn IsReadOnly="True" Width="*" Header="Bank" UniqueName="Bank" TextAlignment="Left" DataMemberBinding="{Binding BankName}" />
+                <telerik:GridViewDataColumn IsReadOnly="True" Width="*" Header="Account Name" UniqueName="AccountName" TextAlignment="Left" DataMemberBinding="{Binding AccountName}" />
+                <telerik:GridViewDataColumn IsReadOnly="True" Width="70" Header="BSB No." TextAlignment="Left" DataMemberBinding="{Binding BSBNo}" />
+                <telerik:GridViewDataColumn IsReadOnly="True" Width="120" Header="Account No." TextAlignment="Left" DataMemberBinding="{Binding AccountNo}" />                
+            </telerik:RadGridView.Columns>
+        </telerik:RadGridView>
+    </Grid>
+</common:OperationsView>

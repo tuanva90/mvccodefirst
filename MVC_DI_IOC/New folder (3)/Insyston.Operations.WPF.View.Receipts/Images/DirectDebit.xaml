@@ -1,0 +1,21 @@
+﻿<UserControl x:Class="Insyston.Operations.WPF.View.Receipts.Commands.DirectDebit"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid Name="backgroundGrid" Width="32" Height="32" Visibility="Collapsed" />
+        <Path Data="M57.333996,19.109L57.333996,28.74423C57.333996,31.184411,55.356064,33.161,52.915922,33.161L26.248664,33.161C24.601736,33.161,23.166613,32.254703,22.408999,30.916115L38.424973,23.338068C39.720497,22.723573 40.698412,21.642782 41.18252,20.291191 41.316723,19.913693 41.404123,19.522997 41.454826,19.132399L56.987793,19.132399C57.106094,19.132399,57.220798,19.1232,57.333996,19.109z M37.616,9.0900011L52.915913,9.0900011C55.35606,9.0900011,57.334003,11.068103,57.334003,13.504638L57.334003,13.963002C57.220798,13.949999,57.106098,13.939598,56.987797,13.939598L39.910347,13.939598z M34.904252,7.5800018L39.031828,16.301354C40.073523,18.504437,39.136028,21.134617,36.930241,22.178909L12.827382,33.590322C10.621695,34.631913,7.9888802,33.69182,6.9460363,31.488737L2.8339996,22.801304 34.605954,7.7596798C34.714153,7.7128105,34.807953,7.6451807,34.904252,7.5800018z M28.547132,9.3460083E-05C30.190109,0.010761261,31.761919,0.94174004,32.509702,2.5252056L32.71,2.9497566C32.599401,2.9835663,32.490102,3.0134754,32.382102,3.0642548L0.61276436,18.103001 0.42526436,17.715109C-0.61769867,15.508054,0.32370186,12.876606,2.5279121,11.832427L26.630837,0.42636871C27.250427,0.13266182,27.904228,-0.0040798187,28.547132,9.3460083E-05z" Stretch="Uniform" Fill="#FF262626" Width="16" Height="16" Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <TransformGroup.Children>
+                        <RotateTransform Angle="0" />
+                        <ScaleTransform ScaleX="1" ScaleY="1" />
+                    </TransformGroup.Children>
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+    </Grid>
+</UserControl>

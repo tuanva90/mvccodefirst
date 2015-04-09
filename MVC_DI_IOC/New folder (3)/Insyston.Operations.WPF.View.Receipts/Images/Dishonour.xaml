@@ -1,0 +1,21 @@
+﻿<UserControl x:Class="Insyston.Operations.WPF.View.Receipts.Commands.Dishonour"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid Name="backgroundGrid" Width="32" Height="32" Visibility="Collapsed" />
+        <Path Data="F1M238.068,28.2585C238.068,28.2585 233.74,29.364 229.869,34.5221 228.307,36.7331 226.924,40.7838 225.908,44.3776 224.986,46.4049 225.264,47.3268 220.936,49.0768 218.174,50.6413 213.842,53.8658 211.908,59.0221 211.354,61.3268 212.139,66.4532 207.947,66.3925 203.572,66.3067 203.252,61.8796 202.971,58.8385 203.342,53.4049 207.576,48.1549 207.576,48.1549L211.264,42.1667C211.264,42.1667 209.893,42.2448 205.549,42.0027 202.108,41.8112 198.502,42.4381 193.67,40.9695 182.709,35.4421 192.014,31.5729 192.014,31.5729 186.025,27.2448 191.369,22.6393 191.369,22.6393 187.592,15.8229 193.756,14.4049 193.393,14.3483 192.193,14.1646 188.049,9.83463 195.143,6.0592 195.143,6.0592 202.881,2.64905 207.119,2.64905 209.881,2.19009 217.803,2.09641 223.791,4.58463 230.881,5.78186 232.256,5.00854 238.15,3.90308L238.068,28.2585z" Stretch="Uniform" Fill="#FF262626" Width="16" Height="16" Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <TransformGroup.Children>
+                        <RotateTransform Angle="0" />
+                        <ScaleTransform ScaleX="1" ScaleY="1" />
+                    </TransformGroup.Children>
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+    </Grid>
+</UserControl>

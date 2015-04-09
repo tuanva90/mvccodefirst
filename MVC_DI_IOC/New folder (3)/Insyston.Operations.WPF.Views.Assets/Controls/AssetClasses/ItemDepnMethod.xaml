@@ -1,0 +1,74 @@
+﻿<UserControl x:Class="Insyston.Operations.WPF.Views.Assets.Controls.AssetClasses.ItemDepnMethod"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="20" d:DesignWidth="200" Margin="0,20,20,0">
+    <Grid>
+        <Grid.Style>
+            <Style TargetType="Grid">
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding IsDepnMethodEnable, Mode=TwoWay}" Value="True">
+                        <Setter Property="IsEnabled" Value="True"></Setter>
+                    </DataTrigger>
+                    <DataTrigger Binding="{Binding IsDepnMethodEnable, Mode=TwoWay}" Value="False">
+                        <Setter Property="IsEnabled" Value="False"></Setter>
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+        </Grid.Style>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="35"></ColumnDefinition>
+            <ColumnDefinition Width="200"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <CheckBox Margin="0,6,0,0" Grid.Column="0" IsChecked="{Binding IsAllDepnMethodChecked, Mode=TwoWay}">
+            <CheckBox.Style>
+                <Style TargetType="CheckBox">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsCheckBoxAllShowUp, Mode=TwoWay}" Value="True">
+                            <Setter Property="Visibility" Value="Visible"></Setter>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding IsCheckBoxAllShowUp, Mode=TwoWay}" Value="False">
+                            <Setter Property="Visibility" Value="Hidden"></Setter>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </CheckBox.Style>
+        </CheckBox>
+        <StackPanel Orientation="Horizontal" Grid.Column="1">
+            <StackPanel.Style>
+                <Style TargetType="StackPanel">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsAllDepnMethodChecked, Mode=TwoWay}" Value="True">
+                            <Setter Property="IsEnabled" Value="True"></Setter>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding IsAllDepnMethodChecked, Mode=TwoWay}" Value="False">
+                            <Setter Property="IsEnabled" Value="False"></Setter>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </StackPanel.Style>
+            <TextBlock >Method:</TextBlock>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="2">
+            <StackPanel.Style>
+                <Style TargetType="StackPanel">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsAllDepnMethodChecked, Mode=TwoWay}" Value="True">
+                            <Setter Property="IsEnabled" Value="True"></Setter>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding IsAllDepnMethodChecked, Mode=TwoWay}" Value="False">
+                            <Setter Property="IsEnabled" Value="False"></Setter>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </StackPanel.Style>
+            
+            <ComboBox HorizontalAlignment="Right" Width="130" ItemsSource="{Binding ListItemDepnMethod}" DisplayMemberPath="Text" 
+                  SelectedValue="{Binding SelectedItemCombobox, Mode=TwoWay}"></ComboBox>
+        </StackPanel>
+    </Grid>
+</UserControl>

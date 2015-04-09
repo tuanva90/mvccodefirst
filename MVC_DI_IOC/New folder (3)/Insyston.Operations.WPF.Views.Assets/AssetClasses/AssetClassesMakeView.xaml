@@ -1,0 +1,210 @@
+﻿<UserControl x:Class="Insyston.Operations.WPF.Views.Assets.AssetClasses.AssetClassesMakeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:assetClasses="clr-namespace:Insyston.Operations.WPF.Views.Assets.AssetClasses"
+             xmlns:controls="clr-namespace:Insyston.Operations.WPF.Views.Common.Controls;assembly=insyston.operations.wpf.views.common"
+             xmlns:assetMake="clr-namespace:Insyston.Operations.WPF.Views.Assets.Controls.AssetClasses.AssetMake"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <Storyboard x:Key="MainViewState">
+            <ObjectAnimationUsingKeyFrames BeginTime="00:00:00"
+                                           Storyboard.TargetName="MainViewGrid"
+                                           Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="00:00:0.01">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames BeginTime="00:00:00"
+                                           Storyboard.TargetName="MainContentGrid"
+                                           Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="00:00:0.01">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Collapsed</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                           Storyboard.TargetName="MainViewGrid"
+                                           Storyboard.TargetProperty="(UIElement.Opacity)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00"
+                                      Value="0" />
+                <SplineDoubleKeyFrame KeyTime="00:00:0.3"
+                                      Value="1" />
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                           Storyboard.TargetName="MainContentGrid"
+                                           Storyboard.TargetProperty="(UIElement.Opacity)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00"
+                                      Value="1" />
+                <SplineDoubleKeyFrame KeyTime="00:00:0.3"
+                                      Value="0" />
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="MainContentState">
+            <ObjectAnimationUsingKeyFrames BeginTime="00:00:00"
+                                           Storyboard.TargetName="MainContentGrid"
+                                           Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="00:00:0.01">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames BeginTime="00:00:00"
+                                           Storyboard.TargetName="MainViewGrid"
+                                           Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="00:00:0.01">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Collapsed</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                           Storyboard.TargetName="MainContentGrid"
+                                           Storyboard.TargetProperty="(UIElement.Opacity)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00"
+                                      Value="0" />
+                <SplineDoubleKeyFrame KeyTime="00:00:0.3"
+                                      Value="1" />
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                           Storyboard.TargetName="MainViewGrid"
+                                           Storyboard.TargetProperty="(UIElement.Opacity)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00"
+                                      Value="1" />
+                <SplineDoubleKeyFrame KeyTime="00:00:0.3"
+                                      Value="0" />
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="DetailState">
+            <ObjectAnimationUsingKeyFrames BeginTime="00:00:00"
+                                           Storyboard.TargetName="DetailGrid"
+                                           Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="00:00:0.01">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames BeginTime="00:00:00"
+                                           Storyboard.TargetName="BulkGrid"
+                                           Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="00:00:0.01">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Collapsed</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                           Storyboard.TargetName="DetailGrid"
+                                           Storyboard.TargetProperty="(UIElement.Opacity)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00"
+                                      Value="0" />
+                <SplineDoubleKeyFrame KeyTime="00:00:0.3"
+                                      Value="1" />
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                           Storyboard.TargetName="BulkGrid"
+                                           Storyboard.TargetProperty="(UIElement.Opacity)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00"
+                                      Value="1" />
+                <SplineDoubleKeyFrame KeyTime="00:00:0.3"
+                                      Value="0" />
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="BulkState">
+            <ObjectAnimationUsingKeyFrames BeginTime="00:00:00"
+                                           Storyboard.TargetName="BulkGrid"
+                                           Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="00:00:0.01">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames BeginTime="00:00:00"
+                                           Storyboard.TargetName="DetailGrid"
+                                           Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="00:00:0.01">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Collapsed</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                           Storyboard.TargetName="BulkGrid"
+                                           Storyboard.TargetProperty="(UIElement.Opacity)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00"
+                                      Value="0" />
+                <SplineDoubleKeyFrame KeyTime="00:00:0.3"
+                                      Value="1" />
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                           Storyboard.TargetName="DetailGrid"
+                                           Storyboard.TargetProperty="(UIElement.Opacity)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00"
+                                      Value="1" />
+                <SplineDoubleKeyFrame KeyTime="00:00:0.3"
+                                      Value="0" />
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        
+    </UserControl.Resources>
+    <telerik:RadBusyIndicator x:Name="BusyIndicator"
+                              BusyContent="{Binding BusyContent,
+                                                        Mode=TwoWay}"
+                              DisplayAfter="00:00:00.00"
+                              IsBusy="{Binding IsBusy,
+                                                   Mode=TwoWay}">
+
+        <Grid x:Name="MainGrid"
+              VerticalAlignment="Stretch"
+              HorizontalAlignment="Stretch">
+            <Grid x:Name="MainViewGrid"
+                  HorizontalAlignment="Stretch">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <DockPanel Grid.Column="0">
+                    <!--<Border Background="DarkGray"
+                            CornerRadius="0 0 0 0"
+                            DockPanel.Dock="Top" MinWidth="0">
+                        <TextBlock Margin="4 5 5 5"
+                                   Foreground="White"
+                                   FontWeight="Bold"
+                                   Text="Drag a column header and drop it here to group by that column" />
+                    </Border>-->
+                    <controls:DynamicHoverGridView x:Name="dynamicMakeGrid"
+                                                   DockPanel.Dock="Top"
+                                                   MaxWidth="{Binding MaxWidthGrid, Mode=TwoWay}"
+                                                   DataContext="{Binding DynamicAssetClassMakeViewModel, Mode=TwoWay}"
+                                                   IsEnableHoverRow="{Binding IsEnableHoverRow, Mode=TwoWay}"
+                                                   SelectedRows="{Binding SelectedRows, Mode=TwoWay}" IsFilteringGenerate="True"
+
+                                                   >
+
+                    </controls:DynamicHoverGridView>
+                </DockPanel>
+            </Grid>
+
+            <Grid x:Name="MainContentGrid"
+                  HorizontalAlignment="Stretch">
+                <Grid x:Name="DetailGrid"
+                      >
+                    <assetMake:AssetMakeDetailView DataContext="{Binding AssetMakeDetailViewModel, Mode=TwoWay, ValidatesOnNotifyDataErrors=False}"></assetMake:AssetMakeDetailView>
+                </Grid>
+                <Grid x:Name="BulkGrid"
+                      >
+                    <assetMake:AssetMakeBulkUpdateView DataContext="{Binding AssetMakeAssignModelViewModel, Mode=TwoWay}"></assetMake:AssetMakeBulkUpdateView>
+                </Grid>
+            </Grid>
+        </Grid>
+    </telerik:RadBusyIndicator>
+
+</UserControl>

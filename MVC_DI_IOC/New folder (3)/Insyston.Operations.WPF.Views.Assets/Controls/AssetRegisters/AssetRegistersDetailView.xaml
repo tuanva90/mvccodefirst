@@ -1,0 +1,141 @@
+﻿<UserControl x:Class="Insyston.Operations.WPF.Views.Assets.Controls.AssetRegisters.AssetRegistersDetailView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:cal="http://www.caliburnproject.org"
+             xmlns:controls="clr-namespace:Insyston.Operations.WPF.Views.Common.Controls;assembly=Insyston.Operations.WPF.Views.Common">
+    <Grid Background="{Binding GridStyle}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Text="{Binding RegisterIdHeader}" Margin="10 0 0 0"/>
+        <telerik:RadPanelBar
+                Grid.Row="1"
+                Margin="10,0,5,5"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                ExpandMode="Multiple"    
+            
+                ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                ScrollViewer.VerticalScrollBarVisibility="Auto"
+                BorderBrush="Transparent">
+            
+            <telerik:RadPanelBarItem IsExpanded="True" BorderThickness="0">
+                <telerik:RadPanelBarItem.Header>
+                    <TextBlock FontWeight="Bold"
+                    Margin="5 0 0 0 "
+                    Text="Detail" >
+                    </TextBlock>
+                </telerik:RadPanelBarItem.Header>
+                <StackPanel>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="200"  />
+                            <ColumnDefinition Width="250" MaxWidth="500" />
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="40" />
+                            <RowDefinition Height="40" />
+                        </Grid.RowDefinitions>
+                        <TextBlock Grid.Row="0"
+                                Grid.Column="0"
+                                Text="Name" Margin="30 0 0 0"/>
+                        
+                        <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding RegisterName}" IsEnabled="{Binding IsCheckedOut}" MaxLength="100"></TextBox>
+                        <TextBlock Grid.Row="1"
+                                Grid.Column="0"
+                                Text="{Binding DefaultReportName}" Margin="30 0 0 0"/>
+                        <telerik:RadComboBox Name="CboAssetMake" Grid.Column="1" Grid.Row="1" Height="25" ItemsSource="{Binding ListEntityRelation}"
+                                             DisplayMemberPath="NodeName" SelectedItem="{Binding SelectDefault, Mode=TwoWay}" IsEnabled="{Binding IsCheckedOut}">
+                            <telerik:RadComboBox.Resources>
+                                <Style TargetType="TextBox">
+                                    <Setter Property="MaxLength" Value="50" />
+                                </Style>
+                            </telerik:RadComboBox.Resources>
+                        </telerik:RadComboBox>
+                        <CheckBox Grid.Row="0" Grid.Column="2" HorizontalAlignment="Right" IsChecked="{Binding IsInternalOnly}" IsEnabled="{Binding IsCheckedOut}"></CheckBox>
+                        <TextBlock Grid.Row="0"
+                                Grid.Column="3" Margin="5 0 0 0"
+                                Text="Internal Only" />
+                    </Grid>
+                </StackPanel>
+            </telerik:RadPanelBarItem>
+
+            <telerik:RadPanelBarItem IsExpanded="True" BorderThickness="0">
+                <telerik:RadPanelBarItem.Header>
+                    <TextBlock FontWeight="Bold"
+                    Margin="5 0 0 0 "
+                    Text="Locations" >
+                    </TextBlock>
+                </telerik:RadPanelBarItem.Header>
+                <Grid x:Name="LocationGrid"
+                  Margin="0,10,0,0"
+                  VerticalAlignment="Stretch"
+                  HorizontalAlignment="Stretch">
+                    <Grid Margin="200 0 0 0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <controls:DynamicHoverGridView Grid.Column="0"
+                                                   x:Name="dynamicLocationGrid"
+                                                   DataContext = "{Binding DynamicRegisterLocationViewModel, Mode=TwoWay}"
+                                                   IsEnableHoverRow="{Binding IsEnableHoverRow, Mode=TwoWay}"
+                                                   SelectedRows="{Binding SelectedRows, Mode=TwoWay}"></controls:DynamicHoverGridView>
+                    </Grid>
+                </Grid>
+            </telerik:RadPanelBarItem>
+
+            <telerik:RadPanelBarItem IsExpanded="True" BorderThickness="0">
+                <telerik:RadPanelBarItem.Header>
+                    <TextBlock FontWeight="Bold"
+                    Margin="5 0 0 0 "
+                    Text="{Binding ReportName}" >
+                    </TextBlock>
+                </telerik:RadPanelBarItem.Header>
+                <StackPanel HorizontalAlignment="Stretch" Margin="200 0 0 0">
+                    <Grid HorizontalAlignment="Stretch">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition ></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <DockPanel Grid.Row="0">
+                            <Border Background="DarkGray"
+                                    CornerRadius="0 0 0 0"
+                                    DockPanel.Dock="Top">
+                                <TextBlock Margin="4 5 5 5" Foreground="White"
+                                           FontWeight="Bold" Text ="{Binding AssignedReportName}"></TextBlock>
+                            </Border>
+                            <controls:DynamicHoverGridView x:Name="dynamicRegisterDetailGrid" 
+                                                           DockPanel.Dock="Top"
+                                                           DataContext = "{Binding DynamicRegisterAssignViewModel, Mode=TwoWay}"
+                                                           IsEnableHoverRow="{Binding IsEnableHoverRow, Mode=TwoWay}"
+                                                           SelectedRows="{Binding SelectedRows, Mode=TwoWay}" IsFilteringGenerate="True"
+                                                           IsEnabled="{Binding IsCheckedOut}">
+                            </controls:DynamicHoverGridView>
+                        </DockPanel>
+                        <Grid Grid.Row="1" Margin="0 10 0 0 ">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="20"></ColumnDefinition>
+                                <ColumnDefinition Width="250"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <CheckBox Grid.Column="0"
+                              x:Name="cbSelectAll"
+                              IsChecked="{Binding IsSelectAllRowRegister,Mode=TwoWay}"
+                              IsEnabled="{Binding DynamicRegisterAssignViewModel.IsEnableHoverRow}"></CheckBox>
+                            <TextBlock Grid.Column="1"
+                              Text="{Binding SelectAllReportName}"></TextBlock>
+                        </Grid>
+                    </Grid>
+                </StackPanel>
+            </telerik:RadPanelBarItem>
+        </telerik:RadPanelBar>
+    </Grid>
+</UserControl>

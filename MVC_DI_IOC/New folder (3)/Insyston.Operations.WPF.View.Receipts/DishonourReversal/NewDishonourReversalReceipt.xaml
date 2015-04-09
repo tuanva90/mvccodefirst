@@ -1,0 +1,216 @@
+﻿<common:OperationsView x:Class="Insyston.Operations.WPF.View.Receipts.DishonourReversal.NewDishonourReversalReceipt"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    mc:Ignorable="d" xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    xmlns:con="http://schemas.kent.boogaart.com/converters"    
+    xmlns:common="clr-namespace:Insyston.Operations.WPF.View.Common;assembly=Insyston.Operations.WPF.View.Common"
+    xmlns:viewModel="clr-namespace:Insyston.Operations.WPF.ViewModel.Common.Interfaces;assembly=Insyston.Operations.WPF.ViewModel.Common"
+    xmlns:prism="http://www.codeplex.com/prism"
+    xmlns:prismInteractivity="http://schemas.microsoft.com/expression/2010/interactivity"    
+    xmlns:controls="clr-namespace:Insyston.Operations.WPF.View.Common.Controls;assembly=Insyston.Operations.WPF.View.Common"    
+    Height="600" Width="800" Background="{DynamicResource WindowBackground}" MinHeight="450" viewModel:OldViewModelBase.ValidateInput="true">
+
+    <prismInteractivity:Interaction.Triggers>
+        <prism:InteractionRequestTrigger SourceObject="{Binding UIInformation, Mode=OneWay}">
+            <common:PopupModalWindowAction />
+        </prism:InteractionRequestTrigger>
+        <prism:InteractionRequestTrigger SourceObject="{Binding ConfirmationWindow, Mode=OneWay}">
+            <common:PopupModalWindowAction />
+        </prism:InteractionRequestTrigger>
+        <prism:InteractionRequestTrigger SourceObject="{Binding Popup}">
+            <common:PopupModalWindowAction />
+        </prism:InteractionRequestTrigger>
+    </prismInteractivity:Interaction.Triggers>
+
+    <UserControl.Resources>
+        <ResourceDictionary>              
+            <common:InverseBooleanToVisibilityConverter x:Key="InverseVisibilityConverter" />
+
+            <FrameworkElement x:Key="DataContextBridge" />
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <common:OperationsView.DataContext>
+        <Binding Mode="OneWayToSource" Path="DataContext" Source="{StaticResource DataContextBridge}" />
+    </common:OperationsView.DataContext>
+    
+    <telerik:RadBusyIndicator IsBusy="{Binding IsBusy}"  BusyContent="" BorderBrush="Transparent" DisplayAfter="00:00:00" Background="Transparent" >
+        <Grid Margin="10,5,10,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <GroupBox Name="grpMain" Header="Receipt Details" DockPanel.Dock="Top" HorizontalAlignment="Stretch" VerticalAlignment="Top"  Height="Auto">
+                <StackPanel>
+                    <Grid Margin="0,8,8,5" Name="GrdControls">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="110"></ColumnDefinition>
+                            <ColumnDefinition Width="130"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="100"></ColumnDefinition>
+                            <ColumnDefinition Width="300"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="22"></RowDefinition>
+                            <RowDefinition Height="8"></RowDefinition>
+                            <RowDefinition Height="22"></RowDefinition>
+                            <RowDefinition Height="8"></RowDefinition>
+                            <RowDefinition Height="22"></RowDefinition>
+                            <RowDefinition Height="8"></RowDefinition>
+                            <RowDefinition Height="25"></RowDefinition>
+                            <RowDefinition Height="8"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Name="LblDateReceived" Text="{Binding ReceiptDateCaption}" VerticalAlignment="Top" Grid.Row="0" Grid.Column="0"  />
+                        <telerik:RadDatePicker Name="dtReceived" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch" IsEnabled="{Binding IsReversalBatch, Converter={con:ExpressionConverter {}!{0}}}">
+                            <telerik:RadDatePicker.SelectedValue>
+                                <Binding Path="ReceiptDate" Mode="TwoWay" ValidatesOnDataErrors="True" ValidatesOnExceptions="True" NotifyOnValidationError="True" UpdateSourceTrigger="LostFocus">
+                                    <Binding.ValidationRules>
+                                        <common:ValidateDate>
+                                            <common:ValidateDate.ValidationRuleParams>
+                                                <common:ValidationRuleParams BoundTo="Receipt Date" />
+                                            </common:ValidateDate.ValidationRuleParams>
+                                        </common:ValidateDate>
+                                    </Binding.ValidationRules>
+                                </Binding>
+                            </telerik:RadDatePicker.SelectedValue>
+                        </telerik:RadDatePicker>
+                        <TextBlock Name="LblReceiptNoCaption" Text="Receipt No.:" VerticalAlignment="Top" Grid.Row="0" Grid.Column="3" Visibility="{Binding IsReceiptinEditMode, Converter={con:BooleanToVisibilityConverter}}" />
+                        <TextBlock Name="LblReceiptNo" Text="{Binding ReceiptID}" VerticalAlignment="Top" Grid.Row="0" Grid.Column="4" Visibility="{Binding IsReceiptinEditMode, Converter={con:BooleanToVisibilityConverter}}" />
+                        
+                        <TextBlock Name="LblReceiptID" Text="Receipt ID:" VerticalAlignment="Top" Grid.Row="2" Grid.Column="0" />
+                        <controls:NumericTextBox Grid.Row="2" Grid.Column="1" IntegerDigits="8">
+                            <TextBox.Text>
+                                <Binding Path="OriginalReceiptID" Mode="TwoWay" ValidatesOnDataErrors="True" ValidatesOnExceptions="True" NotifyOnValidationError="True" UpdateSourceTrigger="LostFocus">
+                                    <Binding.ValidationRules>
+                                        <common:ValidateInteger>
+                                            <common:ValidateInteger.ValidationRuleParams>
+                                                <common:ValidationRuleParams BoundTo="Receipt ID" />
+                                            </common:ValidateInteger.ValidationRuleParams>
+                                        </common:ValidateInteger>
+                                    </Binding.ValidationRules>
+                                </Binding>
+                            </TextBox.Text>
+                        </controls:NumericTextBox>
+                        <telerik:RadButton Name="btnSearchContract" Grid.Column="2" Grid.Row="2" Width="25" Height="21" HorizontalAlignment="Left"  Margin="3,0,0,0" CornerRadius="0" Command="{Binding Search}">
+                            <telerik:RadButton.ToolTip>
+                                <TextBlock Text="Search"/>
+                            </telerik:RadButton.ToolTip>
+                            <Image Source="/Insyston.Operations.WPF.View.Common;Component/Images/Search.ico" Stretch="Fill" />
+                        </telerik:RadButton>
+                        <TextBlock Name="LblAmountReceived" Text="Amount:" VerticalAlignment="Top" Grid.Row="2" Grid.Column="3"  />
+                        <TextBox Name="TxtAmountReceived" Grid.Row="2" Grid.Column="4" Width="130" HorizontalAlignment="Left" TextAlignment="Right" IsEnabled="False" 
+                                 Text="{Binding Receipt.GrossAmountReceived, Converter={con:ExpressionConverter {}{0} * -1}, StringFormat={}{0:C}}" Visibility="{Binding IsReceiptSelected, Converter={con:BooleanToVisibilityConverter}}"></TextBox>
+                        
+                        <TextBlock Name="ApplyToLabel" Text="{Binding ApplyToLabelCaption, StringFormat={}{0}:}" VerticalAlignment="Top" Grid.Row="4" Grid.Column="0" Visibility="{Binding IsSuspense, Converter={StaticResource InverseVisibilityConverter}}"  />
+                        <TextBlock Name="LblApplyToObjectID" Text="{Binding ApplyToObjectID}" Grid.Row="4" Grid.Column="1" Visibility="{Binding IsSuspense, Converter={StaticResource InverseVisibilityConverter}}" />
+                        <TextBlock Name="LblClientNameText" Text="Client Name:" VerticalAlignment="Top" Grid.Row="4" Grid.Column="3" Visibility="{Binding IsSuspense, Converter={StaticResource InverseVisibilityConverter}}" />
+                        <TextBlock Name="LblClientName" Text="{Binding ClientName}" VerticalAlignment="Top" HorizontalAlignment="Stretch" Grid.Row="4" Grid.Column="4" 
+                                   Visibility="{Binding IsSuspense, Converter={StaticResource InverseVisibilityConverter}}"  />                       
+                        <TextBlock Name="LblReasonCode" Text="Reason Code:" Grid.Row="6" Grid.Column="0" />
+                        <telerik:RadComboBox Name="cboReasonCode" Grid.Row="6" Grid.Column="1" ItemsSource="{Binding ReasonCodes}" DisplayMemberPath="Description" SelectedValuePath="ID" Validation.ErrorTemplate="{DynamicResource validationTemplate}"
+                                SelectedValue="{Binding Path=ReasonSelected, Mode=TwoWay, NotifyOnValidationError=True, ValidatesOnDataErrors=True, ValidatesOnExceptions=True, UpdateSourceTrigger=LostFocus}">
+                        </telerik:RadComboBox>
+
+                        <TextBlock Name="LblReference" Text="Reference:" VerticalAlignment="Top" Grid.Row="6" Grid.Column="3"  />
+                        <TextBox Name="TxtReference" Grid.Row="6" Grid.Column="4" HorizontalAlignment="Stretch" Text="{Binding Reference}"></TextBox>
+                    </Grid>
+
+                    <GroupBox Name="grpReceiptDetails" Header="Original Receipt Details" Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="5" Margin="0,0,5,2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                        <GroupBox.Resources>
+                            <Style TargetType="GroupBox" />
+                        </GroupBox.Resources>                        
+                        
+                        <Grid Margin="8">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="110" />
+                                <ColumnDefinition Width="110" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="82" />
+                                <ColumnDefinition Width="110" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="110" />
+                                <ColumnDefinition Width="130" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition Height="10" />
+                                <RowDefinition />
+                                <RowDefinition Height="10" />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <TextBlock Text="Batch ID:" VerticalAlignment="Top" Grid.Row="0" Grid.Column="0" />
+                            <TextBlock Text="{Binding Receipt.ReceiptBatchID}" Grid.Row="0" Grid.Column="1" Visibility="{Binding IsReceiptSelected, Converter={con:BooleanToVisibilityConverter}}" />
+                            <TextBlock Text="Receipt Date:" VerticalAlignment="Top" Grid.Row="0" Grid.Column="3" />
+                            <TextBlock Text="{Binding Receipt.ReceiptDate, StringFormat={}{0:dd/MM/yyyy}}" Grid.Row="0" Grid.Column="4" Visibility="{Binding IsReceiptSelected, Converter={con:BooleanToVisibilityConverter}}" />
+                            <TextBlock Text="Amount Received:" VerticalAlignment="Top" Grid.Row="0" Grid.Column="6" />
+                            <TextBlock Text="{Binding Receipt.GrossAmountReceived, StringFormat={}{0:C}}" Grid.Row="0" Grid.Column="7" Visibility="{Binding IsReceiptSelected, Converter={con:BooleanToVisibilityConverter}}" />
+                            <TextBlock Text="Bank Name:" VerticalAlignment="Top" Grid.Row="2" Grid.Column="0" />
+                            <TextBlock Text="{Binding BankName}" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" Visibility="{Binding IsReceiptSelected, Converter={con:BooleanToVisibilityConverter}}" />
+                            <TextBlock Text="BSB No.:" VerticalAlignment="Top" Grid.Row="2" Grid.Column="6" />
+                            <TextBlock Text="{Binding BSBNo}" Grid.Row="2" Grid.Column="7" HorizontalAlignment="Stretch" Visibility="{Binding IsReceiptSelected, Converter={con:BooleanToVisibilityConverter}}" />
+                            <TextBlock Text="Account Name:" VerticalAlignment="Top" Grid.Row="5" Grid.Column="0" />
+                            <TextBlock Text="{Binding AccountName}" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="3" Visibility="{Binding IsReceiptSelected, Converter={con:BooleanToVisibilityConverter}}" />
+                            <TextBlock Text="{Binding AccountNumberCaption, StringFormat={}{0}:}" VerticalAlignment="Top" Grid.Row="5" Grid.Column="6" />
+                            <TextBlock Text="{Binding AccountNumber}" Grid.Row="5" Grid.Column="7" Visibility="{Binding IsReceiptSelected, Converter={con:BooleanToVisibilityConverter}}" />
+                        </Grid>
+                    </GroupBox>
+                </StackPanel>
+            </GroupBox>
+
+            <GroupBox Grid.Row="1" Grid.Column="0" Header="Open Items Details" Margin="0,3,0,8" BorderBrush="{DynamicResource GroupBoxBorderBrush}" Visibility="{Binding IsOpenItemsApplicable, Converter={con:BooleanToVisibilityConverter}}">
+                <GroupBox.Resources>
+                    <Style TargetType="GroupBox" />
+                </GroupBox.Resources>
+                
+                <telerik:RadGridView VerticalAlignment="Stretch" HorizontalAlignment="Stretch" BorderThickness="1" GridLinesVisibility="Both" AutoGenerateColumns="False" Name="GrdOpenItems" Margin="0,4,0,0"
+                                ItemsSource="{Binding OpenItems}" ShowGroupPanel="False" CanUserInsertRows="False" CanUserDeleteRows="False" ShowColumnFooters="True" RowIndicatorVisibility="Collapsed">                                                                                                    
+                    <telerik:RadGridView.Columns>                        
+                        <telerik:GridViewDataColumn Header="Open Item ID" IsReadOnly="True"  DataMemberBinding="{Binding OpenItemID}" Width="100"></telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn Header="Due Date" IsReadOnly="True" DataMemberBinding="{Binding DueDate}" Width="90" DataFormatString=" {0:dd/MM/yyyy}" ></telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn Header="Pmt #"  IsReadOnly="True" DataMemberBinding="{Binding PaymentNo}" Width="70" />
+                        <telerik:GridViewDataColumn Header="Charge Type" IsReadOnly="True" DataMemberBinding="{Binding ChargeTypeDescription}" Width="*">
+                            <telerik:GridViewDataColumn.Footer>
+                                <TextBlock Text="Total: "></TextBlock>
+                            </telerik:GridViewDataColumn.Footer>
+                        </telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn IsReadOnly="True" Header="{Binding Source={StaticResource DataContextBridge}, Path=DataContext.AmountAppliedCaption}" DataMemberBinding="{Binding AmountApplied}" 
+                                                    DataFormatString=" {0:C2}" HeaderTextAlignment="Right" TextAlignment="Right" Width="115">                            
+                            <telerik:GridViewDataColumn.AggregateFunctions>
+                                <telerik:SumFunction SourceField="AmountApplied" ResultFormatString="{}{0:$#,##0.00;($#,##0.00);}" />
+                            </telerik:GridViewDataColumn.AggregateFunctions>
+                        </telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn Header="Amount. Due"  IsReadOnly="True" DataMemberBinding="{Binding AmountDue}" DataFormatString=" {0:C2}" HeaderTextAlignment="Right" TextAlignment="Right" Width="100">
+                            <telerik:GridViewDataColumn.AggregateFunctions>
+                                <telerik:SumFunction SourceField="AmountDue" ResultFormatString="{}{0:$#,##0.00;($#,##0.00);}" />
+                            </telerik:GridViewDataColumn.AggregateFunctions>
+                        </telerik:GridViewDataColumn>                        
+                    </telerik:RadGridView.Columns>
+                </telerik:RadGridView>  
+            </GroupBox>
+            
+            <telerik:RadListBox Grid.Row="2" Grid.Column="0" Name="ValidationErrors" ItemsSource="{Binding ErrorMessages}" Foreground="Red" Height="{Binding HasError, Converter={con:ExpressionConverter {}{0} ? 43 : 0}}"  MaxHeight="43" 
+                                    BorderThickness="0" Background="Transparent" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto"
+                                    Visibility="{Binding HasError, Converter={con:BooleanToVisibilityConverter}}" Margin="0,-8,0,5" />
+
+            <telerik:RadDockPanel Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right" Margin="0,0,0,40" Height="25">
+                <WrapPanel Visibility="{Binding IsReceiptEditable, Converter={con:BooleanToVisibilityConverter}}">
+                    <telerik:RadButton Content="_Re-Allocate" Name="btnReset" Height="25" Width="115" Margin="5,0,0,0" Command="{Binding ResetAllocation}" 
+                                       Visibility="{Binding IsReversalBatch, Converter={con:BooleanToVisibilityConverter}}" IsEnabled="{Binding IsRequiresResetAllocation}" />
+                    <telerik:RadButton Content="_Next" Name="btnNext" Width="80" Height="25" Margin="8,0,0,0" Command="{Binding Save}" CommandParameter="True" IsEnabled="{Binding IsSaveEnabled}" />
+                    <telerik:RadButton Content="_OK" Name="btnOk" Width="80" Height="25" Margin="8,0,0,0" Command="{Binding Save}" IsEnabled="{Binding IsSaveEnabled}" />
+                </WrapPanel>
+                <telerik:RadButton Content="_Cancel" Name="btnCancel" Width="80" Margin="8,0,0,0" Command="{Binding CloseCommand}" />
+            </telerik:RadDockPanel>
+        </Grid>
+    </telerik:RadBusyIndicator>
+</common:OperationsView>

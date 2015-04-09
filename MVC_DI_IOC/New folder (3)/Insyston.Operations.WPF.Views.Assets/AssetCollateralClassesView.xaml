@@ -1,0 +1,282 @@
+﻿<UserControl x:Class="Insyston.Operations.WPF.Views.Assets.AssetCollateralClassesView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             xmlns:caliburn="http://www.caliburnproject.org"
+             xmlns:controls="clr-namespace:Insyston.Operations.WPF.Views.Common.Controls;assembly=insyston.operations.wpf.views.common"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:assetFeatures="clr-namespace:Insyston.Operations.WPF.Views.Assets.Controls.AssetFeatures"
+             xmlns:assetCollateralClasses="clr-namespace:Insyston.Operations.WPF.Views.Assets.Controls.AssetCollateralClasses"
+             d:DesignHeight="400" d:DesignWidth="800">
+    <UserControl.Resources>
+        <Storyboard x:Key="DetailsState">
+            <ObjectAnimationUsingKeyFrames BeginTime="00:00:00"
+                                           Storyboard.TargetName="Detail"
+                                           Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="00:00:0.01">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames BeginTime="00:00:00"
+                                           Storyboard.TargetName="AssignedTo"
+                                           Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="00:00:0.01">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Collapsed</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                           Storyboard.TargetName="Detail"
+                                           Storyboard.TargetProperty="(UIElement.Opacity)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0" />
+                <SplineDoubleKeyFrame KeyTime="00:00:0.3" Value="1" />
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                           Storyboard.TargetName="AssignedTo"
+                                           Storyboard.TargetProperty="(UIElement.Opacity)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1" />
+                <SplineDoubleKeyFrame KeyTime="00:00:0.3" Value="0" />
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="AssignedToState">
+            <ObjectAnimationUsingKeyFrames BeginTime="00:00:00"
+                                           Storyboard.TargetName="AssignedTo"
+                                           Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="00:00:0.01">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames BeginTime="00:00:00"
+                                           Storyboard.TargetName="Detail"
+                                           Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="00:00:0.01">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Collapsed</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                           Storyboard.TargetName="AssignedTo"
+                                           Storyboard.TargetProperty="(UIElement.Opacity)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0" />
+                <SplineDoubleKeyFrame KeyTime="00:00:0.3" Value="1" />
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                           Storyboard.TargetName="Detail"
+                                           Storyboard.TargetProperty="(UIElement.Opacity)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1" />
+                <SplineDoubleKeyFrame KeyTime="00:00:0.3" Value="0" />
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="GridSummaryState">
+            <ObjectAnimationUsingKeyFrames BeginTime="00:00:00"
+                                           Storyboard.TargetName="GridSummary"
+                                           Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="00:00:0.01">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames BeginTime="00:00:00"
+                                           Storyboard.TargetName="GridContent"
+                                           Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="00:00:0.01">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Collapsed</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames BeginTime="00:00:00"
+                                           Storyboard.TargetName="AssignFeature"
+                                           Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="00:00:0.01">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Collapsed</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                           Storyboard.TargetName="GridSummary"
+                                           Storyboard.TargetProperty="(UIElement.Opacity)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0" />
+                <SplineDoubleKeyFrame KeyTime="00:00:0.3" Value="1" />
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                           Storyboard.TargetName="GridContent"
+                                           Storyboard.TargetProperty="(UIElement.Opacity)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1" />
+                <SplineDoubleKeyFrame KeyTime="00:00:0.3" Value="0" />
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                           Storyboard.TargetName="AssignFeature"
+                                           Storyboard.TargetProperty="(UIElement.Opacity)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1" />
+                <SplineDoubleKeyFrame KeyTime="00:00:0.3" Value="0" />
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="AssignFeatureState">
+            <ObjectAnimationUsingKeyFrames BeginTime="00:00:00"
+                                           Storyboard.TargetName="AssignFeature"
+                                           Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="00:00:0.01">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames BeginTime="00:00:00"
+                                           Storyboard.TargetName="GridContent"
+                                           Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="00:00:0.01">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Collapsed</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames BeginTime="00:00:00"
+                                           Storyboard.TargetName="GridSummary"
+                                           Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="00:00:0.01">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Collapsed</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                           Storyboard.TargetName="AssignFeature"
+                                           Storyboard.TargetProperty="(UIElement.Opacity)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0" />
+                <SplineDoubleKeyFrame KeyTime="00:00:0.3" Value="1" />
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                           Storyboard.TargetName="GridContent"
+                                           Storyboard.TargetProperty="(UIElement.Opacity)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1" />
+                <SplineDoubleKeyFrame KeyTime="00:00:0.3" Value="0" />
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                           Storyboard.TargetName="GridSummary"
+                                           Storyboard.TargetProperty="(UIElement.Opacity)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1" />
+                <SplineDoubleKeyFrame KeyTime="00:00:0.3" Value="0" />
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="GridContentState">
+            <ObjectAnimationUsingKeyFrames BeginTime="00:00:00"
+                                           Storyboard.TargetName="GridContent"
+                                           Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="00:00:0.01">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames BeginTime="00:00:00"
+                                           Storyboard.TargetName="AssignFeature"
+                                           Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="00:00:0.01">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Collapsed</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames BeginTime="00:00:00"
+                                           Storyboard.TargetName="GridSummary"
+                                           Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="00:00:0.01">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Collapsed</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                           Storyboard.TargetName="GridContent"
+                                           Storyboard.TargetProperty="(UIElement.Opacity)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0" />
+                <SplineDoubleKeyFrame KeyTime="00:00:0.3" Value="1" />
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                           Storyboard.TargetName="AssignFeature"
+                                           Storyboard.TargetProperty="(UIElement.Opacity)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1" />
+                <SplineDoubleKeyFrame KeyTime="00:00:0.3" Value="0" />
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                           Storyboard.TargetName="GridSummary"
+                                           Storyboard.TargetProperty="(UIElement.Opacity)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1" />
+                <SplineDoubleKeyFrame KeyTime="00:00:0.3" Value="0" />
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </UserControl.Resources>
+    <telerik:RadBusyIndicator x:Name="BusyIndicator"
+                                  BusyContent="{Binding BusyContent,
+                                                        Mode=TwoWay}"
+                                  DisplayAfter="00:00:00.00"
+                                  IsBusy="{Binding IsBusy,
+                                                   Mode=TwoWay}">
+        <Grid x:Name="MainGrid" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid x:Name="GridContent" Margin="0,0,0,0">
+                <Grid x:Name="Detail" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <assetCollateralClasses:AssetCollateralDetailView DataContext="{Binding AssetCollateralDetailViewModel, Mode=TwoWay}"></assetCollateralClasses:AssetCollateralDetailView>
+                </Grid>
+                <Grid x:Name="AssignedTo" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <assetCollateralClasses:AssetCollateralTypeView DataContext="{Binding AssetCollateralTypeViewModel, Mode=TwoWay}"></assetCollateralClasses:AssetCollateralTypeView>
+                </Grid>
+            </Grid>
+            <Grid x:Name="GridSummary"
+                  HorizontalAlignment="Stretch"
+                  VerticalAlignment="Stretch">
+                <controls:DynamicHoverGridView
+                                               x:Name="dynamicCollateralGrid"
+                                               caliburn:Bind.Model="{Binding DynamicCollateralViewModel, Mode=TwoWay}"
+                                               SelectedRows="{Binding SelectedRows, Mode=TwoWay}"
+                                               IsEnableHoverRow="{Binding IsEnableHoverRow, Mode=TwoWay}"
+                                               IsFilteringGenerate="True"></controls:DynamicHoverGridView>
+            </Grid>
+            <Grid x:Name="AssignFeature" Margin="0,0,0,0">
+                <assetCollateralClasses:AssetCollateralAssignTypeView DataContext="{Binding AssetCollateralAssignTypeViewModel, Mode=TwoWay}"></assetCollateralClasses:AssetCollateralAssignTypeView>
+            </Grid>
+        </Grid>
+    </telerik:RadBusyIndicator>
+
+
+    <!--<Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        
+        <TextBlock Text="Asset Collateral Classes" Grid.Row="0" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="Blue"></TextBlock>
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <Button Content="Load Data To Grid" caliburn:Message.Attach="[Event Click] = [Action LoadData()]" Width="150"></Button>
+            <Button Content="Disable Hover Rows" caliburn:Message.Attach="[Event Click] = [Action DisableHover()]" Width="150"></Button>
+            <Button Content="Select all rows" caliburn:Message.Attach="[Event Click] = [Action SelectAllItems()]" Width="150"></Button>
+            <Button Content="Get Selected rows" caliburn:Message.Attach="[Event Click] = [Action GetSelectedItems()]" Width="150"></Button>
+            <Button Content="Set Selected the first row" caliburn:Message.Attach="[Event Click] = [Action SelectedItems()]" Width="150"></Button>
+            <Button Content="RadWindow Alert" caliburn:Message.Attach="[Event Click] = [Action CallRadWindowAlert()]" Width="100"></Button>
+            <Button Content="RadWindow Confirm" caliburn:Message.Attach="[Event Click] = [Action CallRadWindowConfirm]" Width="100"></Button>
+            <Button Content="RadWindow Prompt" caliburn:Message.Attach="[Event Click] = [Action CallRadWindowPrompt()]" Width="100"></Button>
+            <Button Content="RadWindow Popup" caliburn:Message.Attach="[Event Click] = [Action CallRadWindowPopup()]" Width="100"></Button>
+        </StackPanel>
+        <controls:DynamicHoverGridView x:Name="dynamicCollateralGrid" DataContext="{Binding DynamicCollateralViewModel, Mode=TwoWay}" Grid.Row="2" IsEnableHoverRow="{Binding IsEnableHoverRow, Mode=TwoWay}" IsSelectAllRow="{Binding IsSelectAllRow, Mode=TwoWay}" SelectedRows="{Binding SelectedRows, Mode=TwoWay}"></controls:DynamicHoverGridView>
+    
+    </Grid>-->
+</UserControl>

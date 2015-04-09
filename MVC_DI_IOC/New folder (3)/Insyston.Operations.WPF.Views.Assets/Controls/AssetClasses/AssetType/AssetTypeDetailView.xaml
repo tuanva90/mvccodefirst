@@ -1,0 +1,79 @@
+﻿<UserControl x:Class="Insyston.Operations.WPF.Views.Assets.Controls.AssetClasses.AssetType.AssetTypeDetailView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:assetClasses="clr-namespace:Insyston.Operations.WPF.Views.Assets.Controls.AssetClasses"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <ScrollViewer BorderBrush="Transparent">
+        <Grid  Background="{Binding GridStyle}">
+            <Grid Margin="50,30,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="35"></RowDefinition>
+                    <RowDefinition Height="35"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0" HorizontalAlignment="Left" Width="870">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid HorizontalAlignment="Left" Grid.Column="0" Margin="28,0,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" HorizontalAlignment="Left" TextAlignment="Center" Text="Asset Type:"></TextBlock>
+                        <TextBox Grid.Column="1" MinWidth="242" Text="{Binding TypeName}" IsEnabled="{Binding IsCheckedOut}" MaxLength="60"></TextBox>
+                    </Grid>
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="1" Margin="0,0,290,0">
+                        <TextBlock Margin="0,0,20,0" Text="Enabled:"></TextBlock>
+                        <CheckBox IsChecked="{Binding IsTypeEnable}" IsEnabled="{Binding IsCheckedOut}"></CheckBox>
+                    </StackPanel>
+                </Grid>
+
+                <Grid Margin="28,0,0,0" HorizontalAlignment="Left" Grid.Row="1">
+                    <Grid.Style>
+                        <Style TargetType="Grid">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsCollateralVisible, Mode=TwoWay}" Value="True">
+                                    <Setter Property="Visibility" Value="Visible"></Setter>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding IsCollateralVisible, Mode=TwoWay}" Value="False">
+                                    <Setter Property="Visibility" Value="Collapsed"></Setter>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Grid.Style>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0">Collateral Class:</TextBlock>
+
+                    <ComboBox Grid.Column="1" HorizontalAlignment="Left" MinWidth="242" ItemsSource="{Binding ListCollateralClassItems}" DisplayMemberPath="Text" 
+                  SelectedValue="{Binding SelectedCollateralClassItem, Mode=TwoWay}" IsEnabled="{Binding IsCheckedOut}"></ComboBox>
+                </Grid>
+
+                <Grid Grid.Row="2" HorizontalAlignment="Left" Width="900" IsEnabled="{Binding IsCheckedOut}">
+                    <ItemsControl ItemsSource="{Binding DetailTabViewModel, Mode=TwoWay}" HorizontalAlignment="Stretch">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel Orientation="Vertical" HorizontalAlignment="Left"></WrapPanel>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <assetClasses:ItemDepreciationDetailHorizontalView></assetClasses:ItemDepreciationDetailHorizontalView>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </Grid>
+            </Grid>
+        </Grid>
+    </ScrollViewer>
+</UserControl>

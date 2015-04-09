@@ -1,0 +1,84 @@
+﻿<common:OperationsView x:Class="Insyston.Operations.WPF.View.Receipts.DishonourReversal.NewDishonourReversalReceiptBatch"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:prism="http://www.codeplex.com/prism"
+             xmlns:prismInteractivity="http://schemas.microsoft.com/expression/2010/interactivity"                     
+             xmlns:common="clr-namespace:Insyston.Operations.WPF.View.Common;assembly=Insyston.Operations.WPF.View.Common"
+             xmlns:controls="clr-namespace:Insyston.Operations.WPF.View.Common.Controls;assembly=Insyston.Operations.WPF.View.Common"
+             xmlns:con="http://schemas.kent.boogaart.com/converters"                     
+             mc:Ignorable="d">   
+    <UserControl.Resources>
+        <common:InverseBooleanToVisibilityConverter x:Key="InverseVisibilityConverter" />
+        <common:DataResource x:Key="ValidationErrorMessage" BindingTarget="{Binding ApplyToLabelCaption}" />
+    </UserControl.Resources>
+    
+    <Grid Margin="5,0,0,10" Visibility="{Binding IsSelectListApplicable, Converter={con:BooleanToVisibilityConverter}}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="95"></ColumnDefinition>
+            <ColumnDefinition Width="140"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>            
+            <ColumnDefinition Width="93"></ColumnDefinition>
+            <ColumnDefinition Width="120"></ColumnDefinition>
+            <ColumnDefinition Width="30"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"></RowDefinition>
+            <RowDefinition Height="10"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>            
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Select From:" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" />
+        <telerik:RadComboBox Name="cboSelectList" Grid.Row="0" Grid.Column="1" 
+                        SelectedValue="{Binding Path=SelectFrom, Mode=TwoWay, NotifyOnValidationError=True, ValidatesOnDataErrors=True, ValidatesOnExceptions=True, UpdateSourceTrigger=LostFocus}" 
+                        ItemsSource="{Binding SelectList}" DisplayMemberPath="Description" SelectedValuePath="ID">
+        </telerik:RadComboBox>
+        
+        <TextBlock Name="LblContractNo" Text="{Binding ApplyToLabelCaption, StringFormat={}{0}:}" VerticalAlignment="Center" Grid.Row="0" Grid.Column="3" Visibility="{Binding IsSuspense, Converter={StaticResource InverseVisibilityConverter}}"  />
+        <controls:NumericTextBox Grid.Row="0" HorizontalAlignment="Stretch" Grid.Column="4" Visibility="{Binding IsSuspense, Converter={StaticResource InverseVisibilityConverter}}" IntegerDigits="8" >
+            <TextBox.Text>
+                <Binding Path="SelectFromObjectID" Mode="TwoWay" ValidatesOnDataErrors="True" ValidatesOnExceptions="True" NotifyOnValidationError="True" UpdateSourceTrigger="LostFocus">
+                    <Binding.ValidationRules>
+                        <common:ValidateInteger>
+                            <common:ValidateInteger.ValidationRuleParams>
+                                <common:ValidationRuleParams BoundTo="{common:DataResourceBinding DataResource={StaticResource ValidationErrorMessage}}" />
+                            </common:ValidateInteger.ValidationRuleParams>
+                        </common:ValidateInteger>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </controls:NumericTextBox>
+        
+        <telerik:RadButton Name="btnSearchContract" Grid.Column="5" Grid.Row="0" Width="25" Height="21" HorizontalAlignment="Left"  Margin="3,0,0,0" CornerRadius="0" Command="{Binding SearchCommand}" 
+                                       Visibility="{Binding IsSuspense, Converter={StaticResource InverseVisibilityConverter}}">
+            <telerik:RadButton.ToolTip>
+                <TextBlock Text="Search"/>
+            </telerik:RadButton.ToolTip>
+            <Image Source="/Insyston.Operations.WPF.View.Common;Component/Images/Search.ico" Stretch="Fill" />
+        </telerik:RadButton>
+
+        <telerik:RadGridView Name="grdReceipts" ItemsSource="{Binding DishonourReversalReceipts}" VerticalAlignment="Stretch"                              
+                        SelectedItem="{Binding SelectedReceipt, NotifyOnValidationError=True, ValidatesOnDataErrors=True, ValidatesOnExceptions=True, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" 
+                        FilteringMode="Popup" Width="Auto" BorderThickness="1" GridLinesVisibility="Both" CanUserInsertRows="False" CanUserDeleteRows="False" ShowGroupPanel="False"
+                        IsReadOnly="True" SelectionMode="Multiple"  AutoGenerateColumns="False" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="6" RowIndicatorVisibility="Collapsed">            
+            <prismInteractivity:Interaction.Triggers>
+                <prismInteractivity:EventTrigger EventName="SelectionChanged">
+                    <prismInteractivity:InvokeCommandAction Command="{Binding ReceiptSelectedCommand}" CommandParameter="{Binding SelectedItems, ElementName=grdReceipts}" />
+                </prismInteractivity:EventTrigger>
+            </prismInteractivity:Interaction.Triggers>            
+            <telerik:RadGridView.Columns>
+                <telerik:GridViewSelectColumn />
+                <telerik:GridViewDataColumn IsReadOnly="True" Width="80" Header="Batch No" UniqueName="BatchID"  TextAlignment="Left" DataMemberBinding="{Binding BatchID}" />
+                <telerik:GridViewDataColumn IsReadOnly="True" Width="85" Header="Receipt No" UniqueName="ReceiptID" TextAlignment="Left" DataMemberBinding="{Binding ReceiptID}" />
+                <telerik:GridViewDataColumn IsReadOnly="True" Width="95" Header="Contract No" UniqueName="No" TextAlignment="Left" DataMemberBinding="{Binding ContractNo}" IsVisible="{Binding IsSelectFromQuote, Converter={con:ExpressionConverter !{0}}}" />
+                <telerik:GridViewDataColumn IsReadOnly="True" Width="85" Header="Quote No" UniqueName="No" TextAlignment="Left" DataMemberBinding="{Binding QuoteID}" IsVisible="{Binding IsSelectFromContract, Converter={con:ExpressionConverter !{0}}}" />
+                <telerik:GridViewDataColumn IsReadOnly="True" Width="200" Header="Client Name" TextAlignment="Left" DataMemberBinding="{Binding ClientName}" IsVisible="{Binding IsSuspense, Converter={con:ExpressionConverter !{0}}}" />
+                <telerik:GridViewDataColumn IsReadOnly="True" Width="120" Header="Amount Received" TextAlignment="Right" DataMemberBinding="{Binding AmountReceived}" DataFormatString=" {0:C2}" />
+                <telerik:GridViewDataColumn IsReadOnly="True" Width="105" Header="Date Received" DataMemberBinding="{Binding ReceiptDate}" DataFormatString=" {0:dd/MM/yyyy}" />
+                <telerik:GridViewDataColumn IsReadOnly="True" Width="180" Header="Bank" DataMemberBinding="{Binding BankName}" />
+            </telerik:RadGridView.Columns>
+        </telerik:RadGridView>
+    </Grid>
+</common:OperationsView>

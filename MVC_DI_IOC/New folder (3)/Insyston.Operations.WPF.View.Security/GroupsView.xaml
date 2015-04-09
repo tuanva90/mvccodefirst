@@ -1,0 +1,57 @@
+﻿<UserControl x:Class="Insyston.Operations.WPF.Views.Security.GroupsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:tileview="clr-namespace:Telerik.Windows.Controls.TileView;assembly=Telerik.Windows.Controls.Navigation"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Insyston.Operations.WPF.Views.Security"
+             xmlns:viewModel="clr-namespace:Insyston.Operations.WPF.ViewModels.Security;assembly=Insyston.Operations.WPF.ViewModels.Security"             
+             xmlns:converter="clr-namespace:Insyston.Operations.WPF.Views.Common.ValueConverters;assembly=Insyston.Operations.WPF.Views.Common"            
+             xmlns:con="http://schemas.kent.boogaart.com/converters"
+             mc:Ignorable="d"
+             d:DesignHeight="300" d:DesignWidth="300"
+             x:Name="groups">
+
+    <UserControl.Resources>
+        <Storyboard x:Key="GridTransition">
+            <DoubleAnimation Duration="0:0:0.0" Storyboard.TargetName="SelectedView" Storyboard.TargetProperty="Width" From="0"  />
+        </Storyboard>
+
+        <Storyboard x:Key="ControlTransition">
+            <DoubleAnimation Duration="0:0:0.0" Storyboard.TargetName="SelectedView" Storyboard.TargetProperty="Width" To="0" AccelerationRatio="1" />
+        </Storyboard>
+    </UserControl.Resources>
+    <telerik:RadBusyIndicator x:Name="BusyIndicator"
+                                  BusyContent="{Binding BusyContent,
+                                                        Mode=TwoWay}"
+                                  DisplayAfter="00:00:00.00"
+                                  IsBusy="{Binding IsBusy,
+                                                   Mode=TwoWay}">
+    <!--<ScrollViewer HorizontalScrollBarVisibility="auto" BorderThickness="0">-->
+        <Grid x:Name="MainGrid" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0*" />
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <local:GroupContent Grid.Row="0" Grid.Column="0" Width="0" x:Name="SelectedView" DataContext="{Binding SelectedGroup}" Grid.ColumnSpan="3" Margin="0,0,10602,0" Grid.RowSpan="2" BorderThickness="0" />
+            <GridSplitter x:Name="Splitter" Grid.Column="1" Grid.Row="0" Width="4" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Visibility="Collapsed" Background="#DEE2E1" Grid.ColumnSpan="2" Margin="0,0,10598,0" Grid.RowSpan="2" BorderThickness="0" />
+            <telerik:RadGridView Name="GridSummary" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Stretch"
+                             BorderThickness="1,0,0,0" GridLinesVisibility="Both" ScrollViewer.HorizontalScrollBarVisibility="Auto" Loaded="GridSummary_Loaded" Sorted="GridSummary_Sorted" Filtered="GridSummary_Filtered"
+                             CanUserInsertRows="False" CanUserDeleteRows="False" IsReadOnly="True" SelectionMode="Single" AutoGenerateColumns="False" RowIndicatorVisibility="Collapsed"
+                             ItemsSource="{Binding Groups, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FilteringMode="Popup" IsFilteringAllowed="True" SelectedItem="{Binding SelectedGroup}" MouseDoubleClick="GridSummary_MouseDoubleClick" PreviewKeyDown="GridSummary_KeyDown" Grid.RowSpan="2">
+                <telerik:RadGridView.Columns>
+                    <telerik:GridViewDataColumn IsReadOnly="True" Width="300" MinWidth="200" Header="Group Name" TextAlignment="Left" DataMemberBinding="{Binding LXMGroup.GroupName}" />
+                    <telerik:GridViewDataColumn IsReadOnly="True" Width="300" MinWidth="200" Header="Group Description" TextAlignment="Left" DataMemberBinding="{Binding LXMGroup.GroupDescription}" />
+                    <telerik:GridViewDataColumn IsReadOnly="True" Width="*" MinWidth="80" Header="Manager" TextAlignment="Left" DataMemberBinding="{Binding ManagerName}" />
+                </telerik:RadGridView.Columns>
+            </telerik:RadGridView>
+        </Grid>
+    <!--</ScrollViewer>-->
+        </telerik:RadBusyIndicator>
+</UserControl>

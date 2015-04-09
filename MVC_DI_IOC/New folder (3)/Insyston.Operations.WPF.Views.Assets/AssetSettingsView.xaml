@@ -1,0 +1,111 @@
+﻿<UserControl x:Class="Insyston.Operations.WPF.Views.Assets.AssetSettingsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid >
+        <ScrollViewer BorderThickness="0"
+                      HorizontalAlignment="Stretch"
+                      VerticalAlignment="Stretch"
+                      Background="{Binding GridStyle}">
+            <Border BorderThickness="0">
+                <Grid x:Name="DetailSettingGrid"
+                      Margin="30 30 0 0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="30" />
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0"
+                          VerticalAlignment="Center">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="20" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <CheckBox Grid.Column="0"
+                                  VerticalAlignment="Center"
+                                  Name="cbIncludeMake"
+                                  IsChecked="{Binding AssetSettings.IncludeMake, Mode=TwoWay}"
+                                  IsEnabled="{Binding IsCheckedOut}"></CheckBox>
+                        <TextBlock Grid.Column="1"
+                                   Text="Include Make"
+                                   VerticalAlignment="Center"></TextBlock>
+                    </Grid>
+                    <Grid Grid.Row="1"
+                          Margin="25 0 0 0"
+                          VerticalAlignment="Center">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="20" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.Style>
+                            <Style TargetType="Grid">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding AssetSettings.IncludeMake}"
+                                                 Value="True">
+                                        <Setter Property="Visibility"
+                                                Value="Visible"></Setter>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding AssetSettings.IncludeMake}"
+                                                 Value="False">
+                                        <Setter Property="Visibility"
+                                                Value="Hidden"></Setter>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Grid.Style>
+                        <CheckBox VerticalAlignment="Center"
+                                  Grid.Column="0"
+                                  Name="cbIncludeModel"
+                                  IsChecked="{Binding AssetSettings.IncludeModel, Mode=TwoWay}"
+                                  IsEnabled="{Binding IsCheckedOut}"></CheckBox>
+                        <TextBlock VerticalAlignment="Center"
+                                   Grid.Column="1"
+                                   Text="Include Model"></TextBlock>
+                    </Grid>
+                    <Grid Grid.Row="2"
+                          VerticalAlignment="Center">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="120" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0"
+                                   Text="Default Category:"></TextBlock>
+                        <telerik:RadComboBox Name="cboCategory"
+                                             Grid.Column="1"
+                                             Width="220"
+                                             Height="20"
+                                             HorizontalAlignment="Left"
+                                             DisplayMemberPath="Description"
+                                             FontWeight="Normal"
+                                             IsEditable="True"
+                                             IsEnabled="{Binding IsCheckedOut}"
+                                             ItemsSource="{Binding Category}"
+                                             SelectedValue="{Binding SelectedCategory, Mode=TwoWay}"
+                                             Text="{Binding CurrentCategory, Mode=TwoWay}" />
+                    </Grid>
+                    <Grid Grid.Row="3"
+                          VerticalAlignment="Center">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="20" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <CheckBox VerticalAlignment="Center"
+                                  Grid.Column="0"
+                                  Name="cbDepreciateInInventory"
+                                  IsChecked="{Binding AssetSettings.DepreciateInInventory, Mode=TwoWay}"
+                                  IsEnabled="{Binding IsCheckedOut}"></CheckBox>
+                        <TextBlock VerticalAlignment="Center"
+                                   Grid.Column="1"
+                                   Text="Depreciate In Inventory"></TextBlock>
+                    </Grid>
+                </Grid>
+            </Border>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

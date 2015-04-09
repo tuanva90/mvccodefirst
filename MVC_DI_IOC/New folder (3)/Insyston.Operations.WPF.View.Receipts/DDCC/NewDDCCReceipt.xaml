@@ -1,0 +1,47 @@
+﻿<common:OperationsView x:Class="Insyston.Operations.WPF.View.Receipts.DDCC.NewDDCCReceipt"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"                     
+             xmlns:common="clr-namespace:Insyston.Operations.WPF.View.Common;assembly=Insyston.Operations.WPF.View.Common"
+             xmlns:controls="clr-namespace:Insyston.Operations.WPF.View.Common.Controls;assembly=Insyston.Operations.WPF.View.Common" 
+             mc:Ignorable="d" MinWidth="700">
+    <GroupBox Header="Account Details" BorderBrush="{DynamicResource GroupBoxBorderBrush}">
+        <GroupBox.Resources>
+            <Style TargetType="GroupBox" />
+        </GroupBox.Resources>
+        <Grid Margin="10,5,10,0" Grid.Row="2" Grid.Column="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="95"></ColumnDefinition>
+                <ColumnDefinition Width="130"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="95"></ColumnDefinition>
+                <ColumnDefinition Width="290"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="4"></RowDefinition>
+                <RowDefinition Height="25"></RowDefinition>
+                <RowDefinition Height="8"></RowDefinition>
+                <RowDefinition Height="22"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <TextBlock Name="LblNo" Text="{Binding DDCCAccountNoLabelCaption}" Grid.Row="1" Grid.Column="0" />
+            <telerik:RadComboBox Name="CboNo" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" ItemsSource="{Binding DDCCAccounts}" 
+                                 SelectedValue="{Binding DDCCAccountID, Mode=TwoWay, ValidatesOnDataErrors=True, ValidatesOnExceptions=True, NotifyOnValidationError=True, UpdateSourceTrigger=PropertyChanged}"
+                                 DisplayMemberPath="Description" SelectedValuePath="ID">
+            </telerik:RadComboBox>
+
+            <TextBlock Text="Account Name:" Grid.Row="1" Grid.Column="3" VerticalAlignment="Top" />
+            <TextBlock Name="LblAccountName" Grid.Column="4" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Stretch" 
+                    Text="{Binding Path=DDCCBankDetail.AccountName}"></TextBlock>
+
+            <TextBlock Text="BSB No:" VerticalAlignment="Top" Grid.Row="3" Grid.Column="0"  />
+            <TextBlock Name="LblBSBNo" Text="{Binding DDCCBankDetail.BSBNo}" Grid.Row="3" Grid.Column="1"></TextBlock>
+        
+            <TextBlock Text="Bank Name:" Grid.Row="3" Grid.Column="3" VerticalAlignment="Top" />
+            <TextBlock Name="LblBankName" Grid.Row="3" Grid.Column="4" VerticalAlignment="Top"  HorizontalAlignment="Stretch" 
+                        Text="{Binding DDCCBankDetail.BankName, Mode=TwoWay, ValidatesOnDataErrors=True, ValidatesOnExceptions=True, NotifyOnValidationError=True, UpdateSourceTrigger=LostFocus}"></TextBlock>
+        </Grid>
+    </GroupBox>
+</common:OperationsView>

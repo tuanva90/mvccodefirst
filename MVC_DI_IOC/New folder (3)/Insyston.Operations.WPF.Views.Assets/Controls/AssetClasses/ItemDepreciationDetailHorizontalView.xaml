@@ -1,0 +1,54 @@
+﻿<UserControl x:Class="Insyston.Operations.WPF.Views.Assets.Controls.AssetClasses.ItemDepreciationDetailHorizontalView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:assetclasses="clr-namespace:Insyston.Operations.WPF.Views.Assets.Controls.AssetClasses"
+             xmlns:helpers="clr-namespace:Insyston.Operations.WPF.ViewModels.Assets.Helpers;assembly=insyston.operations.wpf.viewmodels.assets"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <DataTemplate x:Key="Itemtype1">
+            <assetclasses:ItemUseDefault DataContext="{Binding RelativeSource={RelativeSource AncestorType=UserControl}, Path=DataContext.ItemChildViewMdoel, Mode=TwoWay}"></assetclasses:ItemUseDefault>
+        </DataTemplate>
+        <DataTemplate x:Key="Itemtype2">
+            <assetclasses:ItemDepnMethod DataContext="{Binding RelativeSource={RelativeSource AncestorType=UserControl}, Path=DataContext.ItemChildViewMdoel, Mode=TwoWay}"></assetclasses:ItemDepnMethod>
+        </DataTemplate>
+        <DataTemplate x:Key="Itemtype3">
+            <assetclasses:ItemSalvage DataContext="{Binding RelativeSource={RelativeSource AncestorType=UserControl}, Path=DataContext.ItemChildViewMdoel, Mode=TwoWay}"></assetclasses:ItemSalvage>
+        </DataTemplate>
+        <DataTemplate x:Key="Itemtype4">
+            <Grid Margin="80,0,0,0">
+                <assetclasses:ItemEffectiveLife DataContext="{Binding RelativeSource={RelativeSource AncestorType=UserControl}, Path=DataContext.ItemChildViewMdoel, Mode=TwoWay}"></assetclasses:ItemEffectiveLife>
+            </Grid>
+        </DataTemplate>
+
+        <helpers:ItemDepreciationTemplateSelector x:Key="itemDepreciationSelector" ItemUseDefault="{StaticResource Itemtype1}" ItemDepnMethod="{StaticResource Itemtype2}" ItemSalvage="{StaticResource Itemtype3}"
+                                                  ItemEffectiveLife="{StaticResource Itemtype4}" ></helpers:ItemDepreciationTemplateSelector>
+
+    </UserControl.Resources>
+    <Grid Height="165" Margin="0,10,0,0" x:Name="MyItemsControl">
+        <telerik:RadPanelBar Width="875"
+                             BorderBrush="Transparent">
+
+            <telerik:RadPanelBarItem IsExpanded="True"
+                                     BorderThickness="0" Height="160" Width="870">
+                <telerik:RadPanelBarItem.Header>
+                    <TextBlock FontWeight="Bold"><Run Text="{Binding Header}"> </Run> Depreciation</TextBlock>
+                </telerik:RadPanelBarItem.Header>
+
+                <ItemsControl AllowDrop="True"
+                              ItemsSource="{Binding ListItemChild, Mode=TwoWay}"
+                              ItemTemplateSelector="{StaticResource itemDepreciationSelector}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel Orientation="Vertical"
+                                       HorizontalAlignment="Left"></WrapPanel>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                </ItemsControl>
+            </telerik:RadPanelBarItem>
+        </telerik:RadPanelBar>
+    </Grid>
+</UserControl>

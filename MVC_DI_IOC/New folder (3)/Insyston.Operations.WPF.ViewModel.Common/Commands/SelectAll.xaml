@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="Insyston.Operations.WPF.ViewModels.Common.Commands.SelectAll"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.ToolTip>
+        <TextBlock Style="{StaticResource TooltipStyle}" Text="Select All Contracts"/>
+    </UserControl.ToolTip>
+    <Grid  Width="16" Height="16" >
+        <Grid Name="backgroundGrid"
+              Visibility="Collapsed" />
+        <TextBlock Style="{StaticResource ActionCommandStyle}">SELECT ALL</TextBlock>
+        <!--<Grid>
+            <Rectangle/>
+            <Ellipse Visibility="Collapsed" />
+            <Path Data="M50.5,4.7500001C25.232973,4.75 4.75,25.232973 4.7500001,50.5 4.75,75.767029 25.232973,96.25 50.5,96.25 75.767029,96.25 96.25,75.767029 96.25,50.5 96.25,25.232973 75.767029,4.75 50.5,4.7500001z M50.5,0C78.390381,0 101,22.609621 101,50.5 101,78.390381 78.390381,101 50.5,101 22.609621,101 0,78.390381 0,50.5 0,22.609621 22.609621,0 50.5,0z" Stretch="Fill" Fill="#FF000000" Visibility="Collapsed" />
+        </Grid>
+        <Path Data="M34.121552,40.051L36.144999,43.16945 15.130303,56.796999 13.106756,53.677217 13.106756,53.675916 8.6079996,46.735841 11.726523,44.71375 16.22783,51.65373z M0,36.751001L27.249001,36.751001 27.249001,42.554475 23.151356,45.210752 23.151356,40.848707 4.0964856,40.848707 4.0964856,59.901056 23.151356,59.901056 23.151356,53.548086 27.249001,50.890455 27.249001,64.000001 0,64.000001z M34.121553,3.3010007L36.145,6.4182236 15.130303,20.046001 13.106757,16.926167 13.106757,16.924866 8.6079996,9.9846706 11.726523,7.9638004 16.227831,14.904045z M0,0L27.249001,0 27.249001,5.8034441 23.151356,8.4597235 23.151356,4.0990154 4.0964847,4.0990154 4.0964847,23.149955 23.151356,23.149955 23.151356,16.798385 27.249001,14.140756 27.249001,27.249 0,27.249z" Stretch="Uniform" Fill="#FF000000" Width="16" Height="16" RenderTransformOrigin="0.5,0.5">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <TransformGroup.Children>
+                        <RotateTransform Angle="0" />
+                        <ScaleTransform ScaleX="1" ScaleY="1" />
+                    </TransformGroup.Children>
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>-->
+    </Grid>
+</UserControl>

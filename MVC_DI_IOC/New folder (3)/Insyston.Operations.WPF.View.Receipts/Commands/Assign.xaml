@@ -1,0 +1,21 @@
+﻿<UserControl x:Class="Insyston.Operations.WPF.View.Receipts.Commands.Assign"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid Name="backgroundGrid" Width="32" Height="32" Visibility="Collapsed" />
+        <Path Data="M48.915604,39.796998L49.232002,41.73309 18.511999,46.738 18.197001,44.801911z M26.696344,37.951999C27.351365,40.044217,30.231,41.092324,30.231,41.092324L25.910998,42.530999z M26.878857,31.266772L26.9972,33.22778 15.219097,34.475999 15.012001,32.525582z M34.563435,20.119521L32.862622,22.185774 12.228199,23.391999 12.115,21.430711z M36.7463,10.928L36.801003,12.889913 9.3190308,13.674999 9.2630005,11.713086z M48.612541,6.759L48.645159,6.8475333C49.62698,9.3927367,51.956423,12.657845,56.185604,13.352003L56.397999,13.383851 37.033453,37.166108 32.585721,37.558 29.444799,34.677852 29.182,30.360229z M39.522339,5.2349992L42.135407,10.839494 40.334999,13.107881 40.304173,13.145332 37.950729,7.982356 4.0573845,8.1138562 14.78915,52.345605 54.832485,45.017514 47.395187,28.701589 49.447243,26.521901 59.413,47.896409 11.255238,57.579999 0,5.3651915z M54.178093,0C62.421474,0.65496874,62.031075,6.8060206,62.031075,6.8060204L58.233984,11.515564C51.559698,11.778664,50.122002,4.972653,50.122002,4.9726532z" Stretch="Uniform" Fill="#FF262626" Width="24" Height="24" Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <TransformGroup.Children>
+                        <RotateTransform Angle="0" />
+                        <ScaleTransform ScaleX="1" ScaleY="1" />
+                    </TransformGroup.Children>
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+    </Grid>
+</UserControl>

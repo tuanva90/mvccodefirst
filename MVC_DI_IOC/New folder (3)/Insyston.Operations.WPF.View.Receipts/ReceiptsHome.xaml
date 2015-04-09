@@ -1,0 +1,55 @@
+﻿<UserControl x:Class="Insyston.Operations.WPF.View.Receipts.ReceiptsHome"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"      
+             xmlns:interactivity="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:common="clr-namespace:Insyston.Operations.WPF.View.Common;assembly=Insyston.Operations.WPF.View.Common"
+             xmlns:operations="clr-namespace:Insyston.Operations.WPF.View.Receipts" 
+             xmlns:commands="clr-namespace:Insyston.Operations.WPF.View.Common.Commands;assembly=Insyston.Operations.WPF.View.Common"
+             xmlns:receiptCommands="clr-namespace:Insyston.Operations.WPF.View.Receipts.Commands"
+             xmlns:batchToolbar="clr-namespace:Insyston.Operations.WPF.View.Receipts.CommonControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    
+    <StackPanel>        
+        <Grid HorizontalAlignment="Stretch" Margin="5,0,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="34" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <telerik:RadToolBar GripVisibility="Collapsed" OverflowButtonVisibility="Collapsed" Grid.Row="0" Grid.Column="0" Band="1" BandIndex="1" Height="34" Background="Transparent" BorderBrush="Transparent">
+                <telerik:RadButton Command="{Binding Refresh}" BorderBrush="Transparent">
+                    <telerik:RadButton.ToolTip>
+                        <TextBlock Text="Refresh" />
+                    </telerik:RadButton.ToolTip>
+                    <commands:Refresh Width="32" Height="32" />
+                </telerik:RadButton>
+            </telerik:RadToolBar>
+
+            <batchToolbar:NewReceiptBatchToolBar Grid.Row="0" Grid.Column="2" />
+        </Grid>
+        
+        <telerik:RadGridView Name="GrdBatchStatusSummary" DockPanel.Dock="Top" Margin="5,0,5,5" BorderThickness="1" GridLinesVisibility="Both"
+                                CanUserInsertRows="False" CanUserDeleteRows="False" IsReadOnly="True" SelectionMode="Single" AutoGenerateColumns="False" RowIndicatorVisibility="Collapsed"
+                                ItemsSource="{Binding ReceiptBatchStatuses}" FilteringMode="Popup" IsFilteringAllowed="False" MinHeight="100" SelectedItem="{Binding SelectedBatchStatus}">            
+                
+                <interactivity:Interaction.Triggers>
+                    <interactivity:EventTrigger EventName="MouseDoubleClick">
+                        <interactivity:InvokeCommandAction Command="{Binding OpenReceiptBatch}" />
+                    </interactivity:EventTrigger>
+            </interactivity:Interaction.Triggers>
+                <telerik:RadGridView.Columns>
+                    <telerik:GridViewDataColumn IsReadOnly="True" IsFilterable="False" Width="150" Header="Batch Status" TextAlignment="Left" DataMemberBinding="{Binding BatchStatus}" />
+                    <telerik:GridViewDataColumn IsReadOnly="True" IsFilterable="False" Width="110" Header="No. Entries" TextAlignment="Left" DataMemberBinding="{Binding NumberOfEntries}" />
+                    <telerik:GridViewDataColumn IsReadOnly="True" IsFilterable="False" Width="150" Header="Batch Total" TextAlignment="Left" DataMemberBinding="{Binding GrossBatchTotal}" DataFormatString=" {0:c} " />
+                </telerik:RadGridView.Columns>
+            </telerik:RadGridView>        
+    </StackPanel>
+</UserControl>

@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="Insyston.Operations.WPF.Views.Shell.MainWindowDetailsTabControlCollectionQueue"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:shell="clr-namespace:Insyston.Operations.WPF.Views.Shell"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid >
+        <telerik:RadTabControl x:Name="CollectionQueueTab" Margin="0 -6 0 0 " BorderThickness="0"  HeaderBackground="#F1F1F1" IsContentPreserved="True" SelectionChanged="RadTabControlBase_OnSelectionChanged" SelectedIndex="{Binding SelectedTab_ListCollectors}">
+            <telerik:RadTabItem x:Name="TabList" Margin="-2,15,0,0" Height="22"  Visibility="{Binding ChangedVisibility, Mode=TwoWay}">
+                <telerik:RadTabItem.HeaderTemplate>
+                    <DataTemplate>
+                        <TextBlock Style="{StaticResource TabControlHyperlink}"> List</TextBlock>
+                    </DataTemplate>
+                </telerik:RadTabItem.HeaderTemplate>
+                <shell:MainWindowDetails DataContext="{Binding ListMainWindowDetailsVm}"></shell:MainWindowDetails>
+            </telerik:RadTabItem>
+            <telerik:RadTabItem x:Name="TabCollectors" Margin="-2,15,0,0" Height="22" Visibility="{Binding CollectorsChangedVisibility}">
+                <telerik:RadTabItem.HeaderTemplate>
+                    <DataTemplate>
+                        <TextBlock Style="{StaticResource TabControlHyperlink}"> Collectors</TextBlock>
+                    </DataTemplate>
+                </telerik:RadTabItem.HeaderTemplate>
+                <shell:MainWindowDetails DataContext="{Binding CollectorsMainWindowDetailsVm}"></shell:MainWindowDetails>
+            </telerik:RadTabItem>
+        </telerik:RadTabControl>
+    </Grid>
+</UserControl>

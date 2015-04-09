@@ -1,0 +1,35 @@
+﻿<telerik:RadWindow x:Class="Insyston.Operations.WPF.ViewModels.Common.NotificationErrorView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+        xmlns:cal="http://www.caliburnproject.org"
+        Width="auto" Height="auto" MinHeight="140" Header="{Binding Title}" 
+                   x:Name="notificationErrorWindow" WindowStartupLocation="Manual" Top="70" Left="900">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid Row="0">
+            <Label Content="Click on a link to navigate to the error, or manually fix issues described before proceeding:" ></Label>
+        </Grid>
+        
+        <Grid Row="1">
+            <ItemsControl ItemsSource="{Binding listCustomHyperlink}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel></StackPanel>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Button Margin="15,0,15,0" Content="{Binding Path=HyperlinkHeader, Mode=TwoWay}" Style="{Binding SelectedStyle}" Focusable="False" cal:Message.Attach="[Event Click]=[Action DoActionClick]"/>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </Grid>
+    </Grid>
+</telerik:RadWindow>

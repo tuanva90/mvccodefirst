@@ -1,0 +1,50 @@
+﻿<UserControl x:Class="Insyston.Operations.WPF.ViewModel.Common.Commands.Error"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.ToolTip>
+        <TextBlock Style="{StaticResource TooltipStyle}" Text="Error"/>
+    </UserControl.ToolTip>
+    <Grid Width="16" Height="16" Margin="6 0 6 0">
+        <!--<Grid Name="backgroundGrid"
+              Visibility="Collapsed" />
+        <TextBlock Style="{StaticResource ActionCommandStyle}">ERROR</TextBlock>-->
+        <Grid Name="backgroundGrid"
+              Visibility="Visible">
+            <Rectangle Name="Rect" Visibility="Visible"  />
+        </Grid>
+        <Path VerticalAlignment="Center" Data="M50.000001,0.5 L99.500002,99.5 L0.50000004,99.5 z" Stretch="Uniform" Fill="#CD6363" Width="16" Height="16" Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <TransformGroup.Children>
+                        <RotateTransform Angle="0" />
+                        <ScaleTransform ScaleX="1" ScaleY="1" />
+                    </TransformGroup.Children>
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+        <Path Data="M89.999987,42.999989 L98.999999,43 99.000088,79.500314 89.964083,79.682317 z" Stretch="Uniform" Fill="White" Width="7" Height="7" Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <TransformGroup.Children>
+                        <RotateTransform Angle="0" />
+                        <ScaleTransform ScaleX="1" ScaleY="1" />
+                    </TransformGroup.Children>
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+        <Path Data="M22.964,10.5 C22.964,16.022847 17.935262,20.5 11.732,20.5 C5.5287377,20.5 0.5,16.022847 0.5,10.5 C0.5,4.9771525 5.5287377,0.5 11.732,0.5 C17.935262,0.5 22.964,4.9771525 22.964,10.5 z" Stretch="Uniform" Fill="White" Width="2" Height="2" Margin="0,10,0,0" RenderTransformOrigin="0.5,0.5">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <TransformGroup.Children>
+                        <RotateTransform Angle="0" />
+                        <ScaleTransform ScaleX="1" ScaleY="1" />
+                    </TransformGroup.Children>
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+    </Grid>
+</UserControl>

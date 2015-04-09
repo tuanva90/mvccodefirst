@@ -1,0 +1,329 @@
+﻿<UserControl x:Class="Insyston.Operations.WPF.Views.Security.GroupContent"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:local="clr-namespace:Insyston.Operations.WPF.ViewModels.Security;assembly=Insyston.Operations.WPF.ViewModels.Security"
+             xmlns:view="clr-namespace:Insyston.Operations.WPF.Views.Security"
+             xmlns:converter="clr-namespace:Insyston.Operations.WPF.Views.Common.ValueConverters;assembly=Insyston.Operations.WPF.Views.Common"
+             xmlns:prism="http://www.codeplex.com/prism"
+             xmlns:prismInteractivity="http://schemas.microsoft.com/expression/2010/interactivity"  
+             xmlns:common="clr-namespace:Insyston.Operations.WPF.Views.Common;assembly=Insyston.Operations.WPF.Views.Common"
+             x:Name="groupContent"
+             mc:Ignorable="d"
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontWeight" Value="Normal"></Setter>
+            <Setter Property="Margin"
+                    Value="0,10,0,0"></Setter>
+        </Style>
+        <Storyboard x:Key="DetailsState">
+            <ObjectAnimationUsingKeyFrames BeginTime="00:00:00"
+                                           Storyboard.TargetName="DetailsGrid"
+                                           Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="00:00:0.01">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames BeginTime="00:00:00"
+                                           Storyboard.TargetName="MembersGrid"
+                                           Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="00:00:0.01">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Collapsed</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames BeginTime="00:00:00"
+                                           Storyboard.TargetName="PermissionsGrid"
+                                           Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="00:00:0.01">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Collapsed</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                           Storyboard.TargetName="DetailsGrid"
+                                           Storyboard.TargetProperty="(UIElement.Opacity)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0" />
+                <SplineDoubleKeyFrame KeyTime="00:00:0.3" Value="1" />
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                           Storyboard.TargetName="MembersGrid"
+                                           Storyboard.TargetProperty="(UIElement.Opacity)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1" />
+                <SplineDoubleKeyFrame KeyTime="00:00:0.3" Value="0" />
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                           Storyboard.TargetName="PermissionsGrid"
+                                           Storyboard.TargetProperty="(UIElement.Opacity)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1" />
+                <SplineDoubleKeyFrame KeyTime="00:00:0.3" Value="0" />
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="UsersState">
+            <ObjectAnimationUsingKeyFrames BeginTime="00:00:00"
+                                           Storyboard.TargetName="MembersGrid"
+                                           Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="00:00:0.01">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames BeginTime="00:00:00"
+                                           Storyboard.TargetName="DetailsGrid"
+                                           Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="00:00:0.01">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Collapsed</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames BeginTime="00:00:00"
+                                           Storyboard.TargetName="PermissionsGrid"
+                                           Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="00:00:0.01">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Collapsed</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                           Storyboard.TargetName="MembersGrid"
+                                           Storyboard.TargetProperty="(UIElement.Opacity)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0" />
+                <SplineDoubleKeyFrame KeyTime="00:00:0.3" Value="1" />
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                           Storyboard.TargetName="DetailsGrid"
+                                           Storyboard.TargetProperty="(UIElement.Opacity)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1" />
+                <SplineDoubleKeyFrame KeyTime="00:00:0.3" Value="0" />
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                           Storyboard.TargetName="PermissionsGrid"
+                                           Storyboard.TargetProperty="(UIElement.Opacity)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1" />
+                <SplineDoubleKeyFrame KeyTime="00:00:0.3" Value="0" />
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="PermissionsState">
+            <ObjectAnimationUsingKeyFrames BeginTime="00:00:00"
+                                           Storyboard.TargetName="PermissionsGrid"
+                                           Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="00:00:0.01">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames BeginTime="00:00:00"
+                                           Storyboard.TargetName="DetailsGrid"
+                                           Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="00:00:0.01">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Collapsed</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames BeginTime="00:00:00"
+                                           Storyboard.TargetName="MembersGrid"
+                                           Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="00:00:0.01">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Collapsed</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                           Storyboard.TargetName="PermissionsGrid"
+                                           Storyboard.TargetProperty="(UIElement.Opacity)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0" />
+                <SplineDoubleKeyFrame KeyTime="00:00:0.3" Value="1" />
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                           Storyboard.TargetName="DetailsGrid"
+                                           Storyboard.TargetProperty="(UIElement.Opacity)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1" />
+                <SplineDoubleKeyFrame KeyTime="00:00:0.3" Value="0" />
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                           Storyboard.TargetName="MembersGrid"
+                                           Storyboard.TargetProperty="(UIElement.Opacity)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1" />
+                <SplineDoubleKeyFrame KeyTime="00:00:0.3" Value="0" />
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </UserControl.Resources>
+    <ScrollViewer HorizontalScrollBarVisibility="Auto" BorderThickness="0" VerticalScrollBarVisibility="Auto" Margin="0 0 5 0">
+    <Border HorizontalAlignment="Stretch" BorderThickness="0" Background="{Binding RelativeSource={RelativeSource AncestorType=UserControl, AncestorLevel=2},Path=DataContext.GridStyle}">
+        <Grid Margin="0,0,0,0" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <TextBlock  FontWeight="Normal" Grid.Row="0" Grid.Column="0" Text="{Binding LXMGroup.GroupName, ValidatesOnNotifyDataErrors=False}" Style="{DynamicResource SelectedViewBorder}"  />
+            <Grid Grid.Row="1" Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+               <DockPanel Grid.Row="0" Margin="10,0,35,0" d:IsLocked="True">
+                    <Grid x:Name="DetailsGrid">
+                        <Grid.RowDefinitions>
+                            <!--<RowDefinition Height="50"/>
+                            <RowDefinition Height="2"/>
+                            <RowDefinition Height="40"/>-->
+                            <RowDefinition Height="40"/>
+                            <RowDefinition Height="40"/>
+                            <RowDefinition Height="40"/>
+                            <RowDefinition Height="40"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="120"/>
+                            <ColumnDefinition Width="300"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <!--<TextBlock Grid.ColumnSpan="3" Grid.Row="0" Text="Details" Style="{StaticResource HeaderTextBlock}"/>
+                        <Border Grid.ColumnSpan="3" Grid.Row="1" BorderBrush="#FFA1A1A1" BorderThickness="1"/>-->
+
+                        <TextBlock Grid.Column="0" Grid.Row="0" Text="Group Name:" ></TextBlock>
+                        <TextBox Grid.Column="1" Grid.Row="0" Text="{Binding LXMGroup.GroupName,Mode=TwoWay, ValidatesOnNotifyDataErrors=True}"
+                                 Validation.ErrorTemplate="{StaticResource validationTemplate}"
+                                 IsEnabled="{Binding RelativeSource={RelativeSource AncestorType=UserControl, AncestorLevel=2},Path= DataContext.ActiveViewModel.IsCheckedOut}" MaxLength="60"></TextBox>
+
+                        <TextBlock Grid.Column="0" Grid.Row="1" Text="Group Description:" ></TextBlock>
+                        <TextBox Grid.Column="1" Grid.Row="1" Text="{Binding LXMGroup.GroupDescription,Mode=TwoWay, ValidatesOnNotifyDataErrors=True}"
+                                 Validation.ErrorTemplate="{StaticResource validationTemplate}"
+                                 IsEnabled="{Binding RelativeSource={RelativeSource AncestorType=UserControl, AncestorLevel=2},Path= DataContext.ActiveViewModel.IsCheckedOut}"
+                                 MaxLength="100"></TextBox>
+
+                        <CheckBox Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
+                                  Content="Allow Task Assignment:"                                       
+                                  IsChecked="{Binding LXMGroup.AllowTaskAssignment,Mode=TwoWay}" 
+                                  IsEnabled="{Binding RelativeSource={RelativeSource AncestorType=UserControl, AncestorLevel=2},Path= DataContext.ActiveViewModel.IsCheckedOut}"/>
+
+                        <TextBlock Grid.Column="0" Grid.Row="3" Text="Manager:" ></TextBlock>
+                        <telerik:RadComboBox Grid.Column="1" Grid.Row="3"
+                                             ItemsSource="{Binding RelativeSource={RelativeSource AncestorType=UserControl, AncestorLevel=2}, Path=DataContext.Managers}"
+                                             DisplayMemberPath="Description"
+                                             SelectedValuePath="ID"
+                                             SelectedValue="{Binding LXMGroup.ManagerUserEntityId, Mode=TwoWay}"
+                                             IsEnabled="{Binding RelativeSource={RelativeSource AncestorType=UserControl, AncestorLevel=2},Path= DataContext.ActiveViewModel.IsCheckedOut}">
+                        </telerik:RadComboBox>
+                    </Grid>
+                    <Grid x:Name="MembersGrid">
+                        <Grid.RowDefinitions>
+                            <!--<RowDefinition Height="50"/>
+                            <RowDefinition Height="2"/>
+                            <RowDefinition Height="40"/>-->
+                            <RowDefinition Height="40"/>
+                            <RowDefinition Height="400"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="450"/>
+                            <ColumnDefinition Width="40"/>
+                            <ColumnDefinition Width="450"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <!--<TextBlock Grid.ColumnSpan="4" Grid.Row="0" Text="Members" Style="{StaticResource HeaderTextBlock}"/>
+                        <Border Grid.ColumnSpan="4" Grid.Row="1" BorderBrush="#FFA1A1A1" BorderThickness="1"/>-->
+                        <TextBlock Grid.Column="0" Grid.Row="0" Text="Members:"/>
+                        <ListBox Grid.Column="0" Grid.Row="1" ItemsSource="{Binding Users}" Name="lstMembers" SelectionMode="Extended"
+                                 IsEnabled="{Binding RelativeSource={RelativeSource AncestorType=UserControl, AncestorLevel=2},Path= DataContext.ActiveViewModel.IsCheckedOut}">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <DockPanel>
+                                        <TextBlock Text="{Binding Firstname}"></TextBlock>
+                                        <TextBlock Text="{Binding Lastname}" Margin="5 0 0 0"></TextBlock>
+                                    </DockPanel>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                            <prismInteractivity:Interaction.Triggers>
+                                <prismInteractivity:EventTrigger EventName="SelectionChanged">
+                                    <prismInteractivity:InvokeCommandAction Command="{Binding DataContext.ActiveViewModel.SelectMembers, RelativeSource={RelativeSource AncestorType=UserControl, AncestorLevel=2}}" CommandParameter="{Binding SelectedItems, ElementName=lstMembers}" />
+                                </prismInteractivity:EventTrigger>
+                            </prismInteractivity:Interaction.Triggers>
+                        </ListBox>
+                        <StackPanel Orientation="Vertical" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" IsEnabled="{Binding RelativeSource={RelativeSource AncestorType=UserControl, AncestorLevel=2},Path= DataContext.ActiveViewModel.IsCheckedOut}"
+                                    Visibility="{Binding RelativeSource={RelativeSource AncestorType=UserControl, AncestorLevel=2}, Path=DataContext.ActiveViewModel.IsCheckedOut, Converter={StaticResource boolToVisibility}}">
+                            <Button Command="{Binding RelativeSource={RelativeSource AncestorType=UserControl, AncestorLevel=2}, Path=DataContext.Edit.OnUseCaseStepChanged}"
+                                    CommandParameter="{x:Static local:EditGroupViewModel+EnumSteps.AddMember}"
+                                    BorderThickness="0">
+                                <Grid>
+                                    <Grid Width="48" Height="48" Visibility="Visible">
+                                        <Rectangle Fill="#FF000000" Visibility="Visible" />
+                                    </Grid>
+                                    <Path Data="M582.309,226.984L547.355,194.984 582.309,162.984 582.309,226.984z" Stretch="Uniform" Fill="#FFFFFFFF" Width="26" Height="26" Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5">
+                                        <Path.RenderTransform>
+                                            <TransformGroup>
+                                                <TransformGroup.Children>
+                                                    <RotateTransform Angle="0" />
+                                                    <ScaleTransform ScaleX="1" ScaleY="1" />
+                                                </TransformGroup.Children>
+                                            </TransformGroup>
+                                        </Path.RenderTransform>
+                                    </Path>
+                                </Grid>
+                            </Button>
+                            <Button Command="{Binding RelativeSource={RelativeSource AncestorType=UserControl, AncestorLevel=2}, Path=DataContext.Edit.OnUseCaseStepChanged}"
+                                    CommandParameter="{x:Static local:EditGroupViewModel+EnumSteps.RemoveMember}" BorderThickness="0">
+                                <Grid>
+                                    <Grid Width="48" Height="48" Visibility="Visible">
+                                        <Rectangle Fill="#FF000000" Visibility="Visible" />
+                                    </Grid>
+                                    <Path Data="M299.134,162.984L334.087,194.984 299.134,226.984 299.134,162.984z" Stretch="Uniform" Fill="#FFFFFFFF" Width="26" Height="26" Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5">
+                                        <Path.RenderTransform>
+                                            <TransformGroup>
+                                                <TransformGroup.Children>
+                                                    <RotateTransform Angle="0" />
+                                                    <ScaleTransform ScaleX="1" ScaleY="1" />
+                                                </TransformGroup.Children>
+                                            </TransformGroup>
+                                        </Path.RenderTransform>
+                                    </Path>
+                                </Grid>
+                            </Button>
+                        </StackPanel>
+                        <TextBlock Grid.Column="2" Grid.Row="0" 
+                                   Visibility="{Binding RelativeSource={RelativeSource AncestorType=UserControl, AncestorLevel=2}, Path=DataContext.ActiveViewModel.IsCheckedOut, Converter={StaticResource boolToVisibility}}"
+								   
+                                   Text="Not Members:"/>
+                        <ListBox Grid.Column="2" Grid.Row="1"  Name="lstNonMemebers"                                      
+                                 Visibility="{Binding RelativeSource={RelativeSource AncestorType=UserControl, AncestorLevel=2}, Path=DataContext.ActiveViewModel.IsCheckedOut, Converter={StaticResource boolToVisibility}}"
+                                 ItemsSource="{Binding RelativeSource={RelativeSource AncestorType=UserControl, AncestorLevel=2}, Path=DataContext.Edit.NotMembers}"
+                                 SelectionMode="Extended">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <DockPanel>
+                                        <TextBlock Text="{Binding Firstname}"></TextBlock>
+                                        <TextBlock Text="{Binding Lastname}" Margin="5 0 0 0"></TextBlock>
+                                    </DockPanel>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                            <prismInteractivity:Interaction.Triggers>
+                                <prismInteractivity:EventTrigger EventName="SelectionChanged">
+                                    <prismInteractivity:InvokeCommandAction Command="{Binding DataContext.ActiveViewModel.SelectNonMembers, RelativeSource={RelativeSource AncestorType=UserControl, AncestorLevel=2}}" CommandParameter="{Binding SelectedItems, ElementName=lstNonMemebers}" />
+                                </prismInteractivity:EventTrigger>
+                            </prismInteractivity:Interaction.Triggers>
+                        </ListBox>
+                    </Grid>
+                    <Grid x:Name="PermissionsGrid" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                        <view:PermissionGrid IsSourceVisibile="False"></view:PermissionGrid>
+                    </Grid>
+                </DockPanel>
+            </Grid>
+        </Grid>
+    </Border>
+    </ScrollViewer>
+</UserControl>

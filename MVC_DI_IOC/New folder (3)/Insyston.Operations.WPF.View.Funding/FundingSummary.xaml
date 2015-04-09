@@ -1,0 +1,49 @@
+﻿<UserControl x:Class="Insyston.Operations.WPF.Views.Funding.FundingSummary"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"             
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             xmlns:commands="clr-namespace:GalaSoft.MvvmLight.Command;assembly=GalaSoft.MvvmLight.Extras.WPF45" 
+             xmlns:filters="clr-namespace:Insyston.Operations.WPF.Views.Funding.FilterControls"
+             xmlns:local="clr-namespace:Insyston.Operations.WPF.Views.Funding"
+             mc:Ignorable="d"
+             d:DesignHeight="300" d:DesignWidth="300">
+
+    <UserControl.Resources>
+        <Storyboard x:Key="SummaryTransition">
+            <DoubleAnimation Duration="0:0:0.5" Storyboard.TargetName="FundingDetailsUserControl" Storyboard.TargetProperty="Width" From="0"/>
+        </Storyboard>
+        <Storyboard x:Key="DetailsTransition">
+            <DoubleAnimation Duration="0:0:0.7" Storyboard.TargetName="FundingDetailsUserControl" Storyboard.TargetProperty="Width" To="0" AccelerationRatio="1"/>
+        </Storyboard>
+    </UserControl.Resources>
+
+    <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch" x:Name="MainGrid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <local:FundingDetails x:Name="FundingDetailsUserControl" Width="0" Grid.Row="0" Grid.Column="0" DataContext="{Binding FundingDetails}"/>
+        <GridSplitter x:Name="Splitter" Grid.Column="1" Grid.Row="0" Width="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Visibility="Collapsed" />
+        <telerik:RadGridView Name="FundingSummaryGrid" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Stretch" Margin="5" BorderThickness="1" 
+                             ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                             VerticalAlignment="Stretch" GridLinesVisibility="Both" AutoGenerateColumns="False" RowIndicatorVisibility="Collapsed" ItemsSource="{Binding TrancheSummary}" 
+                             CanUserInsertRows="False" CanUserDeleteRows="False" 
+                             ShowGroupPanel="True" 
+                             IsReadOnly="True" SelectionMode="Single" IsFilteringAllowed="True"
+                             SelectedItem="{Binding SelectedTranche}">
+            <telerik:RadGridView.Columns>
+                <telerik:GridViewDataColumn Header="Funder Name" DataMemberBinding="{Binding FunderName}" Width="*" MinWidth="150"/>
+                <telerik:GridViewDataColumn Header="Tranche ID" DataMemberBinding="{Binding TrancheId}" Width="200" MinWidth="50"/>
+                <telerik:GridViewDataColumn UniqueName="TrancheStatus" Header="Tranche Status" DataMemberBinding="{Binding TrancheStatus}" Width="150"/>
+                <telerik:GridViewDataColumn Header="Tranche Date" DataMemberBinding="{Binding TrancheDate, StringFormat=d}" Width="200"/>
+            </telerik:RadGridView.Columns>
+        </telerik:RadGridView>
+    </Grid>
+</UserControl>

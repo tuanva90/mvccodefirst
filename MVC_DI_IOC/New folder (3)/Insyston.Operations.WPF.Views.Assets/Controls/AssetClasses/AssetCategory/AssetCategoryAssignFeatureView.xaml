@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="Insyston.Operations.WPF.Views.Assets.Controls.AssetClasses.AssetCategory.AssetCategoryAssignFeatureView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:dragDrop="clr-namespace:Insyston.Operations.WPF.Views.Common.Controls.DragDrop;assembly=Insyston.Operations.WPF.Views.Common"
+             xmlns:dragDrop1="clr-namespace:Insyston.Operations.WPF.Views.Assets.Controls.DragDrop"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid Background="{Binding GridStyle}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Border Background="DarkGray" CornerRadius="4 4 0 0" DockPanel.Dock="Top" Grid.Row="0" >
+            <TextBlock Margin="4 5 5 5" Foreground="White" FontWeight="Bold" Text="Drag and Drop" />
+        </Border>
+
+        <Grid Grid.Row="1" Margin="0,3,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <DockPanel Grid.Column="0" Background="{Binding GridStyle}" IsEnabled="{Binding IsCheckedOut}">
+                <Border Background="DarkGray" CornerRadius="4 4 0 0" DockPanel.Dock="Top">
+                    <TextBlock Margin="4 5 5 5" Foreground="White" FontWeight="Bold" Text="Select One or More Features" />
+                </Border>
+                <dragDrop:ListDragDrop DataContext="{Binding ListAllFeaturesItems}"></dragDrop:ListDragDrop>
+            </DockPanel>
+
+            <DockPanel Grid.Column="1" Margin="50,0,0,0">
+                <ScrollViewer HorizontalScrollBarVisibility="Visible" BorderThickness="0">
+                    <Grid Background="{Binding GridStyle}" IsEnabled="{Binding IsCheckedOut}">
+                        <dragDrop:GroupDragDropView DataContext="{Binding ListItemsDragDrop}"></dragDrop:GroupDragDropView>
+                    </Grid>
+                </ScrollViewer>
+            </DockPanel>
+        </Grid>
+    </Grid>
+</UserControl>

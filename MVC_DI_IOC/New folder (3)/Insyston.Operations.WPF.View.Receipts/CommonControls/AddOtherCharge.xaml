@@ -1,0 +1,162 @@
+﻿<common:OperationsView x:Class="Insyston.Operations.WPF.View.Receipts.CommonControls.AddOtherCharge"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    mc:Ignorable="d" xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    xmlns:con="http://schemas.kent.boogaart.com/converters"    
+    xmlns:common="clr-namespace:Insyston.Operations.WPF.View.Common;assembly=Insyston.Operations.WPF.View.Common"
+    xmlns:viewModel="clr-namespace:Insyston.Operations.WPF.ViewModel.Common.Interfaces;assembly=Insyston.Operations.WPF.ViewModel.Common"
+    xmlns:prism="http://www.codeplex.com/prism"
+    xmlns:prismInteractivity="http://schemas.microsoft.com/expression/2010/interactivity"    
+    xmlns:controls="clr-namespace:Insyston.Operations.WPF.View.Common.Controls;assembly=Insyston.Operations.WPF.View.Common"                                          
+    Height="342" Width="575" Background="{DynamicResource WindowBackground}" MinHeight="265" Title="Add Other Charge" viewModel:OldViewModelBase.ValidateInput="true">
+                
+    <prismInteractivity:Interaction.Triggers>
+        <prism:InteractionRequestTrigger SourceObject="{Binding UIInformation, Mode=OneWay}">
+            <common:PopupModalWindowAction />
+        </prism:InteractionRequestTrigger>
+        <prism:InteractionRequestTrigger SourceObject="{Binding ConfirmationWindow, Mode=OneWay}">
+            <common:PopupModalWindowAction />
+        </prism:InteractionRequestTrigger>
+        <prism:InteractionRequestTrigger SourceObject="{Binding Popup}">
+            <common:PopupModalWindowAction />
+        </prism:InteractionRequestTrigger>
+        <prismInteractivity:EventTrigger EventName="Loaded">
+            <prismInteractivity:InvokeCommandAction Command="{Binding Loaded}" />
+        </prismInteractivity:EventTrigger>
+    </prismInteractivity:Interaction.Triggers>
+        
+    <telerik:RadBusyIndicator IsBusy="{Binding IsBusy}"  BusyContent="" BorderBrush="Transparent" DisplayAfter="00:00:00" Background="Transparent" >
+        <Grid Margin="10,5,10,0" VerticalAlignment="Stretch">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>                
+            </Grid.RowDefinitions>        
+            
+            <GroupBox Name="grpMain" Grid.Row="0" Grid.Column="0"  Header="Other Charge Details">
+                <Grid Margin="0,8,8,5" Name="GrdControls">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="110"></ColumnDefinition>
+                        <ColumnDefinition Width="90"></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                        <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="22"></RowDefinition>
+                        <RowDefinition Height="8"></RowDefinition>
+                        <RowDefinition Height="25"></RowDefinition>
+                        <RowDefinition Height="8"></RowDefinition>
+                        <RowDefinition Height="22"></RowDefinition>
+                        <RowDefinition Height="8"></RowDefinition>
+                        <RowDefinition Height="22"></RowDefinition>
+                        <RowDefinition Height="8"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <TextBlock Name="LblType" Text="Type:" VerticalAlignment="Top" Grid.Row="0" Grid.Column="0"  />
+                    <RadioButton Grid.Row="0" Grid.Column="1" Content="Disclosed" GroupName="DisclosedUnDisclosed" IsChecked="{Binding ContractOtherCharge.Disclosed}" />
+                    <RadioButton Grid.Row="0" Grid.Column="2" Content="Undisclosed" GroupName="DisclosedUnDisclosed" IsChecked="{Binding ContractOtherCharge.Disclosed, Converter={con:ExpressionConverter !{0}}}" />
+                    
+                    <TextBlock Name="LblDescription" Text="Description:" VerticalAlignment="Top" Grid.Row="2" Grid.Column="0"  />
+                    <telerik:RadComboBox Name="cboDescription" Grid.ColumnSpan="2" Grid.Row="2" Grid.Column="1" ItemsSource="{Binding OtherCharges}" DisplayMemberPath="Description" SelectedValuePath="ID" 
+                                         Validation.ErrorTemplate="{DynamicResource validationTemplate}"
+                                         SelectedValue="{Binding Path=OtherChargeID, Mode=TwoWay, NotifyOnValidationError=True, ValidatesOnDataErrors=True, ValidatesOnExceptions=True, UpdateSourceTrigger=LostFocus}">
+                    </telerik:RadComboBox>
+
+                    <TextBlock Name="LblComment" Text="Comment:" VerticalAlignment="Top" Grid.Row="4" Grid.Column="0"  />
+                    <TextBox Name="TxtComment" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" Text="{Binding ContractOtherCharge.Comment}"></TextBox>                    
+                    
+                    <TextBlock Name="LblGrossAmount" Text="Gross Amount:" VerticalAlignment="Top" Grid.Row="6" Grid.Column="0" />
+                    <controls:NumericTextBox AllowNegative="True"  IntegerDigits="9" DecimalDigits="2" x:Name="TxtGrossAmount" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" Width="120" HorizontalAlignment="Left" IsCurrency="True">
+                        <TextBox.Text>
+                            <Binding Path="ContractOtherCharge.Amount" Mode="TwoWay" ValidatesOnDataErrors="True" ValidatesOnExceptions="True" NotifyOnValidationError="True" UpdateSourceTrigger="LostFocus" StringFormat="{}{0:C}">
+                                <Binding.ValidationRules>
+                                    <common:ValidateDouble>
+                                        <common:ValidateDouble.ValidationRuleParams>
+                                            <common:ValidationRuleParams BoundTo="GrossAmount" />
+                                        </common:ValidateDouble.ValidationRuleParams>
+                                    </common:ValidateDouble>
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </TextBox.Text>
+                    </controls:NumericTextBox>                                        
+                </Grid>
+            </GroupBox>
+
+            <GroupBox Grid.Column="0" Grid.Row="1" Header="Start" Margin="0,3,0,8" BorderBrush="{DynamicResource GroupBoxBorderBrush}" VerticalAlignment="Stretch">
+                <GroupBox.Resources>
+                    <Style TargetType="GroupBox" />
+                </GroupBox.Resources>
+                <Grid Margin="5,5,5,0" VerticalAlignment="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="110"></ColumnDefinition>
+                        <ColumnDefinition Width="80"></ColumnDefinition>
+                        <ColumnDefinition Width="10"></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                        <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="8"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <RadioButton Name="rdoPaymentNo" Grid.Row="0" Grid.Column="0" Content="Payment No" VerticalAlignment="Center" IsChecked="{Binding ContractOtherCharge.IsPaymentNoApplied}" />
+                    <controls:NumericTextBox x:Name="TxtPaymentNo" IsEnabled="{Binding ContractOtherCharge.IsPaymentNoApplied}" IntegerDigits="6" DecimalDigits="0" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch" TextAlignment="Right">
+                        <TextBox.Text>
+                            <Binding Path="PaymentNo" Mode="TwoWay" ValidatesOnDataErrors="True" ValidatesOnExceptions="True" NotifyOnValidationError="True" UpdateSourceTrigger="LostFocus">
+                                <Binding.ValidationRules>
+                                    <common:ValidateDouble>
+                                        <common:ValidateDouble.ValidationRuleParams>
+                                            <common:ValidationRuleParams BoundTo="Payment No." />
+                                        </common:ValidateDouble.ValidationRuleParams>
+                                    </common:ValidateDouble>
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </TextBox.Text>
+                    </controls:NumericTextBox>
+
+                    <Grid Grid.Row="0" Grid.Column="3">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="40"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="60"></ColumnDefinition>
+                            <ColumnDefinition Width="100"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <TextBlock Grid.Row="0" Grid.Column="0" Padding="0,0,0,0" VerticalAlignment="Center">
+                                <Hyperlink Command="{Binding NextPayment}" IsEnabled="{Binding ContractOtherCharge.IsPaymentNoApplied}">Next</Hyperlink>
+                        </TextBlock>
+                        <RadioButton Grid.Row="0" Grid.Column="2" Content="Other" VerticalAlignment="Center" Name="rdoOther" IsChecked="{Binding ContractOtherCharge.IsOtherSelected}" />
+                        <telerik:RadDatePicker Name="dtDueDate" Grid.Row="0" Grid.Column="3" HorizontalAlignment="Stretch" IsEnabled="{Binding ContractOtherCharge.IsOtherSelected}">
+                            <telerik:RadDatePicker.SelectedValue>
+                                <Binding Path="ContractOtherCharge.StartDate" Mode="TwoWay" ValidatesOnDataErrors="True" ValidatesOnExceptions="True" NotifyOnValidationError="True" UpdateSourceTrigger="PropertyChanged">
+                                    <Binding.ValidationRules>
+                                        <common:ValidateDate>
+                                            <common:ValidateDate.ValidationRuleParams>
+                                                <common:ValidationRuleParams BoundTo="Start Date" />
+                                            </common:ValidateDate.ValidationRuleParams>
+                                        </common:ValidateDate>
+                                    </Binding.ValidationRules>
+                                </Binding>
+                            </telerik:RadDatePicker.SelectedValue>
+                        </telerik:RadDatePicker>
+                    </Grid>
+                </Grid>
+            </GroupBox>
+
+            <telerik:RadListBox Grid.Row="2" Grid.Column="0" Name="ValidationErrors" ItemsSource="{Binding ErrorMessages}" Foreground="Red" Height="43" 
+                                    BorderThickness="0" Background="Transparent" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto" Margin="0,-5,0,0"/>
+            
+            <telerik:RadDockPanel Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right" Height="25" Margin="0,3,0,0">                
+                <telerik:RadButton Content="_OK" Name="btnOk" Width="80" Margin="8,0,0,0" Command="{Binding Save}" />
+                <telerik:RadButton Content="_Cancel" Name="btnCancel" Width="80" Margin="8,0,0,0" Command="{Binding CloseCommand}" />
+            </telerik:RadDockPanel>
+        </Grid>
+    </telerik:RadBusyIndicator>
+</common:OperationsView>

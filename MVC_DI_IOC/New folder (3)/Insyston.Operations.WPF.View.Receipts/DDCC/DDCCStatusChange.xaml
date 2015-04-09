@@ -1,0 +1,110 @@
+﻿<common:OperationsView x:Class="Insyston.Operations.WPF.View.Receipts.DDCC.DDCCStatusChange"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:con="http://schemas.kent.boogaart.com/converters"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             mc:Ignorable="d" 
+             xmlns:common="clr-namespace:Insyston.Operations.WPF.View.Common;assembly=Insyston.Operations.WPF.View.Common"
+             xmlns:viewModel="clr-namespace:Insyston.Operations.WPF.ViewModel.Common.Interfaces;assembly=Insyston.Operations.WPF.ViewModel.Common"
+             xmlns:prism="http://www.codeplex.com/prism"
+             xmlns:prismInteractivity="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:commands="clr-namespace:Insyston.Operations.WPF.View.Common.Commands;assembly=Insyston.Operations.WPF.View.Common"
+             Width="1120" Height="650" Background="{DynamicResource WindowBackground}" viewModel:OldViewModelBase.ValidateInput="true">
+    
+    <prismInteractivity:Interaction.Triggers>
+        <prism:InteractionRequestTrigger SourceObject="{Binding UIInformation, Mode=OneWay}">
+            <common:PopupModalWindowAction />
+        </prism:InteractionRequestTrigger>
+    </prismInteractivity:Interaction.Triggers>
+    
+    <telerik:RadBusyIndicator IsBusy="{Binding IsBusy}"  BusyContent="" BorderBrush="Transparent" DisplayAfter="00:00:00" Background="Transparent" >
+        <DockPanel VerticalAlignment="Stretch">
+            <GroupBox Header="Batch Lodgement Parameters" Margin="5,5,5,5" DockPanel.Dock="Top">
+                <Grid Margin="-2,0,8,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="120"></ColumnDefinition>
+                        <ColumnDefinition Width="140"></ColumnDefinition>
+                        <ColumnDefinition Width="80"></ColumnDefinition>
+                        <ColumnDefinition Width="100"></ColumnDefinition>
+                        <ColumnDefinition Width="110"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="30"></ColumnDefinition>                        
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="7"></RowDefinition>
+                        <RowDefinition Height="22"></RowDefinition>
+                        <RowDefinition Height="7"></RowDefinition>
+                        <RowDefinition Height="22"></RowDefinition>
+                        <RowDefinition Height="7"></RowDefinition>
+                        <RowDefinition Height="25"></RowDefinition>
+                        <RowDefinition Height="7"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <telerik:Label Name="LblLodgetDate" Content="Lodge Date:" VerticalAlignment="Top" Grid.Row="1" Grid.Column="0"  />
+                    <telerik:RadDatePicker Name="dtLodgeDate" Grid.Row="1" Grid.Column="1" Width="120" HorizontalAlignment="Left">
+                        <telerik:RadDatePicker.SelectedValue>
+                            <Binding Path="LodgeDate" Mode="TwoWay" ValidatesOnDataErrors="True" ValidatesOnExceptions="True" NotifyOnValidationError="True" UpdateSourceTrigger="LostFocus">
+                                <Binding.ValidationRules>
+                                    <common:ValidateDate>
+                                        <common:ValidateDate.ValidationRuleParams>
+                                            <common:ValidationRuleParams BoundTo="Lodge Date" />
+                                        </common:ValidateDate.ValidationRuleParams>
+                                    </common:ValidateDate>
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </telerik:RadDatePicker.SelectedValue>
+                    </telerik:RadDatePicker>
+
+                    <telerik:Label Name="LblFileLocation" Content="File Location:" VerticalAlignment="Top" Grid.Row="1" Grid.Column="4"  />
+                    <TextBox Grid.Row="1" Grid.Column="5" Text="{Binding FileLocation, Mode=TwoWay, ValidatesOnDataErrors=True, ValidatesOnExceptions=True, UpdateSourceTrigger=LostFocus}"></TextBox>
+                    <telerik:RadButton Name="btnSelectFileLocation" Grid.Row="1" Grid.Column="6" Margin="5,0,0,0" Command="{Binding Browse}" CommandParameter="File"  CornerRadius="0">
+                        <commands:OpenFile HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+                    </telerik:RadButton>
+                    
+                    <telerik:Label Name="LblFilter" Content="Filter:" VerticalAlignment="Top" Grid.Row="3" Grid.Column="0"  />
+                    <RadioButton Grid.Row="3" Grid.Column="1" Content="Internal Company" IsChecked="{Binding IsInternalCompanySelected, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" />
+                    <RadioButton Grid.Row="3" Grid.Column="2" Content="Bank" VerticalAlignment="Center" IsChecked="{Binding IsBankSelected}" />
+
+                    <telerik:Label Name="LblArchiveLocation" Content="Archive Location:" VerticalAlignment="Top" Grid.Row="3" Grid.Column="4"  />
+                    <TextBox Grid.Row="3" Grid.Column="5" Text="{Binding ArchiveLocation, Mode=TwoWay, ValidatesOnDataErrors=True, ValidatesOnExceptions=True, UpdateSourceTrigger=LostFocus}"></TextBox>
+                    <telerik:RadButton Name="btnSelectArchiveLocation" Grid.Row="3" Grid.Column="6" Margin="5,0,0,0" Command="{Binding Browse}" CommandParameter="" CornerRadius="0">
+                        <commands:OpenFile HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+                    </telerik:RadButton>
+                    
+                    <telerik:Label Name="LblFilterBy" Content="Internal Company:" VerticalAlignment="Top" Grid.Row="5" Grid.Column="0"  />
+                    <telerik:RadComboBox Name="cboFilter" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" ItemsSource="{Binding InternalCompanyBankList}" DisplayMemberPath="Description" SelectedValuePath="ID" Validation.ErrorTemplate="{DynamicResource validationTemplate}"
+                        SelectedValue="{Binding ID}">
+                    </telerik:RadComboBox>
+                    
+                    <WrapPanel HorizontalAlignment="Right" Grid.Row="5" Grid.Column="5" Grid.ColumnSpan="2">
+                        <telerik:RadButton Content="_Refresh" Name="btnRefresh" Width="80" Command="{Binding Refresh}" HorizontalAlignment="Left" />
+                        <telerik:RadButton Content="_Lodge" Name="btnLodge" Width="80" Margin="8,0,0,0" Command="{Binding Lodge}" IsEnabled="{Binding IsLodgeEnabled}" HorizontalAlignment="Left" />
+                        <telerik:RadButton Content="_Cancel" Name="btnCancel" Width="80" Margin="8,0,0,0" Command="{Binding CloseCommand}" HorizontalAlignment="Left" />
+                    </WrapPanel>
+                </Grid>
+            </GroupBox>
+            <telerik:RadGridView Name="GrdBatchSummary" VerticalAlignment="Stretch" BorderThickness="1" GridLinesVisibility="Both" ShowGroupPanel="False" Margin="5,5,5,48"
+                                        CanUserDeleteRows="True" SelectionMode="Multiple"  AutoGenerateColumns="False" RowIndicatorVisibility="Collapsed" CanUserInsertRows="False"
+                                        ItemsSource="{Binding ReceiptBatches}" FilteringMode="Popup" MinHeight="100" DockPanel.Dock="Top">
+                <prismInteractivity:Interaction.Triggers>
+                    <prismInteractivity:EventTrigger EventName="SelectionChanged">
+                        <prismInteractivity:InvokeCommandAction Command="{Binding ReceiptBatchSelected}" CommandParameter="{Binding SelectedItems, ElementName=GrdBatchSummary}" />
+                    </prismInteractivity:EventTrigger>
+                </prismInteractivity:Interaction.Triggers>
+                <telerik:RadGridView.Columns>
+                    <telerik:GridViewSelectColumn />
+                    <telerik:GridViewDataColumn IsReadOnly="True" Width="80" Header="Batch No." DataMemberBinding="{Binding BatchID}"></telerik:GridViewDataColumn>
+                    <telerik:GridViewDataColumn IsReadOnly="True" Width="77" Header="Date" DataMemberBinding="{Binding ReceiptDate}" DataFormatString=" {0:dd/MM/yyyy}"></telerik:GridViewDataColumn>
+                    <telerik:GridViewDataColumn IsReadOnly="True" Width="*" Header="Internal Company" TextAlignment="Left" DataMemberBinding="{Binding InternalCompany}" />
+                    <telerik:GridViewDataColumn IsReadOnly="True" Width="*" Header="Bank" TextAlignment="Left" DataMemberBinding="{Binding Bank}" />
+                    <telerik:GridViewDataColumn IsReadOnly="True" Width="*" Header="{Binding RemitterColumnCaption}" TextAlignment="Left" DataMemberBinding="{Binding BatchDescription}" />
+                    <telerik:GridViewDataColumn IsReadOnly="True" Width="182" Header="Date Range" DataMemberBinding="{Binding DateRangeFilter}"></telerik:GridViewDataColumn>
+                    <telerik:GridViewDataColumn IsReadOnly="True" Width="85" Header="No. Entries" TextAlignment="Left" DataMemberBinding="{Binding NumberOfEntries}" />
+                    <telerik:GridViewDataColumn IsReadOnly="True" Width="110" Header="Batch Total" TextAlignment="Right" DataMemberBinding="{Binding GrossBatchTotal}" DataFormatString=" {0:c} " />                    
+                </telerik:RadGridView.Columns>
+            </telerik:RadGridView>
+        </DockPanel>
+    </telerik:RadBusyIndicator>    
+</common:OperationsView>

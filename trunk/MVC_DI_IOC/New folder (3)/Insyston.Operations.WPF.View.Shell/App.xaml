@@ -1,0 +1,61 @@
+﻿
+<Application x:Class="Insyston.Operations.WPF.Views.Shell.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:commonConverters="clr-namespace:Insyston.Operations.WPF.Views.Common.Helpers.Converters;assembly=Insyston.Operations.WPF.Views.Common"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             StartupUri="LoginWindow.xaml"
+              xmlns:caliburn="http://www.caliburnproject.org"
+             xmlns:local="clr-namespace:Insyston.Operations.WPF.Views.Shell.Helpers.Caliburn"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             mc:Ignorable="d">
+    <Application.Resources>
+        <ResourceDictionary>
+            
+
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/Insyston.Operations.WPF.Views.Common;component/Themes/Windows8/System.Windows.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Insyston.Operations.WPF.Views.Common;component/Themes/Windows8/Telerik.Windows.Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Insyston.Operations.WPF.Views.Common;component/Themes/Windows8/Telerik.Windows.Controls.Navigation.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Insyston.Operations.WPF.Views.Common;component/Themes/Windows8/Telerik.Windows.Controls.Input.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Insyston.Operations.WPF.Views.Common;component/Themes/Windows8/PanelBarItemStyleResources.xaml" />
+                <!--  <ResourceDictionary Source="pack://application:,,,/Insyston.Operations.WPF.Views.Common;component/Themes/Windows8/Telerik.Windows.Controls.RibbonView.xaml" />  -->
+                <ResourceDictionary Source="pack://application:,,,/Insyston.Operations.WPF.Views.Common;component/Styles/ControlStyles.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Insyston.Operations.WPF.Views.Common;component/Styles/CommonStyles.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Insyston.Operations.WPF.Views.Common;component/Templates/DynamicRadGridViewTemplate.xaml" />
+                <ResourceDictionary>
+                    <local:AppBootstrapper x:Key="bootstrapper" />
+                    
+                </ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+            <local:CaliburnContentLoader x:Key="CaliburnContentLoader" />
+            
+            <commonConverters:BooleanToVisibilityValueConverter x:Key="BooleanToVisibilityValueConverter" />
+            <commonConverters:InvertBooleanToVisibilityValueConverter x:Key="InvertBooleanToVisibilityValueConverter" />
+            <!--<DataTemplate x:Key="ColumnSelectedHoverTemplate">
+                <StackPanel Orientation="Horizontal">
+                    <CheckBox Name ="chkTemplateSelectedRow" 
+                              caliburn:Bind.Model="{Binding  RelativeSource={ RelativeSource FindAncestor, AncestorType=telerik:RadGridView}, Path=DataContext, Mode=TwoWay}"
+                              caliburn:Message.Attach="[Event Checked] = [Action IsCheckedItemChanged($executionContext)];;[Event Unchecked] = [Action UnCheckedItemChanged($executionContext)]" 
+                              ></CheckBox>
+                    <TextBlock Margin="5,0,0,0" Text="{Binding  RelativeSource={ RelativeSource FindAncestor, AncestorType=telerik:GridViewCell}, Path=Value, Mode=TwoWay}"></TextBlock>
+                </StackPanel>
+
+            </DataTemplate>
+            <DataTemplate x:Key="ColumnCheckedTemplate">
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    
+                    <Image Visibility="{Binding  RelativeSource={ RelativeSource FindAncestor, AncestorType=telerik:GridViewCell}, Path=Value , Converter={StaticResource BooleanToVisibilityValueConverter}}" 
+                        
+                           Source="pack://application:,,,/Insyston.Operations.WPF.Views.Common;component\Images\check2.png">
+                    </Image>
+                    <Image Visibility="{Binding  RelativeSource={ RelativeSource FindAncestor, AncestorType=telerik:GridViewCell}, Path=Value , Converter={StaticResource InvertBooleanToVisibilityValueConverter}}" 
+                           Source="pack://application:,,,/Insyston.Operations.WPF.Views.Common;component\Images\uncheck.png">
+                    </Image>
+                </StackPanel>
+
+            </DataTemplate>-->
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

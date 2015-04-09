@@ -1,0 +1,409 @@
+﻿<UserControl x:Class="Insyston.Operations.WPF.Views.RegisteredAsset.RegisteredAssetDetail.RegisteredAssetDetailView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:controls="clr-namespace:Insyston.Operations.WPF.Views.Common.Controls;assembly=Insyston.Operations.WPF.Views.Common"
+             xmlns:cal="http://www.caliburnproject.org"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid Background="{Binding GridStyle}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0"
+              Margin="10 5 0 0">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="10"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="10"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="60"></ColumnDefinition>
+                <ColumnDefinition Width="50"></ColumnDefinition>
+                <ColumnDefinition Width="80"></ColumnDefinition>
+                <ColumnDefinition Width="90"></ColumnDefinition>
+                <ColumnDefinition Width="80"></ColumnDefinition>
+                <ColumnDefinition Width="120"></ColumnDefinition>
+                <ColumnDefinition Width="90"></ColumnDefinition>
+                <ColumnDefinition Width="210"></ColumnDefinition>
+                <ColumnDefinition Width="110"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="Asset ID:"
+                       Grid.Row="0"
+                       Grid.Column="0" FontWeight="Bold" />
+            <TextBlock Text="{Binding RegisterAssetId, Mode=TwoWay}"
+                       Grid.Row="0"
+                       Grid.Column="1"
+                       FontWeight="Bold"></TextBlock>
+            <TextBlock Text="Asset State:"
+                       Grid.Row="0"
+                       Grid.Column="2"
+                       Margin="5 0 0 0"
+                       FontWeight="Bold"></TextBlock>
+            <TextBlock Text="{Binding AssetState, Mode=TwoWay}"
+                       Grid.Row="0"
+                       Grid.Column="3"
+                       FontWeight="Bold"></TextBlock>
+            <TextBlock Text="Asset Status:"
+                       Grid.Row="0"
+                       Grid.Column="4"
+                       Margin="5 0 0 0"
+                       FontWeight="Bold"></TextBlock>
+            <TextBlock Text="{Binding AssetStatus, Mode=TwoWay}"
+                       Grid.Row="0"
+                       Grid.Column="5"
+                       FontWeight="Bold"></TextBlock>
+            <TextBlock Text="Asset Register"
+                       Grid.Row="0"
+                       Grid.Column="6"
+                       Margin="5 0 0 0"
+                       FontWeight="Bold"></TextBlock>
+            <TextBlock Text="Effective Date" Grid.Row="2" Grid.Column="6" Margin="5 0 0 0"
+                       FontWeight="Bold">
+                <TextBlock.Style>
+                    <Style TargetType="TextBlock">
+                    <Style.Triggers>
+                            <DataTrigger Binding="{Binding IsEffectiveDateEnable}" Value="True">
+                            <Setter Property="Visibility" Value="Visible"></Setter>
+                        </DataTrigger>
+                            <DataTrigger Binding="{Binding IsEffectiveDateEnable}" Value="False">
+                                <Setter Property="Visibility" Value="Collapsed"></Setter>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+                
+            </TextBlock>
+            <telerik:RadDatePicker Grid.Row="2"
+                                                   Grid.Column="7"
+                                                   Margin="5 0 0 0"
+                                                   Height="30"
+                                                   InputMode="DatePicker"
+                                   SelectedValue="{Binding AssetEffectiveDate, Mode=TwoWay}"
+                                                   IsEnabled="{Binding IsCheckedOut}">
+                <telerik:RadDatePicker.Style>
+                    <Style TargetType="telerik:RadDatePicker">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding IsEffectiveDateEnable}" Value="True">
+                                <Setter Property="Visibility" Value="Visible"></Setter>
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding IsEffectiveDateEnable}" Value="False">
+                                <Setter Property="Visibility" Value="Collapsed"></Setter>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </telerik:RadDatePicker.Style>
+            </telerik:RadDatePicker>
+            <Grid Grid.Row="0"
+                  Grid.Column="7" IsEnabled="{Binding IsCheckedOut}">
+            <telerik:RadComboBox Name="CboAssetRegister" Width="200"
+                                 
+                                 Margin="5 0 0 0"
+                                 ItemsSource="{Binding ListAssetRegisters, Mode=TwoWay}"
+                                 DisplayMemberPath="RegisterName"
+                                 SelectedItem="{Binding SelectRegisterDefault, Mode=TwoWay}"
+                                 IsEnabled="{Binding IsAssetRegisterEnable}">
+                <telerik:RadComboBox.Resources>
+                    <Style TargetType="TextBox">
+                        <Setter Property="MaxLength"
+                                Value="50" />
+                    </Style>
+                </telerik:RadComboBox.Resources>
+            </telerik:RadComboBox>
+                </Grid>
+            <TextBlock Text="{Binding ReportCompanyName}"
+                       Grid.Row="0"
+                       Grid.Column="8"
+                       Margin="10 0 0 0"
+                       FontWeight="Bold"></TextBlock>
+            <Grid Grid.Row="0"
+                  Grid.Column="9"
+                  IsEnabled="{Binding IsCheckedOut}">
+                <Grid IsEnabled="{Binding IsReportingCompanyEnable, Mode=TwoWay}">
+                    <controls:DynamicCheckComboBox Margin="5 0 10 0"
+                                                   Width="200"
+                                                   DataContext="{Binding DynamicComboBoxReportCompany, Mode=TwoWay}"></controls:DynamicCheckComboBox>
+                </Grid>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="1" >
+            <telerik:RadPanelBar Margin="10,0,0,5"
+                                 HorizontalAlignment="Stretch"
+                                 VerticalAlignment="Stretch"
+                                 ExpandMode="Multiple"
+                                 BorderBrush="Transparent">
+                
+                <telerik:RadPanelBarItem IsExpanded="True"
+                                         BorderThickness="0">
+                    <telerik:RadPanelBarItem.Header>
+                        <TextBlock FontWeight="Bold"
+                                   Margin="5 0 0 0 "
+                                   Text="Detail">
+                        </TextBlock>
+                    </telerik:RadPanelBarItem.Header>
+                    <StackPanel IsEnabled="{Binding IsCheckedOut, Mode=TwoWay}">
+                        <Grid Margin="20 0 0 0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="150" />
+                                <ColumnDefinition Width="200" />
+                                <ColumnDefinition Width="150" />
+                                <ColumnDefinition Width="200" />
+                                <ColumnDefinition Width="150" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="30" />
+                                <RowDefinition Height="30" />
+                                <RowDefinition Height="30" />
+                                <RowDefinition Height="30" />
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Row="0"
+                                       Grid.Column="0"
+                                       Text="Acquisition Date"
+                                       HorizontalAlignment="Left"
+                                       Margin="30 0 0 0" />
+
+                            <telerik:RadDatePicker Grid.Row="0"
+                                                   Grid.Column="1"
+                                                   Margin="5 0 0 0"
+                                                   Height="28"
+                                                   InputMode="DatePicker"
+                                                   SelectedValue="{Binding AssetAcquisitionDate, Mode=TwoWay}"
+                                                   IsEnabled="{Binding IsAcquisitionDateEnable}"></telerik:RadDatePicker>
+                            <TextBlock Grid.Row="0"
+                                       Grid.Column="2"
+                                       Text="Supplier"
+                                       HorizontalAlignment="Left"
+                                       Margin="30 0 0 0" />
+                            <telerik:RadComboBox Name="CboSupplier"
+                                                 Grid.Column="3"
+                                                 Grid.Row="0"
+                                                 Margin="5 0 0 0"
+                                                 ItemsSource="{Binding ListAssetSupplier, Mode=TwoWay}"
+                                                 DisplayMemberPath="NodeName"
+                                                 SelectedItem="{Binding SelectSupplierDefault, Mode=TwoWay}"
+                                                 IsEnabled="{Binding IsControlEnable}">
+                                <telerik:RadComboBox.Resources>
+                                    <Style TargetType="TextBox">
+                                        <Setter Property="MaxLength"
+                                                Value="50" />
+                                    </Style>
+                                </telerik:RadComboBox.Resources>
+                            </telerik:RadComboBox>
+                            <TextBlock Grid.Row="0"
+                                       Grid.Column="4"
+                                       Text="Sub Status"
+                                       HorizontalAlignment="Left"
+                                       Margin="30 0 0 0" />
+                            <telerik:RadComboBox Name="CboSubStatus"
+                                                 Grid.Column="5"
+                                                 Width="180"
+                                                 Grid.Row="0"
+                                                 Margin="5 0 0 0"
+                                                 HorizontalAlignment="Left"
+                                                 ItemsSource="{Binding ListAssetSubStatus, Mode=TwoWay}"
+                                                 DisplayMemberPath="DisplayName"
+                                                 SelectedItem="{Binding SelectSubDefault, Mode=TwoWay}"
+                                                 IsEnabled="{Binding IsControlEnable}">
+                                <telerik:RadComboBox.Resources>
+                                    <Style TargetType="TextBox">
+                                        <Setter Property="MaxLength"
+                                                Value="50" />
+                                    </Style>
+                                </telerik:RadComboBox.Resources>
+                            </telerik:RadComboBox>
+                            <TextBlock Grid.Row="1"
+                                       Grid.Column="0"
+                                       HorizontalAlignment="Left"
+                                       Margin="30 0 0 0"
+                                       Text="Net Asset Cost:"></TextBlock>
+                            <telerik:RadNumericUpDown Grid.Row="1"
+                                     Grid.Column="1"
+                                     Margin="5 3 0 0"
+                                     Value="{Binding NetAssetCost, Mode=TwoWay, ValidatesOnNotifyDataErrors=True}"
+                                     ValueFormat="Currency" NumberDecimalDigits="2"
+                                     ShowButtons="False"
+                                     IsEnabled="{Binding IsNetAssetCostEnable}" />
+                            <TextBlock Grid.Row="1"
+                                       Grid.Column="2"
+                                       Margin="30 0 0 0"
+                                       HorizontalAlignment="Left"
+                                       Text="P.O. Number"></TextBlock>
+                            <TextBox Grid.Row="1"
+                                     Grid.Column="3"
+                                     Margin="5 0 0 0"
+                                     Text="{Binding AssetPoNumber, Mode=TwoWay}"
+                                     IsEnabled="{Binding IsControlEnable}" />
+                            <TextBlock Grid.Row="1"
+                                       Grid.Column="4"
+                                       Text="Location"
+                                       HorizontalAlignment="Left"
+                                       Margin="30 0 0 0" />
+                                <Grid Grid.Column="5"
+                                  Grid.Row="1"
+                                  IsEnabled="{Binding IsLocationEnable, Mode=TwoWay}">
+                                    <!--<controls:DynamicCheckComboBox Margin="5 0 0 0"
+                                                               Width="200"
+                                                               DataContext="{Binding DynamicComboBoxLocation, Mode=TwoWay, ValidatesOnDataErrors=True}"
+                                                               IsEnabled="{Binding IsCheckedOut, Mode=TwoWay}"></controls:DynamicCheckComboBox>-->
+                                <telerik:RadComboBox Name="CboLocation"
+                                                     Width="180"
+                                                     Margin="5 0 0 0"
+                                                     HorizontalAlignment="Left"
+                                                     ItemsSource="{Binding ListLocations, Mode=TwoWay}"
+                                                     DisplayMemberPath="LocationName"
+                                                     SelectedItem="{Binding SelectLocationDefault, Mode=TwoWay}"
+                                                     IsEnabled="{Binding IsControlEnable}">
+                                    <telerik:RadComboBox.Resources>
+                                        <Style TargetType="TextBox">
+                                            <Setter Property="MaxLength"
+                                                    Value="50" />
+                                        </Style>
+                                    </telerik:RadComboBox.Resources>
+                                </telerik:RadComboBox>
+                            </Grid>
+                                <TextBlock Grid.Row="2"
+                                       Grid.Column="0"
+                                       Margin="30 0 0 0"
+                                       HorizontalAlignment="Left"
+                                       Text="Asset GST"></TextBlock>
+                            <telerik:RadNumericUpDown Grid.Row="2"
+                                     Grid.Column="1"
+                                     Margin="5 3 0 0"
+                                     Value="{Binding AssetGst, Mode=TwoWay}"
+                                     ValueFormat="Currency" NumberDecimalDigits="2"
+                                     ShowButtons="False"
+                                     IsEnabled="{Binding IsAssetGSTEnable}" />
+                            <TextBlock Grid.Row="3"
+                                       Grid.Column="0"
+                                       Margin="30 0 0 0"
+                                       HorizontalAlignment="Right"
+                                       Text="Total Asset Cost"></TextBlock>
+                            <TextBlock Grid.Row="3"
+                                       Grid.Column="1"
+                                       Margin="5 0 5 0"
+                                       HorizontalAlignment="Right"
+                                       Text="{Binding TotalAssetCost, Mode=TwoWay, StringFormat=C}" />
+                        </Grid>
+                    </StackPanel>
+                </telerik:RadPanelBarItem>
+                <telerik:RadPanelBarItem IsExpanded="True"
+                                         BorderThickness="0">
+                    <telerik:RadPanelBarItem.Header>
+                        <TextBlock FontWeight="Bold"
+                                   Margin="5 0 0 0 "
+                                   Text="Description">
+                        </TextBlock>
+                    </telerik:RadPanelBarItem.Header>
+                    <StackPanel x:Name="Description"
+                                Margin="0,10,0,0"
+                                VerticalAlignment="Stretch"
+                                HorizontalAlignment="Stretch" IsEnabled="{Binding IsCheckedOut, Mode=TwoWay}">
+                        <Grid Margin="50 0 0 0"
+                              HorizontalAlignment="Stretch"
+                              VerticalAlignment="Stretch">
+                            
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100"></ColumnDefinition>
+                                <ColumnDefinition Width="580"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="30"></RowDefinition>
+                                    <RowDefinition Height="30"></RowDefinition>
+                                    <RowDefinition Height="100"></RowDefinition>
+                                    <RowDefinition Height="30"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <TextBlock Text="Description"
+                                       Grid.Row="0"
+                                       Grid.Column="0"
+                                       HorizontalAlignment="Left"></TextBlock>
+                                <TextBlock Text="Serial Num"
+                                       Grid.Row="1"
+                                       Grid.Column="0"
+                                       HorizontalAlignment="Left"></TextBlock>
+                                <TextBlock Text="Annexure"
+                                       Grid.Row="2"
+                                       Grid.Column="0"
+                                       VerticalAlignment="Top"
+                                       HorizontalAlignment="Left"></TextBlock>
+                                <TextBlock Text="Contract Num"
+                                       Grid.Row="3"
+                                       Grid.Column="0"
+                                       HorizontalAlignment="Left"></TextBlock>
+                            </Grid>
+                            
+                            <Grid Grid.Column="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="30"></RowDefinition>
+                                    <RowDefinition Height="30"></RowDefinition>
+                                    <RowDefinition Height="100"></RowDefinition>
+                                    <RowDefinition Height="30"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <TextBox Grid.Row="0"
+                                     HorizontalAlignment="Left"
+                                     Width="575"
+                                     IsEnabled="{Binding IsControlEnable}"
+                                     Text="{Binding AssetDescription}"></TextBox>
+
+                                <TextBox Grid.Row="1"
+                                     HorizontalAlignment="Left"
+                                     Width="150"
+                                     IsEnabled="{Binding IsControlEnable}"
+                                     Text="{Binding AssetSerialNum}"></TextBox>
+
+                                <TextBox Text="{Binding AssetAnnexure}"
+                                     Grid.Row="2"
+                                     Width="575"
+                                     MinLines="5"
+                                     TextWrapping="Wrap"
+                                     AcceptsReturn="True"
+                                     VerticalScrollBarVisibility="Auto"
+                                     HorizontalAlignment="Left"
+                                     IsEnabled="{Binding IsControlEnable}"></TextBox>
+                                <TextBlock Text="{Binding AssetContractNum}"
+                                       Grid.Row="3"
+                                       HorizontalAlignment="Left"></TextBlock>
+                            </Grid>
+
+                            <Grid Grid.Column="2"  IsEnabled="{Binding IsControlEnable}" Height="200" HorizontalAlignment="Left" Margin="15 0 0 0">
+                                <controls:EquipSearch DataContext="{Binding SearchToolViewModel, Mode=TwoWay}" HorizontalAlignment="Left"></controls:EquipSearch>
+                            </Grid>
+                        </Grid>
+                    </StackPanel>
+                </telerik:RadPanelBarItem>
+                <telerik:RadPanelBarItem IsExpanded="True"
+                                         BorderThickness="0">
+                    <telerik:RadPanelBarItem.Header>
+                        <TextBlock FontWeight="Bold"
+                                   Margin="5 0 0 0 "
+                                   Text="Features">
+                        </TextBlock>
+                    </telerik:RadPanelBarItem.Header>
+                    <StackPanel x:Name="Features"
+                                Margin="0,10,0,0"
+                                VerticalAlignment="Stretch"
+                                IsEnabled="{Binding IsCheckedOut, Mode=TwoWay}">
+                        <Grid Margin="150 0 0 0"
+                              HorizontalAlignment="Left"
+                              VerticalAlignment="Stretch"
+                              IsEnabled="{Binding IsControlEnable}">
+                            <controls:DynamicHoverGridView Grid.Column="0"
+                                                           x:Name="DynamicFeatureGrid"
+                                                           MaxWidth="{Binding MaxWidthGrid, Mode=TwoWay}"
+                                                           cal:Bind.Model="{Binding DynamicRegisteredAssetFeatureViewModel, Mode=TwoWay}"
+                                                           IsEnableHoverRow="{Binding IsEnableHoverRow, Mode=TwoWay}"
+                                                          ></controls:DynamicHoverGridView>
+                        </Grid>
+                    </StackPanel>
+                </telerik:RadPanelBarItem>
+            </telerik:RadPanelBar>
+        </Grid>
+    </Grid>
+</UserControl>

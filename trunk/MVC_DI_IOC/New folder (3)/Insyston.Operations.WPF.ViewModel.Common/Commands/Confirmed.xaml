@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="Insyston.Operations.WPF.ViewModels.Common.Commands.Confirmed"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.ToolTip>
+        <TextBlock Style="{StaticResource TooltipStyle}" Text="Change the status to Confirmed"/>
+    </UserControl.ToolTip>
+    <Grid  Width="Auto" Height="16" >
+        <Grid Name="backgroundGrid"
+              Visibility="Collapsed" />
+        <TextBlock Style="{StaticResource ActionCommandStyle}">CONFIRMED</TextBlock>
+        <!--<Grid>
+            <Rectangle/>
+            <Ellipse Visibility="Collapsed" />
+            <Path Data="M50.5,4.7500001C25.232973,4.75 4.75,25.232973 4.7500001,50.5 4.75,75.767029 25.232973,96.25 50.5,96.25 75.767029,96.25 96.25,75.767029 96.25,50.5 96.25,25.232973 75.767029,4.75 50.5,4.7500001z M50.5,0C78.390381,0 101,22.609621 101,50.5 101,78.390381 78.390381,101 50.5,101 22.609621,101 0,78.390381 0,50.5 0,22.609621 22.609621,0 50.5,0z" Stretch="Fill" Fill="#FF000000" Visibility="Collapsed" />
+        </Grid>
+        <Path Data="M12.5942,3.6750007C9.3807001,3.675 6.776,6.2791693 6.776,9.4928901 6.776,12.706451 9.3807001,15.312 12.5942,15.312 15.8078,15.312 18.412001,12.706451 18.412001,9.4928901 18.412001,6.2791693 15.8078,3.675 12.5942,3.6750007z M21.914021,3.0610002L40.498577,3.0610002 58.373001,20.551948 58.373001,62.163001 11.215,62.163001 11.215,28.106197 13.6821,22.393846 15.808081,27.316419 15.808081,57.569263 53.779819,57.569263 53.779819,22.507001 38.622,22.507001 38.622,7.6547897 23.772297,7.6547897 23.693031,7.2120869C23.390705,5.7383528,22.801352,4.3680508,21.986166,3.162382z M12.59414,0C17.837017,0 22.086119,4.2487391 22.086119,9.4923666 22.086119,11.643407 21.362236,13.622643 20.155865,15.213773L27.215,28.32472 22.04772,26.83249 19.980768,32.344293 14.152102,18.84544C13.828511,18.898743,13.499019,18.937842,13.164525,18.957342L7.2349634,32.688001 5.1679406,27.176196 0,28.669824 6.4386816,16.7125C4.3991685,14.970269 3.1015882,12.38422 3.1015882,9.4923666 3.1015882,4.2487391 7.35146,0 12.59414,0z" Stretch="Uniform" Fill="Black" Width="16" Height="16" Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <TransformGroup.Children>
+                        <RotateTransform Angle="0" />
+                        <ScaleTransform ScaleX="1" ScaleY="1" />
+                    </TransformGroup.Children>
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>-->
+    </Grid>
+</UserControl>

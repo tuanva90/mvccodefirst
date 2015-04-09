@@ -1,0 +1,78 @@
+﻿<UserControl x:Class="Insyston.Operations.WPF.ViewModels.Common.FilteringControls.FilteringComparision"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             d:DesignHeight="250" d:DesignWidth="220">
+    <Border BorderBrush="DarkGray" Background="#dddddd" BorderThickness="1" Height="250">
+        <StackPanel Margin="0,0,0,0">
+            <!--<StackPanel>
+                <TextBlock x:Name="TitleTextBlock" Text="{Binding Title}" Margin="7 5 7 1" FontWeight="Bold"/>
+            </StackPanel>-->
+            <StackPanel Margin="0 24 0 5">
+                <Border BorderBrush="DarkGray" BorderThickness="1" Margin="2 0 2 8" Height="210">
+                    <Grid >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="27"/>
+                            <RowDefinition Height="27"/>
+                            <RowDefinition Height="27"/>
+                            <RowDefinition Height="27"/>
+                            <RowDefinition Height="27"/>
+                            <RowDefinition Height="27"/>
+                            <RowDefinition Height="40"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="180"/>
+                            <ColumnDefinition Width="30"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="Show rows with value that" Grid.Row="0" Grid.ColumnSpan="2" Margin="3 1 5 1"/>
+
+                        <telerik:RadComboBox Grid.Row="1" Grid.ColumnSpan="2" SelectedItem="{Binding LocalSelectedOperator1,Mode=TwoWay}" 
+                                 ItemsSource="{Binding AllOperators1,Mode= TwoWay}" Margin="3 1 5 1"/>
+
+                        <StackPanel Grid.Row="2" Grid.Column="0" Margin="3 1 2 1" >
+                            <TextBox Text="{Binding NumberInputValue1, Mode =TwoWay}" Visibility="{Binding IsVisiblilityNumber, Mode=TwoWay}"
+                                 CommandManager.PreviewCanExecute="textBox_PreviewExecuted" PreviewTextInput="txtValue_PreviewTextInput" />
+
+                            <TextBox Text="{Binding TextInputValue1, Mode =TwoWay}" Visibility="{Binding IsVisiblilityText, Mode=TwoWay}"
+                                 />
+                        </StackPanel>
+
+
+                        <Border BorderBrush="DarkGray" BorderThickness="1" Grid.Row="2" Grid.Column="1" Margin="2 2 5 2" Width="23" >
+                            <TextBlock  HorizontalAlignment="Center" Text="aA" />
+                        </Border>
+
+                        <telerik:RadComboBox Grid.Row="3" Grid.ColumnSpan="2"  SelectedItem="{Binding LocalSelectedLogicalOperator,Mode=TwoWay}" 
+                                 ItemsSource="{Binding AllLogicalOperator,Mode= TwoWay}" Margin="3 1 5 1"/>
+
+                        <telerik:RadComboBox Grid.Row="4" Grid.ColumnSpan="2" SelectedItem="{Binding LocalSelectedOperator2,Mode=TwoWay}" 
+                                 ItemsSource="{Binding AllOperators2,Mode= TwoWay}" Margin="3 1 5 1"/>
+
+                        <StackPanel Grid.Row="5" Grid.Column="0" Margin="3 1 2 1">
+                            <TextBox  Text="{Binding NumberInputValue2, Mode =TwoWay}" Visibility="{Binding IsVisiblilityNumber, Mode=TwoWay}"
+                                 CommandManager.PreviewCanExecute="textBox_PreviewExecuted" PreviewTextInput="txtValue_PreviewTextInput" />
+                            <TextBox Text="{Binding TextInputValue2, Mode =TwoWay}" Visibility="{Binding IsVisiblilityText, Mode=TwoWay}"
+                                 />
+                        </StackPanel>
+
+
+
+                        <Border BorderBrush="DarkGray" BorderThickness="1" Grid.Row="5" Grid.Column="1"  Margin="2 2 5 2"  Width="23" >
+                            <TextBlock Text="aA" HorizontalAlignment="Center" />
+                        </Border>
+                        <StackPanel Grid.Row="6" Grid.ColumnSpan="3" Orientation="Horizontal">
+                            <Button Click="OnFilter" Margin="3 1 0 5" Width="100">Filter</Button>
+                            <Button Click="OnClearFilter" Margin="3 1 7 5" Width="100">Clear Filter</Button>
+                        </StackPanel>
+
+
+                    </Grid>
+                </Border>
+            </StackPanel>
+        </StackPanel>
+    </Border>
+</UserControl>

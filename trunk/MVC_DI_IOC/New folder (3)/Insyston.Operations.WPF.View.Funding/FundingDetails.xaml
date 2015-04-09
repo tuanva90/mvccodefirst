@@ -1,0 +1,897 @@
+﻿<UserControl x:Class="Insyston.Operations.WPF.Views.Funding.FundingDetails"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:aggregates="clr-namespace:Insyston.Operations.WPF.Views.Funding.CustomAggregates"
+             xmlns:behaviours="clr-namespace:Insyston.Operations.WPF.Views.Common.Behaviours;assembly=Insyston.Operations.WPF.Views.Common"
+             xmlns:ctrls="clr-namespace:Insyston.Operations.WPF.Views.Common.Controls;assembly=Insyston.Operations.WPF.Views.Common"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:enums="clr-namespace:Insyston.Operations.Business.Common.Enums;assembly=Insyston.Operations.Business.Common"
+             xmlns:filters="clr-namespace:Insyston.Operations.WPF.Views.Funding.FilterControls"
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             xmlns:local="clr-namespace:Insyston.Operations.WPF.ViewModels.Funding;assembly=Insyston.Operations.WPF.ViewModels.Funding"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             x:Name="aranUserControl"
+             Style="{Binding Source={StaticResource ValidationHasError}}"
+             d:DesignHeight="900"
+             d:DesignWidth="900"
+             mc:Ignorable="d"
+             xmlns:arcv="clr-namespace:Insyston.Operations.WPF.ViewModels.Funding.Helpers.Converters;assembly=Insyston.Operations.WPF.ViewModels.Funding">
+    
+    
+    <UserControl.Resources>
+        <arcv:FundingAssumedRateConverter x:Key="FundingAssumedRateConverter"></arcv:FundingAssumedRateConverter>
+        <Storyboard x:Key="SummaryState">
+            <ObjectAnimationUsingKeyFrames BeginTime="00:00:00"
+                                           Storyboard.TargetName="SummaryGrid"
+                                           Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="00:00:0.01">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames BeginTime="00:00:00"
+                                           Storyboard.TargetName="ResultGrid"
+                                           Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="00:00:0.01">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Collapsed</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+
+        <Storyboard x:Key="ResultState">
+            <ObjectAnimationUsingKeyFrames BeginTime="00:00:00"
+                                           Storyboard.TargetName="ResultGrid"
+                                           Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="00:00:0.01">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames BeginTime="00:00:00"
+                                           Storyboard.TargetName="SummaryGrid"
+                                           Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="00:00:0.01">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Collapsed</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+
+        <Style x:Key="FundingFiltersViewStyle" TargetType="ItemsControl">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <ScrollViewer BorderThickness="0"
+                                      CanContentScroll="True"
+                                      HorizontalScrollBarVisibility="Auto"
+                                      VerticalScrollBarVisibility="Disabled">
+                            <ItemsPresenter />
+                        </ScrollViewer>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <VirtualizingStackPanel Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal" Visibility="{Binding IsSelected, Converter={StaticResource boolToVisibility}}">
+                            <TextBlock Margin="2 0 2 0"
+                                       Foreground="Black"
+                                       Text="{Binding Text,
+                                                      StringFormat={}{0}}"
+                                       TextWrapping="Wrap" />
+                            <TextBlock x:Name="commaTextBlock" Text=", " />
+                        </StackPanel>
+                        
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Background" Value="Transparent" />
+        </Style>
+        <Style TargetType="telerik:GridViewHeaderRow">
+            <Setter Property="BorderThickness" Value="1 0 0 0" />
+            <Setter Property="BorderBrush" Value="#009CDE" />
+        </Style>
+        <Style TargetType="telerik:GridViewGroupPanel">
+            <Setter Property="FontWeight" Value="Bold"></Setter>
+            <Setter Property="Foreground" Value="#4B4F54"></Setter>
+        </Style>
+    </UserControl.Resources>
+
+
+    <Grid x:Name="FundingDetailsMainGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <ScrollViewer Grid.Row="1"
+                      VerticalAlignment="Stretch"
+                      VerticalScrollBarVisibility="Auto" BorderThickness="0">
+            <Grid x:Name="SummaryGrid"
+                  Margin="15 0 5 0"
+                  d:IsLocked="True">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="56" />
+                    <RowDefinition Height="*" />
+
+                </Grid.RowDefinitions>
+                <WrapPanel Grid.Row="0">
+                    <TextBlock Style="{StaticResource HeaderTextBlock}"
+                           Text="Tranche " />
+                    <TextBlock Style="{StaticResource HeaderTextBlock}"
+                           Text="{Binding SelectedTrancheProfile.TrancheId}" />
+                </WrapPanel>
+                
+
+                <Grid Grid.Row="1">
+
+                    <Grid.Style>
+                        <Style>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding OriginalTrancheStatus, Converter={StaticResource enumToBoolean}, ConverterParameter={x:Static enums:TrancheStatus.Pending}}" Value="False">
+                                    <Setter Property="Grid.IsEnabled" Value="False" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding IsCheckedOut}" Value="False">
+                                    <Setter Property="Grid.IsEnabled" Value="False" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Grid.Style>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="28" />
+                        <RowDefinition Height="28" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100" />
+                        <ColumnDefinition Width="180" />
+                        <ColumnDefinition Width="20" />
+                        <ColumnDefinition Width="115" />
+                        <ColumnDefinition Width="180" />
+                        <ColumnDefinition Width="20" />
+                        <ColumnDefinition Width="105" />
+                        <ColumnDefinition Width="100" />
+                        <ColumnDefinition Width="20" />
+                        <ColumnDefinition Width="90" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Row="0"
+                               Grid.Column="0"
+                               Text="Status" />
+                    <TextBlock Grid.Row="0"
+                               Grid.Column="1"
+                               Text="{Binding OriginalTrancheStatus}" />
+
+                    <TextBlock Grid.Row="0"
+                               Grid.Column="3"
+                               Text="Funding Date:" />
+                    <Border Grid.Row="0" Grid.Column="4">
+                        <Border.Style>
+                            <Style TargetType="Border">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding IsFundingDateInvalid}" Value="True">
+                                        <DataTrigger.Setters>
+                                            <Setter Property="BorderBrush" Value="Red"></Setter>
+                                            <Setter Property="BorderThickness" Value="1"></Setter>
+                                        </DataTrigger.Setters>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Border.Style>
+                        <telerik:RadDateTimePicker Grid.Row="0"
+                                               Grid.Column="4"
+                                               InputMode="DatePicker"
+                                               SelectedValue="{Binding TrancheDateText, 
+                                                                       Mode=TwoWay}" />
+                    </Border>
+
+                    <TextBlock Grid.Row="0"
+                               Grid.Column="6"
+                               Text="Assumed Rate:" />
+                    <TextBox Grid.Row="0"
+                             Grid.Column="7"
+                             Height="26"
+                             Text="{Binding SelectedTrancheProfile.AssumedRate,Mode=TwoWay,Converter={StaticResource FundingAssumedRateConverter},
+                                            StringFormat={}{0}%}">
+                        <i:Interaction.Behaviors>
+                            <behaviours:PercentageBehaviour DecimalPlaces="4" />
+                        </i:Interaction.Behaviors>
+                    </TextBox>
+
+                    <CheckBox Name="CheckBoxCalculate" Grid.Row="0"
+                              Grid.Column="9"
+                              Grid.ColumnSpan="2"
+                              Content="Calculate Holding Cost"
+                              IsChecked="{Binding SelectedTrancheProfile.CalculateHoldingCost,
+                                                  Mode=TwoWay}" />
+
+                    <TextBlock Grid.Row="1"
+                               Grid.Column="0"
+                               Text="Funder:" />
+                    <Border Grid.Row="1" Grid.Column="1">
+                        <Border.Style>
+                            <Style TargetType="Border">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding IsError}" Value="True">
+                                        <DataTrigger.Setters>
+                                            <Setter Property="BorderBrush" Value="Red"></Setter>
+                                            <Setter Property="BorderThickness" Value="1"></Setter>
+                                        </DataTrigger.Setters>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Border.Style>
+                        <telerik:RadComboBox Grid.Row="1"
+                                         Grid.Column="1"
+                                         DisplayMemberPath="Text"
+                                         ItemsSource="{Binding AllFunders}"
+                                         SelectedValue="{Binding SelectedFunder,
+                                                                 Mode=TwoWay}" >
+                        </telerik:RadComboBox>
+                    </Border>
+
+                    <TextBlock Grid.Row="1"
+                               Grid.Column="3"
+                               Text="Direct Debit Profile:" />
+
+                    <telerik:RadComboBox Grid.Row="1"
+                                         Grid.Column="4"
+                                         DisplayMemberPath="ProfileName"
+                                         ItemsSource="{Binding AllDirectDebitProfiles}"
+                                         SelectedValue="{Binding SelectedTrancheProfile.DDProfile,
+                                                                 Mode=TwoWay}"
+                                         SelectedValuePath="ID" />
+
+                    <TextBlock Grid.Row="1"
+                               Grid.Column="6"
+                               Text="Loss Reserve Rate:" />
+
+                    <TextBox Grid.Row="1"
+                             Grid.Column="7"
+                             Height="26"
+                             Text="{Binding SelectedTrancheProfile.LossReserve, 
+                                            Converter={StaticResource FundingAssumedRateConverter},Mode=TwoWay,
+                                            StringFormat={}{0}%}">
+                        <i:Interaction.Behaviors>
+                            <behaviours:PercentageBehaviour DecimalPlaces="4" />
+                        </i:Interaction.Behaviors>
+                    </TextBox>
+                </Grid>
+
+                <Grid Grid.Row="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="26" />
+                        <RowDefinition Height="26" />
+                        <RowDefinition Height="26" />
+                        <RowDefinition Height="26" />
+                        <RowDefinition Height="26" />
+                        <RowDefinition Height="26" />
+                        <RowDefinition Height="26" />
+                        <RowDefinition Height="26" />
+                        <RowDefinition Height="26" />
+                        <RowDefinition Height="26" />
+                        <RowDefinition Height="26" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="150" />
+                        <ColumnDefinition />
+
+                        <ColumnDefinition Width="150" />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Row="0"
+                               Grid.Column="0"
+                               Text="Finance Type:" />
+                    <ItemsControl Grid.Row="0"
+                                  Grid.Column="1"
+                                  Grid.ColumnSpan="3"
+                                  ItemsSource="{Binding AllFinanceTypes}"
+                                  Style="{StaticResource FundingFiltersViewStyle}" />
+                    <TextBlock Grid.Row="1"
+                               Grid.Column="0"
+                               Text="Funding Statuses:" />
+                    <ItemsControl Grid.Row="1"
+                                  Grid.Column="1"
+                                  Grid.ColumnSpan="3"
+                                  ItemsSource="{Binding AllFundingStatuses}"
+                                  Style="{StaticResource FundingFiltersViewStyle}" />
+
+                    <TextBlock Grid.Row="2"
+                               Grid.Column="0"
+                               Text="Funder:" />
+                    <ItemsControl Grid.Row="2"
+                                  Grid.Column="1"
+                                  Grid.ColumnSpan="3"
+                                  ItemsSource="{Binding AllFunders}"
+                                  Style="{StaticResource FundingFiltersViewStyle}" />
+
+                    <TextBlock Grid.Row="3"
+                               Grid.Column="0"
+                               Text="Internal Company:" />
+                    <ItemsControl Grid.Row="3"
+                                  Grid.Column="1"
+                                  Grid.ColumnSpan="3"
+                                  ItemsSource="{Binding AllInternalCompanies}"
+                                  Style="{StaticResource FundingFiltersViewStyle}" />
+                    <TextBlock Grid.Row="4"
+                               Grid.Column="0"
+                               Text="Suppliers:" />
+                    <ItemsControl Grid.Row="4"
+                                  Grid.Column="1"
+                                  Grid.ColumnSpan="3"
+                                  ItemsSource="{Binding AllSuppliers}"
+                                  Style="{StaticResource FundingFiltersViewStyle}" />
+
+                    <TextBlock Grid.Row="5"
+                               Grid.Column="0"
+                               Text="Instalment Type:" />
+                    <ItemsControl Grid.Row="5"
+                                  Grid.Column="1"
+                                  ItemsSource="{Binding AllInstalmentType}"
+                                  Style="{StaticResource FundingFiltersViewStyle}" />
+
+                    <TextBlock Grid.Row="5"
+                               Grid.Column="2"
+                               Text="Frequency:" />
+                    <ItemsControl Grid.Row="5"
+                                  Grid.Column="3"
+                                  ItemsSource="{Binding AllFrequencies}"
+                                  Style="{StaticResource FundingFiltersViewStyle}" />
+
+                    <TextBlock Grid.Row="6"
+                               Grid.Column="0"
+                               Text="Term:" />
+                    <StackPanel Grid.Row="6"
+                                Grid.Column="1"
+                                Orientation="Horizontal">
+                        <TextBlock Text="{Binding DefaultTermOperator, Converter={StaticResource filterOperatorConverter}}" />
+                        <TextBlock Margin="5 0 0 0" Text="{Binding DefaultTerm, Converter={StaticResource funderFundingProfileConverter}}" />
+                    </StackPanel>
+
+                    <TextBlock Grid.Row="6"
+                               Grid.Column="2"
+                               Text="Investment Balance:" />
+                    <StackPanel Grid.Row="6"
+                                Grid.Column="3"
+                                Orientation="Horizontal">
+                        <TextBlock Text="{Binding DefaultInvestmentBalanceOperator, Converter={StaticResource filterOperatorConverter}}" />
+                        <TextBlock Margin="5 0 0 0" Text="{Binding DefaultInvestmentBalance, Converter={StaticResource funderFundingProfileConverter}}" />
+                    </StackPanel>
+
+                    <TextBlock Grid.Row="7"
+                               Grid.Column="0"
+                               Text="Gross Amount Overdue:" />
+                    <StackPanel Grid.Row="7"
+                                Grid.Column="1"
+                                Orientation="Horizontal">
+                        <TextBlock Text="{Binding DefaultGrossOverDueOperator, Converter={StaticResource filterOperatorConverter}}" />
+                        <TextBlock Margin="5 0 0 0" Text="{Binding DefaultGrossOverDue, Converter={StaticResource funderFundingProfileConverter}}" />
+                    </StackPanel>
+
+                    <TextBlock Grid.Row="7"
+                               Grid.Column="2"
+                               Text="Start Date:" />
+                    <StackPanel Grid.Row="7"
+                                Grid.Column="3"
+                                Orientation="Horizontal">
+                        <TextBlock Text="{Binding DefaultFromDateOperator, Converter={StaticResource filterOperatorConverter}}" />
+                        <TextBlock Margin="5 0 0 0" Text="{Binding DefaultFromDateValue, StringFormat=d}" />
+                        <TextBlock VerticalAlignment="Center" Text="{Binding DefaultToDateOperator, Converter={StaticResource filterOperatorConverter}, StringFormat={} \And {0}}">
+                            <TextBlock.Style>
+                                <Style>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding DefaultToDateOperator, Converter={StaticResource filterOperatorConverter}}" Value="{x:Null}">
+                                            <Setter Property="TextBlock.Visibility" Value="Collapsed" />
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
+                        <TextBlock Margin="5 0 0 0" Text="{Binding DefaultToDateValue, StringFormat=d}" />
+                    </StackPanel>
+                </Grid>
+
+            </Grid>
+        </ScrollViewer>
+        <telerik:RadBusyIndicator Grid.Row="1"
+                                  BusyContent="{Binding BusyContent}"
+                                  IsBusy="{Binding IsBusy}">
+            <Grid x:Name="ResultGrid"
+                  Margin="0 0 5 0"
+                  d:IsLocked="True">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="35" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <telerik:RadGridView Name="IncludedInTrancheContractsGrid"
+                                     Grid.Row="1"
+                                     VerticalAlignment="Stretch"
+                                     AutoGenerateColumns="False"
+                                     CanUserDeleteRows="True"
+                                     CanUserInsertRows="False"
+                                     GridLinesVisibility="Both"
+                                     GroupPanelBackground="DarkGray"
+                                     GroupPanelForeground="#4B4F54"
+                                     ItemsSource="{Binding IncludedInTrancheContracts,
+                                                           Mode=TwoWay}"
+                                     RowIndicatorVisibility="Collapsed"
+                                     SelectionMode="Single"
+                                     ShowColumnFooters="True"
+                                     ShowGroupPanel="True"
+                                     CanUserFreezeColumns="False"
+                                     BorderThickness="1">
+                    <telerik:RadGridView.Style>
+                        <Style>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Path=DataContext.OriginalTrancheStatus, Converter={StaticResource enumToBoolean}, ConverterParameter={x:Static enums:TrancheStatus.Pending}, RelativeSource={RelativeSource AncestorType=UserControl}}" Value="False">
+                                    <Setter Property="telerik:RadGridView.IsFilteringAllowed" Value="False" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Path=DataContext.IsCheckedOut, RelativeSource={RelativeSource AncestorType=UserControl}}" Value="False">
+                                    <Setter Property="telerik:RadGridView.IsFilteringAllowed" Value="False" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </telerik:RadGridView.Style>
+                    <telerik:RadGridView.RowStyle>
+                        <Style TargetType="telerik:GridViewRow">
+                            <Setter Property="BorderThickness" Value="1 0 0 0"></Setter>
+                            <Setter Property="BorderBrush" Value="DarkGray"></Setter>
+                            <Setter Property="Background" Value="White" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Path=IsValid}" Value="False">
+                                    <DataTrigger.Setters>
+                                        <Setter Property="Background" Value="Red" />
+                                    </DataTrigger.Setters>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </telerik:RadGridView.RowStyle>
+                    <telerik:RadGridView.Columns>
+                        <telerik:GridViewDataColumn IsFilterable="False" UniqueName="IsSelected" IsReadOnly="True">
+                            <telerik:GridViewDataColumn.Header>
+                                <CheckBox x:Name="SelectAllIncludedInTrancheCheckBox"
+                                          Click="CheckBox_IncludedInTranche_All_Click"
+                                          IsChecked="{Binding IsSelected,
+                                                              Mode=TwoWay}"
+                                          IsThreeState="False">
+                                    <CheckBox.Style>
+                                        <Style>
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding Path=DataContext.OriginalTrancheStatus, Converter={StaticResource enumToBoolean}, ConverterParameter={x:Static enums:TrancheStatus.Pending}, RelativeSource={RelativeSource AncestorType=UserControl}}" Value="False">
+                                                    <Setter Property="CheckBox.IsEnabled" Value="False" />
+                                                </DataTrigger>
+                                                <DataTrigger Binding="{Binding Path=DataContext.IsCheckedOut, RelativeSource={RelativeSource AncestorType=UserControl}}" Value="False">
+                                                    <Setter Property="CheckBox.IsEnabled" Value="False" />
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </CheckBox.Style>
+                                </CheckBox>
+                            </telerik:GridViewDataColumn.Header>
+                            <telerik:GridViewDataColumn.CellTemplate>
+                                <DataTemplate>
+                                    <CheckBox Click="CheckBox_IncludedInTrancheConreactsGridChecked"
+                                              IsChecked="{Binding IsSelected,
+                                                                  Mode=TwoWay}"
+                                              IsThreeState="False"
+                                              >
+                                        <CheckBox.Style>
+                                            <Style>
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding Path=DataContext.OriginalTrancheStatus, Converter={StaticResource enumToBoolean}, ConverterParameter={x:Static enums:TrancheStatus.Pending}, RelativeSource={RelativeSource AncestorType=UserControl}}" Value="False">
+                                                        <Setter Property="CheckBox.IsEnabled" Value="False" />
+                                                    </DataTrigger>
+                                                    <DataTrigger Binding="{Binding Path=DataContext.IsCheckedOut, RelativeSource={RelativeSource AncestorType=UserControl}}" Value="False">
+                                                        <Setter Property="CheckBox.IsEnabled" Value="False" />
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </CheckBox.Style>
+                                    </CheckBox>
+                                </DataTemplate>
+                            </telerik:GridViewDataColumn.CellTemplate>
+                            <telerik:GridViewDataColumn.AggregateFunctions>
+                                <aggregates:CountOfSelectedRecords SourceField="IsSelected" />
+                            </telerik:GridViewDataColumn.AggregateFunctions>
+                        </telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn MinWidth="90"
+                                                    DataMemberBinding="{Binding ContractReference}"
+                                                    Header="Contract ID"
+                                                    IsFilterable="False"
+                                                    IsReadOnly="True"
+                                                    SortMemberPath="ContractId"
+                                                    UniqueName="ContractReference">
+                            <telerik:GridViewDataColumn.Footer>
+                                <TextBlock Text="Rows Selected" />
+                            </telerik:GridViewDataColumn.Footer>
+                        </telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn Width="*"
+                                                    MinWidth="70"
+                                                    DataMemberBinding="{Binding ClientName}"
+                                                    Header="Client Name"
+                                                    IsFilterable="False"
+                                                    IsReadOnly="True"
+                                                    UniqueName="ClientName">
+                            <telerik:GridViewDataColumn.Footer>
+                                <TextBlock Text="Sum :  " TextAlignment="Right" />
+                            </telerik:GridViewDataColumn.Footer>
+                        </telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding InvestmentBalance,
+                                                                                StringFormat={}{0:c}}"
+                                                    FilterMemberPath="InvestmentBalance"
+                                                    Header="Investment Balance"
+                                                    IsReadOnly="True"
+                                                    TextAlignment="Right"
+                                                    UniqueName="InvestmentBalance">
+                            <telerik:GridViewDataColumn.AggregateFunctions>
+                                <aggregates:SumInvestmentBalances ResultFormatString=" {0:c}" SourceField="InvestmentBalance" />
+                            </telerik:GridViewDataColumn.AggregateFunctions>
+                        </telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding GrossAmountOverDue,
+                                                                                StringFormat={}{0:c}}"
+                                                    FilterMemberPath="GrossAmountOverDue"
+                                                    Header="Gross Overdue"
+                                                    IsReadOnly="True"
+                                                    TextAlignment="Right"
+                                                    UniqueName="GrossAmountOverDue">
+                            <telerik:GridViewDataColumn.AggregateFunctions>
+                                <aggregates:SumInvestmentBalances ResultFormatString=" {0:c}" SourceField="GrossAmountOverDue" />
+                            </telerik:GridViewDataColumn.AggregateFunctions>
+                        </telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding StartDate}"
+                                                    DataFormatString=" {0:d} "
+                                                    FilterMemberPath="StartDate"
+                                                    Header="Start Date"
+                                                    IsReadOnly="True"
+                                                    TextAlignment="Right"
+                                                    UniqueName="StartDate" />
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding FinanceType}"
+                                                    FilterMemberPath="FinanceTypeId"
+                                                    Header="Finance Type"
+                                                    IsReadOnly="True"
+                                                    SortMemberPath="FinanceType"
+                                                    UniqueName="FinanceType" />
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding Frequency}"
+                                                    FilterMemberPath="FrequencyId"
+                                                    Header="Frequency"
+                                                    IsReadOnly="True"
+                                                    SortMemberPath="FrequencyId"
+                                                    UniqueName="Frequency" />
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding InstalmentType}"
+                                                    FilterMemberPath="InstalmentType"
+                                                    Header="Instalment Type"
+                                                    IsReadOnly="True"
+                                                    UniqueName="InstalmentType" />
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding FundingStatus}"
+                                                    FilterMemberPath="FundingStatusId"
+                                                    Header="Last Funding Status"
+                                                    IsReadOnly="True"
+                                                    SortMemberPath="FundingStatus"
+                                                    UniqueName="FundingStatus">
+                            <telerik:GridViewDataColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding FundingStatus}" />
+                                </DataTemplate>
+                            </telerik:GridViewDataColumn.CellTemplate>
+                        </telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding FunderName}"
+                                                    FilterMemberPath="FunderId"
+                                                    Header="Funder"
+                                                    IsReadOnly="True"
+                                                    SortMemberPath="FunderName"
+                                                    UniqueName="Funder" />
+                        <telerik:GridViewDataColumn Width="*"
+                                                    MaxWidth="450"
+                                                    DataMemberBinding="{Binding InternalCompany}"
+                                                    FilterMemberPath="InternalCompanyId"
+                                                    Header="Internal Company"
+                                                    IsReadOnly="True"
+                                                    SortMemberPath="InternalCompany"
+                                                    UniqueName="InternalCompany" />
+                        <telerik:GridViewDataColumn Width="*"
+                                                    MaxWidth="450"
+                                                    DataMemberBinding="{Binding Supplier}"
+                                                    FilterMemberPath="SupplierId"
+                                                    Header="Supplier"
+                                                    IsReadOnly="True"
+                                                    SortMemberPath="Supplier"
+                                                    UniqueName="Supplier" />
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding Term}"
+                                                    FilterMemberPath="Term"
+                                                    Header="Term"
+                                                    IsReadOnly="True"
+                                                    UniqueName="Term" />
+                    </telerik:RadGridView.Columns>
+                </telerik:RadGridView>
+                <StackPanel Grid.Row="2"
+                            HorizontalAlignment="Stretch"
+                            Orientation="Horizontal">
+                    <TextBlock>Not Included In Tranche</TextBlock>
+                    <StackPanel Margin="400 0 0 0"
+                                HorizontalAlignment="Center"
+                                Orientation="Horizontal">
+                        <TextBlock>Add To Tranche</TextBlock>
+                        <Button BorderThickness="0"
+                                Command="{Binding OnUseCaseStepChanged}"
+                                CommandParameter="{x:Static local:FundingDetailsViewModel+EnumStep.AddToExisting}"
+                                IsEnabled="{Binding ActiveViewModel.IsCheckedOut}">
+                            <Grid>
+                                <Grid Width="48"
+                                      Height="48"
+                                      Visibility="Visible">
+                                    <Rectangle Name="RectUp"
+                                               Fill="#FF000000"
+                                               Visibility="Visible" />
+                                </Grid>
+                                <Path Width="26"
+                                      Height="26"
+                                      Margin="0,0,0,0"
+                                      Data="M167.5,212.46L199.5,177.507 231.5,212.46 167.5,212.46z"
+                                      Fill="#FFFFFFFF"
+                                      RenderTransformOrigin="0.5,0.5"
+                                      Stretch="Uniform">
+                                    <Path.RenderTransform>
+                                        <TransformGroup>
+                                            <TransformGroup.Children>
+                                                <RotateTransform Angle="0" />
+                                                <ScaleTransform ScaleX="1" ScaleY="1" />
+                                            </TransformGroup.Children>
+                                        </TransformGroup>
+                                    </Path.RenderTransform>
+                                </Path>
+                            </Grid>
+                        </Button>
+                        <TextBlock>Remove From Tranche</TextBlock>
+                        <Button BorderThickness="0"
+                                Command="{Binding OnUseCaseStepChanged}"
+                                CommandParameter="{x:Static local:FundingDetailsViewModel+EnumStep.RemoveFromExisting}"
+                                IsEnabled="{Binding ActiveViewModel.IsCheckedOut}">
+                            <Grid>
+                                <Grid Width="48"
+                                      Height="48"
+                                      Visibility="Visible">
+                                    <Rectangle Name="RectDown"
+                                               Fill="#FF000000"
+                                               Visibility="Visible" />
+                                </Grid>
+                                <Path Width="26"
+                                      Height="26"
+                                      Margin="0,0,0,0"
+                                      Data="M454.165,177.507L422.165,212.46 390.165,177.507 454.165,177.507z"
+                                      Fill="#FFFFFFFF"
+                                      RenderTransformOrigin="0.5,0.5"
+                                      Stretch="Uniform">
+                                    <Path.RenderTransform>
+                                        <TransformGroup>
+                                            <TransformGroup.Children>
+                                                <RotateTransform Angle="0" />
+                                                <ScaleTransform ScaleX="1" ScaleY="1" />
+                                            </TransformGroup.Children>
+                                        </TransformGroup>
+                                    </Path.RenderTransform>
+                                </Path>
+                            </Grid>
+                        </Button>
+                    </StackPanel>
+                </StackPanel>
+
+                <telerik:RadGridView Name="NotIncludedInTrancheContractsGrid"
+                                     Grid.Row="3"
+                                     VerticalAlignment="Stretch"
+                                     AutoGenerateColumns="False"
+                                     CanUserDeleteRows="True"
+                                     CanUserInsertRows="False"
+                                     GridLinesVisibility="Both"
+                                     GroupPanelBackground="DarkGray"
+                                     GroupPanelForeground="#4B4F54"
+                                     ItemsSource="{Binding NotIncludedInTrancheContracts,
+                                                           Mode=TwoWay}"
+                                     RowIndicatorVisibility="Collapsed"
+                                     SelectionMode="Single"
+                                     ShowColumnFooters="True"
+                                     ShowGroupPanel="True"
+                                     BorderThickness="1"
+                                     CanUserFreezeColumns="False">
+                    <telerik:RadGridView.Style>
+                        <Style>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Path=DataContext.OriginalTrancheStatus, Converter={StaticResource enumToBoolean}, ConverterParameter={x:Static enums:TrancheStatus.Pending}, RelativeSource={RelativeSource AncestorType=UserControl}}" Value="False">
+                                    <Setter Property="telerik:RadGridView.IsFilteringAllowed" Value="False" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Path=DataContext.IsCheckedOut, RelativeSource={RelativeSource AncestorType=UserControl}}" Value="False">
+                                    <Setter Property="telerik:RadGridView.IsFilteringAllowed" Value="False" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </telerik:RadGridView.Style>
+                    <telerik:RadGridView.RowStyle>
+                        <Style TargetType="telerik:GridViewRow">
+                            <Setter Property="BorderThickness" Value="1 0 0 0"></Setter>
+                            <Setter Property="BorderBrush" Value="DarkGray"></Setter>
+                            <Setter Property="Background" Value="White" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Path=IsValid}" Value="False">
+                                    <DataTrigger.Setters>
+                                        <Setter Property="Background" Value="Red" />
+                                    </DataTrigger.Setters>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </telerik:RadGridView.RowStyle>
+                    <telerik:RadGridView.Columns>
+                        <telerik:GridViewDataColumn IsFilterable="False" UniqueName="IsSelected" IsReadOnly="True">
+                            <telerik:GridViewDataColumn.Header>
+                                <CheckBox x:Name="SelectAllNotIncludedInTrancheCheckBox"
+                                          Click="CheckBox_NotIncludedInTranche_All_Click"
+                                          IsChecked="{Binding IsSelected,
+                                                              Mode=TwoWay}"
+                                          IsThreeState="False">
+                                    <CheckBox.Style>
+                                        <Style>
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding Path=DataContext.OriginalTrancheStatus, Converter={StaticResource enumToBoolean}, ConverterParameter={x:Static enums:TrancheStatus.Pending}, RelativeSource={RelativeSource AncestorType=UserControl}}" Value="False">
+                                                    <Setter Property="CheckBox.IsEnabled" Value="False" />
+                                                </DataTrigger>
+                                                <DataTrigger Binding="{Binding Path=DataContext.IsCheckedOut, RelativeSource={RelativeSource AncestorType=UserControl}}" Value="False">
+                                                    <Setter Property="CheckBox.IsEnabled" Value="False" />
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </CheckBox.Style>
+                                </CheckBox>
+                            </telerik:GridViewDataColumn.Header>
+                            <telerik:GridViewDataColumn.CellTemplate>
+                                <DataTemplate>
+                                    <CheckBox Click="CheckBox_NotIncludedInTrancheConreactsGridChecked"
+                                              IsChecked="{Binding IsSelected,
+                                                                  Mode=TwoWay}"
+                                              IsThreeState="False">
+                                        <CheckBox.Style>
+                                            <Style>
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding Path=DataContext.OriginalTrancheStatus, Converter={StaticResource enumToBoolean}, ConverterParameter={x:Static enums:TrancheStatus.Pending}, RelativeSource={RelativeSource AncestorType=UserControl}}" Value="False">
+                                                        <Setter Property="CheckBox.IsEnabled" Value="False" />
+                                                    </DataTrigger>
+                                                    <DataTrigger Binding="{Binding Path=DataContext.IsCheckedOut, RelativeSource={RelativeSource AncestorType=UserControl}}" Value="False">
+                                                        <Setter Property="CheckBox.IsEnabled" Value="False" />
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </CheckBox.Style>
+                                    </CheckBox>
+                                </DataTemplate>
+                            </telerik:GridViewDataColumn.CellTemplate>
+                            <telerik:GridViewDataColumn.AggregateFunctions>
+                                <aggregates:CountOfSelectedRecords SourceField="IsSelected" />
+                            </telerik:GridViewDataColumn.AggregateFunctions>
+                        </telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding ContractReference}"
+                                                    Header="Contract ID"
+                                                    IsFilterable="False"
+                                                    IsReadOnly="True"
+                                                    SortMemberPath="ContractId"
+                                                    UniqueName="ContractReference">
+                            <telerik:GridViewDataColumn.Footer>
+                                <TextBlock Text="Rows Selected" />
+                            </telerik:GridViewDataColumn.Footer>
+                        </telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn Width="*"
+                                                    DataMemberBinding="{Binding ClientName}"
+                                                    Header="Client Name"
+                                                    IsFilterable="False"
+                                                    IsReadOnly="True"
+                                                    UniqueName="ClientName">
+                            <telerik:GridViewDataColumn.Footer>
+                                <TextBlock Text="Sum :  " TextAlignment="Right" />
+                            </telerik:GridViewDataColumn.Footer>
+                        </telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding InvestmentBalance,
+                                                                                StringFormat={}{0:c}}"
+                                                    FilterMemberPath="InvestmentBalance"
+                                                    Header="Investment Balance"
+                                                    IsReadOnly="True"
+                                                    TextAlignment="Right"
+                                                    UniqueName="InvestmentBalance">
+                            <telerik:GridViewDataColumn.AggregateFunctions>
+                                <aggregates:SumInvestmentBalances ResultFormatString=" {0:c}" SourceField="InvestmentBalance" />
+                            </telerik:GridViewDataColumn.AggregateFunctions>
+                        </telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding GrossAmountOverDue,
+                                                                                StringFormat={}{0:c}}"
+                                                    FilterMemberPath="GrossAmountOverDue"
+                                                    Header="Gross Overdue"
+                                                    IsReadOnly="True"
+                                                    TextAlignment="Right"
+                                                    UniqueName="GrossAmountOverDue">
+                            <telerik:GridViewDataColumn.AggregateFunctions>
+                                <aggregates:SumInvestmentBalances ResultFormatString=" {0:c}" SourceField="GrossAmountOverDue" />
+                            </telerik:GridViewDataColumn.AggregateFunctions>
+                        </telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding StartDate}"
+                                                    DataFormatString=" {0:d} "
+                                                    FilterMemberPath="StartDate"
+                                                    Header="Start Date"
+                                                    IsReadOnly="True"
+                                                    TextAlignment="Right"
+                                                    UniqueName="StartDate" />
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding FinanceType}"
+                                                    FilterMemberPath="FinanceTypeId"
+                                                    Header="Finance Type"
+                                                    IsReadOnly="True"
+                                                    SortMemberPath="FinanceType"
+                                                    UniqueName="FinanceType" />
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding Frequency}"
+                                                    FilterMemberPath="FrequencyId"
+                                                    Header="Frequency"
+                                                    IsReadOnly="True"
+                                                    SortMemberPath="FrequencyId"
+                                                    UniqueName="Frequency" />
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding InstalmentType}"
+                                                    FilterMemberPath="InstalmentType"
+                                                    Header="Instalment Type"
+                                                    IsReadOnly="True"
+                                                    UniqueName="InstalmentType" />
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding FundingStatus}"
+                                                    FilterMemberPath="FundingStatusId"
+                                                    Header="Last Funding Status"
+                                                    IsReadOnly="True"
+                                                    SortMemberPath="FundingStatus"
+                                                    UniqueName="FundingStatus">
+                            <telerik:GridViewDataColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding FundingStatus}" />
+                                </DataTemplate>
+                            </telerik:GridViewDataColumn.CellTemplate>
+                        </telerik:GridViewDataColumn>
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding FunderName}"
+                                                    FilterMemberPath="FunderId"
+                                                    Header="Funder"
+                                                    IsReadOnly="True"
+                                                    SortMemberPath="FunderName"
+                                                    UniqueName="Funder" />
+                        <telerik:GridViewDataColumn Width="*"
+                                                    MaxWidth="450"
+                                                    DataMemberBinding="{Binding InternalCompany}"
+                                                    FilterMemberPath="InternalCompanyId"
+                                                    Header="Internal Company"
+                                                    IsReadOnly="True"
+                                                    SortMemberPath="InternalCompany"
+                                                    UniqueName="InternalCompany" />
+                        <telerik:GridViewDataColumn Width="*"
+                                                    MaxWidth="450"
+                                                    DataMemberBinding="{Binding Supplier}"
+                                                    FilterMemberPath="SupplierId"
+                                                    Header="Supplier"
+                                                    IsReadOnly="True"
+                                                    SortMemberPath="Supplier"
+                                                    UniqueName="Supplier" />
+                        <telerik:GridViewDataColumn DataMemberBinding="{Binding Term}"
+                                                    FilterMemberPath="Term"
+                                                    Header="Term"
+                                                    IsReadOnly="True"
+                                                    UniqueName="Term" />
+                    </telerik:RadGridView.Columns>
+                </telerik:RadGridView>
+            </Grid>
+        </telerik:RadBusyIndicator>
+    </Grid>
+
+
+
+</UserControl>

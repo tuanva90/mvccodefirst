@@ -1,0 +1,497 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DBD35A59-26F9-4793-8EB7-94821F00F8F3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Insyston.Operations.WPF.ViewModels.Common</RootNamespace>
+    <AssemblyName>Insyston.Operations.WPF.ViewModels.Common</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Caliburn.Micro">
+      <HintPath>..\packages\Caliburn.Micro.Core.2.0.1\lib\net45\Caliburn.Micro.dll</HintPath>
+    </Reference>
+    <Reference Include="Caliburn.Micro.Platform">
+      <HintPath>..\packages\Caliburn.Micro.2.0.1\lib\net45\Caliburn.Micro.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentValidation, Version=5.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\FluentValidation.5.1.0.0\lib\Net40\FluentValidation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Expression.Interactions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Prism.4.1.0.0\lib\NET40\Microsoft.Expression.Interactions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\CommonServiceLocator.1.2\lib\portable-windows8+net40+sl5+windowsphone8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Caliburn.Micro.2.0.1\lib\net45\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Telerik.Windows.Controls, Version=2014.3.1202.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWPF\2014.3.1202.45\Telerik.Windows.Controls.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.GridView, Version=2014.3.1202.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWPF\2014.3.1202.45\Telerik.Windows.Controls.GridView.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Input, Version=2014.3.1202.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWPF\2014.3.1202.45\Telerik.Windows.Controls.Input.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Navigation, Version=2014.3.1202.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWPF\2014.3.1202.45\Telerik.Windows.Controls.Navigation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Data, Version=2014.3.1202.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWPF\2014.3.1202.45\Telerik.Windows.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Commands\Activate.xaml.cs">
+      <DependentUpon>Activate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Commands\AssignFeature.xaml.cs">
+      <DependentUpon>AssignFeature.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Commands\AssignMake.xaml.cs">
+      <DependentUpon>AssignMake.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Commands\AssignModel.xaml.cs">
+      <DependentUpon>AssignModel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Commands\AssignType.xaml.cs">
+      <DependentUpon>AssignType.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Commands\BulkUpdate.xaml.cs">
+      <DependentUpon>BulkUpdate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Commands\PowerOff.xaml.cs">
+      <DependentUpon>PowerOff.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Commands\SaveAndAdd.xaml.cs">
+      <DependentUpon>SaveAndAdd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Commands\Settings.xaml.cs">
+      <DependentUpon>Settings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Commands\Transfer.xaml.cs">
+      <DependentUpon>Transfer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Commands\UpdateDepreciation.xaml.cs">
+      <DependentUpon>UpdateDepreciation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ConfirmationWindowView.xaml.cs">
+      <DependentUpon>ConfirmationWindowView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Commands\Add.xaml.cs">
+      <DependentUpon>Add.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Commands\Cancel.xaml.cs">
+      <DependentUpon>Cancel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Commands\Calculate.xaml.cs">
+      <DependentUpon>Calculate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Commands\Confirmed.xaml.cs">
+      <DependentUpon>Confirmed.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Commands\Copy.xaml.cs">
+      <DependentUpon>Copy.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Commands\Delete.xaml.cs">
+      <DependentUpon>Delete.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Commands\DeSelectAll.xaml.cs">
+      <DependentUpon>DeSelectAll.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Commands\Edit.xaml.cs">
+      <DependentUpon>Edit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Commands\Error.xaml.cs">
+      <DependentUpon>Error.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Commands\FilterAll.xaml.cs">
+      <DependentUpon>FilterAll.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Commands\FilterByQueue.xaml.cs">
+      <DependentUpon>FilterByQueue.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Commands\Funded.xaml.cs">
+      <DependentUpon>Funded.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Commands\Next.xaml.cs">
+      <DependentUpon>Next.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Commands\Pending.xaml.cs">
+      <DependentUpon>Pending.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Commands\Previous.xaml.cs">
+      <DependentUpon>Previous.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Commands\Process.xaml.cs">
+      <DependentUpon>Process.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Commands\Refresh.xaml.cs">
+      <DependentUpon>Refresh.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Commands\ResetPermissions.xaml.cs">
+      <DependentUpon>ResetPermissions.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Commands\Save.xaml.cs">
+      <DependentUpon>Save.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Commands\SelectAll.xaml.cs">
+      <DependentUpon>SelectAll.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ConfirmmationViewModel.cs" />
+    <Compile Include="Controls\CustomDescription.cs" />
+    <Compile Include="Controls\EquipSearchViewModel.cs" />
+    <Compile Include="Controls\ToolbarCommandGridViewModel.cs" />
+    <Compile Include="Controls\Column.cs" />
+    <Compile Include="Controls\ColumnConfig.cs" />
+    <Compile Include="Controls\CustomHyperlink.cs" />
+    <Compile Include="Controls\CustomMenuButton.cs" />
+    <Compile Include="Controls\CustomTabItem.cs" />
+    <Compile Include="Controls\DragDrop\GroupDragDropViewModel.cs" />
+    <Compile Include="Controls\DragDrop\ListDragDropViewModel.cs" />
+    <Compile Include="Controls\DynamicCheckComboBoxViewModel.cs" />
+    <Compile Include="Controls\DynamicGridViewModel.cs" />
+    <Compile Include="Controls\DynamicHoverGridViewModel.cs" />
+    <Compile Include="Controls\FormBarMenuViewModel.cs" />
+    <Compile Include="Controls\ItemValidateContent.cs" />
+    <Compile Include="Controls\TabHyperlinkViewModel.cs" />
+    <Compile Include="Controls\ToggleViewModel.cs" />
+    <Compile Include="CustomToolbarCommand.cs" />
+    <Compile Include="DelegateCommand.cs" />
+    <Compile Include="Controls\GridColumnsBindingBehavior.cs" />
+    <Compile Include="Enums\RadGridViewEnum.cs" />
+    <Compile Include="FilteringControls\FilteringComparision.xaml.cs">
+      <DependentUpon>FilteringComparision.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FilteringControls\FilteringDataList.xaml.cs">
+      <DependentUpon>FilteringDataList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FilteringControls\TextFieldDataListFilter.xaml.cs">
+      <DependentUpon>TextFieldDataListFilter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FilteringControls\TextFieldFilter.xaml.cs">
+      <DependentUpon>TextFieldFilter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\AsyncDelegateCommand.cs" />
+    <Compile Include="Interfaces\OldViewModelBase.cs" />
+    <Compile Include="Interfaces\SubViewModelUseCaseBase.cs" />
+    <Compile Include="Interfaces\ViewModelUseCaseBase.cs" />
+    <Compile Include="Model\ActionCommand.cs" />
+    <Compile Include="Model\DocumentTabViewModel.cs" />
+    <Compile Include="Model\DynamicGridView\Customer.cs" />
+    <Compile Include="Model\DynamicGridView\Dynamic.cs" />
+    <Compile Include="Model\DynamicGridView\DynamicColumn.cs" />
+    <Compile Include="Model\DynamicGridView\DynamicObjectBuilder.cs" />
+    <Compile Include="Model\DynamicGridView\IDynamicObject.cs" />
+    <Compile Include="Model\DynamicGridView\Table\DataColumn.cs" />
+    <Compile Include="Model\DynamicGridView\Table\DataRow.cs" />
+    <Compile Include="Model\DynamicGridView\Table\DataTable.cs" />
+    <Compile Include="Model\DynamicGridView\TypeSignature.cs" />
+    <Compile Include="Model\ErrorItem.cs" />
+    <Compile Include="Model\ExplorerItem.cs" />
+    <Compile Include="Model\Filtering\FilteringDataItem.cs" />
+    <Compile Include="Model\GroupLinkModel.cs" />
+    <Compile Include="Model\ItemComboBox.cs" />
+    <Compile Include="Model\ItemDragDrop.cs" />
+    <Compile Include="Model\ItemEquipSearch.cs" />
+    <Compile Include="Model\ItemGroupPanel.cs" />
+    <Compile Include="Model\MainMenuViewModel.cs" />
+    <Compile Include="Model\RelayCommand.cs" />
+    <Compile Include="Model\SelectListViewModel.cs" />
+    <Compile Include="Model\SystemToolbarViewModel.cs" />
+    <Compile Include="NotificationErrorView.xaml.cs">
+      <DependentUpon>NotificationErrorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NotificationValidateView.xaml.cs">
+      <DependentUpon>NotificationValidateView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NotificationValidateViewModel.cs" />
+    <Compile Include="NotificationErrorViewModel.cs" />
+    <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Controls\SearchViewModel.cs" />
+    <Compile Include="ConfirmationWindowViewModel.cs" />
+    <Compile Include="UIInformation.cs" />
+    <Compile Include="UserControlViewModelBase.cs" />
+    <Compile Include="Utilities.cs" />
+    <Compile Include="Validation\FluentValidationExtensions.cs" />
+    <Compile Include="Validation\RecursiveValidatorSelector.cs" />
+    <Compile Include="WindowManager\RadWindowConductor.cs" />
+    <Compile Include="WindowManager\TelerikWindowManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Insyston.Operations.Business.Collections\Insyston.Operations.Business.Collections.csproj">
+      <Project>{5ce96ad0-a33e-4436-9903-186e3efe949c}</Project>
+      <Name>Insyston.Operations.Business.Collections</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Insyston.Operations.Business.Common\Insyston.Operations.Business.Common.csproj">
+      <Project>{782c299d-3a29-4685-ac14-ec565b117d80}</Project>
+      <Name>Insyston.Operations.Business.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Insyston.Operations.Business.Funding\Insyston.Operations.Business.Funding.csproj">
+      <Project>{FCBF84CB-5C38-4F4F-A683-A36151E13282}</Project>
+      <Name>Insyston.Operations.Business.Funding</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Insyston.Operations.Business.Security\Insyston.Operations.Business.Security.csproj">
+      <Project>{221FA95F-CCF0-4A92-9CFE-953BB642B457}</Project>
+      <Name>Insyston.Operations.Business.Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Insyston.Operations.Common\Insyston.Operations.Common.csproj">
+      <Project>{ffd4cbc2-7a60-46d9-9985-f05682b1c9af}</Project>
+      <Name>Insyston.Operations.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Insyston.Operations.Locking\Insyston.Operations.Locking.csproj">
+      <Project>{96a82fdd-0af2-482d-a1e7-dc388d40a36c}</Project>
+      <Name>Insyston.Operations.Locking</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Insyston.Operations.Logging\Insyston.Operations.Logging.csproj">
+      <Project>{939d1dcf-8855-4209-83a0-4fdd89fac382}</Project>
+      <Name>Insyston.Operations.Logging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Insyston.Operations.Model\Insyston.Operations.Model.csproj">
+      <Project>{b169d420-8b02-4c93-b549-43e36ff1721b}</Project>
+      <Name>Insyston.Operations.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Insyston.Operations.Security\Insyston.Operations.Security.csproj">
+      <Project>{d90a4b49-6673-44b1-8ef3-57e1d5633973}</Project>
+      <Name>Insyston.Operations.Security</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Commands\Activate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Commands\AssignFeature.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Commands\AssignMake.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Commands\AssignModel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Commands\AssignType.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Commands\BulkUpdate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Commands\PowerOff.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Commands\SaveAndAdd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Commands\Settings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Commands\Transfer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Commands\UpdateDepreciation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ConfirmationWindowView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Commands\Add.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Commands\Cancel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Commands\Calculate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Commands\Confirmed.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Commands\Copy.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Commands\Delete.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Commands\DeSelectAll.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Commands\Edit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Commands\Error.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Commands\FilterAll.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Commands\FilterByQueue.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Commands\Funded.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Commands\Next.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Commands\Pending.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Commands\Previous.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Commands\Process.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Commands\Refresh.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Commands\ResetPermissions.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Commands\Save.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Commands\SelectAll.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FilteringControls\FilteringComparision.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FilteringControls\FilteringDataList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FilteringControls\TextFieldDataListFilter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FilteringControls\TextFieldFilter.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="NotificationErrorView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="NotificationValidateView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Settings.StyleCop" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Image\errorValidate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Events\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,105 @@
+﻿<UserControl x:Class="Insyston.Operations.WPF.View.Receipts.ReceiptsBatchSummary"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:con="http://schemas.kent.boogaart.com/converters"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:prism="http://www.codeplex.com/prism"
+             xmlns:prismInteractivity="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:common="clr-namespace:Insyston.Operations.WPF.View.Common;assembly=Insyston.Operations.WPF.View.Common"             
+             xmlns:commands="clr-namespace:Insyston.Operations.WPF.View.Common.Commands;assembly=Insyston.Operations.WPF.View.Common"
+             xmlns:receiptCommands="clr-namespace:Insyston.Operations.WPF.View.Receipts.Commands"
+             xmlns:batchToolbar="clr-namespace:Insyston.Operations.WPF.View.Receipts.CommonControls"
+             xmlns:operations="clr-namespace:Insyston.Operations.WPF.View.Receipts" 
+             mc:Ignorable="d"
+             d:DesignHeight="300" d:DesignWidth="300" >
+    
+    <prismInteractivity:Interaction.Triggers>
+        <prism:InteractionRequestTrigger SourceObject="{Binding UIInformation, Mode=OneWay}">
+            <common:PopupModalWindowAction />
+        </prism:InteractionRequestTrigger>
+        <prism:InteractionRequestTrigger SourceObject="{Binding Popup}">
+            <common:PopupModalWindowAction />
+        </prism:InteractionRequestTrigger>
+    </prismInteractivity:Interaction.Triggers>
+
+    <telerik:RadBusyIndicator Name="prgStatus"  IsBusy="{Binding IsBusy}"  BusyContent="" BorderBrush="Transparent" DisplayAfter="00:00:00" Background="Transparent" >
+        <DockPanel VerticalAlignment="Stretch">
+            <Grid DockPanel.Dock="Top" HorizontalAlignment="Stretch" Margin="5,0,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="34" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <telerik:RadToolBar GripVisibility="Collapsed" OverflowButtonVisibility="Collapsed" Grid.Row="0" Grid.Column="0" Band="1" BandIndex="1" Height="34" Background="Transparent" BorderBrush="Transparent">
+                    <telerik:RadButton Command="{Binding Back}" BorderBrush="Transparent">
+                        <telerik:RadButton.ToolTip>
+                            <TextBlock Text="Back" />
+                        </telerik:RadButton.ToolTip>
+                        <commands:Back Width="32" Height="32" />
+                    </telerik:RadButton>
+                    <telerik:RadButton Command="{Binding Refresh}" BorderBrush="Transparent">
+                        <telerik:RadButton.ToolTip>
+                            <TextBlock Text="Refresh" />
+                        </telerik:RadButton.ToolTip>
+                        <commands:Refresh Width="32" Height="32" />
+                    </telerik:RadButton>
+                    <telerik:RadButton Command="{Binding StatusForward}" IsEnabled="{Binding IsStatusForwardAllowed}" BorderBrush="Transparent" Visibility="{Binding IsStatusForwardVisible, Converter={con:BooleanToVisibilityConverter}}">
+                        <telerik:RadButton.ToolTip>
+                            <TextBlock Text="{Binding StatusForwardText}"/>
+                        </telerik:RadButton.ToolTip>
+                        <receiptCommands:Forward Width="32" Height="32" />
+                    </telerik:RadButton>
+                    <telerik:RadButton Command="{Binding StatusBackward}" BorderBrush="Transparent" IsEnabled="{Binding IsStatusBackwardAllowed}" Visibility="{Binding IsStatusBackwardVisible, Converter={con:BooleanToVisibilityConverter}}">
+                        <telerik:RadButton.ToolTip>
+                            <TextBlock Text="{Binding StatusBackwardText}"/>
+                        </telerik:RadButton.ToolTip>
+                        <receiptCommands:Backward Width="32" Height="32" />
+                    </telerik:RadButton>
+                </telerik:RadToolBar>
+
+                <batchToolbar:NewReceiptBatchToolBar Grid.Row="0" Grid.Column="2" />
+            </Grid>
+            
+            <telerik:RadGridView Name="GrdSummary" DockPanel.Dock="Top" Margin="5,0,5,5" BorderThickness="1" GridLinesVisibility="Both"
+                        CanUserInsertRows="False" CanUserDeleteRows="False" IsReadOnly="True" SelectionMode="Single" AutoGenerateColumns="False" RowIndicatorVisibility="Collapsed"
+                        ItemsSource="{Binding ReceiptBatchSummaries}" FilteringMode="Popup" IsFilteringAllowed="True" Visibility="{Binding IsSummaryVisible, Converter={con:BooleanToVisibilityConverter}}" SelectedItem="{Binding SelectedReceiptBatch}">
+                <prismInteractivity:Interaction.Triggers>
+                    <prismInteractivity:EventTrigger EventName="MouseDoubleClick">
+                        <prismInteractivity:InvokeCommandAction Command="{Binding OpenReceiptBatch}" />
+                    </prismInteractivity:EventTrigger>
+                </prismInteractivity:Interaction.Triggers>
+                <telerik:RadGridView.Columns>
+                        <telerik:GridViewDataColumn IsReadOnly="True" Width="110" Header="Batch Number" TextAlignment="Left" DataMemberBinding="{Binding BatchID}" />
+                        <telerik:GridViewDataColumn IsReadOnly="True" Width="110" Header="Batch Type" TextAlignment="Left" DataMemberBinding="{Binding BatchType}" />
+                        <telerik:GridViewDataColumn IsReadOnly="True" Width="100" Header="Receipt Date" TextAlignment="Left" DataMemberBinding="{Binding ReceiptDate}" DataFormatString=" {0:dd/MM/yyyy}" />
+                        <telerik:GridViewDataColumn IsReadOnly="True" Width="100" Header="Date Created" TextAlignment="Left" DataMemberBinding="{Binding CreatedDate}" DataFormatString=" {0:dd/MM/yyyy}" />
+                        <telerik:GridViewDataColumn IsReadOnly="True" Width="100" Header="No. Entries" TextAlignment="Left" DataMemberBinding="{Binding NumberOfEntries}" />
+                        <telerik:GridViewDataColumn IsReadOnly="True" Width="150" Header="Batch Total" TextAlignment="Right" DataMemberBinding="{Binding GrossBatchTotal}" DataFormatString=" {0:c} " />
+                        <telerik:GridViewDataColumn IsReadOnly="True" Width="*" Header="Internal Company" TextAlignment="Left" DataMemberBinding="{Binding InternalCompany}" />
+                        <telerik:GridViewDataColumn IsReadOnly="True" Width="*" Header="Bank" TextAlignment="Left" DataMemberBinding="{Binding Bank}" />
+                        <telerik:GridViewDataColumn IsReadOnly="True" Width="*" Header="Description" TextAlignment="Left" DataMemberBinding="{Binding BatchDescription}" />
+                    </telerik:RadGridView.Columns>
+                </telerik:RadGridView>
+                <telerik:RadGridView Name="GrdBatchMonthSummary" DockPanel.Dock="Top" Margin="5,0,5,5" BorderThickness="1" GridLinesVisibility="Both"
+                                CanUserInsertRows="False" CanUserDeleteRows="False" IsReadOnly="True" SelectionMode="Single" AutoGenerateColumns="False" RowIndicatorVisibility="Collapsed"
+                                ItemsSource="{Binding ReceiptBatchMonthSummaries}" FilteringMode="Popup" IsFilteringAllowed="False" MinHeight="100" Visibility="{Binding IsMonthSummaryVisible, Converter={con:BooleanToVisibilityConverter}}" SelectedItem="{Binding SelectedReceiptMonth}">
+                    <prismInteractivity:Interaction.Triggers>
+                        <prismInteractivity:EventTrigger EventName="MouseDoubleClick">
+                        <prismInteractivity:InvokeCommandAction Command="{Binding OpenReceiptMonth}" />
+                        </prismInteractivity:EventTrigger>
+                    </prismInteractivity:Interaction.Triggers>
+                    <telerik:RadGridView.Columns>
+                        <telerik:GridViewDataColumn IsReadOnly="True" IsFilterable="False" Width="150" Header="Posted Month" TextAlignment="Left" DataMemberBinding="{Binding BatchMonth}" />
+                        <telerik:GridViewDataColumn IsReadOnly="True" IsFilterable="False" Width="110" Header="No. Entries" TextAlignment="Left" DataMemberBinding="{Binding NumberOfEntries}" />
+                        <telerik:GridViewDataColumn IsReadOnly="True" IsFilterable="False" Width="150" Header="Batch Total" TextAlignment="Left" DataMemberBinding="{Binding GrossBatchTotal}" DataFormatString=" {0:c} " />
+                    </telerik:RadGridView.Columns>
+                </telerik:RadGridView>
+        </DockPanel>
+    </telerik:RadBusyIndicator>
+</UserControl>

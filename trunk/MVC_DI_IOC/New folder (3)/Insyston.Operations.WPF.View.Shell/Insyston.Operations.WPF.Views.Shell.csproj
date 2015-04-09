@@ -1,0 +1,434 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{889CAE9D-4BBB-44C0-813C-AE3E8F1B9342}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Insyston.Operations.WPF.Views.Shell</RootNamespace>
+    <AssemblyName>Insyston.Operations.WPF.Views.Shell</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <UICulture>en-AU</UICulture>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>bin\Debug\</OutputPath>
+    <Prefer32Bit>false</Prefer32Bit>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>bin\Release\</OutputPath>
+    <Prefer32Bit>false</Prefer32Bit>
+    <Optimize>true</Optimize>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>GreenLogo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac">
+      <HintPath>..\packages\Autofac.3.5.2\lib\net40\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper, Version=3.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\AutoMapper.3.1.1\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper.Net4, Version=3.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\AutoMapper.3.1.1\lib\net40\AutoMapper.Net4.dll</HintPath>
+    </Reference>
+    <Reference Include="Caliburn.Micro">
+      <HintPath>..\packages\Caliburn.Micro.Core.2.0.1\lib\net45\Caliburn.Micro.dll</HintPath>
+    </Reference>
+    <Reference Include="Caliburn.Micro.Platform">
+      <HintPath>..\packages\Caliburn.Micro.2.0.1\lib\net45\Caliburn.Micro.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.5\lib\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FirstFloor.ModernUI">
+      <HintPath>..\packages\ModernUI.WPF.1.0.6\lib\net45\FirstFloor.ModernUI.dll</HintPath>
+    </Reference>
+    <Reference Include="Kent.Boogaart.Converters">
+      <HintPath>..\packages\Kent.Boogaart.Converters.1.3.1\lib\net45\Kent.Boogaart.Converters.dll</HintPath>
+    </Reference>
+    <Reference Include="Kent.Boogaart.HelperTrinity, Version=2.0.1.0, Culture=neutral, PublicKeyToken=cc96fa93a217f7a1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Kent.Boogaart.HelperTrinity.2.0.1\lib\portable-win8+net403+sl40+wp+xbox40\Kent.Boogaart.HelperTrinity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Interactions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Prism.4.1.0.0\lib\NET40\Microsoft.Expression.Interactions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\CommonServiceLocator.1.2\lib\portable-windows8+net40+sl5+windowsphone8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Caliburn.Micro.2.0.1\lib\net45\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls, Version=2014.3.1202.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWPF\2014.3.1202.45\Telerik.Windows.Controls.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Data, Version=2014.3.1202.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWPF\2014.3.1202.45\Telerik.Windows.Controls.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.GridView, Version=2014.3.1202.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWPF\2014.3.1202.45\Telerik.Windows.Controls.GridView.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Input, Version=2014.3.1202.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWPF\2014.3.1202.45\Telerik.Windows.Controls.Input.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Navigation, Version=2014.3.1202.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWPF\2014.3.1202.45\Telerik.Windows.Controls.Navigation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.RibbonView, Version=2014.3.1202.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWPF\2014.3.1202.45\Telerik.Windows.Controls.RibbonView.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Data, Version=2014.3.1202.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWPF\2014.3.1202.45\Telerik.Windows.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="CommandSelector.cs" />
+    <Compile Include="ConfigurationView.xaml.cs">
+      <DependentUpon>ConfigurationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DescriptionModuleView.xaml.cs">
+      <DependentUpon>DescriptionModuleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\Caliburn\AppBootstrapper.cs" />
+    <Compile Include="Helpers\Caliburn\AutofacBootstrapper.cs" />
+    <Compile Include="Helpers\Caliburn\CaliburnContentLoader.cs" />
+    <Compile Include="Helpers\Caliburn\EventAggregationAutoSubscriptionModule.cs" />
+    <Compile Include="HomePageView.xaml.cs">
+      <DependentUpon>HomePageView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LandingTiles.xaml.cs">
+      <DependentUpon>LandingTiles.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LoginWindow.xaml.cs">
+      <DependentUpon>LoginWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainViews\MainAssetClassesView.xaml.cs">
+      <DependentUpon>MainAssetClassesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindowDetails.xaml.cs">
+      <DependentUpon>MainWindowDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainViews\MainWindowDetailsTabControlCollectionQueue.xaml.cs">
+      <DependentUpon>MainWindowDetailsTabControlCollectionQueue.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainViews\MainWindowDetailsTabControl.xaml.cs">
+      <DependentUpon>MainWindowDetailsTabControl.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindowDetailsToggle.xaml.cs">
+      <DependentUpon>MainWindowDetailsToggle.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\MainViewModel.cs" />
+    <Page Include="ConfigurationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DescriptionModuleView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HomePageView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Images\Landing\Arrow Sync.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="LandingTiles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LoginWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainViews\MainAssetClassesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="MainWindowDetails.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainViews\MainWindowDetailsTabControlCollectionQueue.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainViews\MainWindowDetailsTabControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindowDetailsToggle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="bin\Debug\LXMTTS.INI" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <None Include="Settings.StyleCop" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Insyston.Operations.Business.Common\Insyston.Operations.Business.Common.csproj">
+      <Project>{782c299d-3a29-4685-ac14-ec565b117d80}</Project>
+      <Name>Insyston.Operations.Business.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Insyston.Operations.Common\Insyston.Operations.Common.csproj">
+      <Project>{ffd4cbc2-7a60-46d9-9985-f05682b1c9af}</Project>
+      <Name>Insyston.Operations.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Insyston.Operations.Logging\Insyston.Operations.Logging.csproj">
+      <Project>{939d1dcf-8855-4209-83a0-4fdd89fac382}</Project>
+      <Name>Insyston.Operations.Logging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Insyston.Operations.Model\Insyston.Operations.Model.csproj">
+      <Project>{b169d420-8b02-4c93-b549-43e36ff1721b}</Project>
+      <Name>Insyston.Operations.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Insyston.Operations.ObjectMap\Insyston.Operations.ObjectMap.csproj">
+      <Project>{f5175bbe-75fb-44a1-a9cd-a0ac025ae76f}</Project>
+      <Name>Insyston.Operations.ObjectMap</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Insyston.Operations.Security\Insyston.Operations.Security.csproj">
+      <Project>{d90a4b49-6673-44b1-8ef3-57e1d5633973}</Project>
+      <Name>Insyston.Operations.Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Insyston.Operations.WPF.View.Collections\Insyston.Operations.WPF.Views.Collections.csproj">
+      <Project>{511f4c6c-bbd7-41d7-b180-6cea8d9fba63}</Project>
+      <Name>Insyston.Operations.WPF.Views.Collections</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Insyston.Operations.WPF.View.Common\Insyston.Operations.WPF.Views.Common.csproj">
+      <Project>{8eb61a41-d35c-4a3e-8f03-4b51d698dd4b}</Project>
+      <Name>Insyston.Operations.WPF.Views.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Insyston.Operations.WPF.View.Funding\Insyston.Operations.WPF.Views.Funding.csproj">
+      <Project>{2c35fe2c-fbca-42e5-a909-7db4a756e944}</Project>
+      <Name>Insyston.Operations.WPF.Views.Funding</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Insyston.Operations.WPF.View.Security\Insyston.Operations.WPF.Views.Security.csproj">
+      <Project>{f4a08964-f9a0-4601-94ba-1d3e3ced90c4}</Project>
+      <Name>Insyston.Operations.WPF.Views.Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Insyston.Operations.WPF.ViewModel.Collections\Insyston.Operations.WPF.ViewModels.Collections.csproj">
+      <Project>{9cb86098-b740-45b0-8a83-e2f1eb61ed6f}</Project>
+      <Name>Insyston.Operations.WPF.ViewModels.Collections</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Insyston.Operations.WPF.ViewModel.Common\Insyston.Operations.WPF.ViewModels.Common.csproj">
+      <Project>{dbd35a59-26f9-4793-8eb7-94821f00f8f3}</Project>
+      <Name>Insyston.Operations.WPF.ViewModels.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Insyston.Operations.WPF.ViewModel.Funding\Insyston.Operations.WPF.ViewModels.Funding.csproj">
+      <Project>{980be28c-736e-49fe-b675-f5382a30b59f}</Project>
+      <Name>Insyston.Operations.WPF.ViewModels.Funding</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Insyston.Operations.WPF.ViewModel.Security\Insyston.Operations.WPF.ViewModels.Security.csproj">
+      <Project>{E86C0B00-9131-4DB5-B8D9-FEF06FF572AA}</Project>
+      <Name>Insyston.Operations.WPF.ViewModels.Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Insyston.Operations.WPF.ViewModel.Shell\Insyston.Operations.WPF.ViewModels.Shell.csproj">
+      <Project>{fdcba3f1-783d-4622-b495-0bde96ef38dd}</Project>
+      <Name>Insyston.Operations.WPF.ViewModels.Shell</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Insyston.Operations.WPF.ViewModels.Assets\Insyston.Operations.WPF.ViewModels.Assets.csproj">
+      <Project>{22a4e454-dd42-4147-a52b-a4878cce2aed}</Project>
+      <Name>Insyston.Operations.WPF.ViewModels.Assets</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Insyston.Operations.WPF.ViewModels.RegisteredAsset\Insyston.Operations.WPF.ViewModels.RegisteredAsset.csproj">
+      <Project>{81e9464b-dab3-4750-a86a-6e22efad4dae}</Project>
+      <Name>Insyston.Operations.WPF.ViewModels.RegisteredAsset</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Insyston.Operations.WPF.Views.Assets\Insyston.Operations.WPF.Views.Assets.csproj">
+      <Project>{052ac5c9-3f06-4138-ba05-111a8983f34d}</Project>
+      <Name>Insyston.Operations.WPF.Views.Assets</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Insyston.Operations.WPF.Views.RegisteredAsset\Insyston.Operations.WPF.Views.RegisteredAsset.csproj">
+      <Project>{e4b32457-78bb-46a8-8b39-77b23761ec3b}</Project>
+      <Name>Insyston.Operations.WPF.Views.RegisteredAsset</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Landing\banner01.jpg" />
+    <Resource Include="Images\Landing\banner03.jpg" />
+    <Resource Include="Images\Landing\banner06.jpg" />
+    <Resource Include="Images\Landing\banner09.jpg" />
+    <Resource Include="Images\Landing\banner10.jpg" />
+    <Resource Include="Images\Landing\banner11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="BlueLogo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Background\Background01.jpg" />
+    <Resource Include="Images\Background\Background02.jpg" />
+    <Resource Include="Images\Background\Background03.jpg" />
+    <Resource Include="Images\Background\Background04.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Module\Collections.png" />
+    <Resource Include="Images\Module\Funding.png" />
+    <Resource Include="Images\Module\Receipting.png" />
+    <Resource Include="Images\Module\Security.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\packages\AutoMapper.3.1.1\lib\net40\AutoMapper.Net4.dll">
+      <Link>AutoMapper.Net4.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="GreenLogo.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,47 @@
+﻿<UserControl x:Class="Insyston.Operations.WPF.Views.Shell.MainAssetClassesView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:assetclasses="clr-namespace:Insyston.Operations.WPF.Views.Assets.AssetClasses;assembly=insyston.operations.wpf.views.assets"
+             xmlns:shell="clr-namespace:Insyston.Operations.WPF.Views.Shell"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <telerik:RadTabControl x:Name="AssetClassesTabControl" BorderThickness="0" Margin="0 -6 0 0 " HeaderBackground="#F1F1F1" IsContentPreserved="True" SelectionChanged="RadTabControlBase_OnSelectionChanged" SelectedIndex="{Binding SelectedTab_AssetClass, Mode=TwoWay}">
+            <telerik:RadTabItem x:Name="TabCategories" Margin="-2,15,0,0" Height="22" Visibility="{Binding CategoryChangedVisibility, Mode=TwoWay}">
+                <telerik:RadTabItem.HeaderTemplate>
+                    <DataTemplate>
+                        <TextBlock Style="{StaticResource TabControlHyperlink}" HorizontalAlignment="Center" VerticalAlignment="Center"> Category</TextBlock>
+                    </DataTemplate>
+                </telerik:RadTabItem.HeaderTemplate>
+                <shell:MainWindowDetails DataContext="{Binding AssetCategoryViewModel}"></shell:MainWindowDetails>
+            </telerik:RadTabItem>
+            <telerik:RadTabItem x:Name="TabTypes" Margin="-2,15,0,0" Height="22" Visibility="{Binding TypeChangedVisibility, Mode=TwoWay}">
+                <telerik:RadTabItem.HeaderTemplate>
+                    <DataTemplate>
+                        <TextBlock Style="{StaticResource TabControlHyperlink}" HorizontalAlignment="Center" VerticalAlignment="Center"> Type</TextBlock>
+                    </DataTemplate>
+                </telerik:RadTabItem.HeaderTemplate>
+                <shell:MainWindowDetails DataContext="{Binding AssetClassesTypeViewModel}"></shell:MainWindowDetails>
+            </telerik:RadTabItem>
+            <telerik:RadTabItem x:Name="TabMakes" Margin="-2,15,0,0" Height="22" Visibility="{Binding MakeChangedVisibility, Mode=TwoWay}">
+                <telerik:RadTabItem.HeaderTemplate>
+                    <DataTemplate>
+                        <TextBlock Style="{StaticResource TabControlHyperlink}" HorizontalAlignment="Center" VerticalAlignment="Center"> Make</TextBlock>
+                    </DataTemplate>
+                </telerik:RadTabItem.HeaderTemplate>
+                <shell:MainWindowDetails DataContext="{Binding AssetClassesMakeViewModel}"></shell:MainWindowDetails>
+            </telerik:RadTabItem>
+            <telerik:RadTabItem x:Name="TabModels" Margin="-2,15,0,0" Height="22" Visibility="{Binding ModelChangedVisibility, Mode=TwoWay}">
+                <telerik:RadTabItem.HeaderTemplate>
+                    <DataTemplate>
+                        <TextBlock Style="{StaticResource TabControlHyperlink}" HorizontalAlignment="Center" VerticalAlignment="Center"> Model</TextBlock>
+                    </DataTemplate>
+                </telerik:RadTabItem.HeaderTemplate>
+                <shell:MainWindowDetails DataContext="{Binding AssetClassesModelViewModel}"></shell:MainWindowDetails>
+            </telerik:RadTabItem>
+        </telerik:RadTabControl>
+    </Grid>
+</UserControl>

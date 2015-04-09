@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="Insyston.Operations.WPF.ViewModels.Common.Commands.PowerOff"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.ToolTip>
+        <TextBlock Style="{StaticResource TooltipStyle}" Text="Log-off"/>
+    </UserControl.ToolTip>
+    <Viewbox >
+        <Grid Width="32" Height="32" Visibility="Visible">
+            <Grid Visibility="Visible">
+                <Rectangle Fill="#FF000000" Visibility="Visible"/>
+                <Ellipse Fill="#FF000000" Visibility="Collapsed" />
+                <Path Data="M50.5,4.7500001C25.232973,4.75 4.75,25.232973 4.7500001,50.5 4.75,75.767029 25.232973,96.25 50.5,96.25 75.767029,96.25 96.25,75.767029 96.25,50.5 96.25,25.232973 75.767029,4.75 50.5,4.7500001z M50.5,0C78.390381,0 101,22.609621 101,50.5 101,78.390381 78.390381,101 50.5,101 22.609621,101 0,78.390381 0,50.5 0,22.609621 22.609621,0 50.5,0z" Stretch="Fill" Fill="#FF000000" Visibility="Collapsed" />
+            </Grid>
+            <Path Data="M26.894,15.797L37.105999,15.797 37.105999,48.205001 26.894,48.205001z M31.999999,7.1492634C18.274899,7.1492634 7.1486797,18.275585 7.1486797,32.00015 7.1486797,45.725513 18.274899,56.851863 31.999999,56.851863 45.725498,56.851863 56.851799,45.725513 56.851799,32.00015 56.851799,18.275585 45.725498,7.1492634 31.999999,7.1492634z M31.999999,0C49.6733,0 63.999998,14.327667 63.999998,32.00015 63.999998,49.67343 49.6733,64.000998 31.999999,64.000998 14.327099,64.000998 0,49.67343 0,32.00015 0,14.327667 14.327099,0 31.999999,0z" Stretch="Uniform" Fill="#FFFFFFFF" Width="16" Height="16" Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5">
+                <Path.RenderTransform>
+                    <TransformGroup>
+                        <TransformGroup.Children>
+                            <RotateTransform Angle="0" />
+                            <ScaleTransform ScaleX="1" ScaleY="1" />
+                        </TransformGroup.Children>
+                    </TransformGroup>
+                </Path.RenderTransform>
+            </Path>
+        </Grid>
+    </Viewbox>
+</UserControl>

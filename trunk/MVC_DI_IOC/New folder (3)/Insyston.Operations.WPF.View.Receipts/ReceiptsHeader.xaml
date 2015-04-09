@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="Insyston.Operations.WPF.View.Receipts.ReceiptsHeader"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:prismInteractivity="http://schemas.microsoft.com/expression/2010/interactivity"
+             mc:Ignorable="d"
+             d:DesignHeight="300" d:DesignWidth="300">
+    <StackPanel>        
+        <telerik:RadBreadcrumb x:Name="breadNavigation" VerticalAlignment="Stretch" Margin="5 0 0 0" IsIconVisible="True" ImagePath="Image" Height="32"
+                               Header="{Binding ReceiptNavigation.Receipts, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HeaderMemberPath="ReceiptText" 
+                               HierarchicalItemsSource="Children" HierarchicalMemberPath="ReceiptText"
+                               ItemsSource="{Binding ReceiptNavigation.Receipts.Children, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextModePath="ReceiptText" 
+                               CurrentItem="{Binding CurrentItem, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                               Path="{Binding Path, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsHistoryEnabled="False" IsTextModeEnabled="False" PreviewMouseDown="breadNavigation_PreviewMouseDown">
+        </telerik:RadBreadcrumb>        
+    </StackPanel>
+</UserControl>

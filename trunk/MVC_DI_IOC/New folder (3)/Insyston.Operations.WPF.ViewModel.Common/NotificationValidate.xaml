@@ -1,0 +1,36 @@
+﻿<telerik:RadWindow x:Class="Insyston.Operations.WPF.ViewModels.Common.NotificationValidate"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300" Header="{Binding Title}" IconTemplate="{DynamicResource IconTemplate}" Width="405" Height="170" x:Name="notificationWindow" WindowStartupLocation="CenterScreen" ResizeMode="CanResizeWithGrip">
+
+    <!--<telerik:RadWindow.Resources>
+        <DataTemplate x:Key="IconTemplate">
+            <Image Source="Images/Notification.jpg" Margin="0,0,2,0" Stretch="Uniform" Width="20" Height="17"/>
+        </DataTemplate>
+    </telerik:RadWindow.Resources>-->
+
+    <DockPanel Background="{DynamicResource WindowBackground}">
+        <DockPanel Margin="10,10,10,12">
+            <Grid DockPanel.Dock="Top" VerticalAlignment="Stretch">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="40"></ColumnDefinition>
+                    <ColumnDefinition Width="10"></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Image Name="imgIcon"  Grid.Column="0" Grid.Row="0" Source="{Binding Icon}" Stretch="UniformToFill"  Height="40" />
+                <TextBlock Grid.Column="2" Grid.Row="0" HorizontalAlignment="Stretch"  VerticalAlignment="Center" TextWrapping="Wrap" Height="Auto" FontFamily="Arial" FontSize="12" Text="{Binding Content}" />
+            </Grid>
+            <DockPanel HorizontalAlignment="Center" DockPanel.Dock="Top" >
+                <telerik:RadButton x:Name="OKButton" Content="_OK" Width="75" Height="23" Margin="0,0,0,0" Grid.Row="1" Click="OK_Click">
+                </telerik:RadButton>
+            </DockPanel>
+        </DockPanel>
+    </DockPanel>
+</telerik:RadWindow>

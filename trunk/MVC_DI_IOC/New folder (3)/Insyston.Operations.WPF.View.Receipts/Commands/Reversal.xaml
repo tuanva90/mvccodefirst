@@ -1,0 +1,21 @@
+﻿<UserControl x:Class="Insyston.Operations.WPF.View.Receipts.Commands.Reversal"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid Name="backgroundGrid" Width="32" Height="32" Visibility="Collapsed" />
+        <Path Data="F1M552.311,447.35L552.311,436.257 557.43,436.257 549.325,427.723 541.217,436.257 546.337,436.257 546.337,449.056C546.337,451.413,548.247,453.324,550.604,453.324L567.244,453.324 561.781,447.35 552.311,447.35z M578.764,444.791L578.764,431.991C578.764,429.634,576.854,427.723,574.497,427.723L557.857,427.723 563.321,433.697 572.79,433.697 572.79,444.791 567.67,444.791 575.778,453.324 583.884,444.791 578.764,444.791z" Stretch="Uniform" Fill="#FF262626" Width="24" Height="24" Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <TransformGroup.Children>
+                        <RotateTransform Angle="0" />
+                        <ScaleTransform ScaleX="1" ScaleY="1" />
+                    </TransformGroup.Children>
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+    </Grid>
+</UserControl>

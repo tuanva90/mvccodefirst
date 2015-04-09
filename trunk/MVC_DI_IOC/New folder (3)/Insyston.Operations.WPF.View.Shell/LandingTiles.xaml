@@ -1,0 +1,64 @@
+﻿<UserControl x:Class="Insyston.Operations.WPF.Views.Shell.LandingTiles"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:con="http://schemas.kent.boogaart.com/converters"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             mc:Ignorable="d" x:Name="LandingTilesUserControl">
+    <UserControl.Resources>
+        <Style TargetType="TextBlock" x:Key="TileLabelStyle">
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="FontFamily" Value="Segoe UI" />
+            <Setter Property="Margin" Value="7" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="VerticalAlignment" Value="Bottom"/>
+        </Style>
+        <DataTemplate x:Key="GroupTemplate">
+            <TextBlock Text="{Binding Header}" FontSize="20" FontFamily="Segoe UI" Margin="10" Foreground="#666"  VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        </DataTemplate>
+    </UserControl.Resources>
+    <Grid Background="#333333">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"></RowDefinition>
+            <RowDefinition Height="2"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="1" Background="#1ba1e2" />
+
+        <Grid Grid.Row="0" Margin="10,0,10,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="57"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Image Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" HorizontalAlignment="Left" VerticalAlignment="Center" Source="Images/Logo.png" Stretch="None" />
+            <TextBlock Grid.Column="1" Grid.Row="0" Text="Operations Launch Pad" HorizontalAlignment="Right" VerticalAlignment="Bottom" FontWeight="Bold" FontSize="20" Foreground="White"  />
+            <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding AssemblyVersion, Mode=OneWay}" HorizontalAlignment="Right" VerticalAlignment="Center" Foreground="White"  />
+        </Grid>
+        <Grid Grid.Row="2" Background="White">
+            <telerik:RadTileList x:Name="ModulesRadTileList" 
+                                 TileReorderMode="None"
+                                 ScrollViewer.HorizontalScrollBarVisibility="Visible" 
+                                 ItemsSource="{Binding CurrentModule.ModulesChildren}"
+                                 AutoGeneratingTile="ModulesRadTileList_AutoGeneratingTile"
+                                 GroupTemplate="{StaticResource GroupTemplate}" 
+                                 SelectedItem="{Binding CurrentModule,Mode=TwoWay}">
+                <telerik:RadTileList.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Image Source="{Binding BackgroundImage}" Stretch="Fill" Margin="-5" />
+                            <Path Data="{Binding PathData}" Stretch="Uniform" Fill="White" Width="68" Height="68" Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            <TextBlock Text="{Binding Header}" Style="{StaticResource TileLabelStyle}"/>
+                        </Grid>
+                    </DataTemplate>
+                </telerik:RadTileList.ItemTemplate>
+            </telerik:RadTileList>
+        </Grid>
+    </Grid>
+</UserControl>

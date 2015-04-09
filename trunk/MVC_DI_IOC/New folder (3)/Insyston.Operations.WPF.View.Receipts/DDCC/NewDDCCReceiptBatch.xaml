@@ -1,0 +1,88 @@
+﻿<common:OperationsView x:Class="Insyston.Operations.WPF.View.Receipts.DDCC.NewDDCCReceiptBatch"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:prism="http://www.codeplex.com/prism"
+             xmlns:prismInteractivity="http://schemas.microsoft.com/expression/2010/interactivity"                     
+             xmlns:common="clr-namespace:Insyston.Operations.WPF.View.Common;assembly=Insyston.Operations.WPF.View.Common"
+             xmlns:receipts="clr-namespace:Insyston.Operations.WPF.View.Receipts"
+             xmlns:con="http://schemas.kent.boogaart.com/converters"                     
+             mc:Ignorable="d">   
+    
+    <UserControl.Resources>
+        <common:InverseBooleanToVisibilityConverter x:Key="InverseVisibilityConverter" />
+    </UserControl.Resources>
+    
+    <Grid Margin="5,0,0,10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="95"></ColumnDefinition>
+            <ColumnDefinition Width="140"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="95"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="22"></RowDefinition>
+            <RowDefinition Height="10"></RowDefinition>
+            <RowDefinition Height="17"></RowDefinition>
+            <RowDefinition Height="5"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>            
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="From Date:" VerticalAlignment="Center" Grid.Row="0" Grid.Column="0" />
+        <telerik:RadDatePicker Grid.Row="0" Grid.Column="1" IsEnabled="{Binding IsDateRangeApplicable}">
+            <telerik:RadDatePicker.SelectedValue>
+                <Binding Path="FromDate" Mode="TwoWay" ValidatesOnDataErrors="True" ValidatesOnExceptions="True" NotifyOnValidationError="True" UpdateSourceTrigger="LostFocus">
+                    <Binding.ValidationRules>
+                        <common:ValidateDate>
+                            <common:ValidateDate.ValidationRuleParams>
+                                <common:ValidationRuleParams BoundTo="From Date" />
+                            </common:ValidateDate.ValidationRuleParams>
+                        </common:ValidateDate>
+                    </Binding.ValidationRules>
+                </Binding>
+            </telerik:RadDatePicker.SelectedValue>
+        </telerik:RadDatePicker>
+        <TextBlock Text="To Date:" Margin="5,0,0,0" Grid.Row="0" Grid.Column="3" VerticalAlignment="Center" />
+        <telerik:RadDatePicker Grid.Row="0" Grid.Column="4" Width="120" HorizontalAlignment="Left" IsEnabled="{Binding IsDateRangeApplicable}">
+            <telerik:RadDatePicker.SelectedValue>
+                <Binding Path="ToDate" Mode="TwoWay" ValidatesOnDataErrors="True" ValidatesOnExceptions="True" NotifyOnValidationError="True" UpdateSourceTrigger="LostFocus">
+                    <Binding.ValidationRules>
+                        <common:ValidateDate>
+                            <common:ValidateDate.ValidationRuleParams>
+                                <common:ValidationRuleParams BoundTo="To Date" />
+                            </common:ValidateDate.ValidationRuleParams>
+                        </common:ValidateDate>
+                    </Binding.ValidationRules>
+                </Binding>
+            </telerik:RadDatePicker.SelectedValue>
+        </telerik:RadDatePicker>
+
+        <RadioButton Grid.Row="2" Grid.Column="0" Content="By Bank" IsChecked="{Binding IsBankSelected}" Click="ClearGridFilter" Visibility="{Binding IsAutoReceipts, Converter={StaticResource InverseVisibilityConverter}}" />
+        <RadioButton Grid.Row="2" Grid.Column="1" Content="By Internal Company" IsChecked="{Binding IsIntercompanySelected}" Click="ClearGridFilter" Visibility="{Binding IsAutoReceipts, Converter={StaticResource InverseVisibilityConverter}}" />
+
+        <telerik:RadGridView Name="grdBankInternalCompany" ItemsSource="{Binding InternalCompanyBankList}" VerticalAlignment="Stretch" Visibility="{Binding IsAutoReceipts, Converter={StaticResource InverseVisibilityConverter}}"                              
+                        SelectedItem="{Binding InternalCompanyBank, NotifyOnValidationError=True, ValidatesOnDataErrors=True, ValidatesOnExceptions=True, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" 
+                        FilteringMode="Popup" Width="Auto" BorderThickness="1" GridLinesVisibility="Both" CanUserInsertRows="False" CanUserDeleteRows="False" ShowGroupPanel="False"
+                        IsReadOnly="True" SelectionMode="Multiple"  AutoGenerateColumns="False" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="5" RowIndicatorVisibility="Collapsed">
+            
+            <prismInteractivity:Interaction.Triggers>
+                <prismInteractivity:EventTrigger EventName="SelectionChanged">
+                    <prismInteractivity:InvokeCommandAction Command="{Binding InterCompanyBankSelectedCommand}" CommandParameter="{Binding SelectedItems, ElementName=grdBankInternalCompany}" />
+                </prismInteractivity:EventTrigger>
+            </prismInteractivity:Interaction.Triggers>
+            
+            <telerik:RadGridView.Columns>
+                <telerik:GridViewSelectColumn />
+                <telerik:GridViewDataColumn IsReadOnly="True" Width="*" Header="Internal Company" UniqueName="InternalCompany"  TextAlignment="Left" DataMemberBinding="{Binding InternalCompany}"
+                                            IsVisible="{Binding IsIntercompanySelected}" />
+                <telerik:GridViewDataColumn IsReadOnly="True" Width="*" Header="Bank" UniqueName="Bank" TextAlignment="Left" DataMemberBinding="{Binding BankName}" />
+                <telerik:GridViewDataColumn IsReadOnly="True" Width="*" Header="Account Name" UniqueName="AccountName" TextAlignment="Left" DataMemberBinding="{Binding AccountName}" />
+                <telerik:GridViewDataColumn IsReadOnly="True" Width="70" Header="BSB No." TextAlignment="Left" DataMemberBinding="{Binding BSBNo}" />
+                <telerik:GridViewDataColumn IsReadOnly="True" Width="120" Header="Account No." TextAlignment="Left" DataMemberBinding="{Binding AccountNo}" />                
+            </telerik:RadGridView.Columns>
+        </telerik:RadGridView>
+    </Grid>
+</common:OperationsView>
